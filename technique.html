@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Formation Technique | MTJ</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+        }
+
+        header {
+            background: #07111f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .slogan {
+            color: #b9c7d9;
+            margin-top: 5px;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 7px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #4d8dff;
+        }
+
+        .hero {
+            background: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #0b5cff;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            color: #5d6878;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #687386;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e1e6ee;
+            border-radius: 16px;
+            padding: 28px;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #687386;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .card button {
+            background: #0b5cff;
+            color: white;
+            border: none;
+            padding: 11px 17px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .card button:hover {
+            background: #0848c7;
+        }
+
+        .important {
+            background: #07111f;
+            color: white;
+            padding: 45px 25px;
+            border-radius: 20px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .important p {
+            color: #b9c7d9;
+            max-width: 700px;
+            margin: 12px auto 0;
+            line-height: 1.7;
+        }
+
+        footer {
+            background: #030912;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer p {
+            color: #9caabd;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 800px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            nav a {
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        MTJ
+    </div>
+
+    <div class="slogan">
+        Éducation & Entrepreneuriat
+    </div>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="cours.html">Cours</a>
+        <a href="technique.html">Technique</a>
+        <a href="#">Informatique</a>
+        <a href="#">Entrepreneuriat</a>
+        <a href="#">Histoire</a>
+        <a href="#">Quiz</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>
+        ⚡ Formation <span>Technique</span>
+    </h1>
+
+    <p>
+        Découvre les métiers et les connaissances techniques
+        dans les domaines de l'électricité, de l'électronique
+        et de l'électrotechnique.
+    </p>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>Nos domaines techniques</h2>
+
+        <p>
+            Choisis une spécialité pour découvrir les cours.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="icon">⚡</div>
+
+            <h3>Électricité</h3>
+
+            <p>
+                Circuits électriques, tension, courant,
+                résistance, puissance et installations.
+            </p>
+
+            <button onclick="openTopic('Électricité')">
+                Découvrir
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🔌</div>
+
+            <h3>Électronique</h3>
+
+            <p>
+                Diodes, transistors, résistances,
+                condensateurs et circuits électroniques.
+            </p>
+
+            <button onclick="openTopic('Électronique')">
+                Découvrir
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🔧</div>
+
+            <h3>Électrotechnique</h3>
+
+            <p>
+                Machines électriques, moteurs,
+                transformateurs et systèmes électriques.
+            </p>
+
+            <button onclick="openTopic('Électrotechnique')">
+                Découvrir
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🏫</div>
+
+            <h3>F3</h3>
+
+            <p>
+                Formation technique orientée vers
+                l'électricité et les compétences pratiques.
+            </p>
+
+            <button onclick="openTopic('F3')">
+                Découvrir
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🏗️</div>
+
+            <h3>F4</h3>
+
+            <p>
+                Découvre les bases techniques,
+                les schémas et les travaux pratiques.
+            </p>
+
+            <button onclick="openTopic('F4')">
+                Découvrir
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">⚙️</div>
+
+            <h3>F5</h3>
+
+            <p>
+                Approfondissement des systèmes,
+                machines et technologies électriques.
+            </p>
+
+            <button onclick="openTopic('F5')">
+                Découvrir
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">📐</div>
+
+            <h3>Schémas & symboles</h3>
+
+            <p>
+                Apprends à reconnaître les symboles
+                et à comprendre les schémas techniques.
+            </p>
+
+            <button onclick="openTopic('Schémas')">
+                Découvrir
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">📏</div>
+
+            <h3>Mesures électriques</h3>
+
+            <p>
+                Multimètre, tension, courant,
+                résistance et méthodes de mesure.
+            </p>
+
+            <button onclick="openTopic('Mesures')">
+                Découvrir
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🛠️</div>
+
+            <h3>Travaux pratiques</h3>
+
+            <p>
+                Exercices, expériences et situations
+                pratiques pour développer tes compétences.
+            </p>
+
+            <button onclick="openTopic('Travaux pratiques')">
+                Découvrir
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="important">
+
+        <h2>🎯 Objectif de la formation</h2>
+
+        <p>
+            Comprendre la théorie, développer les compétences
+            pratiques et préparer les apprenants aux métiers
+            techniques et technologiques.
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <strong>
+        MTJ Éducation & Entrepreneuriat
+    </strong>
+
+    <p>
+        Apprendre aujourd'hui. Construire demain.
+    </p>
+
+</footer>
+
+
+<script>
+
+function openTopic(topic) {
+
+    alert(
+        "La section " + topic +
+        " sera bientôt disponible avec ses cours, exercices et ressources."
+    );
+
+}
+
+</script>
+
+</body>
+</html>
