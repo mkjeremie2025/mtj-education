@@ -6,7 +6,8 @@
 
   <title>Entrepreneuriat | MTJ Éducation</title>
 
-  <meta name="description" content="MTJ Éducation - Apprendre l'entrepreneuriat, le marketing, la vente, la gestion et la création d'entreprise.">
+  <meta name="description"
+        content="MTJ Entrepreneuriat : apprendre à créer, développer et gérer un projet.">
 
   <style>
     * {
@@ -17,7 +18,7 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #f4f7fb;
+      background: #f5f7fb;
       color: #172033;
       line-height: 1.6;
     }
@@ -25,12 +26,15 @@
     header {
       background: #101828;
       color: white;
-      padding: 18px 7%;
+      padding: 16px 6%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
       flex-wrap: wrap;
-      gap: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .logo {
@@ -39,35 +43,47 @@
     }
 
     .logo span {
-      color: #f79009;
+      display: block;
+      font-size: 12px;
+      color: #b9c4d4;
+      font-weight: normal;
     }
 
     nav {
       display: flex;
+      gap: 15px;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      padding: 8px 10px;
-      border-radius: 6px;
+      font-size: 14px;
+      font-weight: bold;
     }
 
     nav a:hover {
+      color: #4ade80;
+    }
+
+    .language {
       background: #1d2939;
+      color: white;
+      border: 1px solid #475467;
+      border-radius: 8px;
+      padding: 8px;
     }
 
     .hero {
-      background: linear-gradient(135deg, #101828, #b54708);
+      background: linear-gradient(135deg, #101828, #047857);
       color: white;
       text-align: center;
-      padding: 75px 20px;
+      padding: 80px 20px;
     }
 
     .hero h1 {
-      font-size: 42px;
+      font-size: 43px;
       margin-bottom: 15px;
     }
 
@@ -75,49 +91,41 @@
       max-width: 750px;
       margin: auto;
       font-size: 18px;
+      color: #e5e7eb;
     }
 
-    .container {
-      width: 90%;
-      max-width: 1150px;
-      margin: 45px auto;
+    section {
+      padding: 60px 6%;
     }
 
-    .section-title {
+    .title {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
     }
 
-    .section-title h2 {
-      font-size: 30px;
+    .title h2 {
+      font-size: 31px;
       margin-bottom: 8px;
     }
 
-    .search {
-      max-width: 650px;
-      margin: 0 auto 35px;
-    }
-
-    .search input {
-      width: 100%;
-      padding: 15px;
-      border: 1px solid #d0d5dd;
-      border-radius: 10px;
-      font-size: 16px;
+    .title p {
+      color: #667085;
     }
 
     .cards {
+      max-width: 1150px;
+      margin: auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
     }
 
     .card {
       background: white;
+      border-radius: 15px;
       padding: 25px;
-      border-radius: 14px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-      transition: 0.2s;
+      box-shadow: 0 5px 20px rgba(16, 24, 40, 0.08);
+      transition: 0.25s;
     }
 
     .card:hover {
@@ -125,78 +133,112 @@
     }
 
     .icon {
-      font-size: 40px;
-      margin-bottom: 12px;
+      font-size: 38px;
+      margin-bottom: 10px;
     }
 
     .card h3 {
       margin-bottom: 10px;
-      font-size: 21px;
     }
 
     .card p {
-      color: #475467;
+      color: #667085;
       margin-bottom: 18px;
     }
 
-    button {
-      border: none;
-      background: #b54708;
+    .btn {
+      display: inline-block;
+      background: #047857;
       color: white;
-      padding: 11px 17px;
-      border-radius: 7px;
-      cursor: pointer;
-      font-size: 15px;
+      text-decoration: none;
+      padding: 10px 17px;
+      border-radius: 8px;
+      font-weight: bold;
     }
 
-    button:hover {
-      background: #8f3a06;
+    .btn:hover {
+      background: #035f46;
     }
 
-    .levels {
-      margin-top: 55px;
+    .program {
+      background: #ecfdf5;
     }
 
-    .level-box {
+    .program-box {
+      max-width: 950px;
+      margin: 0 auto 25px;
       background: white;
-      padding: 25px;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      border-left: 5px solid #f79009;
-    }
-
-    .project {
-      background: #fff7ed;
+      border-radius: 15px;
       padding: 30px;
-      border-radius: 14px;
-      margin-top: 50px;
-      text-align: center;
+      box-shadow: 0 5px 20px rgba(16, 24, 40, 0.07);
     }
 
-    .project h2 {
-      margin-bottom: 10px;
+    .program-box h3 {
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .program-box p {
+      color: #667085;
+    }
+
+    .program-box ul {
+      margin: 15px 0 0 22px;
+    }
+
+    .program-box li {
+      margin-bottom: 7px;
+    }
+
+    .steps {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .step {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 5px 18px rgba(16, 24, 40, 0.07);
+    }
+
+    .step strong {
+      display: block;
+      font-size: 25px;
+      color: #047857;
+      margin-bottom: 8px;
+    }
+
+    .exercise {
+      background: #f0fdf4;
     }
 
     footer {
       background: #101828;
-      color: white;
+      color: #d0d5dd;
       text-align: center;
-      padding: 30px 15px;
-      margin-top: 60px;
+      padding: 30px 20px;
     }
 
-    @media (max-width: 700px) {
-      .hero h1 {
-        font-size: 32px;
-      }
+    footer strong {
+      color: white;
+    }
 
+    @media (max-width: 800px) {
       header {
         justify-content: center;
-        text-align: center;
       }
 
       nav {
         justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 34px;
       }
     }
   </style>
@@ -207,269 +249,642 @@
 <header>
 
   <div class="logo">
-    <span>MTJ</span> Éducation
+    MTJ
+    <span data-fr="Éducation & Entrepreneuriat"
+          data-en="Education & Entrepreneurship">
+      Éducation & Entrepreneuriat
+    </span>
   </div>
 
   <nav>
-    <a href="index.html">Accueil</a>
-    <a href="cours.html">Cours</a>
-    <a href="technique.html">Technique</a>
-    <a href="informatique.html">Informatique</a>
-    <a href="entrepreneuriat.html">Entrepreneuriat</a>
-    <a href="histoire.html">Histoire</a>
-    <a href="quiz.html">Quiz</a>
+
+    <a href="index.html"
+       data-fr="Accueil"
+       data-en="Home">Accueil</a>
+
+    <a href="cours.html"
+       data-fr="Éducation"
+       data-en="Education">Éducation</a>
+
+    <a href="technique.html"
+       data-fr="Technique"
+       data-en="Technical">Technique</a>
+
+    <a href="informatique.html"
+       data-fr="Informatique"
+       data-en="Computer Science">Informatique</a>
+
+    <a href="entrepreneuriat.html"
+       data-fr="Entrepreneuriat"
+       data-en="Entrepreneurship">Entrepreneuriat</a>
+
+    <a href="histoire.html"
+       data-fr="Histoire"
+       data-en="History">Histoire</a>
+
+    <a href="quiz.html"
+       data-fr="Quiz"
+       data-en="Quiz">Quiz</a>
+
+    <select id="languageSelect" class="language">
+      <option value="fr">🇫🇷 Français</option>
+      <option value="en">🇬🇧 English</option>
+    </select>
+
   </nav>
 
 </header>
 
+
 <section class="hero">
 
-  <h1>💼 Entrepreneuriat</h1>
+  <h1 data-fr="💼 Entrepreneuriat"
+      data-en="💼 Entrepreneurship">
+    💼 Entrepreneuriat
+  </h1>
 
-  <p>
-    Développe tes compétences en création d'entreprise,
-    marketing, vente, gestion et entrepreneuriat numérique.
+  <p data-fr="Apprends à transformer une idée en projet, trouver des clients et développer une activité."
+     data-en="Learn how to turn an idea into a project, find customers and grow a business.">
+    Apprends à transformer une idée en projet,
+    trouver des clients et développer une activité.
   </p>
 
 </section>
 
-<main class="container">
 
-  <div class="section-title">
-    <h2>🚀 Nos domaines</h2>
-    <p>Apprends les bases pour transformer une idée en projet.</p>
+<section>
+
+  <div class="title">
+
+    <h2 data-fr="Nos domaines"
+        data-en="Our areas">
+      Nos domaines
+    </h2>
+
+    <p data-fr="Développe les compétences nécessaires pour entreprendre."
+       data-en="Develop the skills needed to become an entrepreneur.">
+      Développe les compétences nécessaires pour entreprendre.
+    </p>
+
   </div>
 
-  <div class="search">
 
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="🔎 Rechercher un domaine..."
-      onkeyup="searchCourses()"
-    >
-
-  </div>
-
-  <div class="cards" id="courseList">
+  <div class="cards">
 
     <div class="card">
-
       <div class="icon">💡</div>
 
-      <h3>Idée & projet</h3>
+      <h3 data-fr="Idée & Projet"
+          data-en="Idea & Project">
+        Idée & Projet
+      </h3>
 
-      <p>
-        Apprends à trouver une idée, identifier un besoin
-        et construire un projet réaliste.
+      <p data-fr="Trouver une idée utile et construire un projet réaliste."
+         data-en="Find a useful idea and build a realistic project.">
+        Trouver une idée utile et construire un projet réaliste.
       </p>
 
-      <button onclick="openTopic('Idée & projet')">
-        Découvrir
-      </button>
-
+      <a href="#idee"
+         class="btn"
+         data-fr="Apprendre"
+         data-en="Learn">
+        Apprendre
+      </a>
     </div>
 
-    <div class="card">
 
+    <div class="card">
       <div class="icon">📋</div>
 
-      <h3>Business plan</h3>
+      <h3 data-fr="Business plan"
+          data-en="Business plan">
+        Business plan
+      </h3>
 
-      <p>
-        Découvre les éléments essentiels d'un business plan
-        et comment organiser un projet.
+      <p data-fr="Organiser son projet, ses objectifs, ses clients et ses ressources."
+         data-en="Organize your project, objectives, customers and resources.">
+        Organiser son projet, ses objectifs,
+        ses clients et ses ressources.
       </p>
 
-      <button onclick="openTopic('Business plan')">
+      <a href="#business"
+         class="btn"
+         data-fr="Apprendre"
+         data-en="Learn">
         Apprendre
-      </button>
-
+      </a>
     </div>
 
-    <div class="card">
 
+    <div class="card">
       <div class="icon">📣</div>
 
-      <h3>Marketing</h3>
+      <h3 data-fr="Marketing"
+          data-en="Marketing">
+        Marketing
+      </h3>
 
-      <p>
-        Découvre les bases du marketing, de la communication
-        et de la promotion d'un produit ou service.
+      <p data-fr="Comprendre les clients, la communication et la promotion."
+         data-en="Understand customers, communication and promotion.">
+        Comprendre les clients, la communication et la promotion.
       </p>
 
-      <button onclick="openTopic('Marketing')">
-        Explorer
-      </button>
-
+      <a href="#marketing"
+         class="btn"
+         data-fr="Apprendre"
+         data-en="Learn">
+        Apprendre
+      </a>
     </div>
 
-    <div class="card">
 
+    <div class="card">
       <div class="icon">🛒</div>
 
-      <h3>Vente & commerce</h3>
+      <h3 data-fr="Vente & Commerce"
+          data-en="Sales & Commerce">
+        Vente & Commerce
+      </h3>
 
-      <p>
-        Apprends les principes de la vente, de la relation client
-        et du développement commercial.
+      <p data-fr="Apprendre à présenter un produit et développer ses ventes."
+         data-en="Learn how to present a product and increase sales.">
+        Apprendre à présenter un produit
+        et développer ses ventes.
       </p>
 
-      <button onclick="openTopic('Vente & commerce')">
+      <a href="#vente"
+         class="btn"
+         data-fr="Apprendre"
+         data-en="Learn">
         Apprendre
-      </button>
-
+      </a>
     </div>
 
-    <div class="card">
 
+    <div class="card">
       <div class="icon">💰</div>
 
-      <h3>Gestion financière</h3>
+      <h3 data-fr="Gestion financière"
+          data-en="Financial management">
+        Gestion financière
+      </h3>
 
-      <p>
-        Comprends les notions de budget, recettes, dépenses,
-        bénéfices et gestion d'une activité.
+      <p data-fr="Comprendre les coûts, revenus, bénéfices et budget."
+         data-en="Understand costs, revenue, profit and budgeting.">
+        Comprendre les coûts, revenus,
+        bénéfices et budget.
       </p>
 
-      <button onclick="openTopic('Gestion financière')">
-        Découvrir
-      </button>
-
+      <a href="#finance"
+         class="btn"
+         data-fr="Apprendre"
+         data-en="Learn">
+        Apprendre
+      </a>
     </div>
 
+
     <div class="card">
+      <div class="icon">💻</div>
 
-      <div class="icon">📱</div>
+      <h3 data-fr="Entrepreneuriat numérique"
+          data-en="Digital entrepreneurship">
+        Entrepreneuriat numérique
+      </h3>
 
-      <h3>Entrepreneuriat numérique</h3>
-
-      <p>
-        Découvre comment les outils numériques peuvent aider
-        à développer un projet ou une activité.
+      <p data-fr="Découvrir les possibilités offertes par Internet et les outils numériques."
+         data-en="Discover opportunities offered by the Internet and digital tools.">
+        Découvrir les possibilités offertes
+        par Internet et les outils numériques.
       </p>
 
-      <button onclick="openTopic('Entrepreneuriat numérique')">
-        Explorer
-      </button>
-
+      <a href="#digital"
+         class="btn"
+         data-fr="Apprendre"
+         data-en="Learn">
+        Apprendre
+      </a>
     </div>
 
   </div>
 
-  <section class="levels">
+</section>
 
-    <div class="section-title">
-      <h2>🎯 Parcours d'apprentissage</h2>
-    </div>
 
-    <div class="level-box">
+<section class="program">
 
-      <h3>🟢 Débutant</h3>
+  <div class="title">
 
-      <p>
-        Découvrir l'entrepreneuriat, trouver une idée,
-        comprendre les clients et organiser un petit projet.
+    <h2 data-fr="Parcours d'apprentissage"
+        data-en="Learning path">
+      Parcours d'apprentissage
+    </h2>
+
+    <p data-fr="Une méthode simple pour passer de l'idée à l'action."
+       data-en="A simple method to move from idea to action.">
+      Une méthode simple pour passer de l'idée à l'action.
+    </p>
+
+  </div>
+
+
+  <div class="steps">
+
+    <div class="step">
+      <strong>01</strong>
+
+      <h3 data-fr="Observer"
+          data-en="Observe">
+        Observer
+      </h3>
+
+      <p data-fr="Identifier un besoin ou un problème."
+         data-en="Identify a need or problem.">
+        Identifier un besoin ou un problème.
       </p>
-
     </div>
 
-    <div class="level-box">
 
-      <h3>🟡 Intermédiaire</h3>
+    <div class="step">
+      <strong>02</strong>
 
-      <p>
-        Marketing, vente, budget, communication,
-        organisation et développement d'une activité.
+      <h3 data-fr="Imaginer"
+          data-en="Imagine">
+        Imaginer
+      </h3>
+
+      <p data-fr="Proposer une solution."
+         data-en="Propose a solution.">
+        Proposer une solution.
       </p>
-
     </div>
 
-    <div class="level-box">
 
-      <h3>🔵 Avancé</h3>
+    <div class="step">
+      <strong>03</strong>
 
-      <p>
-        Stratégie, développement commercial, gestion de projet
-        et création d'une activité durable.
+      <h3 data-fr="Planifier"
+          data-en="Plan">
+        Planifier
+      </h3>
+
+      <p data-fr="Organiser les ressources et les objectifs."
+         data-en="Organize resources and objectives.">
+        Organiser les ressources et les objectifs.
       </p>
-
     </div>
 
-  </section>
 
-  <section class="project">
+    <div class="step">
+      <strong>04</strong>
 
-    <h2>🏆 Passe de l'idée à l'action</h2>
+      <h3 data-fr="Agir"
+          data-en="Act">
+        Agir
+      </h3>
 
-    <p>
-      MTJ Éducation t'aidera progressivement à comprendre
-      comment construire et présenter un projet entrepreneurial.
+      <p data-fr="Tester, apprendre et améliorer."
+         data-en="Test, learn and improve.">
+        Tester, apprendre et améliorer.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="idee">
+
+  <div class="program-box">
+
+    <h3>💡 <span data-fr="Idée & Projet"
+               data-en="Idea & Project">
+      Idée & Projet
+    </span></h3>
+
+    <p data-fr="Une bonne idée répond à un besoin réel. Avant de commencer, il faut comprendre le problème que l'on veut résoudre et les personnes concernées."
+       data-en="A good idea solves a real need. Before starting, understand the problem you want to solve and the people concerned.">
+      Une bonne idée répond à un besoin réel.
+      Avant de commencer, il faut comprendre le problème
+      que l'on veut résoudre et les personnes concernées.
+    </p>
+
+    <ul>
+      <li data-fr="Identifier un problème"
+          data-en="Identify a problem">
+        Identifier un problème
+      </li>
+
+      <li data-fr="Chercher une solution"
+          data-en="Find a solution">
+        Chercher une solution
+      </li>
+
+      <li data-fr="Identifier les clients"
+          data-en="Identify customers">
+        Identifier les clients
+      </li>
+
+      <li data-fr="Tester l'idée"
+          data-en="Test the idea">
+        Tester l'idée
+      </li>
+    </ul>
+
+  </div>
+
+</section>
+
+
+<section id="business">
+
+  <div class="program-box">
+
+    <h3>📋 <span data-fr="Business plan"
+               data-en="Business plan">
+      Business plan
+    </span></h3>
+
+    <p data-fr="Le business plan permet de présenter clairement un projet et de réfléchir à son fonctionnement."
+       data-en="A business plan helps clearly present a project and think about how it will operate.">
+      Le business plan permet de présenter clairement
+      un projet et de réfléchir à son fonctionnement.
+    </p>
+
+    <ul>
+      <li data-fr="Présentation du projet"
+          data-en="Project presentation">
+        Présentation du projet
+      </li>
+
+      <li data-fr="Produits ou services"
+          data-en="Products or services">
+        Produits ou services
+      </li>
+
+      <li data-fr="Clients ciblés"
+          data-en="Target customers">
+        Clients ciblés
+      </li>
+
+      <li data-fr="Budget prévisionnel"
+          data-en="Estimated budget">
+        Budget prévisionnel
+      </li>
+    </ul>
+
+  </div>
+
+</section>
+
+
+<section id="marketing">
+
+  <div class="program-box">
+
+    <h3>📣 <span data-fr="Marketing"
+               data-en="Marketing">
+      Marketing
+    </span></h3>
+
+    <p data-fr="Le marketing consiste notamment à comprendre son marché, connaître ses clients et communiquer efficacement."
+       data-en="Marketing includes understanding your market, knowing your customers and communicating effectively.">
+      Le marketing consiste notamment à comprendre
+      son marché, connaître ses clients et communiquer efficacement.
+    </p>
+
+    <ul>
+      <li data-fr="Identifier son public"
+          data-en="Identify your audience">
+        Identifier son public
+      </li>
+
+      <li data-fr="Créer un message clair"
+          data-en="Create a clear message">
+        Créer un message clair
+      </li>
+
+      <li data-fr="Choisir les bons canaux"
+          data-en="Choose the right channels">
+        Choisir les bons canaux
+      </li>
+
+      <li data-fr="Mesurer les résultats"
+          data-en="Measure results">
+        Mesurer les résultats
+      </li>
+    </ul>
+
+  </div>
+
+</section>
+
+
+<section id="vente">
+
+  <div class="program-box">
+
+    <h3>🛒 <span data-fr="Vente & Commerce"
+               data-en="Sales & Commerce">
+      Vente & Commerce
+    </span></h3>
+
+    <p data-fr="Apprends à présenter clairement un produit ou un service et à comprendre les besoins du client."
+       data-en="Learn how to clearly present a product or service and understand customer needs.">
+      Apprends à présenter clairement un produit
+      ou un service et à comprendre les besoins du client.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section id="finance">
+
+  <div class="program-box">
+
+    <h3>💰 <span data-fr="Gestion financière"
+               data-en="Financial management">
+      Gestion financière
+    </span></h3>
+
+    <p data-fr="Apprends à suivre les dépenses, les revenus, le budget et le résultat d'une activité."
+       data-en="Learn how to track expenses, revenue, budget and the results of a business.">
+      Apprends à suivre les dépenses, les revenus,
+      le budget et le résultat d'une activité.
+    </p>
+
+    <ul>
+      <li data-fr="Dépenses"
+          data-en="Expenses">
+        Dépenses
+      </li>
+
+      <li data-fr="Revenus"
+          data-en="Revenue">
+        Revenus
+      </li>
+
+      <li data-fr="Bénéfice"
+          data-en="Profit">
+        Bénéfice
+      </li>
+
+      <li data-fr="Budget"
+          data-en="Budget">
+        Budget
+      </li>
+    </ul>
+
+  </div>
+
+</section>
+
+
+<section id="digital">
+
+  <div class="program-box">
+
+    <h3>💻 <span data-fr="Entrepreneuriat numérique"
+               data-en="Digital entrepreneurship">
+      Entrepreneuriat numérique
+    </span></h3>
+
+    <p data-fr="Découvre comment les outils numériques peuvent aider à communiquer, vendre, créer et développer une activité."
+       data-en="Discover how digital tools can help you communicate, sell, create and grow a business.">
+      Découvre comment les outils numériques peuvent aider
+      à communiquer, vendre, créer et développer une activité.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section class="exercise">
+
+  <div class="title">
+
+    <h2 data-fr="🎯 Exercice pratique"
+        data-en="🎯 Practical exercise">
+      🎯 Exercice pratique
+    </h2>
+
+    <p data-fr="Commence à réfléchir comme un entrepreneur."
+       data-en="Start thinking like an entrepreneur.">
+      Commence à réfléchir comme un entrepreneur.
+    </p>
+
+  </div>
+
+
+  <div class="program-box">
+
+    <h3 data-fr="Imagine ton projet"
+        data-en="Imagine your project">
+      Imagine ton projet
+    </h3>
+
+    <p data-fr="Choisis un problème que tu observes autour de toi et imagine une solution qui pourrait être utile à d'autres personnes."
+       data-en="Choose a problem you observe around you and imagine a solution that could be useful to other people.">
+      Choisis un problème que tu observes autour de toi
+      et imagine une solution qui pourrait être utile
+      à d'autres personnes.
     </p>
 
     <br>
 
-    <button onclick="startProject()">
-      Commencer un projet
-    </button>
+    <strong data-fr="Questions à résoudre :"
+            data-en="Questions to answer:">
+      Questions à résoudre :
+    </strong>
 
-  </section>
+    <ul>
+      <li data-fr="Quel problème veux-tu résoudre ?"
+          data-en="What problem do you want to solve?">
+        Quel problème veux-tu résoudre ?
+      </li>
 
-</main>
+      <li data-fr="Qui a besoin de ta solution ?"
+          data-en="Who needs your solution?">
+        Qui a besoin de ta solution ?
+      </li>
+
+      <li data-fr="Quel produit ou service proposes-tu ?"
+          data-en="What product or service do you offer?">
+        Quel produit ou service proposes-tu ?
+      </li>
+
+      <li data-fr="Comment vas-tu trouver tes premiers clients ?"
+          data-en="How will you find your first customers?">
+        Comment vas-tu trouver tes premiers clients ?
+      </li>
+    </ul>
+
+  </div>
+
+</section>
+
 
 <footer>
 
-  <p>© 2026 MTJ Éducation & Entrepreneuriat</p>
+  <p>
+    <strong>MTJ Éducation & Entrepreneuriat</strong>
+  </p>
 
-  <p>Apprendre • Entreprendre • Réussir</p>
+  <p data-fr="Apprendre aujourd'hui. Construire demain."
+     data-en="Learn today. Build tomorrow.">
+    Apprendre aujourd'hui. Construire demain.
+  </p>
+
+  <br>
+
+  <p>
+    © 2026 MTJ —
+    <span data-fr="Tous droits réservés"
+          data-en="All rights reserved">
+      Tous droits réservés
+    </span>
+  </p>
 
 </footer>
 
+
 <script>
 
-function openTopic(topic) {
+  const languageSelect =
+    document.getElementById("languageSelect");
 
-  alert(
-    "📚 " + topic +
-    "\n\nCette formation sera développée prochainement sur MTJ Éducation."
-  );
+  function changeLanguage(language) {
 
-}
+    document
+      .querySelectorAll("[data-fr][data-en]")
+      .forEach(element => {
 
-function searchCourses() {
+        element.textContent =
+          element.getAttribute("data-" + language);
 
-  const input = document
-    .getElementById("searchInput")
-    .value
-    .toLowerCase();
+      });
 
-  const cards = document.querySelectorAll(".card");
+    document.documentElement.lang = language;
 
-  cards.forEach(function(card) {
+    localStorage.setItem("mtjLanguage", language);
+  }
 
-    const text = card.innerText.toLowerCase();
 
-    if (text.includes(input)) {
-
-      card.style.display = "block";
-
-    } else {
-
-      card.style.display = "none";
-
-    }
-
+  languageSelect.addEventListener("change", function() {
+    changeLanguage(this.value);
   });
 
-}
 
-function startProject() {
+  const savedLanguage =
+    localStorage.getItem("mtjLanguage") || "fr";
 
-  alert(
-    "🚀 Le créateur de projet MTJ sera disponible prochainement."
-  );
+  languageSelect.value = savedLanguage;
 
-}
+  changeLanguage(savedLanguage);
 
 </script>
 
