@@ -1,180 +1,865 @@
-<!DOCTYPE html><html lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MTJ Éducation & Entrepreneuriat</title><style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
-header{background:#07111f;color:white;padding:20px;text-align:center}
-.logo{font-size:28px;font-weight:bold}
-.slogan{margin-top:5px;color:#b9c7d9}
-nav{margin-top:20px}
-nav a{color:white;text-decoration:none;margin:8px;font-size:14px;display:inline-block}
-.language{margin-top:20px;padding:10px 15px;border:none;border-radius:8px;cursor:pointer;font-weight:bold}
-.hero{padding:80px 20px;text-align:center;background:white}
-.hero h1{font-size:48px;margin-bottom:20px}
-.hero h1 span{color:#0b5cff}
-.hero p{max-width:700px;margin:auto;color:#5d6878;font-size:18px;line-height:1.7}
-.buttons{margin-top:30px}
-.button{display:inline-block;padding:14px 22px;margin:6px;border-radius:8px;text-decoration:none;font-weight:bold}
-.primary{background:#0b5cff;color:white}
-.secondary{background:#eef2f8;color:#172033}
-.section{padding:70px 20px;max-width:1100px;margin:auto}
-.section h2{text-align:center;font-size:36px;margin-bottom:40px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{display:block;background:white;padding:30px;border-radius:15px;border:1px solid #e1e6ee;text-decoration:none;color:#172033}
-.card:hover{transform:translateY(-5px)}
-.card-icon{font-size:40px;margin-bottom:15px}
-.card h3{margin-bottom:10px}
-.card p{color:#687386;line-height:1.6}
-.card-action{display:inline-block;margin-top:18px;color:#0b5cff;font-weight:bold}
-.quiz{margin-top:40px;background:#07111f;color:white;padding:50px 25px;border-radius:20px;text-align:center}
-.quiz p{color:#b9c7d9;margin:15px auto 25px;max-width:650px}
-footer{background:#030912;color:white;padding:40px 20px;text-align:center}
-footer p{color:#9caabd;margin-top:10px}
-@media(max-width:800px){
-.cards{grid-template-columns:1fr}
-.hero h1{font-size:38px}
-}
-</style></head><body><header>
-<div class="logo">MTJ</div>
-<div class="slogan" id="slogan">Éducation & Entrepreneuriat</div><nav>
-<a href="cours.html" id="navEducation">Éducation</a>
-<a href="technique.html" id="navTechnique">Technique</a>
-<a href="informatique.html" id="navInformatique">Informatique</a>
-<a href="entrepreneuriat.html" id="navBusiness">Entrepreneuriat</a>
-<a href="histoire.html" id="navHistory">Histoire</a>
-<a href="citoyennete.html" id="navCitizenship">Citoyenneté</a>
-<a href="quiz.html" id="navQuiz">Quiz</a>
-</nav><select class="language" id="languageSelect" onchange="changeLanguage()">
-<option value="fr">🇫🇷 Français</option>
-<option value="en">🇬🇧 English</option>
-</select>
-</header><section class="hero">
-<h1 id="heroTitle">Apprendre.<br><span>Entreprendre.</span><br>Réussir.</h1><p id="heroText">
-Bienvenue sur MTJ Éducation & Entrepreneuriat,
-une plateforme pour apprendre, développer ses compétences,
-préparer son avenir et découvrir l'entrepreneuriat.
-</p><div class="buttons">
-<a href="cours.html" class="button primary" id="learnButton">Commencer à apprendre</a>
-<a href="quiz.html" class="button secondary" id="quizButton">Faire un quiz</a>
-</div>
-</section><section class="section"><h2 id="question">Que veux-tu apprendre ?</h2><div class="cards"><a href="cours.html" class="card">
-<div class="card-icon">📚</div>
-<h3 id="educationTitle">Éducation</h3>
-<p id="educationText">Cours, matières scolaires, exercices et révisions.</p>
-<span class="card-action" id="educationAction">Voir les cours →</span>
-</a><a href="technique.html" class="card">
-<div class="card-icon">⚡</div>
-<h3 id="techniqueTitle">Filières techniques</h3>
-<p id="techniqueText">F3, F4, F5, électricité, électronique et électrotechnique.</p>
-<span class="card-action" id="techniqueAction">Voir le programme →</span>
-</a><a href="informatique.html" class="card">
-<div class="card-icon">💻</div>
-<h3 id="computerTitle">Informatique</h3>
-<p id="computerText">Programmation, création de sites, numérique et intelligence artificielle.</p>
-<span class="card-action" id="computerAction">Découvrir →</span>
-</a><a href="entrepreneuriat.html" class="card">
-<div class="card-icon">💼</div>
-<h3 id="businessTitle">Entrepreneuriat</h3>
-<p id="businessText">Business, marketing, vente, gestion et création de projets.</p>
-<span class="card-action" id="businessAction">Découvrir →</span>
-</a><a href="histoire.html" class="card">
-<div class="card-icon">🇨🇲</div>
-<h3 id="historyTitle">Histoire</h3>
-<p id="historyText">Histoire du Cameroun, histoire de l'Afrique et du monde.</p>
-<span class="card-action" id="historyAction">Découvrir →</span>
-</a><a href="citoyennete.html" class="card">
-<div class="card-icon">⚖️</div>
-<h3 id="citizenshipTitle">Citoyenneté</h3>
-<p id="citizenshipText">Institutions, justice, droits, devoirs et citoyenneté.</p>
-<span class="card-action" id="citizenshipAction">Découvrir →</span>
-</a></div><div class="quiz">
-<h2 id="quizTitle">🧠 Teste tes connaissances</h2>
-<p id="quizText">Choisis une catégorie, réponds aux questions et découvre ton score.</p>
-<a href="quiz.html" class="button primary" id="quizStart">Commencer le quiz</a>
-</div></section><footer>
-<strong>MTJ Éducation & Entrepreneuriat</strong>
-<p id="footerText">Apprendre aujourd'hui. Construire demain.</p>
-<p>© 2026 MTJ — Tous droits réservés.</p>
-</footer><script>
-const t={
-fr:{
-slogan:"Éducation & Entrepreneuriat",
-education:"Éducation",technique:"Technique",informatique:"Informatique",
-business:"Entrepreneuriat",history:"Histoire",citizenship:"Citoyenneté",quiz:"Quiz",
-hero:"Apprendre.<br><span>Entreprendre.</span><br>Réussir.",
-heroText:"Bienvenue sur MTJ Éducation & Entrepreneuriat, une plateforme pour apprendre, développer ses compétences, préparer son avenir et découvrir l'entrepreneuriat.",
-learn:"Commencer à apprendre",takeQuiz:"Faire un quiz",
-question:"Que veux-tu apprendre ?",educationTitle:"Éducation",
-educationText:"Cours, matières scolaires, exercices et révisions.",educationAction:"Voir les cours →",
-techniqueTitle:"Filières techniques",techniqueText:"F3, F4, F5, électricité, électronique et électrotechnique.",techniqueAction:"Voir le programme →",
-computerTitle:"Informatique",computerText:"Programmation, création de sites, numérique et intelligence artificielle.",computerAction:"Découvrir →",
-businessTitle:"Entrepreneuriat",businessText:"Business, marketing, vente, gestion et création de projets.",businessAction:"Découvrir →",
-historyTitle:"Histoire",historyText:"Histoire du Cameroun, histoire de l'Afrique et du monde.",historyAction:"Découvrir →",
-citizenshipTitle:"Citoyenneté",citizenshipText:"Institutions, justice, droits, devoirs et citoyenneté.",citizenshipAction:"Découvrir →",
-quizTitle:"🧠 Teste tes connaissances",quizText:"Choisis une catégorie, réponds aux questions et découvre ton score.",quizStart:"Commencer le quiz",
-footer:"Apprendre aujourd'hui. Construire demain."
-},
-en:{
-slogan:"Education & Entrepreneurship",
-education:"Education",technique:"Technical",informatique:"Computer Science",
-business:"Entrepreneurship",history:"History",citizenship:"Citizenship",quiz:"Quiz",
-hero:"Learn.<br><span>Build.</span><br>Succeed.",
-heroText:"Welcome to MTJ Education & Entrepreneurship, a platform to learn, develop your skills, prepare for your future and discover entrepreneurship.",
-learn:"Start Learning",takeQuiz:"Take a Quiz",
-question:"What do you want to learn?",educationTitle:"Education",
-educationText:"School subjects, exercises, lessons and revision.",educationAction:"View Courses →",
-techniqueTitle:"Technical Fields",techniqueText:"F3, F4, F5, electricity, electronics and electrotechnics.",techniqueAction:"View Program →",
-computerTitle:"Computer Science",computerText:"Programming, website creation, digital technology and artificial intelligence.",computerAction:"Discover →",
-businessTitle:"Entrepreneurship",businessText:"Business, marketing, sales, management and project creation.",businessAction:"Discover →",
-historyTitle:"History",historyText:"History of Cameroon, Africa and the world.",historyAction:"Discover →",
-citizenshipTitle:"Citizenship",citizenshipText:"Institutions, justice, rights, duties and citizenship.",citizenshipAction:"Discover →",
-quizTitle:"🧠 Test Your Knowledge",quizText:"Choose a category, answer the questions and discover your score.",quizStart:"Start Quiz",
-footer:"Learn today. Build tomorrow."
-}
-};
+<title>MTJ Éducation | Apprendre aujourd'hui, construire demain</title>
 
-function changeLanguage(){
-const lang=document.getElementById("languageSelect").value;
-const x=t[lang];
-
-document.getElementById("slogan").innerHTML=x.slogan;
-document.getElementById("navEducation").innerHTML=x.education;
-document.getElementById("navTechnique").innerHTML=x.technique;
-document.getElementById("navInformatique").innerHTML=x.informatique;
-document.getElementById("navBusiness").innerHTML=x.business;
-document.getElementById("navHistory").innerHTML=x.history;
-document.getElementById("navCitizenship").innerHTML=x.citizenship;
-document.getElementById("navQuiz").innerHTML=x.quiz;
-document.getElementById("heroTitle").innerHTML=x.hero;
-document.getElementById("heroText").innerHTML=x.heroText;
-document.getElementById("learnButton").innerHTML=x.learn;
-document.getElementById("quizButton").innerHTML=x.takeQuiz;
-document.getElementById("question").innerHTML=x.question;
-document.getElementById("educationTitle").innerHTML=x.educationTitle;
-document.getElementById("educationText").innerHTML=x.educationText;
-document.getElementById("educationAction").innerHTML=x.educationAction;
-document.getElementById("techniqueTitle").innerHTML=x.techniqueTitle;
-document.getElementById("techniqueText").innerHTML=x.techniqueText;
-document.getElementById("techniqueAction").innerHTML=x.techniqueAction;
-document.getElementById("computerTitle").innerHTML=x.computerTitle;
-document.getElementById("computerText").innerHTML=x.computerText;
-document.getElementById("computerAction").innerHTML=x.computerAction;
-document.getElementById("businessTitle").innerHTML=x.businessTitle;
-document.getElementById("businessText").innerHTML=x.businessText;
-document.getElementById("businessAction").innerHTML=x.businessAction;
-document.getElementById("historyTitle").innerHTML=x.historyTitle;
-document.getElementById("historyText").innerHTML=x.historyText;
-document.getElementById("historyAction").innerHTML=x.historyAction;
-document.getElementById("citizenshipTitle").innerHTML=x.citizenshipTitle;
-document.getElementById("citizenshipText").innerHTML=x.citizenshipText;
-document.getElementById("citizenshipAction").innerHTML=x.citizenshipAction;
-document.getElementById("quizTitle").innerHTML=x.quizTitle;
-document.getElementById("quizText").innerHTML=x.quizText;
-document.getElementById("quizStart").innerHTML=x.quizStart;
-document.getElementById("footerText").innerHTML=x.footer;
-document.documentElement.lang=lang;
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
-</script></body>
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f4f7fb;
+  color:#172033;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(135deg,#071d49,#0b5ed7);
+  color:white;
+  padding:18px 6%;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 3px 15px rgba(0,0,0,.15);
+}
+
+.header-content{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:bold;
+}
+
+.logo span{
+  color:#55d6ff;
+}
+
+nav{
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:14px;
+}
+
+nav a:hover{
+  color:#55d6ff;
+}
+
+.language{
+  border:none;
+  padding:8px 10px;
+  border-radius:8px;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#0b5ed7,#5b21b6);
+  color:white;
+  padding:75px 6%;
+}
+
+.hero-content{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  gap:40px;
+  align-items:center;
+}
+
+.hero h1{
+  font-size:48px;
+  margin-bottom:18px;
+}
+
+.hero h1 span{
+  color:#66e3ff;
+}
+
+.hero p{
+  font-size:18px;
+  line-height:1.7;
+  max-width:650px;
+}
+
+.buttons{
+  margin-top:28px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-block;
+  padding:13px 22px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+  border:none;
+  cursor:pointer;
+}
+
+.btn-primary{
+  background:white;
+  color:#0b5ed7;
+}
+
+.btn-secondary{
+  background:rgba(255,255,255,.15);
+  color:white;
+  border:1px solid rgba(255,255,255,.5);
+}
+
+.hero-card{
+  background:rgba(255,255,255,.12);
+  padding:30px;
+  border-radius:20px;
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.2);
+}
+
+.hero-card h2{
+  margin-bottom:20px;
+}
+
+.stat{
+  display:flex;
+  justify-content:space-between;
+  padding:12px 0;
+  border-bottom:1px solid rgba(255,255,255,.2);
+}
+
+/* SECTIONS */
+section{
+  padding:60px 6%;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.section-title h2{
+  font-size:32px;
+  color:#071d49;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:#667085;
+}
+
+/* SEARCH */
+.search-box{
+  max-width:700px;
+  margin:0 auto 30px;
+  display:flex;
+  gap:10px;
+}
+
+.search-box input{
+  width:100%;
+  padding:15px;
+  border:1px solid #d0d5dd;
+  border-radius:10px;
+  font-size:16px;
+}
+
+/* FILTERS */
+.filters{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:30px;
+}
+
+.filter{
+  border:none;
+  padding:10px 18px;
+  border-radius:20px;
+  background:#e8eef8;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.filter.active,
+.filter:hover{
+  background:#0b5ed7;
+  color:white;
+}
+
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:25px;
+  box-shadow:0 5px 20px rgba(0,0,0,.07);
+  transition:.25s;
+  border:1px solid #edf0f5;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.icon{
+  font-size:40px;
+  margin-bottom:15px;
+}
+
+.card h3{
+  color:#071d49;
+  margin-bottom:10px;
+}
+
+.card p{
+  color:#667085;
+  line-height:1.5;
+  margin-bottom:18px;
+}
+
+.card-btn{
+  display:inline-block;
+  background:#0b5ed7;
+  color:white;
+  padding:10px 15px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* LEVEL */
+.levels{
+  background:white;
+}
+
+.level-card{
+  text-align:center;
+}
+
+.level-card strong{
+  display:block;
+  font-size:28px;
+  color:#0b5ed7;
+  margin-bottom:8px;
+}
+
+/* PROGRESS */
+.progress-area{
+  background:#071d49;
+  color:white;
+}
+
+.progress-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.progress-card{
+  background:rgba(255,255,255,.1);
+  padding:25px;
+  border-radius:15px;
+}
+
+.progress-bar{
+  height:10px;
+  background:rgba(255,255,255,.2);
+  border-radius:10px;
+  margin-top:15px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  height:100%;
+  background:#55d6ff;
+  border-radius:10px;
+}
+
+/* QUIZ */
+.quiz{
+  background:#eef5ff;
+}
+
+.quiz-box{
+  max-width:700px;
+  margin:auto;
+  background:white;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.question{
+  font-size:20px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+.answer{
+  width:100%;
+  text-align:left;
+  padding:13px;
+  margin:7px 0;
+  border:1px solid #d0d5dd;
+  background:white;
+  border-radius:9px;
+  cursor:pointer;
+}
+
+.answer:hover{
+  background:#eaf2ff;
+}
+
+#result{
+  margin-top:15px;
+  font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+  background:#050f25;
+  color:white;
+  padding:40px 6%;
+  text-align:center;
+}
+
+footer h2{
+  margin-bottom:10px;
+}
+
+footer p{
+  color:#b8c1d1;
+  margin:7px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .hero-content{
+    grid-template-columns:1fr;
+  }
+
+  .progress-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+}
+
+@media(max-width:600px){
+  .header-content{
+    flex-direction:column;
+  }
+
+  nav{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding:50px 5%;
+  }
+
+  section{
+    padding:45px 5%;
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .search-box{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-content">
+
+    <div class="logo">
+      MTJ <span>Éducation</span>
+    </div>
+
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#matieres">Cours</a>
+      <a href="#niveaux">Niveaux</a>
+      <a href="#quiz">Quiz</a>
+
+      <select class="language" id="languageSelect">
+        <option value="fr">🇫🇷 Français</option>
+        <option value="en">🇬🇧 English</option>
+      </select>
+    </nav>
+
+  </div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero" id="accueil">
+
+  <div class="hero-content">
+
+    <div>
+      <h1>
+        Apprends.<br>
+        Progresse.<br>
+        <span>Construis ton avenir.</span>
+      </h1>
+
+      <p id="heroText">
+        Bienvenue sur MTJ Éducation & Entrepreneuriat,
+        une plateforme éducative moderne pour apprendre,
+        pratiquer et développer tes compétences.
+      </p>
+
+      <div class="buttons">
+        <a href="#matieres" class="btn btn-primary">
+          📚 Commencer les cours
+        </a>
+
+        <a href="#quiz" class="btn btn-secondary">
+          🧠 Faire un quiz
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+
+      <h2>🎓 MTJ Éducation</h2>
+
+      <div class="stat">
+        <span>📚 Matières</span>
+        <strong>8+</strong>
+      </div>
+
+      <div class="stat">
+        <span>🧠 Quiz</span>
+        <strong>20+</strong>
+      </div>
+
+      <div class="stat">
+        <span>🌍 Langues</span>
+        <strong>2</strong>
+      </div>
+
+      <div class="stat">
+        <span>🚀 Objectif</span>
+        <strong>Réussir</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- MATIERES -->
+<section id="matieres">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>📚 Nos matières</h2>
+      <p>Choisis une matière et commence ton apprentissage.</p>
+    </div>
+
+    <div class="search-box">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="🔎 Rechercher une matière..."
+        onkeyup="searchSubjects()">
+    </div>
+
+    <div class="filters">
+      <button class="filter active" onclick="filterSubjects('all',this)">
+        Tous
+      </button>
+
+      <button class="filter" onclick="filterSubjects('debutant',this)">
+        Débutant
+      </button>
+
+      <button class="filter" onclick="filterSubjects('intermediaire',this)">
+        Intermédiaire
+      </button>
+
+      <button class="filter" onclick="filterSubjects('avance',this)">
+        Avancé
+      </button>
+    </div>
+
+
+    <div class="grid" id="subjectGrid">
+
+      <div class="card subject" data-level="debutant">
+        <div class="icon">📐</div>
+        <h3>Mathématiques</h3>
+        <p>Nombres, fractions, équations, géométrie, statistiques et algèbre.</p>
+        <a href="maths.html" class="card-btn">Voir le cours →</a>
+      </div>
+
+
+      <div class="card subject" data-level="debutant">
+        <div class="icon">📖</div>
+        <h3>Français</h3>
+        <p>Grammaire, conjugaison, orthographe, vocabulaire et expression.</p>
+        <a href="francais.html" class="card-btn">Voir le cours →</a>
+      </div>
+
+
+      <div class="card subject" data-level="intermediaire">
+        <div class="icon">🇬🇧</div>
+        <h3>English</h3>
+        <p>Grammar, vocabulary, communication and professional English.</p>
+        <a href="anglais.html" class="card-btn">View course →</a>
+      </div>
+
+
+      <div class="card subject" data-level="intermediaire">
+        <div class="icon">⚡</div>
+        <h3>Technique</h3>
+        <p>Électricité, électronique, installations et connaissances techniques.</p>
+        <a href="technique.html" class="card-btn">Voir le cours →</a>
+      </div>
+
+
+      <div class="card subject" data-level="debutant">
+        <div class="icon">💻</div>
+        <h3>Informatique</h3>
+        <p>Programmation, informatique, intelligence artificielle et numérique.</p>
+        <a href="informatique.html" class="card-btn">Voir le cours →</a>
+      </div>
+
+
+      <div class="card subject" data-level="intermediaire">
+        <div class="icon">💼</div>
+        <h3>Entrepreneuriat</h3>
+        <p>Idées d'entreprise, gestion, marketing et développement de projets.</p>
+        <a href="entrepreneuriat.html" class="card-btn">Voir le cours →</a>
+      </div>
+
+
+      <div class="card subject" data-level="debutant">
+        <div class="icon">🌍</div>
+        <h3>Histoire</h3>
+        <p>Découvre les grandes périodes, événements et personnages historiques.</p>
+        <a href="histoire.html" class="card-btn">Voir le cours →</a>
+      </div>
+
+
+      <div class="card subject" data-level="debutant">
+        <div class="icon">🇨🇲</div>
+        <h3>Citoyenneté</h3>
+        <p>Droits, devoirs, valeurs, responsabilité et vie en société.</p>
+        <a href="citoyennete.html" class="card-btn">Voir le cours →</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- NIVEAUX -->
+<section class="levels" id="niveaux">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>🎯 Choisis ton niveau</h2>
+      <p>Apprends progressivement selon ton niveau.</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="card level-card">
+        <strong>01</strong>
+        <h3>Débutant</h3>
+        <p>Commence avec les bases et progresse étape par étape.</p>
+      </div>
+
+      <div class="card level-card">
+        <strong>02</strong>
+        <h3>Intermédiaire</h3>
+        <p>Renforce tes connaissances avec des exercices pratiques.</p>
+      </div>
+
+      <div class="card level-card">
+        <strong>03</strong>
+        <h3>Avancé</h3>
+        <p>Approfondis tes compétences et relève de nouveaux défis.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PROGRESSION -->
+<section class="progress-area">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2 style="color:white;">📈 Ta progression</h2>
+      <p style="color:#cbd5e1;">
+        Suis ton évolution et continue à apprendre.
+      </p>
+    </div>
+
+    <div class="progress-grid">
+
+      <div class="progress-card">
+        <h3>📐 Mathématiques</h3>
+        <p>75% terminé</p>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width:75%;"></div>
+        </div>
+      </div>
+
+      <div class="progress-card">
+        <h3>⚡ Technique</h3>
+        <p>55% terminé</p>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width:55%;"></div>
+        </div>
+      </div>
+
+      <div class="progress-card">
+        <h3>💻 Informatique</h3>
+        <p>40% terminé</p>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width:40%;"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- QUIZ -->
+<section class="quiz" id="quiz">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>🧠 Mini Quiz</h2>
+      <p>Teste rapidement tes connaissances.</p>
+    </div>
+
+    <div class="quiz-box">
+
+      <div class="question">
+        Quelle est la valeur de 5 × 6 ?
+      </div>
+
+      <button class="answer" onclick="checkAnswer(false)">
+        A. 20
+      </button>
+
+      <button class="answer" onclick="checkAnswer(true)">
+        B. 30
+      </button>
+
+      <button class="answer" onclick="checkAnswer(false)">
+        C. 35
+      </button>
+
+      <button class="answer" onclick="checkAnswer(false)">
+        D. 25
+      </button>
+
+      <div id="result"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <h2>MTJ Éducation & Entrepreneuriat</h2>
+
+  <p>Apprendre aujourd'hui, construire demain. 🚀</p>
+
+  <p>
+    Une plateforme pensée pour les jeunes,
+    les élèves et les futurs entrepreneurs.
+  </p>
+
+  <p>
+    © 2026 MTJ Éducation — Tous droits réservés.
+  </p>
+
+</footer>
+
+
+<script>
+
+/* RECHERCHE */
+function searchSubjects(){
+
+  let input =
+    document.getElementById("searchInput")
+    .value
+    .toLowerCase();
+
+  let subjects =
+    document.querySelectorAll(".subject");
+
+  subjects.forEach(function(subject){
+
+    let text =
+      subject.innerText.toLowerCase();
+
+    if(text.includes(input)){
+      subject.style.display = "block";
+    }else{
+      subject.style.display = "none";
+    }
+
+  });
+
+}
+
+
+/* FILTRE */
+function filterSubjects(level,button){
+
+  let subjects =
+    document.querySelectorAll(".subject");
+
+  document.querySelectorAll(".filter")
+    .forEach(function(btn){
+      btn.classList.remove("active");
+    });
+
+  button.classList.add("active");
+
+  subjects.forEach(function(subject){
+
+    if(level === "all" ||
+       subject.dataset.level === level){
+
+      subject.style.display = "block";
+
+    }else{
+
+      subject.style.display = "none";
+
+    }
+
+  });
+
+}
+
+
+/* QUIZ */
+function checkAnswer(correct){
+
+  let result =
+    document.getElementById("result");
+
+  if(correct){
+
+    result.innerHTML =
+      "✅ Bonne réponse ! Excellent travail.";
+
+    result.style.color = "green";
+
+  }else{
+
+    result.innerHTML =
+      "❌ Mauvaise réponse. Essaie encore.";
+
+    result.style.color = "red";
+
+  }
+
+}
+
+
+/* LANGUE */
+const languageSelect =
+  document.getElementById("languageSelect");
+
+languageSelect.addEventListener("change",function(){
+
+  if(this.value === "en"){
+
+    document.getElementById("heroText").innerText =
+      "Welcome to MTJ Education & Entrepreneurship, a modern educational platform to learn, practice and develop your skills.";
+
+  }else{
+
+    document.getElementById("heroText").innerText =
+      "Bienvenue sur MTJ Éducation & Entrepreneuriat, une plateforme éducative moderne pour apprendre, pratiquer et développer tes compétences.";
+
+  }
+
+});
+
+</script>
+
+</body>
 </html>
