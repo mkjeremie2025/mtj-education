@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Histoire | MTJ Éducation</title>
+  <title>MTJ Éducation & Entrepreneuriat — Histoire</title>
 
-  <meta name="description" content="MTJ Éducation - Découvrez l'histoire du Cameroun, de l'Afrique et du monde.">
+  <meta name="description"
+        content="Découvrez l'histoire du Cameroun, de l'Afrique et du monde avec MTJ Éducation & Entrepreneuriat.">
 
   <style>
     * {
@@ -17,53 +18,63 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #f4f7fb;
-      color: #172033;
+      background: #f5f7fb;
+      color: #1f2937;
       line-height: 1.6;
     }
 
     header {
-      background: #101828;
+      background: #111827;
       color: white;
-      padding: 18px 7%;
+      padding: 15px 6%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
       flex-wrap: wrap;
-      gap: 15px;
     }
 
     .logo {
-      font-size: 25px;
+      font-size: 24px;
       font-weight: bold;
     }
 
     .logo span {
-      color: #12b76a;
+      display: block;
+      font-size: 13px;
+      font-weight: normal;
+      color: #d1d5db;
     }
 
     nav {
       display: flex;
+      align-items: center;
+      gap: 15px;
       flex-wrap: wrap;
-      gap: 8px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      padding: 8px 10px;
-      border-radius: 6px;
+      font-size: 14px;
     }
 
     nav a:hover {
-      background: #1d2939;
+      color: #60a5fa;
+    }
+
+    .language {
+      padding: 8px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
     }
 
     .hero {
-      background: linear-gradient(135deg, #101828, #087443);
+      background: linear-gradient(135deg, #7c2d12, #111827);
       color: white;
       text-align: center;
-      padding: 75px 20px;
+      padding: 70px 20px;
     }
 
     .hero h1 {
@@ -72,7 +83,7 @@
     }
 
     .hero p {
-      max-width: 750px;
+      max-width: 800px;
       margin: auto;
       font-size: 18px;
     }
@@ -80,12 +91,29 @@
     .container {
       width: 90%;
       max-width: 1150px;
-      margin: 45px auto;
+      margin: 40px auto;
+    }
+
+    .search {
+      margin-bottom: 35px;
+    }
+
+    .search input {
+      width: 100%;
+      padding: 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .search input:focus {
+      border-color: #2563eb;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .section-title h2 {
@@ -93,96 +121,110 @@
       margin-bottom: 8px;
     }
 
-    .search {
-      max-width: 650px;
-      margin: 0 auto 35px;
+    .section-title p {
+      color: #6b7280;
     }
 
-    .search input {
-      width: 100%;
-      padding: 15px;
-      border: 1px solid #d0d5dd;
-      border-radius: 10px;
-      font-size: 16px;
-    }
-
-    .cards {
+    .topics {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 22px;
     }
 
-    .card {
+    .topic {
       background: white;
       padding: 25px;
       border-radius: 14px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-      transition: 0.2s;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: 0.3s;
     }
 
-    .card:hover {
+    .topic:hover {
       transform: translateY(-5px);
     }
 
     .icon {
       font-size: 40px;
-      margin-bottom: 12px;
-    }
-
-    .card h3 {
       margin-bottom: 10px;
-      font-size: 21px;
     }
 
-    .card p {
-      color: #475467;
+    .topic h3 {
+      margin-bottom: 10px;
+    }
+
+    .topic p {
+      color: #6b7280;
       margin-bottom: 18px;
     }
 
-    button {
-      border: none;
-      background: #087443;
+    .btn {
+      display: inline-block;
+      background: #2563eb;
       color: white;
-      padding: 11px 17px;
+      padding: 10px 16px;
       border-radius: 7px;
-      cursor: pointer;
-      font-size: 15px;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    button:hover {
-      background: #065c35;
+    .btn:hover {
+      background: #1d4ed8;
     }
 
     .timeline {
       margin-top: 55px;
-    }
-
-    .date-box {
       background: white;
-      padding: 22px;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      border-left: 5px solid #12b76a;
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
     }
 
-    .date-box h3 {
-      margin-bottom: 8px;
-    }
-
-    .notice {
-      margin-top: 50px;
-      padding: 28px;
-      background: #ecfdf3;
-      border-radius: 14px;
+    .timeline h2 {
       text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .event {
+      border-left: 4px solid #2563eb;
+      padding: 5px 0 25px 25px;
+      margin-left: 15px;
+    }
+
+    .year {
+      font-size: 24px;
+      font-weight: bold;
+      color: #2563eb;
+      margin-bottom: 5px;
+    }
+
+    .event h3 {
+      margin-bottom: 5px;
+    }
+
+    .event p {
+      color: #6b7280;
+    }
+
+    .important {
+      margin-top: 45px;
+      background: #111827;
+      color: white;
+      padding: 35px;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .important h2 {
+      margin-bottom: 12px;
     }
 
     footer {
-      background: #101828;
-      color: white;
+      margin-top: 50px;
+      background: #111827;
+      color: #d1d5db;
       text-align: center;
-      padding: 30px 15px;
-      margin-top: 60px;
+      padding: 25px;
+      font-size: 14px;
     }
 
     @media (max-width: 700px) {
@@ -207,253 +249,610 @@
 <header>
 
   <div class="logo">
-    <span>MTJ</span> Éducation
+    MTJ
+    <span data-fr="Éducation & Entrepreneuriat"
+          data-en="Education & Entrepreneurship">
+      Éducation & Entrepreneuriat
+    </span>
   </div>
 
   <nav>
-    <a href="index.html">Accueil</a>
-    <a href="cours.html">Cours</a>
-    <a href="technique.html">Technique</a>
-    <a href="informatique.html">Informatique</a>
-    <a href="entrepreneuriat.html">Entrepreneuriat</a>
-    <a href="histoire.html">Histoire</a>
-    <a href="quiz.html">Quiz</a>
+    <a href="index.html"
+       data-fr="Accueil"
+       data-en="Home">
+      Accueil
+    </a>
+
+    <a href="cours.html"
+       data-fr="Cours"
+       data-en="Courses">
+      Cours
+    </a>
+
+    <a href="technique.html"
+       data-fr="Technique"
+       data-en="Technical">
+      Technique
+    </a>
+
+    <a href="informatique.html"
+       data-fr="Informatique"
+       data-en="Computer Science">
+      Informatique
+    </a>
+
+    <a href="entrepreneuriat.html"
+       data-fr="Entrepreneuriat"
+       data-en="Entrepreneurship">
+      Entrepreneuriat
+    </a>
+
+    <a href="histoire.html"
+       data-fr="Histoire"
+       data-en="History">
+      Histoire
+    </a>
+
+    <a href="quiz.html"
+       data-fr="Quiz"
+       data-en="Quiz">
+      Quiz
+    </a>
+
+    <select id="languageSelect"
+            class="language"
+            onchange="changeLanguage(this.value)">
+
+      <option value="fr">🇫🇷 Français</option>
+      <option value="en">🇬🇧 English</option>
+
+    </select>
+
   </nav>
 
 </header>
 
+
 <section class="hero">
 
-  <h1>📜 Histoire</h1>
+  <h1 data-fr="📜 Histoire"
+      data-en="📜 History">
+    📜 Histoire
+  </h1>
 
-  <p>
-    Découvre l'histoire du Cameroun, de l'Afrique et du monde
-    à travers les grandes périodes, dates et personnages historiques.
+  <p data-fr="Découvrez les événements, les civilisations, les grandes dates et les personnages qui ont marqué le Cameroun, l'Afrique et le monde."
+     data-en="Discover the events, civilizations, important dates and people who shaped Cameroon, Africa and the world.">
+    Découvrez les événements, les civilisations, les grandes dates et les personnages qui ont marqué le Cameroun, l'Afrique et le monde.
   </p>
 
 </section>
 
-<main class="container">
 
-  <div class="section-title">
-    <h2>🌍 Explore l'histoire</h2>
-    <p>Apprends, comprends et mémorise les événements importants.</p>
-  </div>
+<main class="container">
 
   <div class="search">
 
     <input
       type="text"
       id="searchInput"
+      data-placeholder-fr="🔎 Rechercher un thème historique..."
+      data-placeholder-en="🔎 Search for a history topic..."
       placeholder="🔎 Rechercher un thème historique..."
-      onkeyup="searchCourses()"
-    >
+      onkeyup="searchTopics()">
 
   </div>
 
-  <div class="cards">
 
-    <div class="card">
+  <div class="section-title">
+
+    <h2 data-fr="Explorer l'histoire"
+        data-en="Explore History">
+      Explorer l'histoire
+    </h2>
+
+    <p data-fr="Choisissez un domaine pour développer vos connaissances."
+       data-en="Choose a field to develop your knowledge.">
+      Choisissez un domaine pour développer vos connaissances.
+    </p>
+
+  </div>
+
+
+  <div class="topics" id="topics">
+
+    <article class="topic">
 
       <div class="icon">🇨🇲</div>
 
-      <h3>Histoire du Cameroun</h3>
+      <h3 data-fr="Histoire du Cameroun"
+          data-en="History of Cameroon">
+        Histoire du Cameroun
+      </h3>
 
-      <p>
-        Découvre les grandes périodes de l'histoire du Cameroun,
-        de la période précoloniale à l'époque contemporaine.
+      <p data-fr="Découvrez les grandes périodes et les événements majeurs de l'histoire du Cameroun."
+         data-en="Discover the major periods and important events in Cameroon's history.">
+        Découvrez les grandes périodes et les événements majeurs de l'histoire du Cameroun.
       </p>
 
-      <button onclick="openTopic('Histoire du Cameroun')">
-        Découvrir
-      </button>
+      <a href="#cameroun"
+         class="btn"
+         data-fr="Explorer"
+         data-en="Explore">
+        Explorer
+      </a>
 
-    </div>
+    </article>
 
-    <div class="card">
+
+    <article class="topic">
 
       <div class="icon">🌍</div>
 
-      <h3>Histoire de l'Afrique</h3>
+      <h3 data-fr="Histoire de l'Afrique"
+          data-en="History of Africa">
+        Histoire de l'Afrique
+      </h3>
 
-      <p>
-        Découvre les anciens royaumes, les empires,
-        la colonisation et les indépendances africaines.
+      <p data-fr="Explorez les royaumes, empires, peuples et grandes transformations du continent africain."
+         data-en="Explore kingdoms, empires, peoples and major transformations across Africa.">
+        Explorez les royaumes, empires, peuples et grandes transformations du continent africain.
       </p>
 
-      <button onclick="openTopic('Histoire de l’Afrique')">
+      <a href="#afrique"
+         class="btn"
+         data-fr="Explorer"
+         data-en="Explore">
         Explorer
-      </button>
+      </a>
 
-    </div>
+    </article>
 
-    <div class="card">
+
+    <article class="topic">
 
       <div class="icon">🌎</div>
 
-      <h3>Histoire du monde</h3>
+      <h3 data-fr="Histoire du monde"
+          data-en="World History">
+        Histoire du monde
+      </h3>
 
-      <p>
-        Étudie les grandes civilisations, les guerres,
-        les révolutions et les transformations du monde.
+      <p data-fr="Découvrez les grands événements qui ont façonné le monde."
+         data-en="Discover the major events that shaped the world.">
+        Découvrez les grands événements qui ont façonné le monde.
       </p>
 
-      <button onclick="openTopic('Histoire du monde')">
-        Apprendre
-      </button>
+      <a href="#monde"
+         class="btn"
+         data-fr="Explorer"
+         data-en="Explore">
+        Explorer
+      </a>
 
-    </div>
+    </article>
 
-    <div class="card">
+
+    <article class="topic">
 
       <div class="icon">👤</div>
 
-      <h3>Personnages historiques</h3>
+      <h3 data-fr="Personnages historiques"
+          data-en="Historical Figures">
+        Personnages historiques
+      </h3>
 
-      <p>
-        Découvre des personnalités qui ont marqué
-        l'histoire du Cameroun, de l'Afrique et du monde.
+      <p data-fr="Découvrez les personnes qui ont joué un rôle important dans l'histoire."
+         data-en="Discover people who played important roles in history.">
+        Découvrez les personnes qui ont joué un rôle important dans l'histoire.
       </p>
 
-      <button onclick="openTopic('Personnages historiques')">
+      <a href="#personnages"
+         class="btn"
+         data-fr="Découvrir"
+         data-en="Discover">
         Découvrir
-      </button>
+      </a>
 
-    </div>
+    </article>
 
-    <div class="card">
+
+    <article class="topic">
 
       <div class="icon">📅</div>
 
-      <h3>Grandes dates</h3>
+      <h3 data-fr="Grandes dates"
+          data-en="Important Dates">
+        Grandes dates
+      </h3>
 
-      <p>
-        Apprends les dates importantes et comprends
-        les événements auxquels elles correspondent.
+      <p data-fr="Mémorisez les dates importantes à connaître pour vos études."
+         data-en="Learn important dates that are useful for your studies.">
+        Mémorisez les dates importantes à connaître pour vos études.
       </p>
 
-      <button onclick="openTopic('Grandes dates')">
-        Explorer
-      </button>
+      <a href="#dates"
+         class="btn"
+         data-fr="Voir les dates"
+         data-en="View dates">
+        Voir les dates
+      </a>
 
-    </div>
+    </article>
 
-    <div class="card">
+
+    <article class="topic">
 
       <div class="icon">🏛️</div>
 
-      <h3>Civilisations</h3>
+      <h3 data-fr="Civilisations"
+          data-en="Civilizations">
+        Civilisations
+      </h3>
 
-      <p>
-        Explore différentes civilisations et découvre
-        leurs contributions à l'histoire humaine.
+      <p data-fr="Découvrez les civilisations et sociétés qui ont marqué l'histoire."
+         data-en="Discover civilizations and societies that shaped history.">
+        Découvrez les civilisations et sociétés qui ont marqué l'histoire.
       </p>
 
-      <button onclick="openTopic('Civilisations')">
-        Apprendre
-      </button>
+      <a href="#civilisations"
+         class="btn"
+         data-fr="Explorer"
+         data-en="Explore">
+        Explorer
+      </a>
 
-    </div>
+    </article>
 
   </div>
 
-  <section class="timeline">
 
-    <div class="section-title">
-      <h2>📅 Quelques repères historiques</h2>
-    </div>
+  <section class="timeline" id="cameroun">
 
-    <div class="date-box">
+    <h2 data-fr="🇨🇲 Quelques repères de l'histoire du Cameroun"
+        data-en="🇨🇲 Some landmarks in Cameroon's history">
+      🇨🇲 Quelques repères de l'histoire du Cameroun
+    </h2>
 
-      <h3>1884 — Protectorat allemand au Cameroun</h3>
 
-      <p>
-        Le territoire camerounais entre sous domination allemande
-        à la fin du XIXe siècle.
+    <div class="event">
+
+      <div class="year">1884</div>
+
+      <h3 data-fr="Établissement de la domination allemande"
+          data-en="Establishment of German colonial rule">
+        Établissement de la domination allemande
+      </h3>
+
+      <p data-fr="Le territoire entre dans la période de colonisation allemande."
+         data-en="The territory enters the period of German colonial rule.">
+        Le territoire entre dans la période de colonisation allemande.
       </p>
 
     </div>
 
-    <div class="date-box">
 
-      <h3>1960 — Indépendance du Cameroun oriental</h3>
+    <div class="event">
 
-      <p>
-        Le Cameroun sous administration française accède
-        à l'indépendance le 1er janvier 1960.
+      <div class="year">1919</div>
+
+      <h3 data-fr="Administration sous mandat"
+          data-en="Administration under mandate">
+        Administration sous mandat
+      </h3>
+
+      <p data-fr="Après la Première Guerre mondiale, l'ancien territoire allemand est placé sous des mandats internationaux."
+         data-en="After the First World War, the former German territory is placed under international mandates.">
+        Après la Première Guerre mondiale, l'ancien territoire allemand est placé sous des mandats internationaux.
       </p>
 
     </div>
 
-    <div class="date-box">
 
-      <h3>1961 — Réunification</h3>
+    <div class="event">
 
-      <p>
-        Le Cameroun oriental et le Cameroun méridional
-        forment la République fédérale du Cameroun.
+      <div class="year">1960</div>
+
+      <h3 data-fr="Indépendance du Cameroun sous administration française"
+          data-en="Independence of French-administered Cameroon">
+        Indépendance du Cameroun sous administration française
+      </h3>
+
+      <p data-fr="Le Cameroun sous administration française accède à l'indépendance."
+         data-en="French-administered Cameroon becomes independent.">
+        Le Cameroun sous administration française accède à l'indépendance.
+      </p>
+
+    </div>
+
+
+    <div class="event">
+
+      <div class="year">1961</div>
+
+      <h3 data-fr="Réunification"
+          data-en="Reunification">
+        Réunification
+      </h3>
+
+      <p data-fr="Le Cameroun oriental et le Southern Cameroons se réunissent pour former la République fédérale du Cameroun."
+         data-en="French-speaking Cameroon and Southern Cameroons reunite to form the Federal Republic of Cameroon.">
+        Le Cameroun oriental et le Southern Cameroons se réunissent pour former la République fédérale du Cameroun.
       </p>
 
     </div>
 
   </section>
 
-  <section class="notice">
 
-    <h2>🎯 Apprendre l'histoire autrement</h2>
+  <section class="timeline" id="afrique">
 
-    <p>
-      Des cours détaillés, des fiches de révision et des quiz
-      historiques seront progressivement ajoutés à MTJ Éducation.
+    <h2 data-fr="🌍 Histoire de l'Afrique"
+        data-en="🌍 African History">
+      🌍 Histoire de l'Afrique
+    </h2>
+
+    <div class="event">
+
+      <div class="year">Antiquité</div>
+
+      <h3 data-fr="Grandes civilisations africaines"
+          data-en="Great African civilizations">
+        Grandes civilisations africaines
+      </h3>
+
+      <p data-fr="L'Afrique a connu de nombreuses sociétés et civilisations anciennes, notamment en Afrique du Nord et dans la vallée du Nil."
+         data-en="Africa has been home to many ancient societies and civilizations, particularly in North Africa and the Nile Valley.">
+        L'Afrique a connu de nombreuses sociétés et civilisations anciennes, notamment en Afrique du Nord et dans la vallée du Nil.
+      </p>
+
+    </div>
+
+    <div class="event">
+
+      <div class="year">Moyen Âge</div>
+
+      <h3 data-fr="Royaumes et empires"
+          data-en="Kingdoms and empires">
+        Royaumes et empires
+      </h3>
+
+      <p data-fr="De puissants États et réseaux commerciaux se développent dans différentes régions d'Afrique."
+         data-en="Powerful states and trade networks develop across different regions of Africa.">
+        De puissants États et réseaux commerciaux se développent dans différentes régions d'Afrique.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="timeline" id="monde">
+
+    <h2 data-fr="🌎 Histoire du monde"
+        data-en="🌎 World History">
+      🌎 Histoire du monde
+    </h2>
+
+    <div class="event">
+
+      <div class="year">1789</div>
+
+      <h3 data-fr="Révolution française"
+          data-en="French Revolution">
+        Révolution française
+      </h3>
+
+      <p data-fr="La Révolution française transforme profondément la vie politique et sociale en France et influence d'autres régions du monde."
+         data-en="The French Revolution profoundly changes political and social life in France and influences other parts of the world.">
+        La Révolution française transforme profondément la vie politique et sociale en France et influence d'autres régions du monde.
+      </p>
+
+    </div>
+
+
+    <div class="event">
+
+      <div class="year">1914–1918</div>
+
+      <h3 data-fr="Première Guerre mondiale"
+          data-en="First World War">
+        Première Guerre mondiale
+      </h3>
+
+      <p data-fr="Un conflit mondial majeur qui transforme profondément les relations internationales."
+         data-en="A major global conflict that profoundly changes international relations.">
+        Un conflit mondial majeur qui transforme profondément les relations internationales.
+      </p>
+
+    </div>
+
+
+    <div class="event">
+
+      <div class="year">1939–1945</div>
+
+      <h3 data-fr="Seconde Guerre mondiale"
+          data-en="Second World War">
+        Seconde Guerre mondiale
+      </h3>
+
+      <p data-fr="Un conflit mondial majeur qui entraîne d'importants changements politiques, économiques et sociaux."
+         data-en="A major global conflict that brings major political, economic and social changes.">
+        Un conflit mondial majeur qui entraîne d'importants changements politiques, économiques et sociaux.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="timeline" id="personnages">
+
+    <h2 data-fr="👤 Personnages historiques"
+        data-en="👤 Historical Figures">
+      👤 Personnages historiques
+    </h2>
+
+    <div class="event">
+
+      <h3 data-fr="Figures camerounaises et africaines"
+          data-en="Cameroonian and African figures">
+        Figures camerounaises et africaines
+      </h3>
+
+      <p data-fr="Cette rubrique sera enrichie avec des biographies vérifiées de personnalités historiques du Cameroun et de l'Afrique."
+         data-en="This section will be expanded with verified biographies of historical figures from Cameroon and Africa.">
+        Cette rubrique sera enrichie avec des biographies vérifiées de personnalités historiques du Cameroun et de l'Afrique.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="timeline" id="dates">
+
+    <h2 data-fr="📅 Grandes dates à retenir"
+        data-en="📅 Important Dates to Remember">
+      📅 Grandes dates à retenir
+    </h2>
+
+    <div class="event">
+
+      <div class="year">1960</div>
+
+      <h3 data-fr="Indépendance du Cameroun sous administration française"
+          data-en="Independence of French-administered Cameroon">
+        Indépendance du Cameroun sous administration française
+      </h3>
+
+    </div>
+
+    <div class="event">
+
+      <div class="year">1961</div>
+
+      <h3 data-fr="Réunification"
+          data-en="Reunification">
+        Réunification
+      </h3>
+
+    </div>
+
+  </section>
+
+
+  <section class="timeline" id="civilisations">
+
+    <h2 data-fr="🏛️ Civilisations"
+        data-en="🏛️ Civilizations">
+      🏛️ Civilisations
+    </h2>
+
+    <div class="event">
+
+      <h3 data-fr="Découvrir les civilisations"
+          data-en="Discover civilizations">
+        Découvrir les civilisations
+      </h3>
+
+      <p data-fr="Étudiez leur organisation, leur culture, leurs inventions, leur économie et leur héritage."
+         data-en="Study their organization, culture, inventions, economy and legacy.">
+        Étudiez leur organisation, leur culture, leurs inventions, leur économie et leur héritage.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="important">
+
+    <h2 data-fr="🎓 Apprendre l'histoire autrement"
+        data-en="🎓 Learn History Differently">
+      🎓 Apprendre l'histoire autrement
+    </h2>
+
+    <p data-fr="Utilisez les cours, les grandes dates et les quiz pour mieux mémoriser les événements historiques."
+       data-en="Use courses, important dates and quizzes to better remember historical events.">
+      Utilisez les cours, les grandes dates et les quiz pour mieux mémoriser les événements historiques.
     </p>
+
+    <a href="quiz.html"
+       data-fr="Faire un quiz d'histoire"
+       data-en="Take a history quiz">
+      Faire un quiz d'histoire
+    </a>
 
   </section>
 
 </main>
 
+
 <footer>
 
-  <p>© 2026 MTJ Éducation & Entrepreneuriat</p>
-
-  <p>Apprendre • Entreprendre • Réussir</p>
+  <p>
+    © 2026 MTJ Éducation & Entrepreneuriat —
+    <span data-fr="Apprendre • Entreprendre • Réussir"
+          data-en="Learn • Build • Succeed">
+      Apprendre • Entreprendre • Réussir
+    </span>
+  </p>
 
 </footer>
 
+
 <script>
 
-function openTopic(topic) {
+  let currentLanguage =
+    localStorage.getItem("mtjLanguage") || "fr";
 
-  alert(
-    "📚 " + topic +
-    "\n\nLe cours détaillé sera ajouté prochainement sur MTJ Éducation."
-  );
 
-}
+  function changeLanguage(language) {
 
-function searchCourses() {
+    currentLanguage = language;
 
-  const input = document
-    .getElementById("searchInput")
-    .value
-    .toLowerCase();
+    localStorage.setItem("mtjLanguage", language);
 
-  const cards = document.querySelectorAll(".card");
+    document.documentElement.lang = language;
 
-  cards.forEach(function(card) {
+    document.querySelectorAll("[data-fr]").forEach(element => {
 
-    const text = card.innerText.toLowerCase();
+      const text =
+        element.getAttribute("data-" + language);
 
-    if (text.includes(input)) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
+      if (text) {
+        element.textContent = text;
+      }
+
+    });
+
+    const searchInput =
+      document.getElementById("searchInput");
+
+    if (searchInput) {
+      searchInput.placeholder =
+        searchInput.getAttribute(
+          "data-placeholder-" + language
+        );
     }
 
-  });
+    document.getElementById("languageSelect").value =
+      language;
+  }
 
-}
 
-</script>
+  function searchTopics() {
 
-</body>
-</html>
+    const search =
+      document.getElementById("searchInput")
+      .value
+      .toLowerCase();
+
+    document.querySelectorAll(".topic").forEach(topic => {
+
+      const text =
+        topic.textContent.toLowerCase();
+
+      topic.style.display =
+        text.includes(search) ? "bl
