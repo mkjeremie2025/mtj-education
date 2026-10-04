@@ -6,7 +6,8 @@
 
   <title>Informatique & Programmation | MTJ Éducation</title>
 
-  <meta name="description" content="MTJ Éducation - Informatique, programmation, développement web, intelligence artificielle et outils numériques.">
+  <meta name="description"
+        content="MTJ Informatique : informatique générale, programmation, développement web, intelligence artificielle et outils numériques.">
 
   <style>
     * {
@@ -17,7 +18,7 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #f4f7fb;
+      background: #f5f7fb;
       color: #172033;
       line-height: 1.6;
     }
@@ -25,12 +26,15 @@
     header {
       background: #101828;
       color: white;
-      padding: 18px 7%;
+      padding: 16px 6%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
       flex-wrap: wrap;
-      gap: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .logo {
@@ -39,85 +43,89 @@
     }
 
     .logo span {
-      color: #4f9cff;
+      display: block;
+      font-size: 12px;
+      color: #b9c4d4;
+      font-weight: normal;
     }
 
     nav {
       display: flex;
+      gap: 15px;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      padding: 8px 10px;
-      border-radius: 6px;
+      font-size: 14px;
+      font-weight: bold;
     }
 
     nav a:hover {
+      color: #60a5fa;
+    }
+
+    .language {
       background: #1d2939;
+      color: white;
+      border: 1px solid #475467;
+      border-radius: 8px;
+      padding: 8px;
     }
 
     .hero {
-      background: linear-gradient(135deg, #101828, #175cd3);
+      background: linear-gradient(135deg, #101828, #2563eb);
       color: white;
       text-align: center;
-      padding: 75px 20px;
+      padding: 80px 20px;
     }
 
     .hero h1 {
-      font-size: 42px;
+      font-size: 43px;
       margin-bottom: 15px;
     }
 
     .hero p {
-      max-width: 750px;
+      max-width: 760px;
       margin: auto;
       font-size: 18px;
+      color: #e5e7eb;
     }
 
-    .container {
-      width: 90%;
-      max-width: 1150px;
-      margin: 45px auto;
+    section {
+      padding: 60px 6%;
     }
 
-    .section-title {
+    .title {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
     }
 
-    .section-title h2 {
-      font-size: 30px;
+    .title h2 {
+      font-size: 31px;
       margin-bottom: 8px;
     }
 
-    .search {
-      max-width: 650px;
-      margin: 0 auto 35px;
-    }
-
-    .search input {
-      width: 100%;
-      padding: 15px;
-      border: 1px solid #d0d5dd;
-      border-radius: 10px;
-      font-size: 16px;
+    .title p {
+      color: #667085;
     }
 
     .cards {
+      max-width: 1150px;
+      margin: auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
     }
 
     .card {
       background: white;
+      border-radius: 15px;
       padding: 25px;
-      border-radius: 14px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-      transition: 0.2s;
+      box-shadow: 0 5px 20px rgba(16, 24, 40, 0.08);
+      transition: 0.25s;
     }
 
     .card:hover {
@@ -125,66 +133,112 @@
     }
 
     .icon {
-      font-size: 40px;
-      margin-bottom: 12px;
+      font-size: 38px;
+      margin-bottom: 10px;
     }
 
     .card h3 {
       margin-bottom: 10px;
-      font-size: 21px;
     }
 
     .card p {
-      color: #475467;
+      color: #667085;
       margin-bottom: 18px;
     }
 
-    button {
-      border: none;
-      background: #175cd3;
+    .btn {
+      display: inline-block;
+      background: #2563eb;
       color: white;
-      padding: 11px 17px;
-      border-radius: 7px;
-      cursor: pointer;
-      font-size: 15px;
+      text-decoration: none;
+      padding: 10px 17px;
+      border-radius: 8px;
+      font-weight: bold;
     }
 
-    button:hover {
-      background: #1049a8;
+    .btn:hover {
+      background: #1d4ed8;
     }
 
-    .levels {
-      margin-top: 55px;
+    .program {
+      background: #eff6ff;
     }
 
-    .level-box {
+    .program-box {
+      max-width: 950px;
+      margin: 0 auto 25px;
       background: white;
-      padding: 25px;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 5px 20px rgba(16, 24, 40, 0.07);
+    }
+
+    .program-box h3 {
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .program-box p {
+      color: #667085;
+    }
+
+    .program-box ul {
+      margin: 15px 0 0 22px;
+    }
+
+    .program-box li {
+      margin-bottom: 7px;
+    }
+
+    .steps {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .step {
+      background: white;
+      padding: 22px;
       border-radius: 12px;
-      margin-bottom: 15px;
-      border-left: 5px solid #175cd3;
+      text-align: center;
+      box-shadow: 0 5px 18px rgba(16, 24, 40, 0.07);
+    }
+
+    .step strong {
+      display: block;
+      font-size: 25px;
+      color: #2563eb;
+      margin-bottom: 8px;
+    }
+
+    .exercise {
+      background: #f8fafc;
     }
 
     footer {
       background: #101828;
-      color: white;
+      color: #d0d5dd;
       text-align: center;
-      padding: 30px 15px;
-      margin-top: 60px;
+      padding: 30px 20px;
     }
 
-    @media (max-width: 700px) {
-      .hero h1 {
-        font-size: 32px;
-      }
+    footer strong {
+      color: white;
+    }
 
+    @media (max-width: 800px) {
       header {
         justify-content: center;
-        text-align: center;
       }
 
       nav {
         justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 34px;
       }
     }
   </style>
@@ -193,190 +247,608 @@
 <body>
 
 <header>
+
   <div class="logo">
-    <span>MTJ</span> Éducation
+    MTJ
+    <span data-fr="Éducation & Entrepreneuriat"
+          data-en="Education & Entrepreneurship">
+      Éducation & Entrepreneuriat
+    </span>
   </div>
 
   <nav>
-    <a href="index.html">Accueil</a>
-    <a href="cours.html">Cours</a>
-    <a href="technique.html">Technique</a>
-    <a href="informatique.html">Informatique</a>
-    <a href="entrepreneuriat.html">Entrepreneuriat</a>
-    <a href="histoire.html">Histoire</a>
-    <a href="quiz.html">Quiz</a>
+
+    <a href="index.html"
+       data-fr="Accueil"
+       data-en="Home">Accueil</a>
+
+    <a href="cours.html"
+       data-fr="Éducation"
+       data-en="Education">Éducation</a>
+
+    <a href="technique.html"
+       data-fr="Technique"
+       data-en="Technical">Technique</a>
+
+    <a href="informatique.html"
+       data-fr="Informatique"
+       data-en="Computer Science">Informatique</a>
+
+    <a href="entrepreneuriat.html"
+       data-fr="Entrepreneuriat"
+       data-en="Entrepreneurship">Entrepreneuriat</a>
+
+    <a href="histoire.html"
+       data-fr="Histoire"
+       data-en="History">Histoire</a>
+
+    <a href="quiz.html"
+       data-fr="Quiz"
+       data-en="Quiz">Quiz</a>
+
+    <select id="languageSelect" class="language">
+      <option value="fr">🇫🇷 Français</option>
+      <option value="en">🇬🇧 English</option>
+    </select>
+
   </nav>
+
 </header>
 
+
 <section class="hero">
-  <h1>💻 Informatique & Programmation</h1>
-  <p>
-    Développe tes compétences numériques, apprends à programmer,
-    crée des sites web et découvre les nouvelles technologies.
+
+  <h1 data-fr="💻 Informatique & Programmation"
+      data-en="💻 Computer Science & Programming">
+    💻 Informatique & Programmation
+  </h1>
+
+  <p data-fr="Développe tes compétences numériques, apprends à programmer et découvre les technologies modernes."
+     data-en="Develop your digital skills, learn programming and discover modern technologies.">
+    Développe tes compétences numériques, apprends à programmer
+    et découvre les technologies modernes.
   </p>
+
 </section>
 
-<main class="container">
 
-  <div class="section-title">
-    <h2>Nos domaines</h2>
-    <p>Apprends progressivement, de débutant à avancé.</p>
+<section>
+
+  <div class="title">
+
+    <h2 data-fr="Nos domaines"
+        data-en="Our areas">
+      Nos domaines
+    </h2>
+
+    <p data-fr="Choisis un domaine pour commencer ton apprentissage."
+       data-en="Choose an area to start learning.">
+      Choisis un domaine pour commencer ton apprentissage.
+    </p>
+
   </div>
 
-  <div class="search">
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="🔎 Rechercher un domaine..."
-      onkeyup="searchCourses()"
-    >
-  </div>
 
-  <div class="cards" id="courseList">
+  <div class="cards">
 
     <div class="card">
+
       <div class="icon">🖥️</div>
-      <h3>Informatique générale</h3>
-      <p>
-        Découvre les bases de l'ordinateur, des fichiers,
-        des logiciels et des systèmes.
-      </p>
-      <button onclick="openTopic('Informatique générale')">
-        Découvrir
-      </button>
-    </div>
 
-    <div class="card">
-      <div class="icon">🌐</div>
-      <h3>Développement Web</h3>
-      <p>
-        Apprends HTML, CSS et JavaScript pour créer
-        des sites web modernes.
-      </p>
-      <button onclick="openTopic('Développement Web')">
-        Commencer
-      </button>
-    </div>
+      <h3 data-fr="Informatique générale"
+          data-en="General Computer Science">
+        Informatique générale
+      </h3>
 
-    <div class="card">
-      <div class="icon">🐍</div>
-      <h3>Programmation</h3>
-      <p>
-        Découvre les concepts de programmation,
-        les algorithmes et différents langages.
+      <p data-fr="Découvre les bases de l'ordinateur, des fichiers, des logiciels et d'Internet."
+         data-en="Learn the basics of computers, files, software and the Internet.">
+        Découvre les bases de l'ordinateur,
+        des fichiers, des logiciels et d'Internet.
       </p>
-      <button onclick="openTopic('Programmation')">
+
+      <a href="#general"
+         class="btn"
+         data-fr="Apprendre"
+         data-en="Learn">
         Apprendre
-      </button>
+      </a>
+
     </div>
 
+
     <div class="card">
-      <div class="icon">🤖</div>
-      <h3>Intelligence artificielle</h3>
-      <p>
-        Comprends les bases de l'IA et découvre
-        comment utiliser les outils intelligents.
+
+      <div class="icon">🌐</div>
+
+      <h3 data-fr="Développement Web"
+          data-en="Web Development">
+        Développement Web
+      </h3>
+
+      <p data-fr="Apprends HTML, CSS et JavaScript pour créer des sites web."
+         data-en="Learn HTML, CSS and JavaScript to create websites.">
+        Apprends HTML, CSS et JavaScript
+        pour créer des sites web.
       </p>
-      <button onclick="openTopic('Intelligence artificielle')">
-        Découvrir
-      </button>
+
+      <a href="#web"
+         class="btn"
+         data-fr="Apprendre"
+         data-en="Learn">
+        Apprendre
+      </a>
+
     </div>
 
+
     <div class="card">
-      <div class="icon">📱</div>
-      <h3>Outils numériques</h3>
-      <p>
+
+      <div class="icon">💻</div>
+
+      <h3 data-fr="Programmation"
+          data-en="Programming">
+        Programmation
+      </h3>
+
+      <p data-fr="Découvre les principes de la programmation et la logique informatique."
+         data-en="Discover programming principles and computer logic.">
+        Découvre les principes de la programmation
+        et la logique informatique.
+      </p>
+
+      <a href="#programmation"
+         class="btn"
+         data-fr="Apprendre"
+         data-en="Learn">
+        Apprendre
+      </a>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">🤖</div>
+
+      <h3 data-fr="Intelligence artificielle"
+          data-en="Artificial Intelligence">
+        Intelligence artificielle
+      </h3>
+
+      <p data-fr="Comprends les bases de l'IA et découvre ses applications."
+         data-en="Understand the basics of AI and discover its applications.">
+        Comprends les bases de l'IA
+        et découvre ses applications.
+      </p>
+
+      <a href="#ia"
+         class="btn"
+         data-fr="Découvrir"
+         data-en="Discover">
+        Découvrir
+      </a>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">🛠️</div>
+
+      <h3 data-fr="Outils numériques"
+          data-en="Digital Tools">
+        Outils numériques
+      </h3>
+
+      <p data-fr="Apprends à utiliser efficacement les outils numériques pour l'école et les projets."
+         data-en="Learn to use digital tools effectively for school and projects.">
         Apprends à utiliser efficacement les outils
         numériques pour l'école et les projets.
       </p>
-      <button onclick="openTopic('Outils numériques')">
-        Explorer
-      </button>
+
+      <a href="#outils"
+         class="btn"
+         data-fr="Découvrir"
+         data-en="Discover">
+        Découvrir
+      </a>
+
     </div>
 
+
     <div class="card">
+
       <div class="icon">🔐</div>
-      <h3>Sécurité numérique</h3>
-      <p>
-        Découvre les bonnes pratiques pour protéger
-        tes comptes, tes données et tes appareils.
+
+      <h3 data-fr="Sécurité numérique"
+          data-en="Digital Security">
+        Sécurité numérique
+      </h3>
+
+      <p data-fr="Apprends les bonnes pratiques pour protéger tes comptes et tes informations."
+         data-en="Learn good practices to protect your accounts and information.">
+        Apprends les bonnes pratiques pour protéger
+        tes comptes et tes informations.
       </p>
-      <button onclick="openTopic('Sécurité numérique')">
-        Apprendre
-      </button>
+
+      <a href="#securite"
+         class="btn"
+         data-fr="Découvrir"
+         data-en="Discover">
+        Découvrir
+      </a>
+
     </div>
 
   </div>
 
-  <section class="levels">
+</section>
 
-    <div class="section-title">
-      <h2>🎯 Parcours d'apprentissage</h2>
-    </div>
 
-    <div class="level-box">
-      <h3>🟢 Débutant</h3>
-      <p>
-        Bases de l'informatique, ordinateur, Internet,
-        fichiers, logiciels et premiers concepts de programmation.
+<section class="program">
+
+  <div class="title">
+
+    <h2 data-fr="Parcours d'apprentissage"
+        data-en="Learning path">
+      Parcours d'apprentissage
+    </h2>
+
+    <p data-fr="Progresse étape par étape."
+       data-en="Progress step by step.">
+      Progresse étape par étape.
+    </p>
+
+  </div>
+
+
+  <div class="steps">
+
+    <div class="step">
+
+      <strong>01</strong>
+
+      <h3 data-fr="Débutant"
+          data-en="Beginner">
+        Débutant
+      </h3>
+
+      <p data-fr="Découvrir les bases."
+         data-en="Discover the basics.">
+        Découvrir les bases.
       </p>
+
     </div>
 
-    <div class="level-box">
-      <h3>🟡 Intermédiaire</h3>
-      <p>
-        HTML, CSS, JavaScript, algorithmes et création
-        de petits projets numériques.
+
+    <div class="step">
+
+      <strong>02</strong>
+
+      <h3 data-fr="Intermédiaire"
+          data-en="Intermediate">
+        Intermédiaire
+      </h3>
+
+      <p data-fr="Pratiquer avec des projets."
+         data-en="Practice with projects.">
+        Pratiquer avec des projets.
       </p>
+
     </div>
 
-    <div class="level-box">
-      <h3>🔵 Avancé</h3>
-      <p>
-        Projets web, programmation plus avancée,
-        intelligence artificielle et développement de projets.
+
+    <div class="step">
+
+      <strong>03</strong>
+
+      <h3 data-fr="Avancé"
+          data-en="Advanced">
+        Avancé
+      </h3>
+
+      <p data-fr="Créer des projets plus complexes."
+         data-en="Build more complex projects.">
+        Créer des projets plus complexes.
       </p>
+
     </div>
 
-  </section>
+  </div>
 
-</main>
+</section>
+
+
+<section id="general">
+
+  <div class="program-box">
+
+    <h3>🖥️ <span data-fr="Informatique générale"
+               data-en="General Computer Science">
+      Informatique générale
+    </span></h3>
+
+    <p data-fr="Apprends les éléments essentiels d'un ordinateur et son utilisation."
+       data-en="Learn the essential parts of a computer and how to use it.">
+      Apprends les éléments essentiels d'un ordinateur
+      et son utilisation.
+    </p>
+
+    <ul>
+
+      <li data-fr="Matériel et logiciels"
+          data-en="Hardware and software">
+        Matériel et logiciels
+      </li>
+
+      <li data-fr="Fichiers et dossiers"
+          data-en="Files and folders">
+        Fichiers et dossiers
+      </li>
+
+      <li data-fr="Systèmes d'exploitation"
+          data-en="Operating systems">
+        Systèmes d'exploitation
+      </li>
+
+      <li data-fr="Internet"
+          data-en="Internet">
+        Internet
+      </li>
+
+    </ul>
+
+  </div>
+
+</section>
+
+
+<section id="web">
+
+  <div class="program-box">
+
+    <h3>🌐 <span data-fr="Développement Web"
+               data-en="Web Development">
+      Développement Web
+    </span></h3>
+
+    <p data-fr="Apprends progressivement à construire un site web."
+       data-en="Learn step by step how to build a website.">
+      Apprends progressivement à construire un site web.
+    </p>
+
+    <ul>
+
+      <li>HTML</li>
+
+      <li>CSS</li>
+
+      <li>JavaScript</li>
+
+      <li data-fr="Création de pages web"
+          data-en="Web page creation">
+        Création de pages web
+      </li>
+
+    </ul>
+
+  </div>
+
+</section>
+
+
+<section id="programmation">
+
+  <div class="program-box">
+
+    <h3>💻 <span data-fr="Programmation"
+               data-en="Programming">
+      Programmation
+    </span></h3>
+
+    <p data-fr="Comprends la logique utilisée pour donner des instructions à un ordinateur."
+       data-en="Understand the logic used to give instructions to a computer.">
+      Comprends la logique utilisée pour donner
+      des instructions à un ordinateur.
+    </p>
+
+    <ul>
+
+      <li data-fr="Variables"
+          data-en="Variables">
+        Variables
+      </li>
+
+      <li data-fr="Conditions"
+          data-en="Conditions">
+        Conditions
+      </li>
+
+      <li data-fr="Boucles"
+          data-en="Loops">
+        Boucles
+      </li>
+
+      <li data-fr="Fonctions"
+          data-en="Functions">
+        Fonctions
+      </li>
+
+    </ul>
+
+  </div>
+
+</section>
+
+
+<section id="ia">
+
+  <div class="program-box">
+
+    <h3>🤖 <span data-fr="Intelligence artificielle"
+               data-en="Artificial Intelligence">
+      Intelligence artificielle
+    </span></h3>
+
+    <p data-fr="Découvre ce qu'est l'intelligence artificielle, comment elle est utilisée et pourquoi elle devient importante."
+       data-en="Discover what artificial intelligence is, how it is used and why it is becoming important.">
+      Découvre ce qu'est l'intelligence artificielle,
+      comment elle est utilisée et pourquoi elle devient importante.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section id="outils">
+
+  <div class="program-box">
+
+    <h3>🛠️ <span data-fr="Outils numériques"
+               data-en="Digital Tools">
+      Outils numériques
+    </span></h3>
+
+    <p data-fr="Découvre les outils utiles pour apprendre, créer, communiquer et travailler."
+       data-en="Discover useful tools for learning, creating, communicating and working.">
+      Découvre les outils utiles pour apprendre,
+      créer, communiquer et travailler.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section id="securite">
+
+  <div class="program-box">
+
+    <h3>🔐 <span data-fr="Sécurité numérique"
+               data-en="Digital Security">
+      Sécurité numérique
+    </span></h3>
+
+    <p data-fr="Apprends à protéger tes comptes et tes données avec de bonnes pratiques de sécurité."
+       data-en="Learn how to protect your accounts and data with good security practices.">
+      Apprends à protéger tes comptes et tes données
+      avec de bonnes pratiques de sécurité.
+    </p>
+
+    <ul>
+
+      <li data-fr="Utiliser des mots de passe solides"
+          data-en="Use strong passwords">
+        Utiliser des mots de passe solides
+      </li>
+
+      <li data-fr="Protéger ses informations personnelles"
+          data-en="Protect personal information">
+        Protéger ses informations personnelles
+      </li>
+
+      <li data-fr="Reconnaître les arnaques en ligne"
+          data-en="Recognize online scams">
+        Reconnaître les arnaques en ligne
+      </li>
+
+    </ul>
+
+  </div>
+
+</section>
+
+
+<section class="exercise">
+
+  <div class="title">
+
+    <h2 data-fr="🎯 Premier exercice"
+        data-en="🎯 First exercise">
+      🎯 Premier exercice
+    </h2>
+
+    <p data-fr="Commence par créer une petite page web."
+       data-en="Start by creating a small web page.">
+      Commence par créer une petite page web.
+    </p>
+
+  </div>
+
+  <div class="program-box">
+
+    <h3 data-fr="Mini-projet : ma première page"
+        data-en="Mini-project: my first page">
+      Mini-projet : ma première page
+    </h3>
+
+    <p data-fr="Objectif : créer une page contenant un titre, un paragraphe et un bouton."
+       data-en="Goal: create a page containing a title, a paragraph and a button.">
+      Objectif : créer une page contenant un titre,
+      un paragraphe et un bouton.
+    </p>
+
+  </div>
+
+</section>
+
 
 <footer>
-  <p>© 2026 MTJ Éducation & Entrepreneuriat</p>
-  <p>Apprendre • Entreprendre • Réussir</p>
+
+  <p>
+    <strong>MTJ Éducation & Entrepreneuriat</strong>
+  </p>
+
+  <p data-fr="Apprendre aujourd'hui. Construire demain."
+     data-en="Learn today. Build tomorrow.">
+    Apprendre aujourd'hui. Construire demain.
+  </p>
+
+  <br>
+
+  <p>
+    © 2026 MTJ —
+    <span data-fr="Tous droits réservés"
+          data-en="All rights reserved">
+      Tous droits réservés
+    </span>
+  </p>
+
 </footer>
+
 
 <script>
 
-function openTopic(topic) {
-  alert(
-    "📚 " + topic +
-    "\\n\\nCette formation sera développée prochainement sur MTJ Éducation."
-  );
-}
+  const languageSelect =
+    document.getElementById("languageSelect");
 
-function searchCourses() {
+  function changeLanguage(language) {
 
-  const input = document
-    .getElementById("searchInput")
-    .value
-    .toLowerCase();
+    document
+      .querySelectorAll("[data-fr][data-en]")
+      .forEach(element => {
 
-  const cards = document.querySelectorAll(".card");
+        element.textContent =
+          element.getAttribute("data-" + language);
 
-  cards.forEach(function(card) {
+      });
 
-    const text = card.innerText.toLowerCase();
+    document.documentElement.lang = language;
 
-    if (text.includes(input)) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
+    localStorage.setItem("mtjLanguage", language);
+  }
 
+  languageSelect.addEventListener("change", function() {
+    changeLanguage(this.value);
   });
-}
+
+  const savedLanguage =
+    localStorage.getItem("mtjLanguage") || "fr";
+
+  languageSelect.value = savedLanguage;
+
+  changeLanguage(savedLanguage);
 
 </script>
 
