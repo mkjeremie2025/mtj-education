@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Quiz | MTJ Éducation</title>
+
+  <meta name="description" content="MTJ Éducation - Quiz éducatifs en français et en anglais.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #101828;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #2e90fa;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+
+    nav a:hover {
+      background: #1d2939;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #101828, #175cd3);
+      color: white;
+      text-align: center;
+      padding: 65px 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 18px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 900px;
+      margin: 45px auto;
+    }
+
+    .panel {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      margin-bottom: 25px;
+    }
+
+    .panel h2 {
+      margin-bottom: 20px;
+    }
+
+    select {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #d0d5dd;
+      border-radius: 8px;
+      margin-bottom: 18px;
+      font-size: 16px;
+    }
+
+    button {
+      border: none;
+      background: #175cd3;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #1049a8;
+    }
+
+    .quiz-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .timer {
+      font-weight: bold;
+      color: #d92d20;
+    }
+
+    .question {
+      font-size: 21px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .answers {
+      display: grid;
+      gap: 12px;
+    }
+
+    .answer {
+      width: 100%;
+      background: #f2f4f7;
+      color: #172033;
+      text-align: left;
+      border: 1px solid #d0d5dd;
+    }
+
+    .answer:hover {
+      background: #e4e7ec;
+    }
+
+    .result {
+      text-align: center;
+      display: none;
+    }
+
+    .score {
+      font-size: 38px;
+      font-weight: bold;
+      margin: 20px 0;
+      color: #175cd3;
+    }
+
+    .correction {
+      text-align: left;
+      margin-top: 25px;
+    }
+
+    .correction-item {
+      background: #f8f9fc;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #101828;
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    <span>MTJ</span> Éducation
+  </div>
+
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="cours.html">Cours</a>
+    <a href="technique.html">Technique</a>
+    <a href="informatique.html">Informatique</a>
+    <a href="entrepreneuriat.html">Entrepreneuriat</a>
+    <a href="histoire.html">Histoire</a>
+    <a href="citoyennete.html">Droit</a>
+    <a href="quiz.html">Quiz</a>
+  </nav>
+
+</header>
+
+<section class="hero">
+
+  <h1>🧠 Quiz MTJ</h1>
+
+  <p>Teste tes connaissances et améliore ton niveau.</p>
+
+</section>
+
+<main class="container">
+
+  <section class="panel" id="setup">
+
+    <h2>🎯 Prépare ton quiz</h2>
+
+    <label for="category">Catégorie</label>
+
+    <select id="category">
+      <option value="general">Culture générale</option>
+      <option value="math">Mathématiques</option>
+      <option value="science">Sciences</option>
+      <option value="computer">Informatique</option>
+      <option value="history">Histoire</option>
+      <option value="technical">Technique</option>
+    </select>
+
+    <label for="difficulty">Difficulté</label>
+
+    <select id="difficulty">
+      <option value="easy">Débutant</option>
+      <option value="medium">Intermédiaire</option>
+      <option value="hard">Avancé</option>
+    </select>
+
+    <button onclick="startQuiz()">
+      🚀 Commencer le quiz
+    </button>
+
+  </section>
+
+  <section class="panel" id="quizBox" style="display:none;">
+
+    <div class="quiz-header">
+
+      <div id="progress">
+        Question 1
+      </div>
+
+      <div class="timer">
+        ⏱️ <span id="time">30</span>s
+      </div>
+
+    </div>
+
+    <div class="question" id="question"></div>
+
+    <div class="answers" id="answers"></div>
+
+  </section>
+
+  <section class="panel result" id="result">
+
+    <h2>🎉 Quiz terminé !</h2>
+
+    <div class="score" id="score"></div>
+
+    <p id="message"></p>
+
+    <div class="correction">
+
+      <h3>📋 Correction</h3>
+
+      <div id="corrections"></div>
+
+    </div>
+
+    <br>
+
+    <button onclick="location.reload()">
+      🔄 Recommencer
+    </button>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <p>© 2026 MTJ Éducation & Entrepreneuriat</p>
+
+  <p>Apprendre • Entreprendre • Réussir</p>
+
+</footer>
+
+<script>
+
+const questions = {
+
+  general: [
+
+    {
+      q: "Quelle est la capitale du Cameroun ?",
+      a: ["Douala", "Yaoundé", "Bertoua", "Bafoussam"],
+      correct: 1
+    },
+
+    {
+      q: "Combien de jours compte une semaine ?",
+      a: ["5", "6", "7", "8"],
+      correct: 2
+    },
+
+    {
+      q: "Quelle planète est appelée la planète rouge ?",
+      a: ["Mars", "Vénus", "Jupiter", "Mercure"],
+      correct: 0
+    }
+
+  ],
+
+  math: [
+
+    {
+      q: "Combien font 5 × 6 ?",
+      a: ["20", "25", "30", "35"],
+      correct: 2
+    },
+
+    {
+      q: "Combien font 20 ÷ 4 ?",
+      a: ["4", "5", "6", "8"],
+      correct: 1
+    },
+
+    {
+      q: "Quel est le résultat de 10 + 15 ?",
+      a: ["20", "25", "30", "35"],
+      correct: 1
+    }
+
+  ],
+
+  science: [
+
+    {
+      q: "Quel organe permet principalement de respirer ?",
+      a: ["Le cœur", "Les poumons", "Le foie", "L'estomac"],
+      correct: 1
+    },
+
+    {
+      q: "Quelle est la formule chimique de l'eau ?",
+      a: ["CO2", "O2", "H2O", "NaCl"],
+      correct: 2
+    },
+
+    {
+      q: "Quelle force nous maintient sur la Terre ?",
+      a: ["La gravité", "La lumière", "Le son", "La chaleur"],
+      correct: 0
+    }
+
+  ],
+
+  computer: [
+
+    {
+      q: "Que signifie HTML ?",
+      a: [
+        "HyperText Markup Language",
+        "HighText Machine Language",
+        "Hyper Tool Modern Language",
+        "Home Text Markup Link"
+      ],
+      correct: 0
+    },
+
+    {
+      q: "Quel langage est principalement utilisé pour styliser une page web ?",
+      a: ["HTML", "CSS", "SQL", "Python"],
+      correct: 1
+    },
+
+    {
+      q: "Quel langage permet d'ajouter de l'interactivité à une page web ?",
+      a: ["CSS", "HTML", "JavaScript", "XML"],
+      correct: 2
+    }
+
+  ],
+
+  history: [
+
+    {
+      q: "En quelle année le Cameroun oriental accède-t-il à l'indépendance ?",
+      a: ["1955", "1960", "1965", "1970"],
+      correct: 1
+    },
+
+    {
+      q: "Quelle ville est la capitale politique du Cameroun ?",
+      a: ["Douala", "Yaoundé", "Bamenda", "Garoua"],
+      correct: 1
+    },
+
+    {
+      q: "Quel continent est souvent appelé le berceau de l'humanité ?",
+      a: ["Europe", "Asie", "Afrique", "Océanie"],
+      correct: 2
+    }
+
+  ],
+
+  technical: [
+
+    {
+      q: "Quelle unité mesure la tension électrique ?",
+      a: ["Ampère", "Volt", "Ohm", "Watt"],
+      correct: 1
+    },
+
+    {
+      q: "Quelle unité mesure la résistance électrique ?",
+      a: ["Volt", "Watt", "Ohm", "Ampère"],
+      correct: 2
+    },
+
+    {
+      q: "Quel composant peut laisser passer le courant principalement dans un seul sens ?",
+      a: ["Résistance", "Diode", "Transformateur", "Fusible"],
+      correct: 1
+    }
+
+  ]
+
+};
+
+let currentQuestions = [];
+let currentQuestion = 0;
+let score = 0;
+let timer;
+let timeLeft = 30;
+let userAnswers = [];
+
+function startQuiz() {
+
+  const category = document.getElementById("category").value;
+
+  currentQuestions = [...questions[category]];
+
+  currentQuestion = 0;
+  score = 0;
+  userAnswers = [];
+
+  document.getElementById("setup").style.display = "none";
+  document.getElementById("quizBox").style.display = "block";
+
+  showQuestion();
+
+}
+
+function showQuestion() {
+
+  clearInterval(timer);
+
+  timeLeft = 30;
+  document.getElementById("time").textContent = timeLeft;
+
+  timer = setInterval(function() {
+
+    timeLeft--;
+
+    document.getElementById("time").textContent = timeLeft;
+
+    if (timeLeft <= 0) {
+
+      clearInterval(timer);
+
+      selectAnswer(-1);
+
+    }
+
+  }, 1000);
+
+  const q = currentQuestions[currentQuestion];
+
+  document.getElementById("progress").textContent =
+    "Question " +
+    (currentQuestion + 1) +
+    " / " +
+    currentQuestions.length;
+
+  document.getElementById("question").textContent = q.q;
+
+  const answers = document.getElementById("answers");
+
+  answers.innerHTML = "";
+
+  q.a.forEach(function(answer, index) {
+
+    const button = document.createElement("button");
+
+    button.className = "answer";
+
+    button.textContent = answer;
+
+    button.onclick = function() {
+      selectAnswer(index);
+    };
+
+    answers.appendChild(button);
+
+  });
+
+}
+
+function selectAnswer(answerIndex) {
+
+  clearInterval(timer);
+
+  const q = currentQuestions[currentQuestion];
+
+  userAnswers.push({
+    question: q.q,
+    selected: answerIndex >= 0 ? q.a[answerIndex] : "Aucune réponse",
+    correct: q.a[q.correct]
+  });
+
+  if (answerIndex === q.correct) {
+    score++;
+  }
+
+  currentQuestion++;
+
+  if (currentQuestion < currentQuestions.length) {
+
+    setTimeout(showQuestion, 300);
+
+  } else {
+
+    setTimeout(showResult, 300);
+
+  }
+
+}
+
+function showResult() {
+
+  document.getElementById("quizBox").style.display = "none";
+
+  document.getElementById("result").style.display = "block";
+
+  document.getElementById("score").textContent =
+    score + " / " + currentQuestions.length;
+
+  let percentage =
+    (score / currentQuestions.length) * 100;
+
+  if (percentage >= 80) {
+
+    document.getElementById("message").textContent =
+      "🏆 Excellent travail !";
+
+  } else if (percentage >= 50) {
+
+    document.getElementById("message").textContent =
+      "👍 Bon travail ! Continue à apprendre.";
+
+  } else {
+
+    document.getElementById("message").textContent =
+      "💪 Continue tes révisions, tu peux progresser !";
+
+  }
+
+  const corrections =
+    document.getElementById("corrections");
+
+  corrections.innerHTML = "";
+
+  userAnswers.forEach(function(item, index) {
+
+    const div = document.createElement("div");
+
+    div.className = "correction-item";
+
+    div.innerHTML =
+      "<strong>" +
+      (index + 1) +
+      ". " +
+      item.question +
+      "</strong><br>" +
+      "Ta réponse : " +
+      item.selected +
+      "<br>" +
+      "Bonne réponse : " +
+      item.correct;
+
+    corrections.appendChild(div);
+
+  });
+
+}
+
+</script>
+
+</body>
+</html>
