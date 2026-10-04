@@ -1,526 +1,391 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>MTJ Éducation & Entrepreneuriat</title>
+    <title>MTJ Éducation & Entrepreneuriat</title>
 
-  <meta name="description"
-        content="MTJ Éducation & Entrepreneuriat : apprendre, développer ses compétences et construire son avenir.">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+        }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #172033;
-      line-height: 1.6;
-    }
+        header {
+            background: #07111f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-    header {
-      background: #101828;
-      color: white;
-      padding: 16px 6%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
 
-    .logo {
-      font-size: 25px;
-      font-weight: bold;
-      color: #ffffff;
-    }
+        .slogan {
+            margin-top: 5px;
+            color: #b9c7d9;
+        }
 
-    .logo span {
-      display: block;
-      font-size: 12px;
-      font-weight: normal;
-      color: #b9c4d4;
-    }
+        nav {
+            margin-top: 20px;
+        }
 
-    nav {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 8px;
+            font-size: 14px;
+        }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-    }
+        .language {
+            margin-top: 20px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
 
-    nav a:hover {
-      color: #4ade80;
-    }
+        .hero {
+            padding: 80px 20px;
+            text-align: center;
+            background: white;
+        }
 
-    .language {
-      padding: 9px 12px;
-      border-radius: 8px;
-      border: 1px solid #475467;
-      background: #1d2939;
-      color: white;
-      cursor: pointer;
-    }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
 
-    .hero {
-      background: linear-gradient(135deg, #101828, #1d4ed8);
-      color: white;
-      text-align: center;
-      padding: 90px 20px;
-    }
+        .hero h1 span {
+            color: #0b5cff;
+        }
 
-    .hero h1 {
-      font-size: 45px;
-      margin-bottom: 18px;
-    }
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #5d6878;
+            font-size: 18px;
+            line-height: 1.7;
+        }
 
-    .hero p {
-      max-width: 700px;
-      margin: auto;
-      font-size: 18px;
-      color: #e5e7eb;
-    }
+        .buttons {
+            margin-top: 30px;
+        }
 
-    .buttons {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
+        .button {
+            display: inline-block;
+            padding: 14px 22px;
+            margin: 6px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-    .btn {
-      display: inline-block;
-      padding: 13px 22px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      background: #4ade80;
-      color: #062e16;
-    }
+        .primary {
+            background: #0b5cff;
+            color: white;
+        }
 
-    .btn.secondary {
-      background: white;
-      color: #172033;
-    }
+        .secondary {
+            background: #eef2f8;
+            color: #172033;
+        }
 
-    section {
-      padding: 65px 6%;
-    }
+        .section {
+            padding: 70px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 35px;
-    }
+        .section h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
 
-    .section-title h2 {
-      font-size: 32px;
-      margin-bottom: 8px;
-    }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
 
-    .section-title p {
-      color: #667085;
-    }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #e1e6ee;
+            transition: 0.2s;
+        }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
-      max-width: 1150px;
-      margin: auto;
-    }
+        .card:hover {
+            transform: translateY(-5px);
+        }
 
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 14px;
-      box-shadow: 0 5px 20px rgba(16, 24, 40, 0.08);
-      transition: 0.25s;
-    }
+        .card-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+        .card h3 {
+            margin-bottom: 10px;
+        }
 
-    .card h3 {
-      margin-bottom: 10px;
-    }
+        .card p {
+            color: #687386;
+            line-height: 1.6;
+        }
 
-    .card p {
-      color: #667085;
-      margin-bottom: 15px;
-    }
+        .quiz {
+            margin-top: 40px;
+            background: #07111f;
+            color: white;
+            padding: 50px 25px;
+            border-radius: 20px;
+            text-align: center;
+        }
 
-    .card a {
-      color: #1d4ed8;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        .quiz p {
+            color: #b9c7d9;
+            margin: 15px auto 25px;
+            max-width: 650px;
+        }
 
-    .quiz {
-      background: #eaf2ff;
-      text-align: center;
-    }
+        footer {
+            background: #030912;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
 
-    .quiz-box {
-      max-width: 750px;
-      margin: auto;
-      background: white;
-      padding: 35px;
-      border-radius: 16px;
-      box-shadow: 0 5px 20px rgba(16, 24, 40, 0.08);
-    }
+        footer p {
+            color: #9caabd;
+            margin-top: 10px;
+        }
 
-    footer {
-      background: #101828;
-      color: #d0d5dd;
-      text-align: center;
-      padding: 30px 20px;
-    }
+        @media (max-width: 800px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
 
-    footer strong {
-      color: white;
-    }
+            .hero h1 {
+                font-size: 38px;
+            }
 
-    @media (max-width: 800px) {
-      header {
-        justify-content: center;
-      }
-
-      nav {
-        justify-content: center;
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-    }
-  </style>
+            nav a {
+                display: inline-block;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
 
-  <div class="logo">
-    MTJ
-    <span data-fr="Éducation & Entrepreneuriat"
-          data-en="Education & Entrepreneurship">
-      Éducation & Entrepreneuriat
-    </span>
-  </div>
+    <div class="logo">
+        MTJ
+    </div>
 
-  <nav>
-    <a href="index.html"
-       data-fr="Accueil"
-       data-en="Home">Accueil</a>
+    <div class="slogan">
+        Éducation & Entrepreneuriat
+    </div>
 
-    <a href="cours.html"
-       data-fr="Éducation"
-       data-en="Education">Éducation</a>
+    <nav>
+        <a href="#education">Éducation</a>
+        <a href="#technique">Technique</a>
+        <a href="#informatique">Informatique</a>
+        <a href="#business">Entrepreneuriat</a>
+        <a href="#histoire">Histoire</a>
+        <a href="#quiz">Quiz</a>
+    </nav>
 
-    <a href="technique.html"
-       data-fr="Technique"
-       data-en="Technical">Technique</a>
-
-    <a href="informatique.html"
-       data-fr="Informatique"
-       data-en="Computer Science">Informatique</a>
-
-    <a href="entrepreneuriat.html"
-       data-fr="Entrepreneuriat"
-       data-en="Entrepreneurship">Entrepreneuriat</a>
-
-    <a href="histoire.html"
-       data-fr="Histoire"
-       data-en="History">Histoire</a>
-
-    <a href="quiz.html"
-       data-fr="Quiz"
-       data-en="Quiz">Quiz</a>
-
-    <select id="languageSelect"
-            class="language"
-            aria-label="Language">
-      <option value="fr">🇫🇷 Français</option>
-      <option value="en">🇬🇧 English</option>
-    </select>
-  </nav>
+    <button class="language" onclick="changeLanguage()">
+        🇫🇷 Français / 🇬🇧 English
+    </button>
 
 </header>
 
 
-<main>
+<section class="hero">
 
-  <section class="hero">
-
-    <h1 data-fr="Apprendre. Entreprendre. Réussir."
-        data-en="Learn. Build. Succeed.">
-      Apprendre. Entreprendre. Réussir.
+    <h1>
+        Apprendre.<br>
+        <span>Entreprendre.</span><br>
+        Réussir.
     </h1>
 
-    <p data-fr="Bienvenue sur MTJ Éducation & Entrepreneuriat, une plateforme pour apprendre, développer ses compétences et préparer son avenir."
-       data-en="Welcome to MTJ Education & Entrepreneurship, a platform to learn, develop your skills and prepare for your future.">
-      Bienvenue sur MTJ Éducation & Entrepreneuriat, une plateforme pour apprendre,
-      développer ses compétences et préparer son avenir.
+    <p>
+        Bienvenue sur MTJ Éducation & Entrepreneuriat,
+        une plateforme pour apprendre, développer ses compétences,
+        préparer son avenir et découvrir l'entrepreneuriat.
     </p>
 
     <div class="buttons">
 
-      <a href="cours.html"
-         class="btn"
-         data-fr="Commencer à apprendre"
-         data-en="Start learning">
-        Commencer à apprendre
-      </a>
+        <a href="#education" class="button primary">
+            Commencer à apprendre
+        </a>
 
-      <a href="quiz.html"
-         class="btn secondary"
-         data-fr="Faire un quiz"
-         data-en="Take a quiz">
-        Faire un quiz
-      </a>
+        <a href="#quiz" class="button secondary">
+            Faire un quiz
+        </a>
 
     </div>
 
-  </section>
+</section>
 
 
-  <section>
+<section class="section" id="education">
 
-    <div class="section-title">
-
-      <h2 data-fr="Nos domaines"
-          data-en="Our areas">
-        Nos domaines
-      </h2>
-
-      <p data-fr="Développe tes connaissances et tes compétences."
-         data-en="Develop your knowledge and skills.">
-        Développe tes connaissances et tes compétences.
-      </p>
-
-    </div>
-
+    <h2>
+        Que veux-tu apprendre ?
+    </h2>
 
     <div class="cards">
 
-      <div class="card">
-        <h3>📚 <span data-fr="Éducation"
-                     data-en="Education">Éducation</span></h3>
+        <div class="card">
 
-        <p data-fr="Cours, matières scolaires, exercices et révisions."
-           data-en="School subjects, lessons, exercises and revision.">
-          Cours, matières scolaires, exercices et révisions.
-        </p>
+            <div class="card-icon">📚</div>
 
-        <a href="cours.html"
-           data-fr="Découvrir →"
-           data-en="Discover →">
-          Découvrir →
-        </a>
-      </div>
+            <h3>Éducation</h3>
+
+            <p>
+                Cours, matières scolaires,
+                exercices et révisions.
+            </p>
+
+        </div>
 
 
-      <div class="card">
-        <h3>⚡ <span data-fr="Filières techniques"
-                     data-en="Technical studies">
-          Filières techniques
-        </span></h3>
+        <div class="card" id="technique">
 
-        <p data-fr="Électricité, électronique, électrotechnique et formations techniques."
-           data-en="Electricity, electronics, electrotechnics and technical training.">
-          Électricité, électronique, électrotechnique et formations techniques.
-        </p>
+            <div class="card-icon">⚡</div>
 
-        <a href="technique.html"
-           data-fr="Découvrir →"
-           data-en="Discover →">
-          Découvrir →
-        </a>
-      </div>
+            <h3>Filières techniques</h3>
+
+            <p>
+                F3, F4, F5, électricité,
+                électronique et électrotechnique.
+            </p>
+
+        </div>
 
 
-      <div class="card">
-        <h3>💻 <span data-fr="Informatique"
-                     data-en="Computer Science">
-          Informatique
-        </span></h3>
+        <div class="card" id="informatique">
 
-        <p data-fr="Programmation, développement web, IA et outils numériques."
-           data-en="Programming, web development, AI and digital tools.">
-          Programmation, développement web, IA et outils numériques.
-        </p>
+            <div class="card-icon">💻</div>
 
-        <a href="informatique.html"
-           data-fr="Découvrir →"
-           data-en="Discover →">
-          Découvrir →
-        </a>
-      </div>
+            <h3>Informatique</h3>
+
+            <p>
+                Programmation, création de sites,
+                numérique et intelligence artificielle.
+            </p>
+
+        </div>
 
 
-      <div class="card">
-        <h3>💼 <span data-fr="Entrepreneuriat"
-                     data-en="Entrepreneurship">
-          Entrepreneuriat
-        </span></h3>
+        <div class="card" id="business">
 
-        <p data-fr="Idées de projets, marketing, vente, gestion et business."
-           data-en="Project ideas, marketing, sales, management and business.">
-          Idées de projets, marketing, vente, gestion et business.
-        </p>
+            <div class="card-icon">💼</div>
 
-        <a href="entrepreneuriat.html"
-           data-fr="Découvrir →"
-           data-en="Discover →">
-          Découvrir →
-        </a>
-      </div>
+            <h3>Entrepreneuriat</h3>
+
+            <p>
+                Business, marketing, vente,
+                gestion et création de projets.
+            </p>
+
+        </div>
 
 
-      <div class="card">
-        <h3>📜 <span data-fr="Histoire"
-                     data-en="History">
-          Histoire
-        </span></h3>
+        <div class="card" id="histoire">
 
-        <p data-fr="Histoire du Cameroun, de l'Afrique et du monde."
-           data-en="History of Cameroon, Africa and the world.">
-          Histoire du Cameroun, de l'Afrique et du monde.
-        </p>
+            <div class="card-icon">🇨🇲</div>
 
-        <a href="histoire.html"
-           data-fr="Découvrir →"
-           data-en="Discover →">
-          Découvrir →
-        </a>
-      </div>
+            <h3>Histoire</h3>
+
+            <p>
+                Histoire du Cameroun,
+                histoire de l'Afrique et du monde.
+            </p>
+
+        </div>
 
 
-      <div class="card">
-        <h3>⚖️ <span data-fr="Droit & Citoyenneté"
-                     data-en="Law & Citizenship">
-          Droit & Citoyenneté
-        </span></h3>
+        <div class="card">
 
-        <p data-fr="Notions de droit, justice, institutions, gouvernement et citoyenneté."
-           data-en="Law, justice, institutions, government and citizenship.">
-          Notions de droit, justice, institutions, gouvernement et citoyenneté.
-        </p>
+            <div class="card-icon">⚖️</div>
 
-        <a href="citoyennete.html"
-           data-fr="Découvrir →"
-           data-en="Discover →">
-          Découvrir →
-        </a>
-      </div>
+            <h3>Citoyenneté</h3>
+
+            <p>
+                Institutions, justice,
+                droits, devoirs et citoyenneté.
+            </p>
+
+        </div>
 
     </div>
 
-  </section>
 
+    <div class="quiz" id="quiz">
 
-  <section class="quiz">
+        <h2>
+            🧠 Teste tes connaissances
+        </h2>
 
-    <div class="quiz-box">
+        <p>
+            Choisis une catégorie, réponds aux questions
+            et découvre ton score.
+        </p>
 
-      <h2 data-fr="Teste tes connaissances 🧠"
-          data-en="Test your knowledge 🧠">
-        Teste tes connaissances 🧠
-      </h2>
-
-      <p data-fr="Choisis une catégorie, réponds aux questions et découvre ton score."
-         data-en="Choose a category, answer the questions and discover your score.">
-        Choisis une catégorie, réponds aux questions et découvre ton score.
-      </p>
-
-      <br>
-
-      <a href="quiz.html"
-         class="btn"
-         data-fr="Commencer le quiz"
-         data-en="Start the quiz">
-        Commencer le quiz
-      </a>
+        <a href="#" class="button primary">
+            Commencer le quiz
+        </a>
 
     </div>
 
-  </section>
-
-</main>
+</section>
 
 
 <footer>
 
-  <p>
-    <strong>MTJ Éducation & Entrepreneuriat</strong>
-  </p>
+    <strong>
+        MTJ Éducation & Entrepreneuriat
+    </strong>
 
-  <p data-fr="Apprendre aujourd'hui. Construire demain."
-     data-en="Learn today. Build tomorrow.">
-    Apprendre aujourd'hui. Construire demain.
-  </p>
+    <p>
+        Apprendre aujourd'hui. Construire demain.
+    </p>
 
-  <br>
-
-  <p>
-    © 2026 MTJ — 
-    <span data-fr="Tous droits réservés"
-          data-en="All rights reserved">
-      Tous droits réservés
-    </span>
-  </p>
+    <p>
+        © 2026 MTJ — Tous droits réservés.
+    </p>
 
 </footer>
 
 
 <script>
 
-  const languageSelect = document.getElementById("languageSelect");
+function changeLanguage() {
 
-  function changeLanguage(language) {
+    alert(
+        "🇫🇷 Français sélectionné. La traduction complète Français / English sera ajoutée dans la prochaine étape."
+    );
 
-    document.querySelectorAll("[data-fr][data-en]").forEach(element => {
-
-      element.textContent = element.getAttribute("data-" + language);
-
-    });
-
-    document.documentElement.lang = language;
-
-    localStorage.setItem("mtjLanguage", language);
-
-  }
-
-
-  languageSelect.addEventListener("change", function() {
-
-    changeLanguage(this.value);
-
-  });
-
-
-  const savedLanguage = localStorage.getItem("mtjLanguage") || "fr";
-
-  languageSelect.value = savedLanguage;
-
-  changeLanguage(savedLanguage);
+}
 
 </script>
 
