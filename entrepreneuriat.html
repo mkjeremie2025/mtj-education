@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Entrepreneuriat | MTJ Éducation</title>
+
+  <meta name="description" content="MTJ Éducation - Apprendre l'entrepreneuriat, le marketing, la vente, la gestion et la création d'entreprise.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #101828;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #f79009;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+
+    nav a:hover {
+      background: #1d2939;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #101828, #b54708);
+      color: white;
+      text-align: center;
+      padding: 75px 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 750px;
+      margin: auto;
+      font-size: 18px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: 45px auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section-title h2 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .search {
+      max-width: 650px;
+      margin: 0 auto 35px;
+    }
+
+    .search input {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #d0d5dd;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .card p {
+      color: #475467;
+      margin-bottom: 18px;
+    }
+
+    button {
+      border: none;
+      background: #b54708;
+      color: white;
+      padding: 11px 17px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    button:hover {
+      background: #8f3a06;
+    }
+
+    .levels {
+      margin-top: 55px;
+    }
+
+    .level-box {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      border-left: 5px solid #f79009;
+    }
+
+    .project {
+      background: #fff7ed;
+      padding: 30px;
+      border-radius: 14px;
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .project h2 {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #101828;
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    <span>MTJ</span> Éducation
+  </div>
+
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="cours.html">Cours</a>
+    <a href="technique.html">Technique</a>
+    <a href="informatique.html">Informatique</a>
+    <a href="entrepreneuriat.html">Entrepreneuriat</a>
+    <a href="histoire.html">Histoire</a>
+    <a href="quiz.html">Quiz</a>
+  </nav>
+
+</header>
+
+<section class="hero">
+
+  <h1>💼 Entrepreneuriat</h1>
+
+  <p>
+    Développe tes compétences en création d'entreprise,
+    marketing, vente, gestion et entrepreneuriat numérique.
+  </p>
+
+</section>
+
+<main class="container">
+
+  <div class="section-title">
+    <h2>🚀 Nos domaines</h2>
+    <p>Apprends les bases pour transformer une idée en projet.</p>
+  </div>
+
+  <div class="search">
+
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="🔎 Rechercher un domaine..."
+      onkeyup="searchCourses()"
+    >
+
+  </div>
+
+  <div class="cards" id="courseList">
+
+    <div class="card">
+
+      <div class="icon">💡</div>
+
+      <h3>Idée & projet</h3>
+
+      <p>
+        Apprends à trouver une idée, identifier un besoin
+        et construire un projet réaliste.
+      </p>
+
+      <button onclick="openTopic('Idée & projet')">
+        Découvrir
+      </button>
+
+    </div>
+
+    <div class="card">
+
+      <div class="icon">📋</div>
+
+      <h3>Business plan</h3>
+
+      <p>
+        Découvre les éléments essentiels d'un business plan
+        et comment organiser un projet.
+      </p>
+
+      <button onclick="openTopic('Business plan')">
+        Apprendre
+      </button>
+
+    </div>
+
+    <div class="card">
+
+      <div class="icon">📣</div>
+
+      <h3>Marketing</h3>
+
+      <p>
+        Découvre les bases du marketing, de la communication
+        et de la promotion d'un produit ou service.
+      </p>
+
+      <button onclick="openTopic('Marketing')">
+        Explorer
+      </button>
+
+    </div>
+
+    <div class="card">
+
+      <div class="icon">🛒</div>
+
+      <h3>Vente & commerce</h3>
+
+      <p>
+        Apprends les principes de la vente, de la relation client
+        et du développement commercial.
+      </p>
+
+      <button onclick="openTopic('Vente & commerce')">
+        Apprendre
+      </button>
+
+    </div>
+
+    <div class="card">
+
+      <div class="icon">💰</div>
+
+      <h3>Gestion financière</h3>
+
+      <p>
+        Comprends les notions de budget, recettes, dépenses,
+        bénéfices et gestion d'une activité.
+      </p>
+
+      <button onclick="openTopic('Gestion financière')">
+        Découvrir
+      </button>
+
+    </div>
+
+    <div class="card">
+
+      <div class="icon">📱</div>
+
+      <h3>Entrepreneuriat numérique</h3>
+
+      <p>
+        Découvre comment les outils numériques peuvent aider
+        à développer un projet ou une activité.
+      </p>
+
+      <button onclick="openTopic('Entrepreneuriat numérique')">
+        Explorer
+      </button>
+
+    </div>
+
+  </div>
+
+  <section class="levels">
+
+    <div class="section-title">
+      <h2>🎯 Parcours d'apprentissage</h2>
+    </div>
+
+    <div class="level-box">
+
+      <h3>🟢 Débutant</h3>
+
+      <p>
+        Découvrir l'entrepreneuriat, trouver une idée,
+        comprendre les clients et organiser un petit projet.
+      </p>
+
+    </div>
+
+    <div class="level-box">
+
+      <h3>🟡 Intermédiaire</h3>
+
+      <p>
+        Marketing, vente, budget, communication,
+        organisation et développement d'une activité.
+      </p>
+
+    </div>
+
+    <div class="level-box">
+
+      <h3>🔵 Avancé</h3>
+
+      <p>
+        Stratégie, développement commercial, gestion de projet
+        et création d'une activité durable.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section class="project">
+
+    <h2>🏆 Passe de l'idée à l'action</h2>
+
+    <p>
+      MTJ Éducation t'aidera progressivement à comprendre
+      comment construire et présenter un projet entrepreneurial.
+    </p>
+
+    <br>
+
+    <button onclick="startProject()">
+      Commencer un projet
+    </button>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <p>© 2026 MTJ Éducation & Entrepreneuriat</p>
+
+  <p>Apprendre • Entreprendre • Réussir</p>
+
+</footer>
+
+<script>
+
+function openTopic(topic) {
+
+  alert(
+    "📚 " + topic +
+    "\n\nCette formation sera développée prochainement sur MTJ Éducation."
+  );
+
+}
+
+function searchCourses() {
+
+  const input = document
+    .getElementById("searchInput")
+    .value
+    .toLowerCase();
+
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(function(card) {
+
+    const text = card.innerText.toLowerCase();
+
+    if (text.includes(input)) {
+
+      card.style.display = "block";
+
+    } else {
+
+      card.style.display = "none";
+
+    }
+
+  });
+
+}
+
+function startProject() {
+
+  alert(
+    "🚀 Le créateur de projet MTJ sera disponible prochainement."
+  );
+
+}
+
+</script>
+
+</body>
+</html>
