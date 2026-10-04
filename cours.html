@@ -1,646 +1,754 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MTJ Éducation | Apprendre aujourd'hui, construire demain</title>
 
-  <title>MTJ Éducation & Entrepreneuriat — Cours</title>
-  <meta name="description" content="Cours et formations de MTJ Éducation & Entrepreneuriat. Apprenez, révisez et développez vos compétences.">
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f4f7fb;
+  color:#172033;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #1f2937;
-      line-height: 1.6;
-    }
+/* HEADER */
+header{
+  background:linear-gradient(135deg,#071d49,#0b5ed7);
+  color:white;
+  padding:18px 6%;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 3px 15px rgba(0,0,0,.15);
+}
 
-    header {
-      background: #111827;
-      color: white;
-      padding: 15px 6%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+.header-content{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
+.logo{
+  font-size:24px;
+  font-weight:bold;
+}
 
-    .logo span {
-      display: block;
-      font-size: 13px;
-      font-weight: normal;
-      color: #d1d5db;
-    }
+.logo span{
+  color:#55d6ff;
+}
 
-    nav {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
+nav{
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-    }
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:14px;
+}
 
-    nav a:hover {
-      color: #60a5fa;
-    }
+nav a:hover{
+  color:#55d6ff;
+}
 
-    .language {
-      padding: 8px;
-      border-radius: 6px;
-      border: none;
-      cursor: pointer;
-    }
+.language{
+  border:none;
+  padding:8px 10px;
+  border-radius:8px;
+}
 
-    .hero {
-      background: linear-gradient(135deg, #1d4ed8, #111827);
-      color: white;
-      text-align: center;
-      padding: 70px 20px;
-    }
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#0b5ed7,#5b21b6);
+  color:white;
+  padding:75px 6%;
+}
 
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
+.hero-content{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  gap:40px;
+  align-items:center;
+}
 
-    .hero p {
-      max-width: 750px;
-      margin: auto;
-      font-size: 18px;
-    }
+.hero h1{
+  font-size:48px;
+  margin-bottom:18px;
+}
 
-    .container {
-      width: 90%;
-      max-width: 1150px;
-      margin: 40px auto;
-    }
+.hero h1 span{
+  color:#66e3ff;
+}
 
-    .search-box {
-      margin-bottom: 35px;
-    }
+.hero p{
+  font-size:18px;
+  line-height:1.7;
+  max-width:650px;
+}
 
-    .search-box input {
-      width: 100%;
-      padding: 16px;
-      border: 1px solid #d1d5db;
-      border-radius: 10px;
-      font-size: 16px;
-      outline: none;
-    }
+.buttons{
+  margin-top:28px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
 
-    .search-box input:focus {
-      border-color: #2563eb;
-    }
+.btn{
+  display:inline-block;
+  padding:13px 22px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+  border:none;
+  cursor:pointer;
+}
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 25px;
-    }
+.btn-primary{
+  background:white;
+  color:#0b5ed7;
+}
 
-    .section-title h2 {
-      font-size: 30px;
-      margin-bottom: 8px;
-    }
+.btn-secondary{
+  background:rgba(255,255,255,.15);
+  color:white;
+  border:1px solid rgba(255,255,255,.5);
+}
 
-    .section-title p {
-      color: #6b7280;
-    }
+.hero-card{
+  background:rgba(255,255,255,.12);
+  padding:30px;
+  border-radius:20px;
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.2);
+}
 
-    .levels {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
-    }
+.hero-card h2{
+  margin-bottom:20px;
+}
 
-    .level-btn {
-      padding: 10px 18px;
-      border: 1px solid #2563eb;
-      background: white;
-      color: #2563eb;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: bold;
-    }
+.stat{
+  display:flex;
+  justify-content:space-between;
+  padding:12px 0;
+  border-bottom:1px solid rgba(255,255,255,.2);
+}
 
-    .level-btn.active,
-    .level-btn:hover {
-      background: #2563eb;
-      color: white;
-    }
+/* SECTIONS */
+section{
+  padding:60px 6%;
+}
 
-    .courses {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 22px;
-    }
+.container{
+  max-width:1200px;
+  margin:auto;
+}
 
-    .course-card {
-      background: white;
-      border-radius: 14px;
-      padding: 25px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-      transition: 0.3s;
-    }
+.section-title{
+  text-align:center;
+  margin-bottom:35px;
+}
 
-    .course-card:hover {
-      transform: translateY(-5px);
-    }
+.section-title h2{
+  font-size:32px;
+  color:#071d49;
+  margin-bottom:10px;
+}
 
-    .course-icon {
-      font-size: 40px;
-      margin-bottom: 12px;
-    }
+.section-title p{
+  color:#667085;
+}
 
-    .course-card h3 {
-      margin-bottom: 10px;
-      font-size: 21px;
-    }
+/* SEARCH */
+.search-box{
+  max-width:700px;
+  margin:0 auto 30px;
+  display:flex;
+  gap:10px;
+}
 
-    .course-card p {
-      color: #6b7280;
-      margin-bottom: 18px;
-    }
+.search-box input{
+  width:100%;
+  padding:15px;
+  border:1px solid #d0d5dd;
+  border-radius:10px;
+  font-size:16px;
+}
 
-    .course-info {
-      font-size: 13px;
-      margin-bottom: 15px;
-      color: #374151;
-    }
+/* FILTERS */
+.filters{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:30px;
+}
 
-    .course-btn {
-      display: inline-block;
-      background: #2563eb;
-      color: white;
-      text-decoration: none;
-      padding: 10px 16px;
-      border-radius: 7px;
-      font-weight: bold;
-    }
+.filter{
+  border:none;
+  padding:10px 18px;
+  border-radius:20px;
+  background:#e8eef8;
+  cursor:pointer;
+  font-weight:bold;
+}
 
-    .course-btn:hover {
-      background: #1d4ed8;
-    }
+.filter.active,
+.filter:hover{
+  background:#0b5ed7;
+  color:white;
+}
 
-    .learning-path {
-      margin-top: 55px;
-      background: white;
-      border-radius: 15px;
-      padding: 30px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-    }
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
 
-    .learning-path h2 {
-      margin-bottom: 20px;
-      text-align: center;
-    }
+.card{
+  background:white;
+  border-radius:18px;
+  padding:25px;
+  box-shadow:0 5px 20px rgba(0,0,0,.07);
+  transition:.25s;
+  border:1px solid #edf0f5;
+}
 
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
 
-    .step {
-      padding: 20px;
-      background: #f3f4f6;
-      border-radius: 10px;
-      text-align: center;
-    }
+.icon{
+  font-size:40px;
+  margin-bottom:15px;
+}
 
-    .step-number {
-      font-size: 28px;
-      font-weight: bold;
-      color: #2563eb;
-      margin-bottom: 8px;
-    }
+.card h3{
+  color:#071d49;
+  margin-bottom:10px;
+}
 
-    .cta {
-      margin-top: 45px;
-      text-align: center;
-      background: #111827;
-      color: white;
-      padding: 45px 20px;
-      border-radius: 15px;
-    }
+.card p{
+  color:#667085;
+  line-height:1.5;
+  margin-bottom:18px;
+}
 
-    .cta h2 {
-      margin-bottom: 10px;
-    }
+.card-btn{
+  display:inline-block;
+  background:#0b5ed7;
+  color:white;
+  padding:10px 15px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-    .cta a {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 22px;
-      background: #2563eb;
-      color: white;
-      text-decoration: none;
-      border-radius: 7px;
-      font-weight: bold;
-    }
+/* LEVEL */
+.levels{
+  background:white;
+}
 
-    footer {
-      margin-top: 50px;
-      background: #111827;
-      color: #d1d5db;
-      text-align: center;
-      padding: 25px;
-      font-size: 14px;
-    }
+.level-card{
+  text-align:center;
+}
 
-    @media (max-width: 700px) {
-      .hero h1 {
-        font-size: 32px;
-      }
+.level-card strong{
+  display:block;
+  font-size:28px;
+  color:#0b5ed7;
+  margin-bottom:8px;
+}
 
-      header {
-        justify-content: center;
-        text-align: center;
-      }
+/* PROGRESS */
+.progress-area{
+  background:#071d49;
+  color:white;
+}
 
-      nav {
-        justify-content: center;
-      }
-    }
-  </style>
+.progress-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.progress-card{
+  background:rgba(255,255,255,.1);
+  padding:25px;
+  border-radius:15px;
+}
+
+.progress-bar{
+  height:10px;
+  background:rgba(255,255,255,.2);
+  border-radius:10px;
+  margin-top:15px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  height:100%;
+  background:#55d6ff;
+  border-radius:10px;
+}
+
+/* QUIZ */
+.quiz{
+  background:#eef5ff;
+}
+
+.quiz-box{
+  max-width:700px;
+  margin:auto;
+  background:white;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.question{
+  font-size:20px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+.answer{
+  width:100%;
+  text-align:left;
+  padding:13px;
+  margin:7px 0;
+  border:1px solid #d0d5dd;
+  background:white;
+  border-radius:9px;
+  cursor:pointer;
+}
+
+.answer:hover{
+  background:#eaf2ff;
+}
+
+#result{
+  margin-top:15px;
+  font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+  background:#050f25;
+  color:white;
+  padding:40px 6%;
+  text-align:center;
+}
+
+footer h2{
+  margin-bottom:10px;
+}
+
+footer p{
+  color:#b8c1d1;
+  margin:7px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .hero-content{
+    grid-template-columns:1fr;
+  }
+
+  .progress-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+}
+
+@media(max-width:600px){
+  .header-content{
+    flex-direction:column;
+  }
+
+  nav{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding:50px 5%;
+  }
+
+  section{
+    padding:45px 5%;
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .search-box{
+    flex-direction:column;
+  }
+}
+</style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-  <div class="logo">
-    MTJ
-    <span data-fr="Éducation & Entrepreneuriat"
-          data-en="Education & Entrepreneurship">
-      Éducation & Entrepreneuriat
-    </span>
+  <div class="header-content">
+
+    <div class="logo">
+      MTJ <span>Éducation</span>
+    </div>
+
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#matieres">Cours</a>
+      <a href="#niveaux">Niveaux</a>
+      <a href="#quiz">Quiz</a>
+
+      <select class="language" id="languageSelect">
+        <option value="fr">🇫🇷 Français</option>
+        <option value="en">🇬🇧 English</option>
+      </select>
+    </nav>
+
   </div>
-
-  <nav>
-    <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
-    <a href="cours.html" data-fr="Cours" data-en="Courses">Cours</a>
-    <a href="technique.html" data-fr="Technique" data-en="Technical">Technique</a>
-    <a href="informatique.html" data-fr="Informatique" data-en="Computer Science">Informatique</a>
-    <a href="entrepreneuriat.html" data-fr="Entrepreneuriat" data-en="Entrepreneurship">Entrepreneuriat</a>
-    <a href="histoire.html" data-fr="Histoire" data-en="History">Histoire</a>
-    <a href="quiz.html" data-fr="Quiz" data-en="Quiz">Quiz</a>
-
-    <select id="languageSelect" class="language" onchange="changeLanguage(this.value)">
-      <option value="fr">🇫🇷 Français</option>
-      <option value="en">🇬🇧 English</option>
-    </select>
-  </nav>
 </header>
 
-<section class="hero">
-  <h1 data-fr="📚 Cours & Formation"
-      data-en="📚 Courses & Training">
-    📚 Cours & Formation
-  </h1>
 
-  <p data-fr="Apprenez de nouvelles compétences, révisez vos leçons et développez vos connaissances avec MTJ."
-     data-en="Learn new skills, review your lessons and develop your knowledge with MTJ.">
-    Apprenez de nouvelles compétences, révisez vos leçons et développez vos connaissances avec MTJ.
-  </p>
-</section>
+<!-- HERO -->
+<section class="hero" id="accueil">
 
-<main class="container">
+  <div class="hero-content">
 
-  <div class="search-box">
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="🔎 Rechercher un cours..."
-      data-placeholder-fr="🔎 Rechercher un cours..."
-      data-placeholder-en="🔎 Search for a course..."
-      onkeyup="searchCourses()">
-  </div>
+    <div>
+      <h1>
+        Apprends.<br>
+        Progresse.<br>
+        <span>Construis ton avenir.</span>
+      </h1>
 
-  <div class="section-title">
-    <h2 data-fr="Nos formations"
-        data-en="Our Courses">
-      Nos formations
-    </h2>
-
-    <p data-fr="Choisissez une matière et commencez votre apprentissage."
-       data-en="Choose a subject and start learning.">
-      Choisissez une matière et commencez votre apprentissage.
-    </p>
-  </div>
-
-  <div class="levels">
-    <button class="level-btn active" onclick="filterLevel('all', this)"
-            data-fr="Tous les niveaux"
-            data-en="All levels">
-      Tous les niveaux
-    </button>
-
-    <button class="level-btn" onclick="filterLevel('beginner', this)"
-            data-fr="Débutant"
-            data-en="Beginner">
-      Débutant
-    </button>
-
-    <button class="level-btn" onclick="filterLevel('intermediate', this)"
-            data-fr="Intermédiaire"
-            data-en="Intermediate">
-      Intermédiaire
-    </button>
-
-    <button class="level-btn" onclick="filterLevel('advanced', this)"
-            data-fr="Avancé"
-            data-en="Advanced">
-      Avancé
-    </button>
-  </div>
-
-  <div class="courses" id="courses">
-
-    <article class="course-card" data-level="beginner">
-      <div class="course-icon">🔢</div>
-
-      <h3 data-fr="Mathématiques"
-          data-en="Mathematics">
-        Mathématiques
-      </h3>
-
-      <p data-fr="Calcul, algèbre, géométrie et résolution de problèmes."
-         data-en="Calculations, algebra, geometry and problem solving.">
-        Calcul, algèbre, géométrie et résolution de problèmes.
+      <p id="heroText">
+        Bienvenue sur MTJ Éducation & Entrepreneuriat,
+        une plateforme éducative moderne pour apprendre,
+        pratiquer et développer tes compétences.
       </p>
 
-      <div class="course-info"
-           data-fr="Niveau : Débutant à Avancé"
-           data-en="Level: Beginner to Advanced">
-        Niveau : Débutant à Avancé
+      <div class="buttons">
+        <a href="#matieres" class="btn btn-primary">
+          📚 Commencer les cours
+        </a>
+
+        <a href="#quiz" class="btn btn-secondary">
+          🧠 Faire un quiz
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+
+      <h2>🎓 MTJ Éducation</h2>
+
+      <div class="stat">
+        <span>📚 Matières</span>
+        <strong>8+</strong>
       </div>
 
-      <a href="#mathematiques" class="course-btn"
-         data-fr="Voir le programme"
-         data-en="View program">
-        Voir le programme
-      </a>
-    </article>
-
-
-    <article class="course-card" data-level="beginner">
-      <div class="course-icon">📖</div>
-
-      <h3 data-fr="Français"
-          data-en="French">
-        Français
-      </h3>
-
-      <p data-fr="Grammaire, conjugaison, vocabulaire, rédaction et compréhension."
-         data-en="Grammar, conjugation, vocabulary, writing and comprehension.">
-        Grammaire, conjugaison, vocabulaire, rédaction et compréhension.
-      </p>
-
-      <div class="course-info"
-           data-fr="Niveau : Débutant à Avancé"
-           data-en="Level: Beginner to Advanced">
-        Niveau : Débutant à Avancé
+      <div class="stat">
+        <span>🧠 Quiz</span>
+        <strong>20+</strong>
       </div>
 
-      <a href="#francais" class="course-btn"
-         data-fr="Voir le programme"
-         data-en="View program">
-        Voir le programme
-      </a>
-    </article>
-
-
-    <article class="course-card" data-level="beginner">
-      <div class="course-icon">🇬🇧</div>
-
-      <h3 data-fr="Anglais"
-          data-en="English">
-        Anglais
-      </h3>
-
-      <p data-fr="Vocabulaire, grammaire, expression et communication en anglais."
-         data-en="Vocabulary, grammar, speaking and English communication.">
-        Vocabulaire, grammaire, expression et communication en anglais.
-      </p>
-
-      <div class="course-info"
-           data-fr="Niveau : Débutant à Avancé"
-           data-en="Level: Beginner to Advanced">
-        Niveau : Débutant à Avancé
+      <div class="stat">
+        <span>🌍 Langues</span>
+        <strong>2</strong>
       </div>
 
-      <a href="#anglais" class="course-btn"
-         data-fr="Voir le programme"
-         data-en="View program">
-        Voir le programme
-      </a>
-    </article>
-
-
-    <article class="course-card" data-level="intermediate">
-      <div class="course-icon">🔬</div>
-
-      <h3 data-fr="Sciences"
-          data-en="Science">
-        Sciences
-      </h3>
-
-      <p data-fr="Physique, chimie, biologie et compréhension du monde scientifique."
-         data-en="Physics, chemistry, biology and understanding of the scientific world.">
-        Physique, chimie, biologie et compréhension du monde scientifique.
-      </p>
-
-      <div class="course-info"
-           data-fr="Niveau : Intermédiaire"
-           data-en="Level: Intermediate">
-        Niveau : Intermédiaire
-      </div>
-
-      <a href="#sciences" class="course-btn"
-         data-fr="Voir le programme"
-         data-en="View program">
-        Voir le programme
-      </a>
-    </article>
-
-
-    <article class="course-card" data-level="intermediate">
-      <div class="course-icon">💻</div>
-
-      <h3 data-fr="Informatique"
-          data-en="Computer Science">
-        Informatique
-      </h3>
-
-      <p data-fr="Ordinateurs, programmation, développement web, IA et outils numériques."
-         data-en="Computers, programming, web development, AI and digital tools.">
-        Ordinateurs, programmation, développement web, IA et outils numériques.
-      </p>
-
-      <div class="course-info"
-           data-fr="Niveau : Débutant à Avancé"
-           data-en="Level: Beginner to Advanced">
-        Niveau : Débutant à Avancé
-      </div>
-
-      <a href="informatique.html" class="course-btn"
-         data-fr="Commencer"
-         data-en="Start">
-        Commencer
-      </a>
-    </article>
-
-
-    <article class="course-card" data-level="beginner">
-      <div class="course-icon">🌍</div>
-
-      <h3 data-fr="Culture générale"
-          data-en="General Knowledge">
-        Culture générale
-      </h3>
-
-      <p data-fr="Histoire, géographie, citoyenneté, sciences et connaissances du monde."
-         data-en="History, geography, citizenship, science and world knowledge.">
-        Histoire, géographie, citoyenneté, sciences et connaissances du monde.
-      </p>
-
-      <div class="course-info"
-           data-fr="Niveau : Tous niveaux"
-           data-en="Level: All levels">
-        Niveau : Tous niveaux
-      </div>
-
-      <a href="#culture" class="course-btn"
-         data-fr="Voir le programme"
-         data-en="View program">
-        Voir le programme
-      </a>
-    </article>
-
-  </div>
-
-
-  <section class="learning-path">
-
-    <h2 data-fr="🎯 Notre méthode d'apprentissage"
-        data-en="🎯 Our Learning Method">
-      🎯 Notre méthode d'apprentissage
-    </h2>
-
-    <div class="steps">
-
-      <div class="step">
-        <div class="step-number">1</div>
-
-        <h3 data-fr="Apprendre"
-            data-en="Learn">
-          Apprendre
-        </h3>
-
-        <p data-fr="Comprendre les notions essentielles."
-           data-en="Understand the essential concepts.">
-          Comprendre les notions essentielles.
-        </p>
-      </div>
-
-
-      <div class="step">
-        <div class="step-number">2</div>
-
-        <h3 data-fr="Pratiquer"
-            data-en="Practice">
-          Pratiquer
-        </h3>
-
-        <p data-fr="Faire des exercices pour progresser."
-           data-en="Complete exercises to improve.">
-          Faire des exercices pour progresser.
-        </p>
-      </div>
-
-
-      <div class="step">
-        <div class="step-number">3</div>
-
-        <h3 data-fr="Réviser"
-            data-en="Review">
-          Réviser
-        </h3>
-
-        <p data-fr="Revoir les points importants."
-           data-en="Review the important points.">
-          Revoir les points importants.
-        </p>
-      </div>
-
-
-      <div class="step">
-        <div class="step-number">4</div>
-
-        <h3 data-fr="Évaluer"
-            data-en="Evaluate">
-          Évaluer
-        </h3>
-
-        <p data-fr="Tester ses connaissances avec des quiz."
-           data-en="Test your knowledge with quizzes.">
-          Tester ses connaissances avec des quiz.
-        </p>
+      <div class="stat">
+        <span>🚀 Objectif</span>
+        <strong>Réussir</strong>
       </div>
 
     </div>
-  </section>
+
+  </div>
+
+</section>
 
 
-  <section class="cta">
+<!-- MATIERES -->
+<section id="matieres">
 
-    <h2 data-fr="🚀 Prêt à apprendre ?"
-        data-en="🚀 Ready to learn?">
-      🚀 Prêt à apprendre ?
-    </h2>
+  <div class="container">
 
-    <p data-fr="Choisissez votre domaine et commencez votre progression."
-       data-en="Choose your field and start your learning journey.">
-      Choisissez votre domaine et commencez votre progression.
-    </p>
+    <div class="section-title">
+      <h2>📚 Nos matières</h2>
+      <p>Choisis une matière et commence ton apprentissage.</p>
+    </div>
 
-    <a href="quiz.html"
-       data-fr="Faire un quiz"
-       data-en="Take a quiz">
-      Faire un quiz
-    </a>
+    <div class="search-box">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="🔎 Rechercher une matière..."
+        onkeyup="searchSubjects()">
+    </div>
 
-  </section>
+    <div class="filters">
+      <button class="filter active" onclick="filterSubjects('all',this)">
+        Tous
+      </button>
 
-</main>
+      <button class="filter" onclick="filterSubjects('debutant',this)">
+        Débutant
+      </button>
+
+      <button class="filter" onclick="filterSubjects('intermediaire',this)">
+        Intermédiaire
+      </button>
+
+      <button class="filter" onclick="filterSubjects('avance',this)">
+        Avancé
+      </button>
+    </div>
 
 
+    <div class="grid" id="subjectGrid">
+
+      <div class="card subject" data-level="debutant">
+        <div class="icon">📐</div>
+        <h3>Mathématiques</h3>
+        <p>Nombres, fractions, équations, géométrie, statistiques et algèbre.</p>
+        <a href="maths.html" class="card-btn">Voir le cours →</a>
+      </div>
+
+
+      <div class="card subject" data-level="debutant">
+        <div class="icon">📖</div>
+        <h3>Français</h3>
+        <p>Grammaire, conjugaison, orthographe, vocabulaire et expression.</p>
+        <a href="francais.html" class="card-btn">Voir le cours →</a>
+      </div>
+
+
+      <div class="card subject" data-level="intermediaire">
+        <div class="icon">🇬🇧</div>
+        <h3>English</h3>
+        <p>Grammar, vocabulary, communication and professional English.</p>
+        <a href="anglais.html" class="card-btn">View course →</a>
+      </div>
+
+
+      <div class="card subject" data-level="intermediaire">
+        <div class="icon">⚡</div>
+        <h3>Technique</h3>
+        <p>Électricité, électronique, installations et connaissances techniques.</p>
+        <a href="technique.html" class="card-btn">Voir le cours →</a>
+      </div>
+
+
+      <div class="card subject" data-level="debutant">
+        <div class="icon">💻</div>
+        <h3>Informatique</h3>
+        <p>Programmation, informatique, intelligence artificielle et numérique.</p>
+        <a href="informatique.html" class="card-btn">Voir le cours →</a>
+      </div>
+
+
+      <div class="card subject" data-level="intermediaire">
+        <div class="icon">💼</div>
+        <h3>Entrepreneuriat</h3>
+        <p>Idées d'entreprise, gestion, marketing et développement de projets.</p>
+        <a href="entrepreneuriat.html" class="card-btn">Voir le cours →</a>
+      </div>
+
+
+      <div class="card subject" data-level="debutant">
+        <div class="icon">🌍</div>
+        <h3>Histoire</h3>
+        <p>Découvre les grandes périodes, événements et personnages historiques.</p>
+        <a href="histoire.html" class="card-btn">Voir le cours →</a>
+      </div>
+
+
+      <div class="card subject" data-level="debutant">
+        <div class="icon">🇨🇲</div>
+        <h3>Citoyenneté</h3>
+        <p>Droits, devoirs, valeurs, responsabilité et vie en société.</p>
+        <a href="citoyennete.html" class="card-btn">Voir le cours →</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- NIVEAUX -->
+<section class="levels" id="niveaux">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>🎯 Choisis ton niveau</h2>
+      <p>Apprends progressivement selon ton niveau.</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="card level-card">
+        <strong>01</strong>
+        <h3>Débutant</h3>
+        <p>Commence avec les bases et progresse étape par étape.</p>
+      </div>
+
+      <div class="card level-card">
+        <strong>02</strong>
+        <h3>Intermédiaire</h3>
+        <p>Renforce tes connaissances avec des exercices pratiques.</p>
+      </div>
+
+      <div class="card level-card">
+        <strong>03</strong>
+        <h3>Avancé</h3>
+        <p>Approfondis tes compétences et relève de nouveaux défis.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PROGRESSION -->
+<section class="progress-area">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2 style="color:white;">📈 Ta progression</h2>
+      <p style="color:#cbd5e1;">
+        Suis ton évolution et continue à apprendre.
+      </p>
+    </div>
+
+    <div class="progress-grid">
+
+      <div class="progress-card">
+        <h3>📐 Mathématiques</h3>
+        <p>75% terminé</p>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width:75%;"></div>
+        </div>
+      </div>
+
+      <div class="progress-card">
+        <h3>⚡ Technique</h3>
+        <p>55% terminé</p>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width:55%;"></div>
+        </div>
+      </div>
+
+      <div class="progress-card">
+        <h3>💻 Informatique</h3>
+        <p>40% terminé</p>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width:40%;"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- QUIZ -->
+<section class="quiz" id="quiz">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>🧠 Mini Quiz</h2>
+      <p>Teste rapidement tes connaissances.</p>
+    </div>
+
+    <div class="quiz-box">
+
+      <div class="question">
+        Quelle est la valeur de 5 × 6 ?
+      </div>
+
+      <button class="answer" onclick="checkAnswer(false)">
+        A. 20
+      </button>
+
+      <button class="answer" onclick="checkAnswer(true)">
+        B. 30
+      </button>
+
+      <button class="answer" onclick="checkAnswer(false)">
+        C. 35
+      </button>
+
+      <button class="answer" onclick="checkAnswer(false)">
+        D. 25
+      </button>
+
+      <div id="result"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
 <footer>
 
+  <h2>MTJ Éducation & Entrepreneuriat</h2>
+
+  <p>Apprendre aujourd'hui, construire demain. 🚀</p>
+
   <p>
-    © 2026 MTJ Éducation & Entrepreneuriat —
-    <span data-fr="Apprendre • Entreprendre • Réussir"
-          data-en="Learn • Build • Succeed">
-      Apprendre • Entreprendre • Réussir
-    </span>
+    Une plateforme pensée pour les jeunes,
+    les élèves et les futurs entrepreneurs.
+  </p>
+
+  <p>
+    © 2026 MTJ Éducation — Tous droits réservés.
   </p>
 
 </footer>
@@ -648,78 +756,108 @@
 
 <script>
 
-  let currentLanguage = localStorage.getItem("mtjLanguage") || "fr";
-  let currentLevel = "all";
+/* RECHERCHE */
+function searchSubjects(){
 
+  let input =
+    document.getElementById("searchInput")
+    .value
+    .toLowerCase();
 
-  function changeLanguage(language) {
+  let subjects =
+    document.querySelectorAll(".subject");
 
-    currentLanguage = language;
+  subjects.forEach(function(subject){
 
-    localStorage.setItem("mtjLanguage", language);
+    let text =
+      subject.innerText.toLowerCase();
 
-    document.documentElement.lang = language;
-
-    document.querySelectorAll("[data-fr]").forEach(element => {
-
-      const text = element.getAttribute("data-" + language);
-
-      if (text) {
-        element.textContent = text;
-      }
-
-    });
-
-    const searchInput = document.getElementById("searchInput");
-
-    if (searchInput) {
-      searchInput.placeholder =
-        searchInput.getAttribute("data-placeholder-" + language);
+    if(text.includes(input)){
+      subject.style.display = "block";
+    }else{
+      subject.style.display = "none";
     }
 
-    document.getElementById("languageSelect").value = language;
-  }
+  });
+
+}
 
 
-  function searchCourses() {
+/* FILTRE */
+function filterSubjects(level,button){
 
-    const search =
-      document.getElementById("searchInput").value.toLowerCase();
+  let subjects =
+    document.querySelectorAll(".subject");
 
-    document.querySelectorAll(".course-card").forEach(card => {
-
-      const text = card.textContent.toLowerCase();
-
-      const matchesSearch = text.includes(search);
-
-      const matchesLevel =
-        currentLevel === "all" ||
-        card.getAttribute("data-level") === currentLevel;
-
-      card.style.display =
-        matchesSearch && matchesLevel ? "block" : "none";
-
-    });
-  }
-
-
-  function filterLevel(level, button) {
-
-    currentLevel = level;
-
-    document.querySelectorAll(".level-btn").forEach(btn => {
+  document.querySelectorAll(".filter")
+    .forEach(function(btn){
       btn.classList.remove("active");
     });
 
-    button.classList.add("active");
+  button.classList.add("active");
 
-    searchCourses();
+  subjects.forEach(function(subject){
+
+    if(level === "all" ||
+       subject.dataset.level === level){
+
+      subject.style.display = "block";
+
+    }else{
+
+      subject.style.display = "none";
+
+    }
+
+  });
+
+}
+
+
+/* QUIZ */
+function checkAnswer(correct){
+
+  let result =
+    document.getElementById("result");
+
+  if(correct){
+
+    result.innerHTML =
+      "✅ Bonne réponse ! Excellent travail.";
+
+    result.style.color = "green";
+
+  }else{
+
+    result.innerHTML =
+      "❌ Mauvaise réponse. Essaie encore.";
+
+    result.style.color = "red";
+
   }
 
+}
 
-  window.onload = function() {
-    changeLanguage(currentLanguage);
-  };
+
+/* LANGUE */
+const languageSelect =
+  document.getElementById("languageSelect");
+
+languageSelect.addEventListener("change",function(){
+
+  if(this.value === "en"){
+
+    document.getElementById("heroText").innerText =
+      "Welcome to MTJ Education & Entrepreneurship, a modern educational platform to learn, practice and develop your skills.";
+
+  }else{
+
+    document.getElementById("heroText").innerText =
+      "Bienvenue sur MTJ Éducation & Entrepreneuriat, une plateforme éducative moderne pour apprendre, pratiquer et développer tes compétences.";
+
+  }
+
+});
 
 </script>
 
