@@ -12,13 +12,17 @@
   box-sizing:border-box;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   font-family:Arial,Helvetica,sans-serif;
   background:#f4f7fb;
   color:#172033;
+  line-height:1.6;
 }
 
-/* HEADER */
 header{
   background:linear-gradient(135deg,#071d49,#0b5ed7);
   color:white;
@@ -70,7 +74,6 @@ nav a:hover{
   border-radius:8px;
 }
 
-/* HERO */
 .hero{
   background:linear-gradient(135deg,#0b5ed7,#5b21b6);
   color:white;
@@ -148,7 +151,6 @@ nav a:hover{
   border-bottom:1px solid rgba(255,255,255,.2);
 }
 
-/* SECTIONS */
 section{
   padding:60px 6%;
 }
@@ -173,7 +175,6 @@ section{
   color:#667085;
 }
 
-/* SEARCH */
 .search-box{
   max-width:700px;
   margin:0 auto 30px;
@@ -189,7 +190,6 @@ section{
   font-size:16px;
 }
 
-/* FILTERS */
 .filters{
   display:flex;
   justify-content:center;
@@ -213,11 +213,17 @@ section{
   color:white;
 }
 
-/* CARDS */
 .grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:20px;
+}
+
+/* CARTE CLIQUABLE */
+.card-link{
+  text-decoration:none;
+  color:inherit;
+  display:block;
 }
 
 .card{
@@ -227,11 +233,13 @@ section{
   box-shadow:0 5px 20px rgba(0,0,0,.07);
   transition:.25s;
   border:1px solid #edf0f5;
+  height:100%;
 }
 
 .card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 10px 25px rgba(0,0,0,.12);
+  transform:translateY(-7px);
+  box-shadow:0 12px 30px rgba(11,94,215,.18);
+  border-color:#0b5ed7;
 }
 
 .icon{
@@ -256,11 +264,13 @@ section{
   color:white;
   padding:10px 15px;
   border-radius:8px;
-  text-decoration:none;
   font-weight:bold;
 }
 
-/* LEVEL */
+.card-link:hover .card-btn{
+  background:#071d49;
+}
+
 .levels{
   background:white;
 }
@@ -276,7 +286,6 @@ section{
   margin-bottom:8px;
 }
 
-/* PROGRESS */
 .progress-area{
   background:#071d49;
   color:white;
@@ -308,7 +317,6 @@ section{
   border-radius:10px;
 }
 
-/* QUIZ */
 .quiz{
   background:#eef5ff;
 }
@@ -348,7 +356,6 @@ section{
   font-weight:bold;
 }
 
-/* FOOTER */
 footer{
   background:#050f25;
   color:white;
@@ -365,7 +372,6 @@ footer p{
   margin:7px;
 }
 
-/* MOBILE */
 @media(max-width:900px){
   .grid{
     grid-template-columns:repeat(2,1fr);
@@ -419,7 +425,6 @@ footer p{
 
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="header-content">
 
@@ -443,7 +448,6 @@ footer p{
 </header>
 
 
-<!-- HERO -->
 <section class="hero" id="accueil">
 
   <div class="hero-content">
@@ -503,7 +507,6 @@ footer p{
 </section>
 
 
-<!-- MATIERES -->
 <section id="matieres">
 
   <div class="container">
@@ -522,88 +525,198 @@ footer p{
     </div>
 
     <div class="filters">
-      <button class="filter active" onclick="filterSubjects('all',this)">
+
+      <button class="filter active"
+        onclick="filterSubjects('all',this)">
         Tous
       </button>
 
-      <button class="filter" onclick="filterSubjects('debutant',this)">
+      <button class="filter"
+        onclick="filterSubjects('debutant',this)">
         Débutant
       </button>
 
-      <button class="filter" onclick="filterSubjects('intermediaire',this)">
+      <button class="filter"
+        onclick="filterSubjects('intermediaire',this)">
         Intermédiaire
       </button>
 
-      <button class="filter" onclick="filterSubjects('avance',this)">
+      <button class="filter"
+        onclick="filterSubjects('avance',this)">
         Avancé
       </button>
+
     </div>
 
 
     <div class="grid" id="subjectGrid">
 
-      <div class="card subject" data-level="debutant">
-        <div class="icon">📐</div>
-        <h3>Mathématiques</h3>
-        <p>Nombres, fractions, équations, géométrie, statistiques et algèbre.</p>
-        <a href="maths.html" class="card-btn">Voir le cours →</a>
-      </div>
+      <!-- MATHEMATIQUES -->
+      <a href="maths.html" class="card-link subject" data-level="debutant">
+        <div class="card">
+
+          <div class="icon">📐</div>
+
+          <h3>Mathématiques</h3>
+
+          <p>
+            Nombres, fractions, équations,
+            géométrie, statistiques et algèbre.
+          </p>
+
+          <span class="card-btn">
+            Voir le cours →
+          </span>
+
+        </div>
+      </a>
 
 
-      <div class="card subject" data-level="debutant">
-        <div class="icon">📖</div>
-        <h3>Français</h3>
-        <p>Grammaire, conjugaison, orthographe, vocabulaire et expression.</p>
-        <a href="francais.html" class="card-btn">Voir le cours →</a>
-      </div>
+      <!-- FRANCAIS -->
+      <a href="francais.html" class="card-link subject" data-level="debutant">
+        <div class="card">
+
+          <div class="icon">📖</div>
+
+          <h3>Français</h3>
+
+          <p>
+            Grammaire, conjugaison, orthographe,
+            vocabulaire et expression.
+          </p>
+
+          <span class="card-btn">
+            Voir le cours →
+          </span>
+
+        </div>
+      </a>
 
 
-      <div class="card subject" data-level="intermediaire">
-        <div class="icon">🇬🇧</div>
-        <h3>English</h3>
-        <p>Grammar, vocabulary, communication and professional English.</p>
-        <a href="anglais.html" class="card-btn">View course →</a>
-      </div>
+      <!-- ANGLAIS -->
+      <a href="anglais.html" class="card-link subject" data-level="intermediaire">
+        <div class="card">
+
+          <div class="icon">🇬🇧</div>
+
+          <h3>English</h3>
+
+          <p>
+            Grammar, vocabulary, communication
+            and professional English.
+          </p>
+
+          <span class="card-btn">
+            View course →
+          </span>
+
+        </div>
+      </a>
 
 
-      <div class="card subject" data-level="intermediaire">
-        <div class="icon">⚡</div>
-        <h3>Technique</h3>
-        <p>Électricité, électronique, installations et connaissances techniques.</p>
-        <a href="technique.html" class="card-btn">Voir le cours →</a>
-      </div>
+      <!-- TECHNIQUE -->
+      <a href="technique.html" class="card-link subject" data-level="intermediaire">
+        <div class="card">
+
+          <div class="icon">⚡</div>
+
+          <h3>Technique</h3>
+
+          <p>
+            Électricité, électronique,
+            installations et connaissances techniques.
+          </p>
+
+          <span class="card-btn">
+            Voir le cours →
+          </span>
+
+        </div>
+      </a>
 
 
-      <div class="card subject" data-level="debutant">
-        <div class="icon">💻</div>
-        <h3>Informatique</h3>
-        <p>Programmation, informatique, intelligence artificielle et numérique.</p>
-        <a href="informatique.html" class="card-btn">Voir le cours →</a>
-      </div>
+      <!-- INFORMATIQUE -->
+      <a href="informatique.html" class="card-link subject" data-level="debutant">
+        <div class="card">
+
+          <div class="icon">💻</div>
+
+          <h3>Informatique</h3>
+
+          <p>
+            Programmation, informatique,
+            intelligence artificielle et numérique.
+          </p>
+
+          <span class="card-btn">
+            Voir le cours →
+          </span>
+
+        </div>
+      </a>
 
 
-      <div class="card subject" data-level="intermediaire">
-        <div class="icon">💼</div>
-        <h3>Entrepreneuriat</h3>
-        <p>Idées d'entreprise, gestion, marketing et développement de projets.</p>
-        <a href="entrepreneuriat.html" class="card-btn">Voir le cours →</a>
-      </div>
+      <!-- ENTREPRENEURIAT -->
+      <a href="entrepreneuriat.html" class="card-link subject" data-level="intermediaire">
+        <div class="card">
+
+          <div class="icon">💼</div>
+
+          <h3>Entrepreneuriat</h3>
+
+          <p>
+            Idées d'entreprise, gestion,
+            marketing et développement de projets.
+          </p>
+
+          <span class="card-btn">
+            Voir le cours →
+          </span>
+
+        </div>
+      </a>
 
 
-      <div class="card subject" data-level="debutant">
-        <div class="icon">🌍</div>
-        <h3>Histoire</h3>
-        <p>Découvre les grandes périodes, événements et personnages historiques.</p>
-        <a href="histoire.html" class="card-btn">Voir le cours →</a>
-      </div>
+      <!-- HISTOIRE -->
+      <a href="histoire.html" class="card-link subject" data-level="debutant">
+        <div class="card">
+
+          <div class="icon">🌍</div>
+
+          <h3>Histoire</h3>
+
+          <p>
+            Découvre les grandes périodes,
+            événements et personnages historiques.
+          </p>
+
+          <span class="card-btn">
+            Voir le cours →
+          </span>
+
+        </div>
+      </a>
 
 
-      <div class="card subject" data-level="debutant">
-        <div class="icon">🇨🇲</div>
-        <h3>Citoyenneté</h3>
-        <p>Droits, devoirs, valeurs, responsabilité et vie en société.</p>
-        <a href="citoyennete.html" class="card-btn">Voir le cours →</a>
-      </div>
+      <!-- CITOYENNETE -->
+      <a href="citoyennete.html" class="card-link subject" data-level="debutant">
+        <div class="card">
+
+          <div class="icon">🇨🇲</div>
+
+          <h3>Citoyenneté</h3>
+
+          <p>
+            Droits, devoirs, valeurs,
+            responsabilité et vie en société.
+          </p>
+
+          <span class="card-btn">
+            Voir le cours →
+          </span>
+
+        </div>
+      </a>
 
     </div>
 
@@ -612,7 +725,6 @@ footer p{
 </section>
 
 
-<!-- NIVEAUX -->
 <section class="levels" id="niveaux">
 
   <div class="container">
@@ -627,19 +739,25 @@ footer p{
       <div class="card level-card">
         <strong>01</strong>
         <h3>Débutant</h3>
-        <p>Commence avec les bases et progresse étape par étape.</p>
+        <p>
+          Commence avec les bases et progresse étape par étape.
+        </p>
       </div>
 
       <div class="card level-card">
         <strong>02</strong>
         <h3>Intermédiaire</h3>
-        <p>Renforce tes connaissances avec des exercices pratiques.</p>
+        <p>
+          Renforce tes connaissances avec des exercices pratiques.
+        </p>
       </div>
 
       <div class="card level-card">
         <strong>03</strong>
         <h3>Avancé</h3>
-        <p>Approfondis tes compétences et relève de nouveaux défis.</p>
+        <p>
+          Approfondis tes compétences et relève de nouveaux défis.
+        </p>
       </div>
 
     </div>
@@ -649,13 +767,13 @@ footer p{
 </section>
 
 
-<!-- PROGRESSION -->
 <section class="progress-area">
 
   <div class="container">
 
     <div class="section-title">
       <h2 style="color:white;">📈 Ta progression</h2>
+
       <p style="color:#cbd5e1;">
         Suis ton évolution et continue à apprendre.
       </p>
@@ -666,6 +784,7 @@ footer p{
       <div class="progress-card">
         <h3>📐 Mathématiques</h3>
         <p>75% terminé</p>
+
         <div class="progress-bar">
           <div class="progress-fill" style="width:75%;"></div>
         </div>
@@ -674,6 +793,7 @@ footer p{
       <div class="progress-card">
         <h3>⚡ Technique</h3>
         <p>55% terminé</p>
+
         <div class="progress-bar">
           <div class="progress-fill" style="width:55%;"></div>
         </div>
@@ -682,6 +802,7 @@ footer p{
       <div class="progress-card">
         <h3>💻 Informatique</h3>
         <p>40% terminé</p>
+
         <div class="progress-bar">
           <div class="progress-fill" style="width:40%;"></div>
         </div>
@@ -694,7 +815,6 @@ footer p{
 </section>
 
 
-<!-- QUIZ -->
 <section class="quiz" id="quiz">
 
   <div class="container">
@@ -735,12 +855,13 @@ footer p{
 </section>
 
 
-<!-- FOOTER -->
 <footer>
 
   <h2>MTJ Éducation & Entrepreneuriat</h2>
 
-  <p>Apprendre aujourd'hui, construire demain. 🚀</p>
+  <p>
+    Apprendre aujourd'hui, construire demain. 🚀
+  </p>
 
   <p>
     Une plateforme pensée pour les jeunes,
@@ -759,34 +880,31 @@ footer p{
 /* RECHERCHE */
 function searchSubjects(){
 
-  let input =
+  const input =
     document.getElementById("searchInput")
     .value
-    .toLowerCase();
+    .toLowerCase()
+    .trim();
 
-  let subjects =
+  const subjects =
     document.querySelectorAll(".subject");
 
   subjects.forEach(function(subject){
 
-    let text =
+    const text =
       subject.innerText.toLowerCase();
 
-    if(text.includes(input)){
-      subject.style.display = "block";
-    }else{
-      subject.style.display = "none";
-    }
+    subject.style.display =
+      text.includes(input) ? "block" : "none";
 
   });
-
 }
 
 
-/* FILTRE */
+/* FILTRES */
 function filterSubjects(level,button){
 
-  let subjects =
+  const subjects =
     document.querySelectorAll(".subject");
 
   document.querySelectorAll(".filter")
@@ -798,8 +916,10 @@ function filterSubjects(level,button){
 
   subjects.forEach(function(subject){
 
-    if(level === "all" ||
-       subject.dataset.level === level){
+    if(
+      level === "all" ||
+      subject.dataset.level === level
+    ){
 
       subject.style.display = "block";
 
@@ -817,7 +937,7 @@ function filterSubjects(level,button){
 /* QUIZ */
 function checkAnswer(correct){
 
-  let result =
+  const result =
     document.getElementById("result");
 
   if(correct){
@@ -843,21 +963,24 @@ function checkAnswer(correct){
 const languageSelect =
   document.getElementById("languageSelect");
 
-languageSelect.addEventListener("change",function(){
+languageSelect.addEventListener(
+  "change",
+  function(){
 
-  if(this.value === "en"){
+    if(this.value === "en"){
 
-    document.getElementById("heroText").innerText =
-      "Welcome to MTJ Education & Entrepreneurship, a modern educational platform to learn, practice and develop your skills.";
+      document.getElementById("heroText").innerText =
+        "Welcome to MTJ Education & Entrepreneurship, a modern educational platform to learn, practice and develop your skills.";
 
-  }else{
+    }else{
 
-    document.getElementById("heroText").innerText =
-      "Bienvenue sur MTJ Éducation & Entrepreneuriat, une plateforme éducative moderne pour apprendre, pratiquer et développer tes compétences.";
+      document.getElementById("heroText").innerText =
+        "Bienvenue sur MTJ Éducation & Entrepreneuriat, une plateforme éducative moderne pour apprendre, pratiquer et développer tes compétences.";
+
+    }
 
   }
-
-});
+);
 
 </script>
 
