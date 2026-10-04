@@ -1,448 +1,886 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Formation Technique | MTJ</title>
+  <title>Formation Technique | MTJ Éducation</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <meta name="description"
+        content="Formation technique MTJ : électricité, électronique, électrotechnique, F3, F4, F5, schémas et mesures électriques.">
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f7fb;
-            color: #172033;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        header {
-            background: #07111f;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #172033;
+      line-height: 1.6;
+    }
 
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-        }
+    header {
+      background: #101828;
+      color: white;
+      padding: 16px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        .slogan {
-            color: #b9c7d9;
-            margin-top: 5px;
-        }
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
 
-        nav {
-            margin-top: 20px;
-        }
+    .logo span {
+      display: block;
+      font-size: 12px;
+      color: #b9c4d4;
+      font-weight: normal;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 7px;
-            font-size: 14px;
-        }
+    nav {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-        nav a:hover {
-            color: #4d8dff;
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+    }
 
-        .hero {
-            background: white;
-            text-align: center;
-            padding: 70px 20px;
-        }
+    nav a:hover {
+      color: #4ade80;
+    }
 
-        .hero h1 {
-            font-size: 46px;
-            margin-bottom: 15px;
-        }
+    .language {
+      background: #1d2939;
+      color: white;
+      border: 1px solid #475467;
+      border-radius: 8px;
+      padding: 8px;
+    }
 
-        .hero h1 span {
-            color: #0b5cff;
-        }
+    .hero {
+      background: linear-gradient(135deg, #101828, #1d4ed8);
+      color: white;
+      text-align: center;
+      padding: 75px 20px;
+    }
 
-        .hero p {
-            max-width: 750px;
-            margin: auto;
-            color: #5d6878;
-            font-size: 18px;
-            line-height: 1.7;
-        }
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
 
-        .section {
-            max-width: 1100px;
-            margin: auto;
-            padding: 60px 20px;
-        }
+    .hero p {
+      max-width: 750px;
+      margin: auto;
+      color: #e5e7eb;
+      font-size: 18px;
+    }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+    section {
+      padding: 60px 6%;
+    }
 
-        .section-title h2 {
-            font-size: 34px;
-            margin-bottom: 10px;
-        }
+    .title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
 
-        .section-title p {
-            color: #687386;
-        }
+    .title h2 {
+      font-size: 31px;
+      margin-bottom: 8px;
+    }
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
+    .title p {
+      color: #667085;
+    }
 
-        .card {
-            background: white;
-            border: 1px solid #e1e6ee;
-            border-radius: 16px;
-            padding: 28px;
-            transition: 0.2s;
-        }
+    .cards {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-        }
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 5px 20px rgba(16, 24, 40, 0.08);
+      transition: 0.25s;
+    }
 
-        .icon {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
+    .card:hover {
+      transform: translateY(-5px);
+    }
 
-        .card h3 {
-            margin-bottom: 10px;
-        }
+    .icon {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
 
-        .card p {
-            color: #687386;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
+    .card h3 {
+      margin-bottom: 10px;
+    }
 
-        .card button {
-            background: #0b5cff;
-            color: white;
-            border: none;
-            padding: 11px 17px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-        }
+    .card p {
+      color: #667085;
+      margin-bottom: 18px;
+    }
 
-        .card button:hover {
-            background: #0848c7;
-        }
+    .btn {
+      display: inline-block;
+      background: #1d4ed8;
+      color: white;
+      text-decoration: none;
+      padding: 10px 17px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
 
-        .important {
-            background: #07111f;
-            color: white;
-            padding: 45px 25px;
-            border-radius: 20px;
-            margin-top: 50px;
-            text-align: center;
-        }
+    .btn:hover {
+      background: #163ea8;
+    }
 
-        .important p {
-            color: #b9c7d9;
-            max-width: 700px;
-            margin: 12px auto 0;
-            line-height: 1.7;
-        }
+    .program {
+      background: #eaf2ff;
+    }
 
-        footer {
-            background: #030912;
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-        }
+    .program-box {
+      max-width: 950px;
+      margin: auto;
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 25px;
+      box-shadow: 0 5px 20px rgba(16, 24, 40, 0.07);
+    }
 
-        footer p {
-            color: #9caabd;
-            margin-top: 10px;
-        }
+    .program-box h3 {
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
 
-        @media (max-width: 800px) {
-            .cards {
-                grid-template-columns: 1fr;
-            }
+    .program-box ul {
+      margin-left: 22px;
+      margin-top: 12px;
+    }
 
-            .hero h1 {
-                font-size: 36px;
-            }
+    .program-box li {
+      margin-bottom: 7px;
+    }
 
-            nav a {
-                display: inline-block;
-            }
-        }
-    </style>
+    .steps {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .step {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 5px 18px rgba(16, 24, 40, 0.07);
+    }
+
+    .step strong {
+      display: block;
+      font-size: 25px;
+      color: #1d4ed8;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      background: #101828;
+      color: #d0d5dd;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 33px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
 
-    <div class="logo">
-        MTJ
-    </div>
+  <div class="logo">
+    MTJ
+    <span data-fr="Éducation & Entrepreneuriat"
+          data-en="Education & Entrepreneurship">
+      Éducation & Entrepreneuriat
+    </span>
+  </div>
 
-    <div class="slogan">
-        Éducation & Entrepreneuriat
-    </div>
+  <nav>
 
-    <nav>
-        <a href="index.html">Accueil</a>
-        <a href="cours.html">Cours</a>
-        <a href="technique.html">Technique</a>
-        <a href="#">Informatique</a>
-        <a href="#">Entrepreneuriat</a>
-        <a href="#">Histoire</a>
-        <a href="#">Quiz</a>
-    </nav>
+    <a href="index.html"
+       data-fr="Accueil"
+       data-en="Home">
+      Accueil
+    </a>
+
+    <a href="cours.html"
+       data-fr="Éducation"
+       data-en="Education">
+      Éducation
+    </a>
+
+    <a href="technique.html"
+       data-fr="Technique"
+       data-en="Technical">
+      Technique
+    </a>
+
+    <a href="informatique.html"
+       data-fr="Informatique"
+       data-en="Computer Science">
+      Informatique
+    </a>
+
+    <a href="entrepreneuriat.html"
+       data-fr="Entrepreneuriat"
+       data-en="Entrepreneurship">
+      Entrepreneuriat
+    </a>
+
+    <a href="histoire.html"
+       data-fr="Histoire"
+       data-en="History">
+      Histoire
+    </a>
+
+    <a href="quiz.html"
+       data-fr="Quiz"
+       data-en="Quiz">
+      Quiz
+    </a>
+
+    <select id="languageSelect" class="language">
+      <option value="fr">🇫🇷 Français</option>
+      <option value="en">🇬🇧 English</option>
+    </select>
+
+  </nav>
 
 </header>
 
 
 <section class="hero">
 
-    <h1>
-        ⚡ Formation <span>Technique</span>
-    </h1>
+  <h1 data-fr="⚡ Formation Technique"
+      data-en="⚡ Technical Training">
+    ⚡ Formation Technique
+  </h1>
 
-    <p>
-        Découvre les métiers et les connaissances techniques
-        dans les domaines de l'électricité, de l'électronique
-        et de l'électrotechnique.
-    </p>
+  <p data-fr="Développe tes compétences techniques en électricité, électronique et électrotechnique."
+     data-en="Develop your technical skills in electricity, electronics and electrotechnics.">
+    Développe tes compétences techniques en électricité,
+    électronique et électrotechnique.
+  </p>
 
 </section>
 
 
-<section class="section">
+<section>
 
-    <div class="section-title">
+  <div class="title">
 
-        <h2>Nos domaines techniques</h2>
+    <h2 data-fr="Nos domaines techniques"
+        data-en="Our technical areas">
+      Nos domaines techniques
+    </h2>
 
-        <p>
-            Choisis une spécialité pour découvrir les cours.
-        </p>
+    <p data-fr="Choisis un domaine pour commencer ton apprentissage."
+       data-en="Choose an area to start your learning.">
+      Choisis un domaine pour commencer ton apprentissage.
+    </p>
 
+  </div>
+
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">⚡</div>
+
+      <h3 data-fr="Électricité"
+          data-en="Electricity">
+        Électricité
+      </h3>
+
+      <p data-fr="Découvre les circuits, tensions, courants, résistances et installations électriques."
+         data-en="Learn about circuits, voltage, current, resistance and electrical installations.">
+        Découvre les circuits, tensions, courants, résistances
+        et installations électriques.
+      </p>
+
+      <a href="#electricite"
+         class="btn"
+         data-fr="Découvrir"
+         data-en="Discover">
+        Découvrir
+      </a>
     </div>
 
 
-    <div class="cards">
+    <div class="card">
+      <div class="icon">🔌</div>
 
-        <div class="card">
+      <h3 data-fr="Électronique"
+          data-en="Electronics">
+        Électronique
+      </h3>
 
-            <div class="icon">⚡</div>
+      <p data-fr="Apprends les composants électroniques et leur fonctionnement."
+         data-en="Learn about electronic components and how they work.">
+        Apprends les composants électroniques et leur fonctionnement.
+      </p>
 
-            <h3>Électricité</h3>
-
-            <p>
-                Circuits électriques, tension, courant,
-                résistance, puissance et installations.
-            </p>
-
-            <button onclick="openTopic('Électricité')">
-                Découvrir
-            </button>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="icon">🔌</div>
-
-            <h3>Électronique</h3>
-
-            <p>
-                Diodes, transistors, résistances,
-                condensateurs et circuits électroniques.
-            </p>
-
-            <button onclick="openTopic('Électronique')">
-                Découvrir
-            </button>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="icon">🔧</div>
-
-            <h3>Électrotechnique</h3>
-
-            <p>
-                Machines électriques, moteurs,
-                transformateurs et systèmes électriques.
-            </p>
-
-            <button onclick="openTopic('Électrotechnique')">
-                Découvrir
-            </button>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="icon">🏫</div>
-
-            <h3>F3</h3>
-
-            <p>
-                Formation technique orientée vers
-                l'électricité et les compétences pratiques.
-            </p>
-
-            <button onclick="openTopic('F3')">
-                Découvrir
-            </button>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="icon">🏗️</div>
-
-            <h3>F4</h3>
-
-            <p>
-                Découvre les bases techniques,
-                les schémas et les travaux pratiques.
-            </p>
-
-            <button onclick="openTopic('F4')">
-                Découvrir
-            </button>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="icon">⚙️</div>
-
-            <h3>F5</h3>
-
-            <p>
-                Approfondissement des systèmes,
-                machines et technologies électriques.
-            </p>
-
-            <button onclick="openTopic('F5')">
-                Découvrir
-            </button>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="icon">📐</div>
-
-            <h3>Schémas & symboles</h3>
-
-            <p>
-                Apprends à reconnaître les symboles
-                et à comprendre les schémas techniques.
-            </p>
-
-            <button onclick="openTopic('Schémas')">
-                Découvrir
-            </button>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="icon">📏</div>
-
-            <h3>Mesures électriques</h3>
-
-            <p>
-                Multimètre, tension, courant,
-                résistance et méthodes de mesure.
-            </p>
-
-            <button onclick="openTopic('Mesures')">
-                Découvrir
-            </button>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="icon">🛠️</div>
-
-            <h3>Travaux pratiques</h3>
-
-            <p>
-                Exercices, expériences et situations
-                pratiques pour développer tes compétences.
-            </p>
-
-            <button onclick="openTopic('Travaux pratiques')">
-                Découvrir
-            </button>
-
-        </div>
-
+      <a href="#electronique"
+         class="btn"
+         data-fr="Découvrir"
+         data-en="Discover">
+        Découvrir
+      </a>
     </div>
 
 
-    <div class="important">
+    <div class="card">
+      <div class="icon">⚙️</div>
 
-        <h2>🎯 Objectif de la formation</h2>
+      <h3 data-fr="Électrotechnique"
+          data-en="Electrotechnics">
+        Électrotechnique
+      </h3>
 
-        <p>
-            Comprendre la théorie, développer les compétences
-            pratiques et préparer les apprenants aux métiers
-            techniques et technologiques.
-        </p>
+      <p data-fr="Machines électriques, transformateurs, moteurs et systèmes électriques."
+         data-en="Electrical machines, transformers, motors and electrical systems.">
+        Machines électriques, transformateurs, moteurs
+        et systèmes électriques.
+      </p>
 
+      <a href="#electrotechnique"
+         class="btn"
+         data-fr="Découvrir"
+         data-en="Discover">
+        Découvrir
+      </a>
     </div>
+
+
+    <div class="card">
+      <div class="icon">🏫</div>
+
+      <h3>F3</h3>
+
+      <p data-fr="Formation technique orientée vers l'électricité et les compétences pratiques."
+         data-en="Technical training focused on electricity and practical skills.">
+        Formation technique orientée vers l'électricité
+        et les compétences pratiques.
+      </p>
+
+      <a href="#f3"
+         class="btn"
+         data-fr="Découvrir"
+         data-en="Discover">
+        Découvrir
+      </a>
+    </div>
+
+
+    <div class="card">
+      <div class="icon">🏗️</div>
+
+      <h3>F4</h3>
+
+      <p data-fr="Découvre les bases techniques, les schémas et les travaux pratiques."
+         data-en="Learn technical basics, diagrams and practical work.">
+        Découvre les bases techniques, les schémas
+        et les travaux pratiques.
+      </p>
+
+      <a href="#f4"
+         class="btn"
+         data-fr="Découvrir"
+         data-en="Discover">
+        Découvrir
+      </a>
+    </div>
+
+
+    <div class="card">
+      <div class="icon">⚙️</div>
+
+      <h3>F5</h3>
+
+      <p data-fr="Approfondis tes connaissances techniques et développe tes compétences."
+         data-en="Deepen your technical knowledge and develop your skills.">
+        Approfondis tes connaissances techniques
+        et développe tes compétences.
+      </p>
+
+      <a href="#f5"
+         class="btn"
+         data-fr="Découvrir"
+         data-en="Discover">
+        Découvrir
+      </a>
+    </div>
+
+
+    <div class="card">
+      <div class="icon">📐</div>
+
+      <h3 data-fr="Schémas & symboles"
+          data-en="Diagrams & symbols">
+        Schémas & symboles
+      </h3>
+
+      <p data-fr="Apprends à reconnaître les symboles et à comprendre les schémas techniques."
+         data-en="Learn to recognize symbols and understand technical diagrams.">
+        Apprends à reconnaître les symboles
+        et à comprendre les schémas techniques.
+      </p>
+
+      <a href="#schemas"
+         class="btn"
+         data-fr="Découvrir"
+         data-en="Discover">
+        Découvrir
+      </a>
+    </div>
+
+
+    <div class="card">
+      <div class="icon">📏</div>
+
+      <h3 data-fr="Mesures électriques"
+          data-en="Electrical measurements">
+        Mesures électriques
+      </h3>
+
+      <p data-fr="Multimètre, tension, courant, résistance et méthodes de mesure."
+         data-en="Multimeter, voltage, current, resistance and measurement methods.">
+        Multimètre, tension, courant, résistance
+        et méthodes de mesure.
+      </p>
+
+      <a href="#mesures"
+         class="btn"
+         data-fr="Découvrir"
+         data-en="Discover">
+        Découvrir
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="program">
+
+  <div class="title">
+
+    <h2 data-fr="Parcours d'apprentissage"
+        data-en="Learning path">
+      Parcours d'apprentissage
+    </h2>
+
+    <p data-fr="Une progression simple pour développer tes compétences."
+       data-en="A simple progression to develop your skills.">
+      Une progression simple pour développer tes compétences.
+    </p>
+
+  </div>
+
+
+  <div class="steps">
+
+    <div class="step">
+      <strong>01</strong>
+
+      <span data-fr="Comprendre"
+            data-en="Understand">
+        Comprendre
+      </span>
+
+      <p data-fr="Apprendre les notions fondamentales."
+         data-en="Learn the fundamental concepts.">
+        Apprendre les notions fondamentales.
+      </p>
+    </div>
+
+
+    <div class="step">
+      <strong>02</strong>
+
+      <span data-fr="S'exercer"
+            data-en="Practice">
+        S'exercer
+      </span>
+
+      <p data-fr="Résoudre des exercices."
+         data-en="Solve exercises.">
+        Résoudre des exercices.
+      </p>
+    </div>
+
+
+    <div class="step">
+      <strong>03</strong>
+
+      <span data-fr="Pratiquer"
+            data-en="Practice practically">
+        Pratiquer
+      </span>
+
+      <p data-fr="Réaliser des travaux pratiques."
+         data-en="Complete practical work.">
+        Réaliser des travaux pratiques.
+      </p>
+    </div>
+
+
+    <div class="step">
+      <strong>04</strong>
+
+      <span data-fr="Évaluer"
+            data-en="Evaluate">
+        Évaluer
+      </span>
+
+      <p data-fr="Tester ses connaissances avec des quiz."
+         data-en="Test your knowledge with quizzes.">
+        Tester ses connaissances avec des quiz.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="f3">
+
+  <div class="program-box">
+
+    <h3>🏫 F3</h3>
+
+    <p data-fr="Parcours technique : bases de l'électricité et développement des compétences pratiques."
+       data-en="Technical pathway: electrical fundamentals and practical skills development.">
+      Parcours technique : bases de l'électricité
+      et développement des compétences pratiques.
+    </p>
+
+    <ul>
+      <li data-fr="Bases de l'électricité"
+          data-en="Electrical fundamentals">
+        Bases de l'électricité
+      </li>
+
+      <li data-fr="Circuits électriques"
+          data-en="Electrical circuits">
+        Circuits électriques
+      </li>
+
+      <li data-fr="Symboles et schémas"
+          data-en="Symbols and diagrams">
+        Symboles et schémas
+      </li>
+
+      <li data-fr="Mesures électriques"
+          data-en="Electrical measurements">
+        Mesures électriques
+      </li>
+
+      <li data-fr="Exercices et révisions"
+          data-en="Exercises and revision">
+        Exercices et révisions
+      </li>
+    </ul>
+
+  </div>
+
+</section>
+
+
+<section id="f4">
+
+  <div class="program-box">
+
+    <h3>🏗️ F4</h3>
+
+    <p data-fr="Développement des connaissances techniques, des schémas et des travaux pratiques."
+       data-en="Development of technical knowledge, diagrams and practical work.">
+      Développement des connaissances techniques,
+      des schémas et des travaux pratiques.
+    </p>
+
+    <ul>
+      <li data-fr="Installations électriques"
+          data-en="Electrical installations">
+        Installations électriques
+      </li>
+
+      <li data-fr="Lecture de schémas"
+          data-en="Reading diagrams">
+        Lecture de schémas
+      </li>
+
+      <li data-fr="Appareils et composants"
+          data-en="Devices and components">
+        Appareils et composants
+      </li>
+
+      <li data-fr="Mesures et sécurité"
+          data-en="Measurements and safety">
+        Mesures et sécurité
+      </li>
+    </ul>
+
+  </div>
+
+</section>
+
+
+<section id="f5">
+
+  <div class="program-box">
+
+    <h3>⚙️ F5</h3>
+
+    <p data-fr="Approfondissement des compétences techniques et préparation aux systèmes électriques plus avancés."
+       data-en="Advanced technical skills and preparation for more complex electrical systems.">
+      Approfondissement des compétences techniques
+      et préparation aux systèmes électriques plus avancés.
+    </p>
+
+    <ul>
+      <li data-fr="Machines électriques"
+          data-en="Electrical machines">
+        Machines électriques
+      </li>
+
+      <li data-fr="Moteurs et transformateurs"
+          data-en="Motors and transformers">
+        Moteurs et transformateurs
+      </li>
+
+      <li data-fr="Systèmes électriques"
+          data-en="Electrical systems">
+        Systèmes électriques
+      </li>
+
+      <li data-fr="Travaux pratiques"
+          data-en="Practical work">
+        Travaux pratiques
+      </li>
+    </ul>
+
+  </div>
+
+</section>
+
+
+<section id="electricite">
+
+  <div class="program-box">
+
+    <h3>⚡ <span data-fr="Électricité"
+               data-en="Electricity">
+      Électricité
+    </span></h3>
+
+    <p data-fr="Étudie les notions fondamentales nécessaires pour comprendre les circuits électriques."
+       data-en="Study the fundamental concepts needed to understand electrical circuits.">
+      Étudie les notions fondamentales nécessaires
+      pour comprendre les circuits électriques.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section id="electronique">
+
+  <div class="program-box">
+
+    <h3>🔌 <span data-fr="Électronique"
+               data-en="Electronics">
+      Électronique
+    </span></h3>
+
+    <p data-fr="Découvre les composants électroniques, leurs symboles et leurs fonctions."
+       data-en="Discover electronic components, their symbols and their functions.">
+      Découvre les composants électroniques,
+      leurs symboles et leurs fonctions.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section id="electrotechnique">
+
+  <div class="program-box">
+
+    <h3>⚙️ <span data-fr="Électrotechnique"
+               data-en="Electrotechnics">
+      Électrotechnique
+    </span></h3>
+
+    <p data-fr="Découvre les machines électriques, les transformateurs, les moteurs et les systèmes électriques."
+       data-en="Learn about electrical machines, transformers, motors and electrical systems.">
+      Découvre les machines électriques,
+      les transformateurs, les moteurs et les systèmes électriques.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section id="schemas">
+
+  <div class="program-box">
+
+    <h3>📐 <span data-fr="Schémas & symboles"
+               data-en="Diagrams & symbols">
+      Schémas & symboles
+    </span></h3>
+
+    <p data-fr="Apprends à reconnaître les principaux symboles utilisés dans les schémas électriques et techniques."
+       data-en="Learn to recognize the main symbols used in electrical and technical diagrams.">
+      Apprends à reconnaître les principaux symboles
+      utilisés dans les schémas électriques et techniques.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section id="mesures">
+
+  <div class="program-box">
+
+    <h3>📏 <span data-fr="Mesures électriques"
+               data-en="Electrical measurements">
+      Mesures électriques
+    </span></h3>
+
+    <p data-fr="Apprends les bases de l'utilisation du multimètre et des mesures de tension, courant et résistance."
+       data-en="Learn the basics of using a multimeter and measuring voltage, current and resistance.">
+      Apprends les bases de l'utilisation du multimètre
+      et des mesures de tension, courant et résistance.
+    </p>
+
+  </div>
 
 </section>
 
 
 <footer>
 
-    <strong>
-        MTJ Éducation & Entrepreneuriat
-    </strong>
+  <p>
+    <strong>MTJ Éducation & Entrepreneuriat</strong>
+  </p>
 
-    <p>
-        Apprendre aujourd'hui. Construire demain.
-    </p>
+  <p data-fr="Apprendre aujourd'hui. Construire demain."
+     data-en="Learn today. Build tomorrow.">
+    Apprendre aujourd'hui. Construire demain.
+  </p>
+
+  <br>
+
+  <p>
+    © 2026 MTJ —
+    <span data-fr="Tous droits réservés"
+          data-en="All rights reserved">
+      Tous droits réservés
+    </span>
+  </p>
 
 </footer>
 
 
 <script>
 
-function openTopic(topic) {
+  const languageSelect =
+    document.getElementById("languageSelect");
 
-    alert(
-        "La section " + topic +
-        " sera bientôt disponible avec ses cours, exercices et ressources."
-    );
+  function changeLanguage(language) {
 
-}
+    document
+      .querySelectorAll("[data-fr][data-en]")
+      .forEach(element => {
+
+        element.textContent =
+          element.getAttribute("data-" + language);
+
+      });
+
+    document.documentElement.lang = language;
+
+    localStorage.setItem("mtjLanguage", language);
+  }
+
+
+  languageSelect.addEventListener("change", function() {
+
+    changeLanguage(this.value);
+
+  });
+
+
+  const savedLanguage =
+    localStorage.getItem("mtjLanguage") || "fr";
+
+  languageSelect.value = savedLanguage;
+
+  changeLanguage(savedLanguage);
 
 </script>
 
