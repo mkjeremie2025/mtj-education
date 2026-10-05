@@ -1,10 +1,13 @@
 {
   "name": "MT Jeunesse",
   "short_name": "MT Jeunesse",
-  "start_url": "./index.html",
+  "description": "MT Jeunesse est une plateforme éducative pour apprendre, réviser et tester ses connaissances.",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#f4f7fb",
   "theme_color": "#0f6e56",
-  "description": "MT Jeunesse - Plateforme éducative pour les jeunes."
+  "lang": "fr",
+  "dir": "ltr"
 }
