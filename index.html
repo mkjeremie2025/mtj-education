@@ -3,437 +3,217 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>MTJ Éducation & Entrepreneuriat</title>
-
-<meta name="description"
-content="MTJ Éducation & Entrepreneuriat — Apprends, développe tes compétences et prépare ton avenir.">
+<title>Histoire du Cameroun 🇨🇲</title>
 
 <style>
 *{
+  box-sizing:border-box;
   margin:0;
   padding:0;
-  box-sizing:border-box;
-  font-family:Arial,Helvetica,sans-serif;
-}
-
-html{
-  scroll-behavior:smooth;
+  font-family:Arial, sans-serif;
 }
 
 body{
-  background:#f5f7fb;
-  color:#172033;
+  background:#f4f6f8;
+  color:#222;
   line-height:1.6;
 }
 
 header{
-  background:rgba(255,255,255,.96);
-  border-bottom:1px solid #e5e7eb;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  backdrop-filter:blur(10px);
-}
-
-.navbar{
-  max-width:1200px;
-  margin:auto;
-  padding:15px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
-
-.logo{
-  font-size:21px;
-  font-weight:800;
-  color:#1746a2;
-  text-decoration:none;
-}
-
-.logo span{
-  color:#f59e0b;
-}
-
-nav{
-  display:flex;
-  align-items:center;
-  gap:20px;
-}
-
-nav a{
-  text-decoration:none;
-  color:#263244;
-  font-weight:600;
-}
-
-nav a:hover{
-  color:#1746a2;
-}
-
-#language{
-  border:1px solid #d7dce5;
-  border-radius:10px;
-  padding:8px;
-  background:white;
-}
-
-.hero{
-  background:linear-gradient(135deg,#123d8d,#1769d2);
+  background:linear-gradient(135deg,#007a3d,#ce1126,#fcd116);
   color:white;
-  padding:90px 20px;
-}
-
-.hero-content{
-  max-width:1100px;
-  margin:auto;
+  padding:45px 20px;
   text-align:center;
 }
 
-.badge{
-  display:inline-block;
-  background:rgba(255,255,255,.15);
-  padding:8px 16px;
-  border-radius:30px;
-  margin-bottom:20px;
-  font-weight:700;
+header h1{
+  font-size:42px;
+  margin-bottom:10px;
 }
 
-.hero h1{
-  font-size:clamp(38px,7vw,68px);
-  line-height:1.05;
-  margin-bottom:20px;
-}
-
-.hero h1 span{
-  color:#ffd166;
-}
-
-.hero p{
-  max-width:750px;
-  margin:0 auto 30px;
+header p{
   font-size:18px;
-  opacity:.95;
 }
 
-.buttons{
-  display:flex;
-  justify-content:center;
-  gap:14px;
-  flex-wrap:wrap;
+nav{
+  background:#111;
+  padding:15px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:100;
 }
 
-.btn{
-  display:inline-block;
-  padding:13px 22px;
-  border-radius:12px;
+nav a{
+  color:white;
   text-decoration:none;
-  font-weight:700;
-  transition:.2s;
+  margin:0 12px;
+  font-weight:bold;
 }
 
-.btn-primary{
-  background:#f59e0b;
-  color:#111827;
+nav a:hover{
+  color:#fcd116;
 }
 
-.btn-primary:hover{
-  transform:translateY(-2px);
-}
-
-.btn-light{
-  background:white;
-  color:#1746a2;
-}
-
-.section{
+.container{
+  width:92%;
   max-width:1200px;
   margin:auto;
-  padding:70px 20px;
+}
+
+.hero{
+  margin:30px 0;
+  padding:45px 25px;
+  background:white;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.hero h2{
+  color:#007a3d;
+  font-size:30px;
+  margin-bottom:15px;
 }
 
 .section-title{
   text-align:center;
-  margin-bottom:35px;
-}
-
-.section-title h2{
-  font-size:35px;
-  margin-bottom:8px;
-}
-
-.section-title p{
-  color:#667085;
-}
-
-.stats{
-  max-width:1100px;
-  margin:-35px auto 0;
-  position:relative;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-  padding:0 20px;
-}
-
-.stat{
-  background:white;
-  padding:25px 15px;
-  text-align:center;
-  border-radius:16px;
-  box-shadow:0 10px 30px rgba(20,40,80,.08);
-}
-
-.stat strong{
-  display:block;
+  margin:45px 0 25px;
+  color:#007a3d;
   font-size:30px;
-  color:#1746a2;
 }
 
-.search-box{
-  max-width:700px;
-  margin:0 auto 25px;
-}
-
-.search-box input{
-  width:100%;
-  padding:16px 18px;
-  border:1px solid #d8dee9;
-  border-radius:14px;
-  font-size:16px;
-  outline:none;
-}
-
-.search-box input:focus{
-  border-color:#1769d2;
-}
-
-.filters{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:35px;
-}
-
-.filter{
-  border:1px solid #d9dee8;
-  background:white;
-  padding:9px 16px;
-  border-radius:30px;
-  cursor:pointer;
-  font-weight:600;
-}
-
-.filter.active,
-.filter:hover{
-  background:#1746a2;
-  color:white;
-}
-
-.courses{
+.cards{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
 }
 
-.course{
+.card{
   background:white;
-  border-radius:18px;
   padding:25px;
-  text-decoration:none;
-  color:#172033;
-  border:1px solid #e8ebf0;
-  box-shadow:0 8px 25px rgba(20,40,80,.06);
-  transition:.25s;
-  display:block;
+  border-radius:16px;
+  box-shadow:0 4px 15px rgba(0,0,0,.08);
+  transition:.3s;
 }
 
-.course:hover{
-  transform:translateY(-7px);
-  box-shadow:0 18px 35px rgba(20,40,80,.13);
+.card:hover{
+  transform:translateY(-5px);
 }
 
-.icon{
-  width:55px;
-  height:55px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#edf4ff;
-  border-radius:15px;
-  font-size:27px;
-  margin-bottom:18px;
+.card h3{
+  color:#ce1126;
+  margin-bottom:10px;
 }
 
-.course h3{
-  margin-bottom:8px;
+.date{
+  color:#007a3d;
+  font-weight:bold;
+  font-size:20px;
 }
 
-.course p{
-  color:#667085;
-  font-size:14px;
-  margin-bottom:15px;
+.timeline{
+  border-left:5px solid #007a3d;
+  margin:30px auto;
+  max-width:900px;
+  padding-left:25px;
 }
 
-.level{
-  display:inline-block;
-  font-size:12px;
-  background:#eef2f7;
-  padding:5px 9px;
-  border-radius:20px;
-  font-weight:700;
-}
-
-.features{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.feature{
+.event{
   background:white;
-  border-radius:18px;
-  padding:28px;
-  border:1px solid #e8ebf0;
+  padding:20px;
+  margin-bottom:20px;
+  border-radius:12px;
+  box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
-.feature-icon{
-  font-size:30px;
-  margin-bottom:12px;
+.event h3{
+  color:#ce1126;
 }
 
-.feature p{
-  color:#667085;
+.search{
+  margin:25px auto;
+  max-width:600px;
+}
+
+.search input{
+  width:100%;
+  padding:15px;
+  border:2px solid #007a3d;
+  border-radius:10px;
+  font-size:16px;
 }
 
 .quiz{
-  background:linear-gradient(135deg,#101828,#1d2939);
+  background:#111;
   color:white;
-  border-radius:25px;
-  padding:40px;
-  max-width:850px;
-  margin:auto;
-  text-align:center;
+  padding:30px;
+  border-radius:18px;
+  margin:40px 0;
 }
 
 .quiz h2{
-  margin-bottom:10px;
+  color:#fcd116;
+  margin-bottom:20px;
 }
 
-.quiz-question{
-  margin:25px 0;
-  font-size:19px;
-  font-weight:700;
+.question{
+  background:#222;
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:20px;
 }
 
-.answers{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
-.answers button{
-  border:0;
-  background:white;
-  color:#172033;
-  padding:12px 18px;
-  border-radius:10px;
+button{
+  background:#007a3d;
+  color:white;
+  border:none;
+  padding:12px 20px;
+  border-radius:8px;
   cursor:pointer;
-  font-weight:700;
+  font-weight:bold;
 }
 
-#result{
+button:hover{
+  background:#005b2d;
+}
+
+.result{
   margin-top:20px;
-  font-weight:700;
-}
-
-.cta{
-  background:#eaf2ff;
-  border-radius:25px;
-  text-align:center;
-  padding:50px 20px;
-}
-
-.cta h2{
-  font-size:32px;
-  margin-bottom:10px;
-}
-
-.cta p{
-  color:#667085;
-  margin-bottom:22px;
+  font-size:20px;
+  font-weight:bold;
 }
 
 footer{
-  background:#101828;
+  background:#111;
   color:white;
   text-align:center;
-  padding:35px 20px;
+  padding:30px 15px;
+  margin-top:50px;
 }
 
-footer p{
-  color:#cbd5e1;
+.badge{
+  display:inline-block;
+  padding:7px 12px;
+  background:#fcd116;
+  border-radius:20px;
   margin:5px;
+  font-weight:bold;
 }
 
-@media(max-width:950px){
-  .courses{
-    grid-template-columns:repeat(2,1fr);
+@media(max-width:600px){
+  header h1{
+    font-size:30px;
   }
 
-  .features{
-    grid-template-columns:1fr;
+  nav a{
+    display:inline-block;
+    margin:5px;
+    font-size:14px;
   }
 
-  .stats{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-@media(max-width:650px){
-  .navbar{
-    flex-wrap:wrap;
-    justify-content:center;
-  }
-
-  nav{
-    width:100%;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
-  }
-
-  .hero{
-    padding:65px 18px;
-  }
-
-  .hero h1{
-    font-size:42px;
-  }
-
-  .courses{
-    grid-template-columns:1fr;
-  }
-
-  .stats{
-    grid-template-columns:1fr 1fr;
-    padding:0 12px;
-  }
-
-  .stat{
-    padding:18px 10px;
-  }
-
-  .stat strong{
-    font-size:25px;
-  }
-
-  .quiz{
-    padding:30px 18px;
+  .hero h2{
+    font-size:24px;
   }
 }
 </style>
@@ -442,390 +222,396 @@ footer p{
 <body>
 
 <header>
-  <div class="navbar">
-
-    <a href="index.html" class="logo">
-      MTJ <span>Éducation</span>
-    </a>
-
-    <nav>
-      <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
-      <a href="#matieres" data-fr="Matières" data-en="Subjects">Matières</a>
-      <a href="cours.html" data-fr="Cours" data-en="Courses">Cours</a>
-      <a href="#quiz" data-fr="Quiz" data-en="Quiz">Quiz</a>
-
-      <select id="language">
-        <option value="fr">🇫🇷 Français</option>
-        <option value="en">🇬🇧 English</option>
-      </select>
-    </nav>
-
-  </div>
+  <h1>🇨🇲 Histoire du Cameroun</h1>
+  <p>Découvrons ensemble l'histoire, les peuples, les royaumes et les grandes figures du Cameroun.</p>
 </header>
 
-<section class="hero">
+<nav>
+  <a href="#accueil">Accueil</a>
+  <a href="#periodes">Périodes</a>
+  <a href="#chronologie">Chronologie</a>
+  <a href="#personnages">Personnages</a>
+  <a href="#quiz">Quiz</a>
+</nav>
 
-  <div class="hero-content">
+<div class="container">
 
-    <div class="badge">
-      🎓 MTJ Éducation & Entrepreneuriat
-    </div>
+<section id="accueil" class="hero">
+  <h2>Bienvenue dans l'histoire du Cameroun 🇨🇲</h2>
 
-    <h1>
-      Apprends aujourd'hui,<br>
-      <span>construis ton avenir.</span>
-    </h1>
+  <p>
+    Ce site est consacré exclusivement à l'histoire du Cameroun.
+    Il permet de découvrir les grandes périodes qui ont marqué
+    le pays, les peuples, les royaumes, la colonisation,
+    l'indépendance et les grandes personnalités historiques.
+  </p>
 
-    <p id="heroText">
-      Une plateforme éducative moderne pour apprendre,
-      réviser, développer tes compétences et préparer ton avenir.
-    </p>
+  <br>
 
-    <div class="buttons">
-      <a href="#matieres" class="btn btn-primary">
-        🚀 Commencer maintenant
-      </a>
-
-      <a href="cours.html" class="btn btn-light">
-        📚 Voir les cours
-      </a>
-    </div>
-
-  </div>
-
+  <span class="badge">Culture</span>
+  <span class="badge">Histoire</span>
+  <span class="badge">Patrimoine</span>
+  <span class="badge">Éducation</span>
 </section>
 
-<div class="stats">
+<section id="periodes">
 
-  <div class="stat">
-    <strong>8+</strong>
-    <span>Matières</span>
-  </div>
+<h2 class="section-title">📚 Les grandes périodes</h2>
 
-  <div class="stat">
-    <strong>50+</strong>
-    <span>Leçons</span>
-  </div>
+<div class="search">
+  <input
+    type="text"
+    id="search"
+    placeholder="🔎 Rechercher une période ou un événement..."
+    onkeyup="rechercher()"
+  >
+</div>
 
-  <div class="stat">
-    <strong>100%</strong>
-    <span>Accessible</span>
-  </div>
+<div class="cards" id="cards">
 
-  <div class="stat">
-    <strong>FR/EN</strong>
-    <span>Bilingue</span>
-  </div>
+<div class="card">
+  <h3>🏺 Les premiers peuples</h3>
+  <p>
+    Découverte des premiers peuples installés sur le territoire
+    camerounais et de leurs modes de vie.
+  </p>
+</div>
+
+<div class="card">
+  <h3>👑 Les royaumes et chefferies</h3>
+  <p>
+    Découvrez les royaumes, chefferies traditionnelles et
+    organisations politiques qui ont marqué l'histoire du pays.
+  </p>
+</div>
+
+<div class="card">
+  <h3>🇩🇪 La période allemande</h3>
+  <p>
+    Le Cameroun devient une colonie allemande à partir de la fin
+    du XIXe siècle.
+  </p>
+</div>
+
+<div class="card">
+  <h3>🇫🇷🇬🇧 La période franco-britannique</h3>
+  <p>
+    Après la Première Guerre mondiale, le territoire est placé
+    sous administration française et britannique.
+  </p>
+</div>
+
+<div class="card">
+  <h3>✊ La lutte pour l'indépendance</h3>
+  <p>
+    Découvrez les mouvements politiques et les acteurs qui ont
+    participé à la marche vers l'indépendance.
+  </p>
+</div>
+
+<div class="card">
+  <h3>🇨🇲 L'indépendance</h3>
+  <p>
+    Le Cameroun français accède à l'indépendance le
+    1er janvier 1960.
+  </p>
+</div>
+
+<div class="card">
+  <h3>🏛️ Le Cameroun après l'indépendance</h3>
+  <p>
+    Découvrez les principales étapes de l'évolution politique
+    du Cameroun après 1960.
+  </p>
+</div>
+
+<div class="card">
+  <h3>🌍 Le Cameroun contemporain</h3>
+  <p>
+    Une présentation des grandes transformations du Cameroun
+    jusqu'à l'époque contemporaine.
+  </p>
+</div>
+
+</div>
+</section>
+
+<section id="chronologie">
+
+<h2 class="section-title">🕰️ Grande chronologie</h2>
+
+<div class="timeline">
+
+<div class="event">
+  <div class="date">1472</div>
+  <h3>Premiers contacts portugais</h3>
+  <p>
+    Des navigateurs portugais atteignent la région de l'actuel
+    littoral camerounais. Le nom « Rio dos Camarões »
+    est associé aux nombreux crustacés observés dans les eaux.
+  </p>
+</div>
+
+<div class="event">
+  <div class="date">1884</div>
+  <h3>Début de la période allemande</h3>
+  <p>
+    L'Allemagne établit son protectorat sur le territoire
+    qui devient le Kamerun allemand.
+  </p>
+</div>
+
+<div class="event">
+  <div class="date">1919</div>
+  <h3>Administration internationale</h3>
+  <p>
+    Après la Première Guerre mondiale, le territoire est
+    placé sous mandat de la Société des Nations.
+  </p>
+</div>
+
+<div class="event">
+  <div class="date">1945</div>
+  <h3>Après la Seconde Guerre mondiale</h3>
+  <p>
+    Le Cameroun est placé sous tutelle de l'Organisation
+    des Nations unies.
+  </p>
+</div>
+
+<div class="event">
+  <div class="date">1er janvier 1960</div>
+  <h3>Indépendance du Cameroun français</h3>
+  <p>
+    Le Cameroun français devient indépendant.
+  </p>
+</div>
+
+<div class="event">
+  <div class="date">1961</div>
+  <h3>Réunification</h3>
+  <p>
+    Une partie du Cameroun britannique rejoint la République
+    du Cameroun, formant une nouvelle structure fédérale.
+  </p>
+</div>
+
+<div class="event">
+  <div class="date">1972</div>
+  <h3>État unitaire</h3>
+  <p>
+    Le référendum du 20 mai 1972 conduit à la création
+    de la République-Unie du Cameroun.
+  </p>
+</div>
+
+</div>
+</section>
+
+<section id="personnages">
+
+<h2 class="section-title">👤 Grandes figures historiques</h2>
+
+<div class="cards">
+
+<div class="card">
+  <h3>Rudolf Duala Manga Bell</h3>
+  <p>
+    Chef duala et figure historique de la résistance à
+    la politique coloniale allemande.
+  </p>
+</div>
+
+<div class="card">
+  <h3>Ahmadou Ahidjo</h3>
+  <p>
+    Premier président de la République du Cameroun indépendant.
+  </p>
+</div>
+
+<div class="card">
+  <h3>John Ngu Foncha</h3>
+  <p>
+    Homme politique camerounais important dans l'histoire
+    du Cameroun occidental et de la réunification.
+  </p>
+</div>
+
+<div class="card">
+  <h3>Um Nyobè</h3>
+  <p>
+    Figure majeure du mouvement nationaliste camerounais
+    et de la lutte pour l'indépendance.
+  </p>
+</div>
+
+</div>
+</section>
+
+<section id="quiz" class="quiz">
+
+<h2>🧠 Quiz : connais-tu l'histoire du Cameroun ?</h2>
+
+<div class="question">
+  <p><strong>1. En quelle année le Cameroun français devient-il indépendant ?</strong></p>
+
+  <br>
+
+  <label>
+    <input type="radio" name="q1" value="0">
+    1955
+  </label>
+
+  <br>
+
+  <label>
+    <input type="radio" name="q1" value="1">
+    1960
+  </label>
+
+  <br>
+
+  <label>
+    <input type="radio" name="q1" value="0">
+    1972
+  </label>
+</div>
+
+<div class="question">
+  <p><strong>2. Quelle puissance coloniale a administré le Kamerun avant la Première Guerre mondiale ?</strong></p>
+
+  <br>
+
+  <label>
+    <input type="radio" name="q2" value="1">
+    Allemagne
+  </label>
+
+  <br>
+
+  <label>
+    <input type="radio" name="q2" value="0">
+    Espagne
+  </label>
+
+  <br>
+
+  <label>
+    <input type="radio" name="q2" value="0">
+    Portugal
+  </label>
+</div>
+
+<div class="question">
+  <p><strong>3. En quelle année a eu lieu le référendum qui a conduit à l'État unitaire ?</strong></p>
+
+  <br>
+
+  <label>
+    <input type="radio" name="q3" value="0">
+    1960
+  </label>
+
+  <br>
+
+  <label>
+    <input type="radio" name="q3" value="0">
+    1961
+  </label>
+
+  <br>
+
+  <label>
+    <input type="radio" name="q3" value="1">
+    1972
+  </label>
+</div>
+
+<button onclick="corrigerQuiz()">Voir mon résultat</button>
+
+<div id="resultat" class="result"></div>
+
+</section>
 
 </div>
 
-<section class="section" id="matieres">
-
-  <div class="section-title">
-    <h2>📚 Nos matières</h2>
-    <p>Choisis une matière et commence ton apprentissage.</p>
-  </div>
-
-  <div class="search-box">
-    <input
-      type="text"
-      id="search"
-      placeholder="🔎 Rechercher une matière..."
-    >
-  </div>
-
-  <div class="filters">
-
-    <button class="filter active" data-filter="all">
-      Toutes
-    </button>
-
-    <button class="filter" data-filter="debutant">
-      Débutant
-    </button>
-
-    <button class="filter" data-filter="intermediaire">
-      Intermédiaire
-    </button>
-
-    <button class="filter" data-filter="avance">
-      Avancé
-    </button>
-
-  </div>
-
-  <div class="courses" id="courseList">
-
-    <a href="maths.html" class="course" data-level="debutant">
-      <div class="icon">📐</div>
-      <h3>Mathématiques</h3>
-      <p>Nombres, équations, géométrie, statistiques et calculs.</p>
-      <span class="level">Débutant</span>
-    </a>
-
-    <a href="francais.html" class="course" data-level="debutant">
-      <div class="icon">📖</div>
-      <h3>Français</h3>
-      <p>Grammaire, conjugaison, orthographe et expression.</p>
-      <span class="level">Débutant</span>
-    </a>
-
-    <a href="anglais.html" class="course" data-level="intermediaire">
-      <div class="icon">🇬🇧</div>
-      <h3>English</h3>
-      <p>Vocabulary, grammar, communication and professional English.</p>
-      <span class="level">Intermédiaire</span>
-    </a>
-
-    <a href="technique.html" class="course" data-level="intermediaire">
-      <div class="icon">⚡</div>
-      <h3>Technique</h3>
-      <p>Électricité, électronique, machines et systèmes techniques.</p>
-      <span class="level">Intermédiaire</span>
-    </a>
-
-    <a href="informatique.html" class="course" data-level="debutant">
-      <div class="icon">💻</div>
-      <h3>Informatique</h3>
-      <p>Ordinateurs, programmation, Internet et technologies.</p>
-      <span class="level">Débutant</span>
-    </a>
-
-    <a href="entrepreneuriat.html" class="course" data-level="intermediaire">
-      <div class="icon">💼</div>
-      <h3>Entrepreneuriat</h3>
-      <p>Idées, business, gestion, marketing et création de projets.</p>
-      <span class="level">Intermédiaire</span>
-    </a>
-
-    <a href="histoire.html" class="course" data-level="debutant">
-      <div class="icon">🌍</div>
-      <h3>Histoire</h3>
-      <p>Découvre les événements et les grandes civilisations.</p>
-      <span class="level">Débutant</span>
-    </a>
-
-    <a href="citoyennete.html" class="course" data-level="debutant">
-      <div class="icon">🤝</div>
-      <h3>Citoyenneté</h3>
-      <p>Droits, devoirs, valeurs et responsabilité citoyenne.</p>
-      <span class="level">Débutant</span>
-    </a>
-
-  </div>
-
-</section>
-
-<section class="section">
-
-  <div class="section-title">
-    <h2>✨ Pourquoi MTJ ?</h2>
-    <p>Une plateforme pensée pour les jeunes qui veulent progresser.</p>
-  </div>
-
-  <div class="features">
-
-    <div class="feature">
-      <div class="feature-icon">📱</div>
-      <h3>Accessible partout</h3>
-      <p>
-        Apprends depuis ton téléphone, ta tablette ou ton ordinateur.
-      </p>
-    </div>
-
-    <div class="feature">
-      <div class="feature-icon">🌐</div>
-      <h3>Bilingue</h3>
-      <p>
-        Passe facilement du français à l'anglais.
-      </p>
-    </div>
-
-    <div class="feature">
-      <div class="feature-icon">🧠</div>
-      <h3>Apprentissage pratique</h3>
-      <p>
-        Cours, exercices et quiz pour apprendre plus efficacement.
-      </p>
-    </div>
-
-  </div>
-
-</section>
-
-<section class="section" id="quiz">
-
-  <div class="quiz">
-
-    <h2>🧠 Mini Quiz</h2>
-
-    <p>
-      Teste rapidement tes connaissances.
-    </p>
-
-    <div class="quiz-question">
-      Quelle est la capitale du Cameroun ?
-    </div>
-
-    <div class="answers">
-
-      <button onclick="checkAnswer('douala')">
-        Douala
-      </button>
-
-      <button onclick="checkAnswer('yaounde')">
-        Yaoundé
-      </button>
-
-      <button onclick="checkAnswer('bertoua')">
-        Bertoua
-      </button>
-
-    </div>
-
-    <div id="result"></div>
-
-  </div>
-
-</section>
-
-<section class="section">
-
-  <div class="cta">
-
-    <h2>🚀 Ton avenir commence maintenant</h2>
-
-    <p>
-      Apprends une compétence aujourd'hui et utilise-la demain.
-    </p>
-
-    <a href="cours.html" class="btn btn-primary">
-      Découvrir tous les cours
-    </a>
-
-  </div>
-
-</section>
-
 <footer>
-
-  <p><strong>MTJ Éducation & Entrepreneuriat</strong></p>
-
-  <p>
-    Apprendre • Créer • Entreprendre • Réussir
-  </p>
-
-  <p>
-    © 2026 MTJ — Tous droits réservés
-  </p>
-
+  <h3>🇨🇲 Histoire du Cameroun</h3>
+  <p>Un espace numérique pour apprendre, découvrir et transmettre l'histoire du Cameroun.</p>
+  <br>
+  <p>Créé par M K Jérémie</p>
 </footer>
 
 <script>
 
-const search = document.getElementById("search");
-const courses = document.querySelectorAll(".course");
-const filters = document.querySelectorAll(".filter");
+function rechercher(){
 
-let currentFilter = "all";
+  let recherche =
+    document.getElementById("search").value.toLowerCase();
 
-function filterCourses(){
+  let cartes =
+    document.querySelectorAll(".card");
 
-  const text = search.value.toLowerCase();
+  cartes.forEach(function(carte){
 
-  courses.forEach(course => {
+    let texte =
+      carte.innerText.toLowerCase();
 
-    const name = course.querySelector("h3").textContent.toLowerCase();
-    const level = course.dataset.level;
-
-    const matchesText = name.includes(text);
-    const matchesFilter =
-      currentFilter === "all" ||
-      level === currentFilter;
-
-    course.style.display =
-      matchesText && matchesFilter
-      ? "block"
-      : "none";
+    if(texte.includes(recherche)){
+      carte.style.display = "block";
+    }else{
+      carte.style.display = "none";
+    }
 
   });
 
 }
 
-search.addEventListener("input", filterCourses);
+function corrigerQuiz(){
 
-filters.forEach(button => {
+  let score = 0;
 
-  button.addEventListener("click", () => {
+  let questions = ["q1","q2","q3"];
 
-    filters.forEach(btn =>
-      btn.classList.remove("active")
-    );
+  questions.forEach(function(question){
 
-    button.classList.add("active");
+    let reponse =
+      document.querySelector(
+        'input[name="' + question + '"]:checked'
+      );
 
-    currentFilter = button.dataset.filter;
-
-    filterCourses();
+    if(reponse){
+      score += Number(reponse.value);
+    }
 
   });
 
-});
+  let resultat =
+    document.getElementById("resultat");
 
-function checkAnswer(answer){
+  if(score === 3){
 
-  const result = document.getElementById("result");
+    resultat.innerHTML =
+      "🎉 Excellent ! Tu as obtenu 3/3.";
 
-  if(answer === "yaounde"){
+  }else if(score === 2){
 
-    result.textContent =
-      "✅ Bonne réponse ! Yaoundé est la capitale du Cameroun.";
+    resultat.innerHTML =
+      "👏 Très bien ! Tu as obtenu 2/3.";
+
+  }else if(score === 1){
+
+    resultat.innerHTML =
+      "👍 Tu as obtenu 1/3. Continue à apprendre !";
 
   }else{
 
-    result.textContent =
-      "❌ Pas encore. Essaie encore !";
+    resultat.innerHTML =
+      "📚 0/3. Pas grave, continue à découvrir l'histoire du Cameroun.";
 
   }
 
 }
-
-const language = document.getElementById("language");
-
-language.addEventListener("change", () => {
-
-  const lang = language.value;
-
-  document.querySelectorAll("[data-fr]").forEach(element => {
-
-    element.textContent =
-      element.getAttribute("data-" + lang);
-
-  });
-
-  if(lang === "en"){
-
-    document.documentElement.lang = "en";
-
-    document.getElementById("heroText").textContent =
-      "A modern educational platform to learn, revise, develop your skills and prepare for your future.";
-
-    search.placeholder =
-      "🔎 Search for a subject...";
-
-  }else{
-
-    document.documentElement.lang = "fr";
-
-    document.getElementById("heroText").textContent =
-      "Une plateforme éducative moderne pour apprendre, réviser, développer tes compétences et préparer ton avenir.";
-
-    search.placeholder =
-      "🔎 Rechercher une matière...";
-
-  }
-
-});
 
 </script>
 
