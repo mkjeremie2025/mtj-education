@@ -3,294 +3,94 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="MT Jeunesse - Cours, notes, exemples, formules et exercices.">
-
-<title>MT Jeunesse | Cours</title>
+<meta name="description" content="MT Jeunesse - Cours et exercices">
+<title>MT Jeunesse - Cours</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
+*{box-sizing:border-box}
 body{
+  margin:0;
   font-family:Arial,sans-serif;
   background:#f4f7fb;
   color:#172033;
-  line-height:1.7;
 }
-
 header{
-  background:linear-gradient(135deg,#0757c8,#00a6ff);
+  background:linear-gradient(135deg,#0759d6,#00a8ff);
   color:white;
-  padding:18px 7%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  box-shadow:0 3px 15px rgba(0,0,0,.15);
+  padding:20px;
+  text-align:center;
 }
-
-.logo{
-  font-size:25px;
-  font-weight:bold;
-}
-
-header a{
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-}
-
+header h1{margin:0}
 .container{
-  width:90%;
-  max-width:1150px;
+  max-width:1000px;
   margin:auto;
+  padding:20px;
 }
-
 .hero{
+  background:white;
+  padding:25px;
+  border-radius:16px;
+  margin-bottom:20px;
   text-align:center;
-  padding:50px 15px 30px;
 }
-
-.hero h1{
-  color:#0757c8;
-  font-size:clamp(35px,7vw,60px);
-}
-
-.hero p{
-  color:#687386;
-  max-width:750px;
-  margin:10px auto 25px;
-}
-
 .search{
-  max-width:800px;
-  margin:20px auto 40px;
-  display:flex;
-  gap:10px;
-}
-
-.search input{
-  flex:1;
-  padding:16px;
-  border:2px solid #dce3ec;
-  border-radius:12px;
+  width:100%;
+  padding:14px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  margin-top:15px;
   font-size:16px;
-  outline:none;
 }
-
-.search input:focus{
-  border-color:#0757c8;
-}
-
-.section-title{
-  text-align:center;
-  margin:30px 0;
-}
-
-.section-title h2{
-  color:#0757c8;
-}
-
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+  gap:15px;
 }
-
-.card{
+.card,.note{
   background:white;
-  padding:25px;
-  border-radius:16px;
-  border:1px solid #e4e9f0;
-  box-shadow:0 4px 18px rgba(0,0,0,.06);
-}
-
-.card:hover{
-  transform:translateY(-3px);
-}
-
-.subject{
-  text-align:center;
-}
-
-.subject .icon{
-  font-size:45px;
-}
-
-.subject h3{
-  color:#0757c8;
-  margin:10px 0;
-}
-
-button{
-  border:none;
-  cursor:pointer;
-  background:#0757c8;
-  color:white;
-  padding:12px 17px;
-  border-radius:9px;
-  font-weight:bold;
-  margin-top:15px;
-}
-
-button:hover{
-  background:#043d91;
-}
-
-.secondary{
-  background:#eaf3ff;
-  color:#0757c8;
-}
-
-.secondary:hover{
-  background:#d8eaff;
-}
-
-.hidden{
-  display:none;
-}
-
-#bibliotheque{
-  margin-top:40px;
-}
-
-.library-header{
-  background:white;
-  padding:25px;
-  border-radius:16px;
-  margin-bottom:20px;
-  border-left:5px solid #0757c8;
-}
-
-.result{
-  background:white;
-  padding:22px;
-  border-radius:14px;
-  border:1px solid #e1e6ed;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 3px 12px #0001;
   margin-bottom:15px;
 }
-
-.result h3{
-  color:#0757c8;
+.card h3,.note h3{margin-top:0}
+button{
+  border:0;
+  background:#0759d6;
+  color:white;
+  padding:12px 18px;
+  border-radius:9px;
+  cursor:pointer;
+  font-weight:bold;
 }
-
-.result p{
-  color:#626d7d;
-}
-
-.note{
+button:hover{background:#0345aa}
+.back{background:#555;margin-bottom:15px}
+.hidden{display:none}
+.lesson{
   background:white;
-  margin:40px auto;
-  padding:30px;
-  border-radius:18px;
-  max-width:950px;
-  box-shadow:0 5px 25px rgba(0,0,0,.08);
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 3px 12px #0001;
 }
-
-.note h2{
-  color:#0757c8;
-  margin-bottom:20px;
-}
-
-.note h3{
-  color:#0757c8;
-  margin:25px 0 10px;
-}
-
-.note p{
-  margin-bottom:12px;
-}
-
-.example{
-  background:#f1f8ff;
-  border-left:5px solid #0757c8;
-  padding:18px;
+.example,.formula,.exercise{
+  padding:15px;
+  margin:15px 0;
   border-radius:10px;
-  margin:15px 0;
+  background:#f1f5ff;
 }
-
-.formula{
-  background:#fff8df;
-  border-left:5px solid #f0b400;
-  padding:18px;
-  border-radius:10px;
-  margin:15px 0;
-  font-weight:bold;
-}
-
-.schema{
-  background:#101828;
-  color:#fff;
-  padding:20px;
-  border-radius:12px;
-  overflow:auto;
-  white-space:pre-wrap;
-  font-family:monospace;
-  margin:15px 0;
-}
-
-.exercise{
-  background:#f7f9fc;
-  padding:18px;
-  border-radius:12px;
-  margin:15px 0;
-  border:1px solid #e2e7ee;
-}
-
-.level{
-  font-weight:bold;
-  color:#0757c8;
-}
-
 .answer{
   display:none;
-  background:#eaf8ef;
-  border-left:5px solid #198754;
-  padding:15px;
-  margin-top:12px;
+  margin-top:10px;
+  padding:10px;
+  background:#e8f7e8;
   border-radius:8px;
 }
-
-.nav-buttons{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:30px;
-}
-
 footer{
-  background:#101828;
-  color:white;
   text-align:center;
-  padding:35px 20px;
-  margin-top:50px;
-}
-
-footer p{
-  color:#b8c0cc;
-  margin-top:8px;
-}
-
-@media(max-width:700px){
-  header{
-    justify-content:center;
-  }
-
-  .search{
-    flex-direction:column;
-  }
-
-  .note{
-    padding:20px;
-  }
+  padding:25px;
+  margin-top:30px;
+  background:#172033;
+  color:white;
 }
 </style>
 </head>
@@ -298,889 +98,365 @@ footer p{
 <body>
 
 <header>
-  <div class="logo">📚 MT Jeunesse</div>
-  <a href="index.html">🏠 Accueil</a>
+  <h1>📚 MT Jeunesse</h1>
+  <p>Apprendre aujourd'hui, construire demain</p>
 </header>
 
-<main class="container">
+<div class="container">
 
 <section class="hero">
-  <h1>📚 MT Jeunesse</h1>
-  <p>
-    Recherche une matière, un chapitre ou une note.
-    Lis le cours, découvre les exemples, les formules et entraîne-toi avec les exercices.
-  </p>
+  <h2>Bienvenue sur MT Jeunesse</h2>
+  <p>Choisis une matière pour découvrir ses cours.</p>
 
-  <div class="search">
-    <input
-      type="search"
-      id="rechercheGlobale"
-      placeholder="🔎 Rechercher un cours, une matière, un chapitre..."
-      oninput="rechercheGlobale()"
-    >
-  </div>
+  <input
+    class="search"
+    id="recherche"
+    placeholder="🔎 Rechercher une matière..."
+    oninput="rechercher()">
 </section>
 
 <section id="matieres">
-
-<div class="section-title">
-  <h2>📚 Choisis une matière</h2>
-  <p>Commence par sélectionner le domaine que tu veux apprendre.</p>
-</div>
-
-<div class="grid" id="listeMatieres"></div>
-
+  <h2>📖 Matières</h2>
+  <div class="grid" id="liste"></div>
 </section>
 
-<section id="bibliotheque" class="hidden"></section>
+<section id="cours" class="hidden">
+  <button class="back" onclick="retourMatieres()">← Retour aux matières</button>
+  <h2 id="titreMatiere"></h2>
+  <div id="listeCours"></div>
+</section>
 
-<section id="lecteur" class="hidden"></section>
+<section id="note" class="hidden">
+  <button class="back" onclick="retourCours()">← Retour aux cours</button>
+  <div id="contenuNote"></div>
+</section>
 
-</main>
+</div>
 
 <footer>
-  <strong>📚 MT Jeunesse</strong>
-  <p>Apprendre aujourd'hui pour construire demain.</p>
-  <p>© 2026 MT Jeunesse</p>
+  © 2026 MT Jeunesse — Apprendre, comprendre, réussir.
 </footer>
 
 <script>
 
 const programme = {
 
-mathematiques:{
-nom:"Mathématiques",
-icon:"🔢",
-chapitres:[
-
+"Mathématiques":[
 {
-titre:"Nombres et calculs",
-lecon:"Les nombres permettent de compter, mesurer et effectuer des calculs.",
-notes:"On utilise les nombres entiers, décimaux, positifs et négatifs. Les quatre opérations principales sont l'addition, la soustraction, la multiplication et la division.",
-exemple:"25 + 15 = 40. 8 × 5 = 40. 50 ÷ 10 = 5.",
-formule:"Somme = terme 1 + terme 2",
-schema:"Nombre → Opération → Résultat",
+titre:"Les fractions",
+lecon:"Une fraction représente une partie d'un tout. Elle possède un numérateur et un dénominateur.",
+exemple:"Exemple : 3/4 signifie trois parties sur quatre.",
+formule:"Fraction = numérateur ÷ dénominateur",
 exercices:[
-["🟢 Débutant","Calcule 12 + 8.","20"],
-["🔵 Amateur","Calcule 15 × 4.","60"],
-["🟠 Difficile","Calcule 144 ÷ 12.","12"],
-["🔴 Expert","Un nombre augmenté de 15 donne 40. Quel est ce nombre ?","25"]
+["🟢 Débutant","Que représente 1/2 ?","Une moitié."],
+["🔵 Amateur","Calcule 1/2 + 1/2.","1."],
+["🟠 Difficile","Calcule 3/4 + 1/4.","1."],
+["🔴 Expert","Explique pourquoi 2/4 = 1/2.","Parce que les deux fractions représentent la même quantité."]
 ]
 },
-
 {
-titre:"Fractions",
-lecon:"Une fraction représente une partie d'un tout.",
-notes:"Une fraction possède un numérateur placé au-dessus et un dénominateur placé en dessous. Le dénominateur indique en combien de parties égales le tout est divisé.",
-exemple:"Dans 3/4, 3 est le numérateur et 4 est le dénominateur.",
-formule:"Fraction = numérateur / dénominateur",
-schema:"   3\n  ───\n   4",
-exercices:[
-["🟢 Débutant","Quel est le numérateur de 3/5 ?","3"],
-["🔵 Amateur","Quel est le dénominateur de 7/9 ?","9"],
-["🟠 Difficile","Calcule 1/2 + 1/2.","1"],
-["🔴 Expert","Calcule 3/4 + 1/4.","1"]
-]
-},
-
-{
-titre:"Équations",
-lecon:"Une équation est une égalité contenant une inconnue.",
-notes:"Pour résoudre une équation, on cherche la valeur de l'inconnue qui rend l'égalité vraie.",
-exemple:"x + 5 = 12. Donc x = 12 - 5 = 7.",
-formule:"ax + b = c → x = (c - b) / a",
-schema:"Équation → Transformation → Solution",
+titre:"Les équations",
+lecon:"Une équation est une égalité contenant une inconnue, souvent représentée par x.",
+exemple:"Exemple : x + 5 = 12. Donc x = 7.",
+formule:"x + a = b  →  x = b - a",
 exercices:[
 ["🟢 Débutant","Résous x + 3 = 8.","x = 5"],
 ["🔵 Amateur","Résous x - 4 = 10.","x = 14"],
 ["🟠 Difficile","Résous 2x = 18.","x = 9"],
-["🔴 Expert","Résous 3x + 6 = 21.","x = 5"]
-]
-},
-
-{
-titre:"Géométrie",
-lecon:"La géométrie étudie les figures, les longueurs, les angles, les surfaces et les volumes.",
-notes:"Les figures courantes sont le carré, le rectangle, le triangle et le cercle.",
-exemple:"Un rectangle de longueur 8 cm et largeur 3 cm possède une aire de 24 cm².",
-formule:"Aire du rectangle = longueur × largeur",
-schema:"┌──────────┐\n│          │\n│          │\n└──────────┘",
-exercices:[
-["🟢 Débutant","Combien de côtés possède un carré ?","4"],
-["🔵 Amateur","Aire d'un rectangle de 5 cm × 4 cm ?","20 cm²"],
-["🟠 Difficile","Périmètre d'un carré de côté 6 cm ?","24 cm"],
-["🔴 Expert","Un rectangle mesure 12 cm sur 7 cm. Quelle est son aire ?","84 cm²"]
+["🔴 Expert","Résous 3x + 2 = 14.","x = 4"]
 ]
 }
+],
 
-]
-},
-
-electricite:{
-nom:"Technique / Électricité",
-icon:"⚡",
-chapitres:[
-
+"Électricité":[
 {
-titre:"Courant électrique",
-lecon:"Le courant électrique correspond au déplacement des charges électriques dans un circuit.",
-notes:"Pour qu'un courant circule, il faut généralement une source d'énergie et un circuit fermé.",
-exemple:"Une pile reliée à une lampe par des fils peut faire circuler un courant.",
-formule:"I = Q / t",
-schema:"Pile (+) ─── Interrupteur ─── Lampe ─── Pile (-)",
+titre:"La loi d'Ohm",
+lecon:"La loi d'Ohm relie la tension, la résistance et le courant dans un circuit électrique.",
+exemple:"Si U = 12 V et R = 4 Ω, alors I = 12 ÷ 4 = 3 A.",
+formule:"U = R × I\nI = U ÷ R\nR = U ÷ I",
 exercices:[
-["🟢 Débutant","Quel appareil peut fournir de l'énergie électrique ?","Une pile ou une batterie."],
-["🔵 Amateur","Que faut-il pour qu'un circuit fonctionne ?","Un circuit fermé."],
-["🟠 Difficile","Quelle grandeur mesure l'intensité du courant ?","L'intensité I."],
-["🔴 Expert","Si 20 C passent en 4 s, calcule I.","5 A"]
+["🟢 Débutant","Que signifie U ?","La tension électrique."],
+["🔵 Amateur","Que signifie I ?","L'intensité du courant."],
+["🟠 Difficile","U = 10 V et R = 5 Ω. Trouve I.","I = 2 A."],
+["🔴 Expert","I = 3 A et R = 4 Ω. Trouve U.","U = 12 V."]
 ]
 },
-
 {
-titre:"Tension électrique",
-lecon:"La tension électrique représente la différence de potentiel entre deux points.",
-notes:"Elle se mesure en volts avec un voltmètre.",
-exemple:"Une batterie de 12 V possède une tension nominale de 12 volts.",
-formule:"U = R × I",
-schema:"   ┌── Voltmètre ──┐\n───┤                ├───\n   └──── Charge ────┘",
+titre:"Le courant électrique",
+lecon:"Le courant électrique correspond au déplacement des charges électriques dans un circuit fermé.",
+exemple:"Une lampe s'allume lorsque le circuit est fermé.",
+formule:"I = Q ÷ t",
 exercices:[
-["🟢 Débutant","Quelle unité mesure la tension ?","Le volt (V)."],
-["🔵 Amateur","Quel appareil mesure la tension ?","Le voltmètre."],
-["🟠 Difficile","Une batterie indique 9 V. Quelle est sa tension ?","9 V."],
-["🔴 Expert","Avec R = 10 Ω et I = 2 A, calcule U.","20 V"]
+["🟢 Débutant","Une lampe fonctionne-t-elle avec un circuit ouvert ?","Non."],
+["🔵 Amateur","Quelle unité mesure l'intensité ?","L'ampère (A)."],
+["🟠 Difficile","Quel appareil mesure le courant ?","L'ampèremètre."],
+["🔴 Expert","Pourquoi faut-il un circuit fermé ?","Pour permettre la circulation du courant."]
 ]
-},
+}
+],
 
-{
-titre:"Loi d'Ohm",
-lecon:"La loi d'Ohm relie la tension, la résistance et l'intensité dans un circuit.",
-notes:"Elle permet de calculer une grandeur lorsqu'on connaît les deux autres.",
-exemple:"Avec U = 12 V et R = 6 Ω, I = 12 ÷ 6 = 2 A.",
-formule:"U = R × I ; I = U / R ; R = U / I",
-schema:"U ── R ── I",
-exercices:[
-["🟢 Débutant","Donne la formule de la loi d'Ohm.","U = R × I"],
-["🔵 Amateur","U = 10 V et R = 5 Ω. Calcule I.","2 A"],
-["🟠 Difficile","I = 3 A et R = 4 Ω. Calcule U.","12 V"],
-["🔴 Expert","U = 24 V et I = 2 A. Calcule R.","12 Ω"]
-]
-},
-
-{
-titre:"Puissance électrique",
-lecon:"La puissance électrique indique la quantité d'énergie électrique utilisée ou fournie par unité de temps.",
-notes:"Elle est très importante pour comprendre la consommation des appareils électriques.",
-exemple:"Une lampe de 60 W utilise une puissance électrique de 60 watts.",
-formule:"P = U × I",
-schema:"Tension × Courant = Puissance",
-exercices:[
-["🟢 Débutant","Quelle est l'unité de la puissance ?","Le watt (W)."],
-["🔵 Amateur","U = 10 V et I = 2 A. Calcule P.","20 W"],
-["🟠 Difficile","U = 220 V et I = 2 A. Calcule P.","440 W"],
-de 1000 W fonctionne sous 250 V. Calcule I.","4 A"]
-]
-},
-
+"Anglais":[
 {
 titre:"Verb To Be",
-lecon:"Le verbe To Be signifie principalement être.",
-notes:"Au présent, on utilise am, is ou are selon le sujet.",
+lecon:"Le verbe To Be signifie principalement être. Au présent, on utilise am, is ou are.",
 exemple:"I am a student. She is happy. They are ready.",
-formule:"I am / You are / He is / She is / It is / We are / They are",
-schema:"I → am\nHe/She/It → is\nYou/We/They → are",
+formule:"I am / You are / He is / She is / We are / They are",
 exercices:[
 ["🟢 Débutant","Complète : I ___ a student.","am"],
 ["🔵 Amateur","Complète : She ___ happy.","is"],
-["🟠 Difficile","Complète : They ___ ready.","are"],
-["🔴 Expert","Traduis : Nous sommes étudiants.","We are students."]
-]
-},
-
-{
-titre:"Present Simple",
-lecon:"Le Present Simple est utilisé pour parler des habitudes, des faits et des actions régulières.",
-notes:"Avec he, she et it, le verbe prend généralement s à la forme affirmative.",
-exemple:"I play football. She plays football.",
-formule:"I/You/We/They + verb ; He/She/It + verb-s",
-schema:"Subject → Verb → Complement",
-exercices:[
-["🟢 Débutant","Traduis : I play football.","Je joue au football."],
-["🔵 Amateur","Complète : He ___ English.","speaks"],
-["🟠 Difficile","Mets au Present Simple : She (work) here.","She works here."],
-["🔴 Expert","Traduis : Ils vont à l'école chaque jour.","They go to school every day."]
-]
-},
-
-{
-titre:"Past Simple",
-lecon:"Le Past Simple permet de parler d'une action terminée dans le passé.",
-notes:"Les verbes réguliers prennent généralement -ed. Certains verbes sont irréguliers.",
-exemple:"I played football yesterday. She went to school.",
-formule:"Sujet + verbe au passé + complément",
-schema:"Past → Action terminée",
-exercices:[
-["🟢 Débutant","Donne le passé de play.","played"],
-["🔵 Amateur","Donne le passé de go.","went"],
-["🟠 Difficile","Traduis : I visited my friend.","J'ai rendu visite à mon ami."],
-["🔴 Expert","Mets au passé : They go to school.","They went to school."]
+["🟠 Difficile","Complète : They ___ students.","are"],
+["🔴 Expert","Traduis : Nous sommes prêts.","We are ready."]
 ]
 }
+],
 
-]
-},
-
-francais:{
-nom:"Français",
-icon:"🇫🇷",
-chapitres:[
-
+"Français":[
 {
-titre:"Nature des mots",
-lecon:"La nature d'un mot indique la catégorie grammaticale à laquelle il appartient.",
-notes:"On trouve notamment les noms, verbes, adjectifs, pronoms, déterminants, adverbes et prépositions.",
-exemple:"Dans « Le petit garçon court », « garçon » est un nom, « petit » est un adjectif et « court » est un verbe.",
-formule:"Nom + déterminant + adjectif + verbe",
-schema:"Phrase → Mots → Nature grammaticale",
+titre:"Les noms",
+lecon:"Un nom désigne une personne, un animal, une chose ou une idée.",
+exemple:"Paul, chien, maison et courage sont des noms.",
+formule:"Nom = personne, animal, chose ou idée",
 exercices:[
-["🟢 Débutant","Quelle est la nature de « maison » ?","Nom."],
-["🔵 Amateur","Quelle est la nature de « courir » ?","Verbe."],
-["🟠 Difficile","Quelle est la nature de « rapidement » ?","Adverbe."],
-["🔴 Expert","Identifie la nature de « beau » dans « un beau livre ».","Adjectif qualificatif."]
-]
-},
-
-{
-titre:"Conjugaison",
-lecon:"La conjugaison consiste à modifier un verbe selon le temps et la personne.",
-notes:"Les principaux temps étudiés sont le présent, l'imparfait, le futur simple et le passé composé.",
-exemple:"Présent : je fais. Imparfait : je faisais. Futur : je ferai.",
-formule:"Sujet + verbe conjugué",
-schema:"Présent → Imparfait → Futur → Passé composé",
-exercices:[
-["🟢 Débutant","Conjugue « avoir » avec je au présent.","j'ai"],
-["🔵 Amateur","Conjugue « aller » avec ils à l'imparfait.","ils allaient"],
-["🟠 Difficile","Conjugue « finir » avec tu au futur simple.","tu finiras"],
-["🔴 Expert","Conjugue « prendre » avec elle au passé composé.","elle a pris"]
-]
-},
-
-{
-titre:"Rédaction",
-lecon:"Une rédaction permet d'organiser des idées pour produire un texte clair et cohérent.",
-notes:"Un bon texte possède généralement une introduction, un développement et une conclusion.",
-exemple:"Pour raconter une journée, on peut présenter le lieu, les événements dans l'ordre puis terminer par une conclusion.",
-formule:"Introduction → Développement → Conclusion",
-schema:"Idée → Organisation → Texte",
-exercices:[
-["🟢 Débutant","Cite une partie d'une rédaction.","L'introduction."],
-["🔵 Amateur","Pourquoi organiser les idées ?","Pour rendre le texte clair et compréhensible."],
-["🟠 Difficile","Cite les trois grandes parties d'un texte.","Introduction, développement, conclusion."],
-["🔴 Expert","Écris une courte conclusion pour un texte sur l'école.","Exemple : L'école nous aide à préparer notre avenir."]
+["🟢 Débutant","Trouve le nom : Le garçon court.","garçon"],
+["🔵 Amateur","Trouve le nom : La maison est grande.","maison"],
+["🟠 Difficile","Donne deux noms.","Exemple : école, livre."],
+["🔴 Expert","Explique ce qu'est un nom.","Un mot qui désigne une personne, un animal, une chose ou une idée."]
 ]
 }
+],
 
-]
-},
-
-histoire:{
-nom:"Histoire",
-icon:"📜",
-chapitres:[
-
+"Histoire":[
 {
 titre:"Qu'est-ce que l'histoire ?",
-lecon:"L'histoire étudie les événements du passé des sociétés humaines.",
-notes:"Les historiens utilisent des documents, des témoignages, des objets et d'autres sources pour comprendre le passé.",
-exemple:"Une ancienne photographie peut être utilisée comme source historique.",
-formule:"Source → Analyse → Interprétation historique",
-schema:"Passé → Sources → Historien → Compréhension",
+lecon:"L'histoire étudie les événements du passé et les sociétés humaines.",
+exemple:"Les grandes guerres, les royaumes et les indépendances font partie de l'histoire.",
+formule:"Histoire = étude du passé",
 exercices:[
-["🟢 Débutant","Que signifie histoire ?","L'étude du passé des sociétés humaines."],
-["🔵 Amateur","Cite une source historique.","Un document ou une photographie."],
-["🟠 Difficile","Qui étudie les sources historiques ?","L'historien."],
-["🔴 Expert","Pourquoi les sources sont-elles importantes ?","Elles permettent de mieux connaître et comprendre le passé."]
-]
-},
-
-{
-titre:"Histoire du Cameroun",
-lecon:"L'histoire du Cameroun comprend différentes périodes et transformations politiques, sociales et économiques.",
-notes:"Le territoire camerounais a connu des sociétés et royaumes anciens, la période coloniale, puis la construction de l'État moderne.",
-exemple:"L'étude de l'histoire du Cameroun permet de comprendre les changements politiques et sociaux du pays.",
-formule:"Passé → Transformations → Société actuelle",
-schema:"Sociétés anciennes\n      ↓\nPériode coloniale\n      ↓\nÉtat moderne",
-exercices:[
-["🟢 Débutant","Quel pays étudie ce chapitre ?","Le Cameroun."],
-["🔵 Amateur","Pourquoi étudier l'histoire du Cameroun ?","Pour comprendre son passé et son évolution."],
-["🟠 Difficile","Cite une période importante de son histoire.","La période coloniale."],
-["🔴 Expert","Explique pourquoi connaître l'histoire peut aider les citoyens.","Cela permet de comprendre les événements passés et de mieux participer à la société."]
+["🟢 Débutant","Que représente l'histoire ?","L'étude du passé."],
+["🔵 Amateur","L'histoire étudie-t-elle le futur ?","Non."],
+["🟠 Difficile","Donne un exemple d'événement historique.","L'indépendance d'un pays."],
+["🔴 Expert","Pourquoi étudier l'histoire ?","Pour comprendre le passé et mieux comprendre le présent."]
 ]
 }
+],
 
-]
-},
-
-geographie:{
-nom:"Géographie",
-icon:"🌍",
-chapitres:[
-
+"Géographie":[
 {
 titre:"La Terre",
-lecon:"La Terre est une planète du système solaire sur laquelle vivent les êtres humains, les animaux et les plantes.",
-notes:"La surface terrestre comprend des continents, des océans, des mers, des montagnes, des plaines et d'autres formes de relief.",
+lecon:"La Terre est une planète du système solaire. Elle possède des continents et des océans.",
 exemple:"L'Afrique est l'un des continents de la Terre.",
-formule:"Terre → Continents + Océans + Reliefs",
-schema:"🌍 Terre\n├── Continents\n├── Océans\n└── Reliefs",
+formule:"Terre = continents + océans",
 exercices:[
 ["🟢 Débutant","Sur quelle planète vivons-nous ?","La Terre."],
 ["🔵 Amateur","Cite un continent.","L'Afrique."],
-["🟠 Difficile","Cite une grande forme de relief.","Une montagne."],
-["🔴 Expert","Quelle est la différence entre un continent et un océan ?","Un continent est une grande étendue de terres émergées, tandis qu'un océan est une vaste étendue d'eau salée."]
-]
-},
-
-{
-titre:"Climat",
-lecon:"Le climat correspond aux conditions atmosphériques observées sur une longue période dans une région.",
-notes:"Le climat est étudié à partir de plusieurs éléments comme la température, les précipitations, le vent et l'humidité.",
-exemple:"Une région peut avoir un climat chaud et humide avec des précipitations importantes.",
-formule:"Climat = Température + Précipitations + Vent + Humidité",
-schema:"☀️ Température\n🌧️ Précipitations\n💨 Vent\n💧 Humidité",
-exercices:[
-["🟢 Débutant","Qu'est-ce que le climat ?","Les conditions atmosphériques d'une région sur une longue période."],
-["🔵 Amateur","Cite un élément du climat.","La température."],
-["🟠 Difficile","Quelle différence entre météo et climat ?","La météo décrit les conditions à court terme, tandis que le climat étudie les conditions sur une longue période."],
-["🔴 Expert","Cite trois éléments utilisés pour étudier le climat.","La température, les précipitations et le vent."]
+["🟠 Difficile","Cite un océan.","L'océan Atlantique."],
+["🔴 Expert","Quelle est la différence entre un continent et un océan ?","Un continent est une grande étendue de terres ; un océan est une grande étendue d'eau."]
 ]
 }
+],
 
-]
-},
-
-sciences:{
-nom:"Sciences",
-icon:"🔬",
-chapitres:[
-
+"Sciences":[
 {
 titre:"La matière",
 lecon:"La matière est tout ce qui possède une masse et occupe un espace.",
-notes:"La matière peut se présenter sous différents états, notamment solide, liquide et gazeux.",
-exemple:"La glace est solide, l'eau est liquide et la vapeur d'eau est gazeuse.",
-formule:"Solide → Liquide → Gaz",
-schema:"🧊 Solide → 💧 Liquide → 💨 Gaz",
+exemple:"L'eau, le bois, le fer et l'air sont de la matière.",
+formule:"Matière → solide, liquide ou gaz",
 exercices:[
-["🟢 Débutant","Cite un état de la matière.","Solide."],
-["🔵 Amateur","Quel est l'état de l'eau dans un verre ?","Liquide."],
-["🟠 Difficile","Quel est l'état de la vapeur d'eau ?","Gazeux."],
-["🔴 Expert","Cite les trois états principaux de la matière.","Solide, liquide et gazeux."]
-]
-},
-
-{
-titre:"Corps humain",
-lecon:"Le corps humain est constitué de plusieurs systèmes et organes qui travaillent ensemble.",
-notes:"Parmi les grands systèmes, on trouve les systèmes respiratoire, digestif, circulatoire et nerveux.",
-exemple:"Le cœur participe à la circulation du sang dans l'organisme.",
-formule:"Organe → Fonction → Système",
-schema:"🫀 Cœur → Circulation du sang\n🫁 Poumons → Respiration",
-exercices:[
-["🟢 Débutant","Quel organe pompe le sang ?","Le cœur."],
-["🔵 Amateur","Quel organe permet principalement les échanges respiratoires ?","Les poumons."],
-["🟠 Difficile","Quel système transporte le sang ?","Le système circulatoire."],
-["🔴 Expert","Pourquoi les organes doivent-ils travailler ensemble ?","Parce que les différentes fonctions du corps dépendent les unes des autres."]
+["🟢 Débutant","Cite un solide.","Le bois."],
+["🔵 Amateur","Cite un liquide.","L'eau."],
+["🟠 Difficile","Cite un gaz.","L'air."],
+["🔴 Expert","Quels sont les trois états courants de la matière ?","Solide, liquide et gaz."]
 ]
 }
+],
 
-]
-},
-
-entrepreneuriat:{
-nom:"Entrepreneuriat",
-icon:"💼",
-chapitres:[
-
+"Entrepreneuriat":[
 {
-titre:"Idée d'entreprise",
-lecon:"Une idée d'entreprise consiste à identifier un produit ou un service pouvant répondre à un besoin.",
-notes:"Une bonne idée doit partir d'un besoin réel et prendre en compte les clients, les ressources et les possibilités du marché.",
-exemple:"Créer un service de réparation de téléphones peut répondre à un besoin local.",
-formule:"Besoin → Idée → Solution → Client",
-schema:"Problème → Solution → Client → Entreprise",
+titre:"L'idée d'entreprise",
+lecon:"Une idée d'entreprise correspond à une solution ou un produit que l'on souhaite proposer à des clients.",
+exemple:"Vendre des accessoires scolaires peut être une idée d'entreprise.",
+formule:"Idée + besoin + clients = opportunité",
 exercices:[
-["🟢 Débutant","Qu'est-ce qu'une idée d'entreprise ?","Une idée de produit ou de service répondant à un besoin."],
-["🔵 Amateur","Pourquoi identifier les besoins ?","Pour proposer une solution utile."],
-["🟠 Difficile","Cite un exemple de service.","Réparation de téléphones."],
-["🔴 Expert","Transforme un problème en idée d'entreprise.","Exemple : difficulté à trouver des fournitures → service de livraison de fournitures."]
-]
-},
-
-{
-titre:"Budget",
-lecon:"Un budget permet de prévoir les recettes et les dépenses d'une activité.",
-notes:"Il aide à savoir combien d'argent entre, combien sort et combien peut rester.",
-exemple:"Recettes 100 000 FCFA, dépenses 70 000 FCFA : reste 30 000 FCFA.",
-formule:"Solde = Recettes - Dépenses",
-schema:"Recettes → Budget → Dépenses → Solde",
-exercices:[
-["🟢 Débutant","Que représente une dépense ?","Une somme d'argent utilisée."],
-["🔵 Amateur","Que représente une recette ?","Une somme d'argent reçue ou gagnée."],
-["🟠 Difficile","100 000 - 70 000 = ?","30 000 FCFA"],
-["🔴 Expert","Pourquoi préparer un budget ?","Pour prévoir et contrôler l'utilisation de l'argent."]
-]
-},
-
-{
-titre:"Marketing",
-lecon:"Le marketing regroupe les méthodes utilisées pour comprendre les clients et présenter une offre.",
-notes:"Il peut comprendre l'étude du marché, la communication, la promotion et la relation avec les clients.",
-exemple:"Une petite entreprise peut utiliser les réseaux sociaux pour présenter ses produits.",
-formule:"Produit + Client + Communication = Marketing",
-schema:"Produit → Communication → Client",
-exercices:[
-["🟢 Débutant","Qu'est-ce que le marketing ?","Des méthodes pour présenter et vendre une offre en répondant aux besoins des clients."],
-["🔵 Amateur","Cite un moyen de communication.","Les réseaux sociaux."],
-["🟠 Difficile","Pourquoi connaître ses clients ?","Pour mieux répondre à leurs besoins."],
-["🔴 Expert","Donne une idée simple de promotion.","Publier une présentation du produit sur les réseaux sociaux."]
+["🟢 Débutant","Qu'est-ce qu'une idée d'entreprise ?","Une idée permettant de proposer un produit ou un service."],
+["🔵 Amateur","Pourquoi connaître ses clients ?","Pour répondre à leurs besoins."],
+["🟠 Difficile","Donne une idée d'entreprise.","Exemple : vente d'accessoires scolaires."],
+["🔴 Expert","Pourquoi étudier le marché ?","Pour connaître les clients et la concurrence."]
 ]
 }
+],
 
-]
-},
-
-gouvernement:{
-nom:"Gouvernement / Éducation civique",
-icon:"🏛️",
-chapitres:[
-
+"Gouvernement":[
 {
 titre:"Le citoyen",
-lecon:"Un citoyen est une personne qui appartient juridiquement à un État et possède des droits et des devoirs.",
-notes:"Le citoyen participe à la vie de la société et doit respecter les règles communes.",
-exemple:"Respecter les lois et participer à la vie de la communauté sont des comportements civiques.",
-formule:"Citoyen = Droits + Devoirs + Responsabilités",
-schema:"Citoyen\n├── Droits\n├── Devoirs\n└── Responsabilités",
+lecon:"Un citoyen est une personne qui appartient à une communauté politique et possède des droits et des devoirs.",
+exemple:"Respecter les lois fait partie des responsabilités du citoyen.",
+formule:"Citoyen = droits + devoirs",
 exercices:[
-["🟢 Débutant","Qu'est-ce qu'un citoyen ?","Une personne appartenant juridiquement à un État."],
-["🔵 Amateur","Cite un devoir du citoyen.","Respecter les lois."],
-["🟠 Difficile","Pourquoi respecter les règles ?","Pour permettre la vie collective et l'ordre dans la société."],
-["🔴 Expert","Quelle différence entre droit et devoir ?","Un droit est une liberté ou une protection reconnue, tandis qu'un devoir est une responsabilité à respecter."]
-]
-},
-
-{
-titre:"Les droits",
-lecon:"Les droits sont des libertés et protections reconnues aux personnes par les règles et les lois.",
-notes:"Les droits doivent être exercés dans le respect des autres et des règles de la société.",
-exemple:"Le droit à l'éducation permet aux enfants et aux jeunes d'accéder à l'instruction.",
-formule:"Droit = Liberté ou protection reconnue",
-schema:"Droits → Respect → Vie en société",
-exercices:[
-["🟢 Débutant","Cite un droit important.","Le droit à l'éducation."],
-["🔵 Amateur","Les droits doivent-ils respecter les autres ?","Oui."],
-["🟠 Difficile","Pourquoi les droits sont-ils importants ?","Ils protègent les personnes et leurs libertés."],
-["🔴 Expert","Donne un exemple de droit et explique-le.","Le droit à l'éducation permet d'accéder à l'instruction."]
+["🟢 Débutant","Qu'est-ce qu'un citoyen ?","Une personne appartenant à une communauté politique."],
+["🔵 Amateur","Cite un devoir.","Respecter les lois."],
+["🟠 Difficile","Cite un droit.","Le droit à l'éducation."],
+["🔴 Expert","Pourquoi respecter les autres citoyens ?","Pour favoriser la vie en société."]
 ]
 }
+],
 
-]
-},
-
-informatique:{
-nom:"Informatique",
-icon:"💻",
-chapitres:[
-
+"Informatique":[
 {
 titre:"L'ordinateur",
 lecon:"Un ordinateur est une machine électronique capable de recevoir, traiter, stocker et restituer des informations.",
-notes:"Il comprend du matériel et des logiciels. Le clavier, la souris, l'écran et l'unité centrale sont des éléments courants.",
-exemple:"On peut utiliser un ordinateur pour écrire un document, calculer ou naviguer sur Internet.",
+exemple:"Le clavier permet d'entrer des informations et l'écran permet de les afficher.",
 formule:"Entrée → Traitement → Sortie",
-schema:"Clavier/Souris → Ordinateur → Écran",
 exercices:[
-["🟢 Débutant","Cite un périphérique d'entrée.","Le clavier."],
-["🔵 Amateur","Cite un périphérique de sortie.","L'écran."],
-["🟠 Difficile","Quel est le rôle général d'un ordinateur ?","Traiter et manipuler des informations."],
-["🔴 Expert","Explique la différence entre matériel et logiciel.","Le matériel désigne les éléments physiques, tandis que le logiciel désigne les programmes."]
+["🟢 Débutant","Qu'est-ce qu'un ordinateur ?","Une machine électronique qui traite des informations."],
+["🔵 Amateur","Cite un périphérique d'entrée.","Le clavier."],
+["🟠 Difficile","Cite un périphérique de sortie.","L'écran."],
+["🔴 Expert","Que signifie traitement de l'information ?","L'ordinateur transforme les données reçues en résultats."]
 ]
 },
-
 {
 titre:"Internet",
-lecon:"Internet est un réseau mondial qui relie de nombreux appareils et réseaux entre eux.",
-notes:"Internet permet d'utiliser différents services comme le Web, le courrier électronique, les appels en ligne et le transfert de fichiers.",
-exemple:"Un navigateur Web permet d'accéder à des sites Internet.",
-formule:"Appareil → Réseau → Internet → Service",
-schema:"📱 → 📡 → 🌍 Internet → 🌐 Site Web",
+lecon:"Internet est un réseau mondial qui permet à des appareils de communiquer et d'échanger des informations.",
+exemple:"Le Web, les e-mails et les services de messagerie utilisent Internet.",
+formule:"Internet = réseau mondial",
 exercices:[
-["🟢 Débutant","Qu'est-ce qu'Internet ?","Un réseau mondial d'appareils et de réseaux connectés."],
-["🔵 Amateur","Cite un service utilisant Internet.","Le Web."],
-["🟠 Difficile","Quel logiciel permet généralement de visiter un site Web ?","Un navigateur Web."],
-["🔴 Expert","Quelle différence entre Internet et le Web ?","Internet est l'infrastructure mondiale de réseaux ; le Web est un service qui fonctionne sur Internet."]
-]
-},
-
-{
-titre:"Algorithmique",
-lecon:"Un algorithme est une suite ordonnée d'instructions permettant de résoudre un problème ou d'accomplir une tâche.",
-notes:"Un algorithme doit être clair, organisé et comporter des étapes compréhensibles.",
-exemple:"Pour calculer une moyenne : lire les nombres, les additionner, compter leur nombre puis diviser la somme par ce nombre.",
-formule:"Moyenne = Somme des valeurs / Nombre de valeurs",
-schema:"Début → Instructions → Résultat → Fin",
-exercices:[
-["🟢 Débutant","Qu'est-ce qu'un algorithme ?","Une suite d'instructions permettant de résoudre un problème."],
-["🔵 Amateur","Pourquoi organiser les instructions ?","Pour obtenir un résultat correct."],
-["🟠 Difficile","Donne une étape pour calculer une moyenne.","Additionner les valeurs."],
-["🔴 Expert","Donne les étapes principales pour calculer la moyenne de 10 et 20.","Additionner 10 + 20 puis diviser par 2 : moyenne = 15."]
-]
-},
-
-{
-titre:"Programmation",
-lecon:"La programmation consiste à écrire des instructions qu'un ordinateur peut exécuter.",
-notes:"Les instructions sont écrites dans des langages de programmation comme JavaScript, Python, Java ou C.",
-exemple:"En JavaScript, on peut écrire : let age = 16;",
-formule:"Algorithme → Code → Exécution → Résultat",
-schema:"Idée → Algorithme → Programme → Ordinateur",
-exercices:[
-["🟢 Débutant","Qu'est-ce que programmer ?","Écrire des instructions pour un ordinateur."],
-["🔵 Amateur","Cite un langage de programmation.","JavaScript."],
-["🟠 Difficile","Qu'est-ce qu'une variable ?","Un espace nommé permettant de stocker une valeur."],
-["🔴 Expert","À quoi sert un programme ?","À faire exécuter à l'ordinateur une série d'instructions."]
-]
-},
-
-{
-titre:"Sécurité informatique",
-lecon:"La sécurité informatique consiste à protéger les appareils, les comptes, les réseaux et les données.",
-notes:"Il faut utiliser des mots de passe solides, faire les mises à jour et éviter les fichiers ou liens suspects.",
-exemple:"Un mot de passe unique et difficile à deviner protège mieux un compte qu'un mot de passe très simple.",
-formule:"Sécurité = Protection + Vigilance + Mise à jour",
-schema:"Utilisateur → Mot de passe → Compte sécurisé",
-exercices:[
-["🟢 Débutant","Pourquoi protéger son compte ?","Pour empêcher les accès non autorisés."],
-["🔵 Amateur","Cite une bonne pratique de sécurité.","Faire les mises à jour."],
-["🟠 Difficile","Pourquoi éviter les liens suspects ?","Ils peuvent conduire vers des sites dangereux ou trompeurs."],
-["🔴 Expert","Cite trois bonnes pratiques de sécurité.","Mot de passe solide, mises à jour et vigilance face aux liens ou fichiers suspects."]
+["🟢 Débutant","Qu'est-ce qu'Internet ?","Un réseau mondial d'appareils connectés."],
+["🔵 Amateur","Cite un service utilisant Internet.","Le courrier électronique."],
+["🟠 Difficile","Internet est-il un seul ordinateur ?","Non, c'est un réseau de nombreux appareils."],
+["🔴 Expert","Pourquoi utilise-t-on Internet ?","Pour communiquer, rechercher et échanger des informations."]
 ]
 }
-
 ]
-}
 
 };
 
-let matiereActuelle = null;
-let chapitreActuel = 0;
+let matiereActuelle="";
+let coursActuels=[];
 
 function afficherMatieres(){
+  const liste=document.getElementById("liste");
+  liste.innerHTML="";
 
-const zone = document.getElementById("listeMatieres");
-
-zone.innerHTML = "";
-
-Object.keys(programme).forEach(function(id){
-
-const matiere = programme[id];
-
-zone.innerHTML += `
-<div class="card subject">
-  <div class="icon">${matiere.icon}</div>
-  <h3>${matiere.nom}</h3>
-  <p>${matiere.chapitres.length} notes disponibles</p>
-  <button onclick="ouvrirMatiere('${id}')">
-    📚 Voir les cours
-  </button>
-</div>
-`;
-
-});
-
+  Object.keys(programme).forEach(function(matiere){
+    liste.innerHTML+=`
+      <div class="card">
+        <h3>📘 ${matiere}</h3>
+        <p>${programme[matiere].length} cours disponibles</p>
+        <button onclick="ouvrirMatiere('${matiere}')">
+          Voir les cours
+        </button>
+      </div>
+    `;
+  });
 }
 
-function ouvrirMatiere(id){
+function ouvrirMatiere(matiere){
+  matiereActuelle=matiere;
+  coursActuels=programme[matiere];
 
-matiereActuelle = id;
+  document.getElementById("matieres").classList.add("hidden");
+  document.getElementById("cours").classList.remove("hidden");
 
-const matiere = programme[id];
+  document.getElementById("titreMatiere").textContent="📖 "+matiere;
 
-document.getElementById("matieres").classList.add("hidden");
+  const liste=document.getElementById("listeCours");
+  liste.innerHTML="";
 
-const bibliotheque = document.getElementById("bibliotheque");
+  coursActuels.forEach(function(cours,index){
+    liste.innerHTML+=`
+      <div class="note">
+        <h3>${index+1}. ${cours.titre}</h3>
+        <p>${cours.lecon}</p>
+        <button onclick="ouvrirNote(${index})">
+          📚 Lire la note
+        </button>
+      </div>
+    `;
+  });
 
-bibliotheque.classList.remove("hidden");
-
-bibliotheque.innerHTML = `
-<div class="library-header">
-<h2>📚 ${matiere.icon} ${matiere.nom}</h2>
-<p>${matiere.chapitres.length} notes disponibles. Choisis celle que tu veux lire.</p>
-
-<button class="secondary" onclick="retourMatieres()">
-← Retour aux matières
-</button>
-</div>
-`;
-
-matiere.chapitres.forEach(function(chapitre,index){
-
-bibliotheque.innerHTML += `
-<div class="result">
-<h3>📖 ${chapitre.titre}</h3>
-<p>${chapitre.lecon}</p>
-<button onclick="ouvrirNote(${index})">
-📖 Lire la note
-</button>
-</div>
-`;
-
-});
-
-bibliotheque.scrollIntoView({behavior:"smooth"});
-
+  window.scrollTo(0,0);
 }
 
 function ouvrirNote(index){
+  const cours=coursActuels[index];
 
-chapitreActuel = index;
+  document.getElementById("cours").classList.add("hidden");
+  document.getElementById("note").classList.remove("hidden");
 
-const matiere = programme[matiereActuelle];
+  let html=`
+    <div class="lesson">
+      <h2>📖 ${cours.titre}</h2>
 
-const chapitre = matiere.chapitres[index];
+      <h3>📝 Leçon</h3>
+      <p>${cours.lecon}</p>
 
-document.getElementById("bibliotheque").classList.add("hidden");
+      <div class="example">
+        <h3>💡 Exemple</h3>
+        <p>${cours.exemple}</p>
+      </div>
 
-const lecteur = document.getElementById("lecteur");
+      <div class="formula">
+        <h3>📐 Formule / À retenir</h3>
+        <p>${cours.formule.replace(/\n/g,"<br>")}</p>
+      </div>
 
-lecteur.classList.remove("hidden");
+      <h3>✏️ Exercices</h3>
+  `;
 
-let exercices = "";
+  cours.exercices.forEach(function(exercice,indexExercice){
+    html+=`
+      <div class="exercise">
+        <strong>${exercice[0]}</strong>
+        <p><b>Question :</b> ${exercice[1]}</p>
 
-chapitre.exercices.forEach(function(exercice,indexExercice){
+        <button onclick="voirReponse(${indexExercice})">
+          Voir la correction
+        </button>
 
-exercices += `
-<div class="exercise">
+        <div class="answer" id="reponse${indexExercice}">
+          <b>Correction :</b> ${exercice[2]}
+        </div>
+      </div>
+    `;
+  });
 
-<div class="level">$
-{exercice[0]}</div>
+  html+=`</div>`;
 
-<p><strong>Question :</strong> ${exercice[1]}</p>
-
-<button onclick="voirReponse(${indexExercice})">
-Voir la correction
-</button>
-
-<div class="answer" id="answer${indexExercice}">
-<strong>Correction :</strong> ${exercice[2]}
-</div>
-
-</div>
-`;
-
-});
-
-lecteur.innerHTML = `
-
-<div class="note">
-
-<h2>📖 ${chapitre.titre}</h2>
-
-<h3>📘 La leçon</h3>
-<p>${chapitre.lecon}</p>
-
-<h3>📝 Notes / Explication</h3>
-<p>${chapitre.notes}</p>
-
-<h3>💡 Exemple</h3>
-<div class="example">
-${chapitre.exemple}
-</div>
-
-<h3>📐 Formule / À retenir</h3>
-<div class="formula">
-${chapitre.formule}
-</div>
-
-<h3>📊 Schéma</h3>
-<div class="schema">
-${chapitre.schema}
-</div>
-
-<h3>📝 Exercices</h3>
-
-${exercices}
-
-<div class="nav-buttons">
-
-<button class="secondary" onclick="retourBibliotheque()">
-← Toutes les notes
-</button>
-
-${
-index > 0
-?
-`<button onclick="ouvrirNote(${index-1})">
-⬅️ Note précédente
-</button>`
-:
-""
-}
-
-${
-index < matiere.chapitres.length - 1
-?
-`<button onclick="ouvrirNote(${index+1})">
-Note suivante ➡️
-</button>`
-:
-""
-}
-
-</div>
-
-</div>
-`;
-
-lecteur.scrollIntoView({
-behavior:"smooth"
-});
-
+  document.getElementById("contenuNote").innerHTML=html;
+  window.scrollTo(0,0);
 }
 
 function voirReponse(index){
+  const reponse=document.getElementById("reponse"+index);
 
-const reponse = document.getElementById("answer" + index);
-
-if(!reponse) return;
-
-if(reponse.style.display === "block"){
-reponse.style.display = "none";
-}else{
-reponse.style.display = "block";
-}
-
-}
-
-function retourBibliotheque(){
-
-document.getElementById("lecteur").classList.add("hidden");
-
-document.getElementById("bibliotheque").classList.remove("hidden");
-
-document.getElementById("bibliotheque").scrollIntoView({
-behavior:"smooth"
-});
-
+  if(reponse.style.display==="block"){
+    reponse.style.display="none";
+  }else{
+    reponse.style.display="block";
+  }
 }
 
 function retourMatieres(){
-
-document.getElementById("bibliotheque").classList.add("hidden");
-
-document.getElementById("lecteur").classList.add("hidden");
-
-document.getElementById("matieres").classList.remove("hidden");
-
-document.getElementById("matieres").scrollIntoView({
-behavior:"smooth"
-});
-
+  document.getElementById("cours").classList.add("hidden");
+  document.getElementById("note").classList.add("hidden");
+  document.getElementById("matieres").classList.remove("hidden");
+  window.scrollTo(0,0);
 }
 
-function rechercheGlobale(){
-
-const recherche = document
-.getElementById("rechercheGlobale")
-.value
-.toLowerCase()
-.trim();
-
-if(!recherche){
-
-document.getElementById("bibliotheque").classList.add("hidden");
-document.getElementById("lecteur").classList.add("hidden");
-document.getElementById("matieres").classList.remove("hidden");
-
-return;
+function retourCours(){
+  document.getElementById("note").classList.add("hidden");
+  document.getElementById("cours").classList.remove("hidden");
+  window.scrollTo(0,0);
 }
 
-document.getElementById("matieres").classList.add("hidden");
-document.getElementById("lecteur").classList.add("hidden");
+function rechercher(){
+  const recherche=document.getElementById("recherche").value.toLowerCase();
 
-const bibliotheque = document.getElementById("bibliotheque");
-
-bibliotheque.classList.remove("hidden");
-
-let resultats = 0;
-
-let html = `
-<div class="library-header">
-<h2>🔎 Résultats de recherche</h2>
-<p>Recherche : <strong>${recherche}</strong></p>
-</div>
-`;
-
-Object.keys(programme).forEach(function(id){
-
-const matiere = programme[id];
-
-matiere.chapitres.forEach(function(chapitre,index){
-
-const contenu = (
-matiere.nom + " " +
-chapitre.titre + " " +
-chapitre.lecon + " " +
-chapitre.notes + " " +
-chapitre.exemple + " " +
-chapitre.formule
-).toLowerCase();
-
-if(contenu.includes(recherche)){
-
-resultats++;
-
-html += `
-<div class="result">
-
-<h3>${matiere.icon} ${matiere.nom} — ${chapitre.titre}</h3>
-
-<p>${chapitre.lecon}</p>
-
-<button onclick="ouvrirRecherche('${id}',${index})">
-📖 Lire la note
-</button>
-
-</div>
-`;
-
-}
-
-});
-
-});
-
-if(resultats === 0){
-
-html += `
-<div class="result">
-<h3>😕 Aucun résultat</h3>
-<p>Aucune note ne correspond à ta recherche.</p>
-</div>
-`;
-
-}
-
-bibliotheque.innerHTML = html;
-
-}
-
-function ouvrirRecherche(id,index){
-
-matiereActuelle = id;
-
-ouvrirNote(index);
-
+  document.querySelectorAll("#liste .card").forEach(function(card){
+    card.style.display=
+      card.innerText.toLowerCase().includes(recherche)
+      ? "block"
+      : "none";
+  });
 }
 
 afficherMatieres();
