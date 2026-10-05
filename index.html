@@ -1,537 +1,407 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="MT Jeunesse - Plateforme éducative pour apprendre, réviser et progresser.">
-<meta name="robots" content="index, follow">
+  <title>MT Jeunesse</title>
+  <meta name="description" content="MT Jeunesse - Plateforme éducative pour les jeunes.">
+  <meta name="theme-color" content="#0f6e56">
 
-<title>MT Jeunesse | Apprendre aujourd'hui, construire demain</title>
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
 
-<style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-body{
-    font-family:Arial, sans-serif;
-    background:#f4f7fb;
-    color:#172033;
-    line-height:1.6;
-}
-
-/* HEADER */
-header{
-    background:linear-gradient(135deg,#0757c8,#00a6ff);
-    color:white;
-    padding:18px 7%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 3px 15px rgba(0,0,0,.15);
-}
-
-.logo{
-    font-size:25px;
-    font-weight:bold;
-}
-
-nav{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    padding:9px 14px;
-    border-radius:8px;
-    font-weight:bold;
-}
-
-nav a:hover{
-    background:rgba(255,255,255,.18);
-}
-
-/* HERO */
-.hero{
-    min-height:75vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:60px 20px;
-    background:
-        radial-gradient(circle at top right,#dff4ff,transparent 35%),
-        #f4f7fb;
-}
-
-.hero-content{
-    max-width:850px;
-}
-
-.badge{
-    display:inline-block;
-    background:#e8f3ff;
-    color:#0757c8;
-    padding:8px 15px;
-    border-radius:30px;
-    font-weight:bold;
-    margin-bottom:20px;
-}
-
-.hero h1{
-    font-size:clamp(38px,7vw,70px);
-    color:#0757c8;
-    margin-bottom:15px;
-}
-
-.hero h2{
-    font-size:clamp(22px,4vw,35px);
-    margin-bottom:20px;
-}
-
-.hero p{
-    max-width:700px;
-    margin:auto;
-    color:#5c6678;
-    font-size:18px;
-}
-
-.buttons{
-    margin-top:30px;
-}
-
-.btn{
-    display:inline-block;
-    text-decoration:none;
-    padding:14px 22px;
-    border-radius:10px;
-    margin:5px;
-    font-weight:bold;
-    transition:.2s;
-}
-
-.btn-primary{
-    background:#0757c8;
-    color:white;
-}
-
-.btn-primary:hover{
-    background:#043d91;
-    transform:translateY(-2px);
-}
-
-.btn-secondary{
-    background:white;
-    color:#0757c8;
-    border:2px solid #0757c8;
-}
-
-.btn-secondary:hover{
-    background:#eaf3ff;
-}
-
-/* SECTIONS */
-section{
-    padding:65px 7%;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:40px;
-}
-
-.section-title h2{
-    font-size:34px;
-    color:#0757c8;
-}
-
-.section-title p{
-    color:#697386;
-}
-
-/* CARDS */
-.grid{
-    max-width:1100px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:white;
-    padding:25px;
-    border-radius:16px;
-    box-shadow:0 4px 18px rgba(0,0,0,.07);
-    transition:.2s;
-    border:1px solid #e7ebf1;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 25px rgba(0,0,0,.10);
-}
-
-.icon{
-    font-size:40px;
-    margin-bottom:12px;
-}
-
-.card h3{
-    color:#0757c8;
-    margin-bottom:8px;
-}
-
-/* HOW */
-.how{
-    background:white;
-}
-
-.step{
-    text-align:center;
-}
-
-.number{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    background:#0757c8;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin:0 auto 15px;
-    font-weight:bold;
-    font-size:20px;
-}
-
-/* SECURITY */
-.security{
-    max-width:900px;
-    margin:auto;
-    background:#eef8f1;
-    border-left:5px solid #198754;
-    padding:25px;
-    border-radius:12px;
-}
-
-.security h3{
-    color:#146c43;
-    margin-bottom:10px;
-}
-
-/* FOOTER */
-footer{
-    background:#101828;
-    color:white;
-    text-align:center;
-    padding:35px 20px;
-}
-
-footer p{
-    color:#b8c0cc;
-    margin-top:8px;
-}
-
-/* MOBILE */
-@media(max-width:700px){
-
-    header{
-        flex-direction:column;
-        padding:15px;
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    nav{
-        justify-content:center;
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #17202a;
+      line-height: 1.6;
     }
 
-    .hero{
-        min-height:70vh;
-        padding:45px 15px;
+    header {
+      background: #0f6e56;
+      color: white;
+      padding: 18px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
     }
 
-    section{
-        padding:50px 15px;
+    .header-content {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
     }
-}
-</style>
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .lang {
+      background: white;
+      color: #0f6e56;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      color: #0f6e56;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      color: #566573;
+      font-size: 18px;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: #0f6e56;
+      color: white;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #0f6e56;
+      border: 2px solid #0f6e56;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 30px 20px 60px;
+    }
+
+    .section h2 {
+      text-align: center;
+      color: #0f6e56;
+      margin-bottom: 25px;
+      font-size: 30px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .card .icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      color: #0f6e56;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: #667085;
+      margin-bottom: 18px;
+    }
+
+    footer {
+      background: #102a24;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    #installBtn {
+      display: none;
+      margin: 20px auto 0;
+      border: none;
+      background: #f4b400;
+      color: #17202a;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .header-content {
+        flex-direction: column;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
+  <header>
+    <div class="header-content">
+      <div class="logo">📚 MT Jeunesse</div>
 
-    <div class="logo">📚 MT Jeunesse</div>
-
-    <nav>
-        <a href="#accueil">Accueil</a>
-        <a href="cours.html">Cours</a>
-        <a href="#matieres">Matières</a>
-        <a href="#apropos">À propos</a>
-    </nav>
-
-</header>
-
-
-<main>
-
-<!-- ACCUEIL -->
-<section class="hero" id="accueil">
-
-    <div class="hero-content">
-
-        <span class="badge">🌍 Plateforme éducative</span>
-
-        <h1>MT Jeunesse</h1>
-
-        <h2>Apprendre aujourd'hui pour construire demain.</h2>
-
-        <p>
-            Une plateforme éducative conçue pour aider les jeunes
-            à apprendre, comprendre, pratiquer et progresser.
-        </p>
-
-        <div class="buttons">
-
-            <a class="btn btn-primary" href="cours.html">
-                📚 Commencer les cours
-            </a>
-
-            <a class="btn btn-secondary" href="#matieres">
-                🔎 Découvrir les matières
-            </a>
-
-        </div>
-
+      <select class="lang" id="language">
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+      </select>
     </div>
+  </header>
 
-</section>
+  <main>
 
+    <section class="hero">
+      <h1 id="title">Bienvenue sur MT Jeunesse</h1>
 
-<!-- MATIÈRES -->
-<section id="matieres">
+      <p id="description">
+        Une plateforme éducative simple, moderne et accessible à tous les jeunes.
+        Apprends, entraîne-toi et développe tes compétences.
+      </p>
 
-    <div class="section-title">
+      <div class="buttons">
+        <a href="cours.html" class="btn btn-primary" id="coursesBtn">
+          📚 Découvrir les cours
+        </a>
 
-        <h2>📚 Nos matières</h2>
+        <a href="quiz.html" class="btn btn-secondary" id="quizBtn">
+          📝 Faire un quiz
+        </a>
+      </div>
 
-        <p>
-            Explore les principales matières disponibles sur MT Jeunesse.
-        </p>
+      <button id="installBtn">📱 Installer MT Jeunesse</button>
+    </section>
 
-    </div>
+    <section class="section">
+      <h2 id="featuresTitle">Ce que tu peux faire</h2>
 
-
-    <div class="grid">
+      <div class="cards">
 
         <div class="card">
-            <div class="icon">🔢</div>
-            <h3>Mathématiques</h3>
-            <p>Nombres, calculs, fractions, équations et géométrie.</p>
+          <div class="icon">📖</div>
+          <h3 id="card1Title">Apprendre</h3>
+          <p id="card1Text">
+            Découvre différents cours et développe tes connaissances.
+          </p>
+          <a href="cours.html" class="btn btn-primary">Cours</a>
         </div>
 
         <div class="card">
-            <div class="icon">⚡</div>
-            <h3>Technique / Électricité</h3>
-            <p>Courant, tension, résistance, puissance et circuits.</p>
+          <div class="icon">🧠</div>
+          <h3 id="card2Title">T'entraîner</h3>
+          <p id="card2Text">
+            Teste tes connaissances avec des quiz interactifs.
+          </p>
+          <a href="quiz.html" class="btn btn-primary">Quiz</a>
         </div>
 
         <div class="card">
-            <div class="icon">🇬🇧</div>
-            <h3>Anglais</h3>
-            <p>Grammaire, vocabulaire, conjugaison et communication.</p>
+          <div class="icon">💡</div>
+          <h3 id="card3Title">Progresser</h3>
+          <p id="card3Text">
+            Apprends à ton rythme et prépare ton avenir.
+          </p>
+          <a href="cours.html" class="btn btn-primary">Commencer</a>
         </div>
 
-        <div class="card">
-            <div class="icon">🇫🇷</div>
-            <h3>Français</h3>
-            <p>Grammaire, conjugaison, vocabulaire et rédaction.</p>
-        </div>
+      </div>
+    </section>
 
-        <div class="card">
-            <div class="icon">🌍</div>
-            <h3>Histoire & Géographie</h3>
-            <p>Comprendre les sociétés, les territoires et le monde.</p>
-        </div>
+  </main>
 
-        <div class="card">
-            <div class="icon">🔬</div>
-            <h3>Sciences</h3>
-            <p>Découvrir la matière, le corps humain et les phénomènes scientifiques.</p>
-        </div>
+  <footer>
+    <p><strong>MT Jeunesse</strong></p>
+    <p>Apprendre aujourd'hui, construire demain.</p>
+    <p>© 2026 MT Jeunesse</p>
+  </footer>
 
-        <div class="card">
-            <div class="icon">💼</div>
-            <h3>Entrepreneuriat</h3>
-            <p>Idées, projets, budget, marketing et création d'entreprise.</p>
-        </div>
+  <script>
+    /* =========================
+       INSTALLATION PWA
+    ========================= */
 
-        <div class="card">
-            <div class="icon">💻</div>
-            <h3>Informatique</h3>
-            <p>Ordinateurs, Internet, algorithmique, programmation et sécurité.</p>
-        </div>
+    let deferredPrompt;
+    const installBtn = document.getElementById("installBtn");
 
-    </div>
+    window.addEventListener("beforeinstallprompt", (event) => {
+      event.preventDefault();
+      deferredPrompt = event;
+      installBtn.style.display = "block";
+    });
 
-</section>
+    installBtn.addEventListener("click", async () => {
+      if (!deferredPrompt) return;
 
+      deferredPrompt.prompt();
 
-<!-- COMMENT ÇA MARCHE -->
-<section class="how">
+      const result = await deferredPrompt.userChoice;
 
-    <div class="section-title">
+      if (result.outcome === "accepted") {
+        installBtn.style.display = "none";
+      }
 
-        <h2>🚀 Comment apprendre ?</h2>
+      deferredPrompt = null;
+    });
 
-        <p>Une méthode simple pour progresser étape par étape.</p>
+    /* =========================
+       SERVICE WORKER
+    ========================= */
 
-    </div>
-
-
-    <div class="grid">
-
-        <div class="card step">
-            <div class="number">1</div>
-            <h3>Choisis une matière</h3>
-            <p>Sélectionne le domaine que tu veux étudier.</p>
-        </div>
-
-        <div class="card step">
-            <div class="number">2</div>
-            <h3>Choisis un chapitre</h3>
-            <p>Parcours les leçons organisées comme un livre.</p>
-        </div>
-
-        <div class="card step">
-            <div class="number">3</div>
-            <h3>Apprends</h3>
-            <p>Lis la leçon, les exemples, les formules et les schémas.</p>
-        </div>
-
-        <div class="card step">
-            <div class="number">4</div>
-            <h3>Pratique</h3>
-            <p>Fais les exercices et vérifie tes corrections.</p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- SÉCURITÉ -->
-<section id="securite">
-
-    <div class="section-title">
-
-        <h2>🛡️ Sécurité</h2>
-
-        <p>MT Jeunesse privilégie une expérience simple et responsable.</p>
-
-    </div>
-
-    <div class="security">
-
-        <h3>🔒 Protection du site</h3>
-
-        <p>
-            Cette page utilise uniquement du HTML, du CSS et du JavaScript
-            nécessaires au fonctionnement du site. Aucun téléchargement
-            automatique de programme n'est effectué depuis cette page.
-        </p>
-
-        <p style="margin-top:10px;">
-            ⚠️ MT Jeunesse n'est pas un antivirus et ne peut pas analyser
-            ou supprimer les virus présents sur l'appareil de l'utilisateur.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- À PROPOS -->
-<section id="apropos">
-
-    <div class="section-title">
-
-        <h2>🌟 À propos de MT Jeunesse</h2>
-
-        <p>
-            Un projet éducatif tourné vers l'apprentissage et la jeunesse.
-        </p>
-
-    </div>
-
-    <div class="card" style="max-width:900px;margin:auto;text-align:center;">
-
-        <p>
-            MT Jeunesse a pour objectif de rendre l'apprentissage
-            plus accessible, plus clair et plus intéressant.
-        </p>
-
-        <p style="margin-top:15px;">
-            📖 Cours → 💡 Explications → 📝 Exercices → ✅ Corrections
-        </p>
-
-        <div class="buttons">
-
-            <a class="btn btn-primary" href="cours.html">
-                📚 Accéder aux cours
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-</main>
-
-
-<footer>
-
-    <strong>📚 MT Jeunesse</strong>
-
-    <p>Apprendre aujourd'hui pour construire demain.</p>
-
-    <p>© 2026 MT Jeunesse — Tous droits réservés.</p>
-
-</footer>
-
-
-<script>
-/*
-  Sécurité basique côté client :
-  éviter l'ouverture de fenêtres inutiles
-  et empêcher certaines manipulations accidentelles.
-*/
-
-document.addEventListener("contextmenu", function(e){
-    /* Le clic droit reste autorisé : le site doit rester accessible. */
-});
-
-document.querySelectorAll("a[href]").forEach(function(link){
-
-    const destination = link.getAttribute("href");
-
-    if(destination && destination.startsWith("javascript:")){
-        link.removeAttribute("href");
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("sw.js")
+          .then(() => {
+            console.log("MT Jeunesse : service worker actif.");
+          })
+          .catch((error) => {
+            console.error("Erreur service worker :", error);
+          });
+      });
     }
 
-});
-</script>
+    /* =========================
+       FRANÇAIS / ENGLISH
+    ========================= */
+
+    const language = document.getElementById("language");
+
+    language.addEventListener("change", () => {
+
+      if (language.value === "en") {
+
+        document.documentElement.lang = "en";
+
+        document.getElementById("title").textContent =
+          "Welcome to MT Jeunesse";
+
+        document.getElementById("description").textContent =
+          "A simple, modern and accessible educational platform for young people. Learn, practice and develop your skills.";
+
+        document.getElementById("coursesBtn").textContent =
+          "📚 Discover courses";
+
+        document.getElementById("quizBtn").textContent =
+          "📝 Take a quiz";
+
+        document.getElementById("featuresTitle").textContent =
+          "What you can do";
+
+        document.getElementById("card1Title").textContent =
+          "Learn";
+
+        document.getElementById("card1Text").textContent =
+          "Discover different courses and develop your knowledge.";
+
+        document.getElementById("card2Title").textContent =
+          "Practice";
+
+        document.getElementById("card2Text").textContent =
+          "Test your knowledge with interactive quizzes.";
+
+        document.getElementById("card3Title").textContent =
+          "Progress";
+
+        document.getElementById("card3Text").textContent =
+          "Learn at your own pace and prepare for your future.";
+
+      } else {
+
+        document.documentElement.lang = "fr";
+
+        document.getElementById("title").textContent =
+          "Bienvenue sur MT Jeunesse";
+
+        document.getElementById("description").textContent =
+          "Une plateforme éducative simple, moderne et accessible à tous les jeunes. Apprends, entraîne-toi et développe tes compétences.";
+
+        document.getElementById("coursesBtn").textContent =
+          "📚 Découvrir les cours";
+
+        document.getElementById("quizBtn").textContent =
+          "📝 Faire un quiz";
+
+        document.getElementById("featuresTitle").textContent =
+          "Ce que tu peux faire";
+
+        document.getElementById("card1Title").textContent =
+          "Apprendre";
+
+        document.getElementById("card1Text").textContent =
+          "Découvre différents cours et développe tes connaissances.";
+
+        document.getElementById("card2Title").textContent =
+          "T'entraîner";
+
+        document.getElementById("card2Text").textContent =
+          "Teste tes connaissances avec des quiz interactifs.";
+
+        document.getElementById("card3Title").textContent =
+          "Progresser";
+
+        document.getElementById("card3Text").textContent =
+          "Apprends à ton rythme et prépare ton avenir.";
+      }
+    });
+  </script>
 
 </body>
 </html>
