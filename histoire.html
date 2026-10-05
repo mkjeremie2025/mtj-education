@@ -1,10 +1,366 @@
-{
-  "name": "MT Jeunesse",
-  "short_name": "MT Jeunesse",
-  "start_url": "./index.html",
-  "scope": "./",
-  "display": "standalone",
-  "background_color": "#f4f7fb",
-  "theme_color": "#0f6e56",
-  "description": "MT Jeunesse - Plateforme éducative pour les jeunes."
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MT Jeunesse - Histoire</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0f6e56;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      opacity: 0.9;
+    }
+
+    nav {
+      background: white;
+      padding: 12px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    nav a {
+      color: #0f6e56;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 25px 15px;
+    }
+
+    .top {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .top h2 {
+      color: #0f6e56;
+      margin-bottom: 10px;
+    }
+
+    #search {
+      width: 100%;
+      max-width: 600px;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+
+    .language {
+      margin-top: 15px;
+    }
+
+    .language button {
+      border: none;
+      padding: 9px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 3px;
+      font-weight: bold;
+    }
+
+    .language button:first-child {
+      background: #0f6e56;
+      color: white;
+    }
+
+    .language button:last-child {
+      background: #e8eeee;
+      color: #0f6e56;
+    }
+
+    .lesson {
+      background: white;
+      padding: 22px;
+      margin-bottom: 18px;
+      border-radius: 14px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      border-left: 5px solid #0f6e56;
+    }
+
+    .lesson h3 {
+      color: #0f6e56;
+      margin-bottom: 10px;
+    }
+
+    .lesson p {
+      margin-bottom: 8px;
+    }
+
+    .lesson ul {
+      margin-left: 22px;
+    }
+
+    .important {
+      background: #eef8f4;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .quiz-button {
+      display: block;
+      width: fit-content;
+      margin: 25px auto;
+      background: #0f6e56;
+      color: white;
+      text-decoration: none;
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #0f6e56;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 23px;
+      }
+
+      .lesson {
+        padding: 17px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>📚 MT Jeunesse</h1>
+    <p id="subtitle">Cours d'Histoire</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="cours.html">Cours</a>
+    <a href="quiz.html">Quiz</a>
+  </nav>
+
+  <main class="container">
+
+    <section class="top">
+      <h2 id="title">Histoire</h2>
+
+      <p id="intro">
+        Découvre les grands événements, personnages et périodes de l'histoire.
+      </p>
+
+      <input
+        type="text"
+        id="search"
+        placeholder="🔎 Rechercher une leçon..."
+        onkeyup="searchLessons()"
+      >
+
+      <div class="language">
+        <button onclick="setLanguage('fr')">🇫🇷 Français</button>
+        <button onclick="setLanguage('en')">🇬🇧 English</button>
+      </div>
+    </section>
+
+    <section id="lessons">
+
+      <article class="lesson">
+        <h3 class="fr">1. Qu'est-ce que l'Histoire ?</h3>
+        <h3 class="en" style="display:none;">1. What is History?</h3>
+
+        <p class="fr">
+          L'Histoire est l'étude des événements du passé et des sociétés humaines.
+        </p>
+
+        <p class="en" style="display:none;">
+          History is the study of past events and human societies.
+        </p>
+
+        <div class="important fr">
+          <strong>À retenir :</strong>
+          L'Histoire nous aide à comprendre le passé pour mieux comprendre le présent.
+        </div>
+
+        <div class="important en" style="display:none;">
+          <strong>Remember:</strong>
+          History helps us understand the past and the present.
+        </div>
+      </article>
+
+      <article class="lesson">
+        <h3 class="fr">2. Les grandes périodes de l'Histoire</h3>
+        <h3 class="en" style="display:none;">2. The Main Periods of History</h3>
+
+        <p class="fr">On distingue généralement plusieurs grandes périodes :</p>
+        <p class="en" style="display:none;">History is generally divided into several main periods:</p>
+
+        <ul class="fr">
+          <li>La Préhistoire</li>
+          <li>L'Antiquité</li>
+          <li>Le Moyen Âge</li>
+          <li>Les Temps modernes</li>
+          <li>L'Époque contemporaine</li>
+        </ul>
+
+        <ul class="en" style="display:none;">
+          <li>Prehistory</li>
+          <li>Antiquity</li>
+          <li>Middle Ages</li>
+          <li>Modern Times</li>
+          <li>Contemporary Period</li>
+        </ul>
+      </article>
+
+      <article class="lesson">
+        <h3 class="fr">3. La colonisation</h3>
+        <h3 class="en" style="display:none;">3. Colonization</h3>
+
+        <p class="fr">
+          La colonisation est un processus par lequel un État exerce son
+          contrôle politique, économique ou militaire sur un autre territoire.
+        </p>
+
+        <p class="en" style="display:none;">
+          Colonization is a process in which a state exercises political,
+          economic or military control over another territory.
+        </p>
+
+        <div class="important fr">
+          <strong>À retenir :</strong>
+          La colonisation a profondément marqué l'histoire de nombreux pays africains.
+        </div>
+
+        <div class="important en" style="display:none;">
+          <strong>Remember:</strong>
+          Colonization deeply influenced the history of many African countries.
+        </div>
+      </article>
+
+      <article class="lesson">
+        <h3 class="fr">4. L'indépendance du Cameroun</h3>
+        <h3 class="en" style="display:none;">4. The Independence of Cameroon</h3>
+
+        <p class="fr">
+          Le Cameroun a progressivement accédé à l'indépendance au début des années 1960.
+          Le pays a ensuite construit ses institutions et développé son organisation politique.
+        </p>
+
+        <p class="en" style="display:none;">
+          Cameroon progressively gained independence in the early 1960s.
+          The country then developed its institutions and political organization.
+        </p>
+      </article>
+
+      <article class="lesson">
+        <h3 class="fr">5. Pourquoi étudier l'Histoire ?</h3>
+        <h3 class="en" style="display:none;">5. Why Study History?</h3>
+
+        <p class="fr">
+          Étudier l'Histoire permet de connaître les événements du passé,
+          de comprendre les changements des sociétés et de tirer des leçons
+          pour construire l'avenir.
+        </p>
+
+        <p class="en" style="display:none;">
+          Studying History helps us understand past events, social changes
+          and lessons that can help build the future.
+        </p>
+      </article>
+
+    </section>
+
+    <a class="quiz-button" href="quiz.html">
+      📝 Faire le quiz
+    </a>
+
+  </main>
+
+  <footer>
+    <p>© 2026 MT Jeunesse</p>
+    <p>Apprendre aujourd'hui pour construire demain.</p>
+  </footer>
+
+  <script>
+    let currentLanguage = "fr";
+
+    function setLanguage(language) {
+      currentLanguage = language;
+
+      document.querySelectorAll(".fr").forEach(element => {
+        element.style.display = language === "fr" ? "" : "none";
+      });
+
+      document.querySelectorAll(".en").forEach(element => {
+        element.style.display = language === "en" ? "" : "none";
+      });
+
+      if (language === "fr") {
+        document.getElementById("subtitle").textContent = "Cours d'Histoire";
+        document.getElementById("title").textContent = "Histoire";
+        document.getElementById("intro").textContent =
+          "Découvre les grands événements, personnages et périodes de l'histoire.";
+        document.getElementById("search").placeholder =
+          "🔎 Rechercher une leçon...";
+      } else {
+        document.getElementById("subtitle").textContent = "History Course";
+        document.getElementById("title").textContent = "History";
+        document.getElementById("intro").textContent =
+          "Discover important events, people and periods of history.";
+        document.getElementById("search").placeholder =
+          "🔎 Search for a lesson...";
+      }
+    }
+
+    function searchLessons() {
+      const search =
+        document.getElementById("search").value.toLowerCase();
+
+      document.querySelectorAll(".lesson").forEach(lesson => {
+        const text = lesson.textContent.toLowerCase();
+
+        lesson.style.display =
+          text.includes(search) ? "block" : "none";
+      });
+    }
+  </script>
+
+</body>
+</html>
