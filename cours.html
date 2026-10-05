@@ -2,902 +2,558 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="MT Jeunesse - Cours, éducation, technique, informatique, histoire, entrepreneuriat et culture générale.">
-<meta name="theme-color" content="#07111f">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>MT Jeunesse - Cours</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-
-html{scroll-behavior:smooth}
-
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f4f7fb;
-    color:#172033;
-}
-
-header{
-    background:#07111f;
-    color:white;
-    padding:20px;
-    text-align:center;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 4px 20px rgba(0,0,0,.15);
-}
-
-.logo{
-    font-size:28px;
-    font-weight:bold;
-}
-
-.logo span{color:#4d8dff}
-
-.slogan{
-    color:#aebbd0;
-    margin-top:5px;
-}
-
-nav{margin-top:18px}
-
-nav button{
-    background:#10233b;
-    color:white;
-    border:1px solid #294463;
-    padding:9px 12px;
-    margin:4px;
-    border-radius:7px;
-    cursor:pointer;
-}
-
-nav button:hover{
-    background:#0b5cff;
-}
-
-.language{
-    margin-top:15px;
-    background:#0b5cff;
-    color:white;
-    border:none;
-    padding:10px 18px;
-    border-radius:8px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-.hero{
-    background:linear-gradient(135deg,#07111f,#0b5cff);
-    color:white;
-    text-align:center;
-    padding:70px 20px;
-}
-
-.hero h1{
-    font-size:42px;
-    margin-bottom:15px;
-}
-
-.hero p{
-    max-width:720px;
-    margin:auto;
-    color:#d5deeb;
-    font-size:17px;
-}
-
-.container{
-    max-width:1150px;
-    margin:auto;
-    padding:60px 20px;
-}
-
-.title{
-    text-align:center;
-    margin-bottom:35px;
-}
-
-.title h2{
-    font-size:34px;
-    margin-bottom:10px;
-}
-
-.title p{color:#687386}
-
-.search{
-    width:100%;
-    padding:14px;
-    border:1px solid #ccd5e2;
-    border-radius:9px;
-    margin-bottom:30px;
-    font-size:16px;
-}
-
-.courses{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.course{
-    background:white;
-    border:1px solid #e0e6ef;
-    border-radius:15px;
-    padding:25px;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.course:hover{
-    transform:translateY(-5px);
-    box-shadow:0 12px 30px rgba(0,0,0,.08);
-    border-color:#b8d0ff;
-}
-
-.icon{
-    font-size:38px;
-    margin-bottom:12px;
-}
-
-.course h3{margin-bottom:10px}
-
-.course p{
-    color:#687386;
-    line-height:1.6;
-}
-
-.open{
-    display:inline-block;
-    margin-top:15px;
-    color:#0b5cff;
-    font-weight:bold;
-}
-
-.lesson{
-    display:none;
-    background:white;
-    border:1px solid #d7e3f8;
-    border-radius:15px;
-    padding:30px;
-    margin-top:35px;
-    box-shadow:0 10px 30px rgba(0,0,0,.05);
-}
-
-.lesson.show{display:block}
-
-.lesson h2{
-    margin-bottom:18px;
-    font-size:28px;
-}
-
-.lesson p{
-    color:#586579;
-    line-height:1.8;
-    margin-bottom:16px;
-}
-
-.lesson ul{
-    margin-left:25px;
-    line-height:2;
-    margin-bottom:22px;
-}
-
-.lesson li{color:#354257}
-
-.info{
-    background:#eef4ff;
-    border-left:4px solid #0b5cff;
-    padding:16px;
-    border-radius:8px;
-    margin:20px 0;
-    line-height:1.7;
-}
-
-.check{
-    margin-top:25px;
-    padding:20px;
-    background:#f4f7fb;
-    border-radius:12px;
-}
-
-.check h3{
-    margin-bottom:12px;
-}
-
-.check button{
-    display:block;
-    width:100%;
-    text-align:left;
-    margin:7px 0;
-    padding:12px;
-    border:1px solid #d0d8e6;
-    border-radius:8px;
-    background:white;
-    cursor:pointer;
-}
-
-.check button:hover{
-    background:#edf3ff;
-}
-
-.check button.good{
-    background:#157347;
-    color:white;
-    border-color:#157347;
-}
-
-.check button.bad{
-    background:#a33b3b;
-    color:white;
-    border-color:#a33b3b;
-}
-
-.result{
-    margin-top:12px;
-    font-weight:bold;
-}
-
-.close{
-    margin-top:20px;
-    padding:10px 16px;
-    background:#07111f;
-    color:white;
-    border:none;
-    border-radius:7px;
-    cursor:pointer;
-}
-
-.close:hover{background:#0b5cff}
-
-footer{
-    background:#030912;
-    color:white;
-    text-align:center;
-    padding:40px 20px;
-    margin-top:30px;
-}
-
-footer p{
-    color:#9caabd;
-    margin-top:8px;
-}
-
-@media(max-width:850px){
-    .courses{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-@media(max-width:600px){
-    .courses{
-        grid-template-columns:1fr;
-    }
-
-    .hero h1{
-        font-size:34px;
-    }
-
-    .container{
-        padding:45px 16px;
-    }
-
-    .lesson{
-        padding:22px;
-    }
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#222}
+header{background:linear-gradient(135deg,#0757c8,#00a6ff);color:white;text-align:center;padding:32px 15px}
+header h1{margin:0;font-size:32px}
+main{max-width:1100px;margin:auto;padding:20px}
+.box,.card{background:white;border-radius:14px;padding:20px;box-shadow:0 3px 15px #ddd}
+.box{margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card h3{color:#0757c8;margin-top:0}
+button,select,input{font:inherit}
+button{background:#0757c8;color:white;border:0;border-radius:8px;padding:11px 15px;cursor:pointer}
+button:hover{background:#043d91}
+input,select{padding:12px;border:1px solid #ccc;border-radius:8px}
+input{width:100%;margin:12px 0}
+.course{display:none}
+.lesson{background:#f7f9fc;padding:18px;border-radius:10px;margin:15px 0}
+.formula{background:#eaf2ff;padding:15px;border-radius:10px;font-size:20px;font-weight:bold}
+.example{background:#eef9f0;padding:15px;border-radius:10px}
+.exercise{background:#fff7df;padding:18px;border-radius:10px;margin-top:15px}
+.answer{color:#168238;font-weight:bold}
+.diagram{font-family:monospace;background:#111;color:#fff;padding:15px;border-radius:10px;overflow:auto}
+footer{background:#111;color:white;text-align:center;padding:25px;margin-top:30px}
+.close{float:right;background:#e53935}
+.small{color:#666}
 </style>
 </head>
 
 <body>
 
 <header>
-
-<div class="logo">
-MT <span>Jeunesse</span>
-</div>
-
-<div class="slogan" id="slogan">
-Apprendre • Créer • Entreprendre • Innover
-</div>
-
-<nav>
-
-<button onclick="location.href='index.html'" id="homeBtn">
-Accueil
-</button>
-
-<button onclick="location.href='cours.html'" id="coursesBtn">
-Cours
-</button>
-
-<button onclick="location.href='quiz.html'" id="quizBtn">
-Quiz
-</button>
-
-</nav>
-
-<button class="language" onclick="changeLanguage()" id="langBtn">
-🇬🇧 English
-</button>
-
+<h1>📚 MT Jeunesse</h1>
+<p>Apprendre aujourd'hui pour construire demain.</p>
 </header>
 
+<main>
 
-<section class="hero">
+<section class="box">
+<h2>👋 Bienvenue sur MT Jeunesse</h2>
 
-<h1 id="heroTitle">
-📚 Les cours MT Jeunesse
-</h1>
-
-<p id="heroText">
-Choisis une matière et commence à apprendre.
+<p>
+MT Jeunesse est une plateforme destinée aux jeunes pour apprendre,
+réviser et s'exercer facilement.
 </p>
+
+<h3>📌 Comment utiliser les cours ?</h3>
+
+<p>
+<strong>1.</strong> Choisis une matière.<br>
+<strong>2.</strong> Choisis un chapitre.<br>
+<strong>3.</strong> Lis la leçon.<br>
+<strong>4.</strong> Regarde les exemples et les formules.<br>
+<strong>5.</strong> Observe le schéma lorsqu'il existe.<br>
+<strong>6.</strong> Fais l'exercice.<br>
+<strong>7.</strong> Vérifie ta réponse.
+</p>
+</section>
+
+<div class="box">
+
+<select id="langue" onchange="changerLangue()">
+<option value="fr">🇫🇷 Français</option>
+<option value="en">🇬🇧 English</option>
+</select>
+
+<input
+id="recherche"
+placeholder="🔎 Rechercher une matière ou un cours..."
+oninput="afficherMatieres()">
+
+</div>
+
+<h2>📚 Matières</h2>
+
+<div id="matieres" class="grid"></div>
+
+<section id="cours" class="box course">
+
+<button class="close" onclick="fermerCours()">✕ Fermer</button>
+
+<h2 id="titreCours"></h2>
+
+<div id="contenuCours"></div>
 
 </section>
 
-
-<main class="container">
-
-<div class="title">
-
-<h2 id="courseTitle">
-Toutes les matières
-</h2>
-
-<p id="courseSubtitle">
-Des cours simples pour apprendre, comprendre et progresser.
-</p>
-
-</div>
-
-
-<input
-type="text"
-class="search"
-id="search"
-placeholder="🔎 Rechercher un cours..."
-onkeyup="searchCourses()"
->
-
-
-<div class="courses" id="courses">
-
-
-<div class="course" data-name="maths" onclick="openLesson('maths')">
-<div class="icon">📐</div>
-<h3 data-fr="Mathématiques" data-en="Mathematics">Mathématiques</h3>
-<p data-fr="Algèbre, géométrie, calcul et exercices."
-data-en="Algebra, geometry, calculations and exercises.">
-Algèbre, géométrie, calcul et exercices.
-</p>
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
-</div>
-
-
-<div class="course" data-name="technique" onclick="openLesson('technique')">
-<div class="icon">⚡</div>
-<h3 data-fr="Technique" data-en="Technical Studies">Technique</h3>
-<p data-fr="Électricité, électronique, électrotechnique et machines."
-data-en="Electricity, electronics, electrotechnics and machines.">
-Électricité, électronique, électrotechnique et machines.
-</p>
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
-</div>
-
-
-<div class="course" data-name="anglais" onclick="openLesson('anglais')">
-<div class="icon">🇬🇧</div>
-<h3 data-fr="Anglais" data-en="English">Anglais</h3>
-<p data-fr="Vocabulaire, grammaire, conjugaison et communication."
-data-en="Vocabulary, grammar, conjugation and communication.">
-Vocabulaire, grammaire, conjugaison et communication.
-</p>
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
-</div>
-
-
-<div class="course" data-name="francais" onclick="openLesson('francais')">
-<div class="icon">🇫🇷</div>
-<h3 data-fr="Français" data-en="French">Français</h3>
-<p data-fr="Grammaire, conjugaison, vocabulaire et expression."
-data-en="Grammar, conjugation, vocabulary and expression.">
-Grammaire, conjugaison, vocabulaire et expression.
-</p>
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
-</div>
-
-
-<div class="course" data-name="histoire" onclick="openLesson('histoire')">
-<div class="icon">🇨🇲</div>
-<h3 data-fr="Histoire" data-en="History">Histoire</h3>
-<p data-fr="Histoire du Cameroun, de l'Afrique et du monde."
-data-en="History of Cameroon, Africa and the world.">
-Histoire du Cameroun, de l'Afrique et du monde.
-</p>
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
-</div>
-
-
-<div class="course" data-name="entrepreneuriat" onclick="openLesson('entrepreneuriat')">
-<div class="icon">💼</div>
-<h3 data-fr="Entrepreneuriat" data-en="Entrepreneurship">Entrepreneuriat</h3>
-<p data-fr="Idée de projet, business, marketing, vente et gestion."
-data-en="Project ideas, business, marketing, sales and management.">
-Idée de projet, business, marketing, vente et gestion.
-</p>
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
-</div>
-
-
-<div class="course" data-name="gouvernement" onclick="openLesson('gouvernement')">
-<div class="icon">🏛️</div>
-<h3 data-fr="Gouvernement" data-en="Government">Gouvernement</h3>
-<p data-fr="Institutions, administration et fonctionnement de l'État."
-data-en="Institutions, administration and how the state works.">
-Institutions, administration et fonctionnement de l'État.
-</p>
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
-</div>
-
-
-<div class="course" data-name="politique" onclick="openLesson('politique')">
-<div class="icon">⚖️</div>
-<h3 data-fr="Politique et citoyenneté" data-en="Politics and Citizenship">
-Politique et citoyenneté
-</h3>
-<p data-fr="Droits, devoirs, institutions et participation citoyenne."
-data-en="Rights, duties, institutions and civic participation.">
-Droits, devoirs, institutions et participation citoyenne.
-</p>
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
-</div>
-
-
-<div class="course" data-name="informatique" onclick="openLesson('informatique')">
-<div class="icon">💻</div>
-<h3 data-fr="Informatique" data-en="Computer Science">
-Informatique
-</h3>
-<p data-fr="Ordinateurs, programmation, Internet et création de sites."
-data-en="Computers, programming, Internet and website creation.">
-Ordinateurs, programmation, Internet et création de sites.
-</p>
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
-</div>
-
-
-<div class="course" data-name="sciences" onclick="openLesson('sciences')">
-<div class="icon">🔬</div>
-<h3 data-fr="Sciences" data-en="Science">Sciences</h3>
-<p data-fr="Physique, chimie, biologie et connaissances scientifiques."
-data-en="Physics, chemistry, biology and scientific knowledge.">
-Physique, chimie, biologie et connaissances scientifiques.
-</p>
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
-</div>
-
-
-<div class="course" data-name="culture" onclick="openLesson('culture')">
-<div class="icon">🌍</div>
-<h3 data-fr="Culture générale" data-en="General Knowledge">
-Culture générale
-</h3>
-<p data-fr="Pays, capitales, découvertes et connaissances du monde."
-data-en="Countries, capitals, discoveries and world knowledge.">
-Pays, capitales, découvertes et connaissances du monde.
-</p>
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
-</div>
-
-
-<div class="course" data-name="articles" onclick="openLesson('articles')">
-<div class="icon">📰</div>
-<h3 data-fr="Articles" data-en="Articles">Articles</h3>
-<p data-fr="Actualités éducatives, découvertes et sujets intéressants."
-data-en="Educational news, discoveries and interesting topics.">
-Actualités éducatives, découvertes et sujets intéressants.
-</p>
-<span class="open" data-fr="Lire →" data-en="Read →">
-Lire →
-</span>
-</div>
-
-
-<div class="course" data-name="projets" onclick="openLesson('projets')">
-<div class="icon">🚀</div>
-<h3 data-fr="Projets et innovation" data-en="Projects and Innovation">
-Projets et innovation
-</h3>
-<p data-fr="Transforme tes idées en projets concrets."
-data-en="Turn your ideas into practical projects.">
-Transforme tes idées en projets concrets.
-</p>
-<span class="open" data-fr="Découvrir →" data-en="Discover →">
-Découvrir →
-</span>
-</div>
-
-</div>
-
-
-<div class="lesson" id="lesson">
-
-<h2 id="lessonTitle"></h2>
-
-<div id="lessonBody"></div>
-
-<ul id="lessonList"></ul>
-
-<div class="check" id="check"></div>
-
-<button class="close" onclick="closeLesson()" id="closeBtn">
-Fermer
-</button>
-
-</div>
-
 </main>
 
-
 <footer>
-
-<strong>MT Jeunesse</strong>
-
-<p id="footerSlogan">
-Apprendre aujourd'hui. Construire demain.
-</p>
-
-<p>
-Créateur : M K Jérémie
-</p>
-
-<p>
-© 2026 MT Jeunesse — Tous droits réservés.
-</p>
-
+<strong>MT Jeunesse © 2026</strong>
+<p>Apprendre aujourd'hui pour construire demain.</p>
 </footer>
 
 
 <script>
 
-var lang = "fr";
-
-
-var lessons = {
-
 /* =========================
-   MATHEMATIQUES
+   PROGRAMME MT JEUNESSE
 ========================= */
 
-maths:{
-fr:{
-title:"📐 Mathématiques",
-paras:[
-"Les mathématiques permettent de résoudre des problèmes grâce aux nombres, aux formules et au raisonnement.",
-"Un pourcentage compare une partie à 100. Par exemple, 25 % de 200 = 50.",
-"L'aire d'un rectangle se calcule avec longueur × largeur. L'aire d'un triangle se calcule avec base × hauteur ÷ 2."
-],
-items:[
-"Pourcentage = partie × 100 ÷ total",
-"Aire du rectangle = longueur × largeur",
-"Aire du triangle = base × hauteur ÷ 2",
-"Une équation doit rester équilibrée"
-],
-quiz:{
-q:"25 % de 80 égale combien ?",
-opts:["15","20","25","40"],
-ok:1
-}
-},
-en:{
-title:"📐 Mathematics",
-paras:[
-"Mathematics helps solve problems using numbers, formulas and reasoning.",
-"A percentage compares a part with 100. For example, 25% of 200 = 50.",
-"The area of a rectangle is length × width. The area of a triangle is base × height ÷ 2."
-],
-items:[
-"Percentage = part × 100 ÷ total",
-"Rectangle area = length × width",
-"Triangle area = base × height ÷ 2",
-"An equation must remain balanced"
-],
-quiz:{
-q:"What is 25% of 80?",
-opts:["15","20","25","40"],
-ok:1
-}
-}
-},
+const programme={
 
-
-/* =========================
-   TECHNIQUE
-========================= */
+math:{
+nom:"📐 Mathématiques",
+description:"Calcul, algèbre, géométrie, statistiques et problèmes.",
+chapitres:[
+["Nombres et calculs",
+"Les nombres permettent de compter, comparer et effectuer des opérations.",
+"Exemple : 25 + 15 = 40.",
+"12 × 5 = ?","60"],
+["Fractions",
+"Une fraction représente une partie d'un tout. Elle s'écrit a/b.",
+"Exemple : 1/2 signifie une partie sur deux.",
+"1/2 + 1/2 = ?","1"],
+["Équations",
+"Une équation contient une inconnue qu'il faut déterminer.",
+"Exemple : x + 5 = 12 donc x = 7.",
+"x + 8 = 15. Trouve x.","7"],
+["Géométrie",
+"La géométrie étudie les formes, les longueurs, les angles et les surfaces.",
+"Rectangle : Aire = longueur × largeur.",
+"Rectangle de 5 cm sur 3 cm. Aire = ?","15 cm²"],
+["Statistiques",
+"Les statistiques permettent d'organiser et d'analyser des données.",
+"Exemple : 2, 4, 6. La moyenne est 4.",
+"Moyenne de 2, 4 et 6 ?","4"]
+]},
 
 technique:{
-fr:{
-title:"⚡ Technique",
-paras:[
-"Les filières techniques permettent de comprendre et de construire des systèmes électriques et électroniques.",
-"Dans un circuit simple, la tension provoque la circulation du courant et la résistance s'oppose à cette circulation.",
-"Un condensateur peut stocker une charge électrique. Une diode laisse principalement passer le courant dans un seul sens."
-],
-items:[
-"Tension, courant et résistance",
-"Condensateur = stockage de charge",
-"Diode = courant principalement dans un sens",
-"Résistance = opposition au courant"
-],
-quiz:{
-q:"Quel composant stocke principalement une charge électrique ?",
-opts:["Diode","Condensateur","Transformateur","Interrupteur"],
-ok:1
-}
-},
-en:{
-title:"⚡ Technical Studies",
-paras:[
-"Technical studies help us understand and build electrical and electronic systems.",
-"In a simple circuit, voltage drives current while resistance opposes the current.",
-"A capacitor can store electrical charge. A diode mainly allows current to flow in one direction."
-],
-items:[
-"Voltage, current and resistance",
-"Capacitor = stores charge",
-"Diode = mainly one current direction",
-"Resistance = opposition to current"
-],
-quiz:{
-q:"Which component mainly stores electrical charge?",
-opts:["Diode","Capacitor","Transformer","Switch"],
-ok:1
-}
-}
-},
-
-
-/* =========================
-   ANGLAIS
-========================= */
+nom:"⚡ Technique / Électricité",
+description:"Électricité, électronique, circuits et mesures.",
+chapitres:[
+["Courant électrique",
+"Le courant électrique correspond au déplacement des charges électriques dans un circuit.",
+"Un circuit simple peut contenir une source, des conducteurs et une lampe.",
+"Quelle est l'unité du courant ?","Ampère (A)"],
+["Tension électrique",
+"La tension représente une différence de potentiel entre deux points.",
+"Elle se mesure avec un voltmètre.",
+"Quelle est l'unité de la tension ?","Volt (V)"],
+["Loi d'Ohm",
+"La loi d'Ohm relie la tension, la résistance et le courant.",
+"U = R × I",
+"R = 10 Ω et I = 2 A. Trouve U.","20 V"],
+["Puissance électrique",
+"La puissance indique la quantité d'énergie électrique utilisée par unité de temps.",
+"P = U × I",
+"U = 12 V et I = 2 A. Trouve P.","24 W"],
+["Circuit électrique",
+"Un circuit fermé permet au courant de circuler.",
+`+ ─── 💡 ─── −
+|             |
+└─────────────┘`,
+"Que se passe-t-il si le circuit est ouvert ?","Le courant ne circule pas."]
+]},
 
 anglais:{
-fr:{
-title:"🇬🇧 Anglais",
-paras:[
-"L'anglais permet de communiquer avec des personnes du monde entier.",
-"Pour se présenter, on peut utiliser : My name is..., I am... years old, I live in...",
-"Les verbes irréguliers ne prennent pas toujours -ed au passé. Par exemple : go → went."
-],
-items:[
-"I am / I was / I will be",
-"My name is...",
-"Go → went",
-"See → saw"
-],
-quiz:{
-q:"Quel est le passé de « go » ?",
-opts:["goed","went","gone","going"],
-ok:1
-}
-},
-en:{
-title:"🇬🇧 English",
-paras:[
-"English helps people communicate with others around the world.",
-"To introduce yourself, you can say: My name is..., I am... years old, I live in...",
-"Irregular verbs do not always take -ed in the past. For example: go → went."
-],
-items:[
-"I am / I was / I will be",
-"My name is...",
-"Go → went",
-"See → saw"
-],
-quiz:{
-q:"What is the past of go?",
-opts:["goed","went","gone","going"],
-ok:1
-}
-}
-},
-
-
-/* =========================
-   FRANCAIS
-========================= */
+nom:"🇬🇧 Anglais",
+description:"Grammar, vocabulary, verbs, reading and communication.",
+chapitres:[
+["Verb To Be",
+"Le verbe To Be signifie principalement être.",
+"I am, You are, He is, She is, We are, They are.",
+"Complete: She ___ happy.","is"],
+["Present Simple",
+"Le présent simple sert notamment à parler des habitudes et des faits.",
+"I go to school every day.",
+"Complete: He ___ football.","plays"],
+["Past Simple",
+"Le past simple permet de parler d'une action passée.",
+"I visited my friend yesterday.",
+"Past of 'go' ?","went"],
+["Vocabulary",
+"Le vocabulaire permet de comprendre et de construire des phrases.",
+"School = école, Book = livre, Teacher = professeur.",
+"Translate : school.","école"],
+["Communication",
+"Une bonne communication utilise des phrases claires et adaptées.",
+"Example: Good morning. How are you?",
+"How do you answer 'How are you?'","I am fine."]
+]},
 
 francais:{
-fr:{
-title:"🇫🇷 Français",
-paras:[
-"Le français permet de mieux communiquer à l'écrit comme à l'oral.",
-"Une phrase commence généralement par une majuscule et se termine par un signe de ponctuation.",
-"Le sujet et le verbe doivent être correctement accordés."
-],
-items:[
-"Grammaire",
-"Conjugaison",
-"Orthographe",
-"Vocabulaire",
-"Expression écrite"
-],
-quiz:{
-q:"Quelle phrase est correcte ?",
-opts:[
-"les eleves arrive.",
-"Les élèves arrivent.",
-"les Élèves arrives",
-"Les élève arrive."
-],
-ok:1
-}
-},
-en:{
-title:"🇫🇷 French",
-paras:[
-"French helps develop clear written and spoken communication.",
-"A sentence generally begins with a capital letter and ends with punctuation.",
-"The subject and verb must agree correctly."
-],
-items:[
-"Grammar",
-"Conjugation",
-"Spelling",
-"Vocabulary",
-"Written expression"
-],
-quiz:{
-q:"Which sentence is correct?",
-opts:[
-"les eleves arrive.",
-"Les élèves arrivent.",
-"les Élèves arrives",
-"Les élève arrive."
-],
-ok:1
-}
-}
-},
-
-
-/* =========================
-   HISTOIRE
-========================= */
+nom:"🇫🇷 Français",
+description:"Grammaire, conjugaison, orthographe et expression.",
+chapitres:[
+["Nature des mots",
+"Les mots peuvent être des noms, verbes, adjectifs, pronoms, déterminants, etc.",
+"Exemple : Le jeune garçon court. garçon = nom.",
+"Dans 'Paul mange', quel est le verbe ?","mange"],
+["Conjugaison",
+"Le verbe change selon la personne et le temps.",
+"Présent de être : je suis, tu es, il est.",
+"Conjugue avoir avec nous.","nous avons"],
+["Accord",
+"Les mots doivent respecter les règles d'accord.",
+"Une petite fille / des petites filles.",
+"Complète : des fille___ heureuses.","s"],
+["Orthographe",
+"L'orthographe permet d'écrire correctement les mots.",
+"Exemple : maison, école, travail.",
+"Écris correctement : 'ecole'.","école"],
+["Rédaction",
+"Une rédaction organise les idées dans un texte clair.",
+"Introduction → développement → conclusion.",
+"Que faut-il faire avant d'écrire ?","Organiser ses idées."]
+]},
 
 histoire:{
-fr:{
-title:"🇨🇲 Histoire du Cameroun",
-paras:[
-"Le Cameroun est un pays d'Afrique centrale. Yaoundé est la capitale politique et Douala est la principale ville économique.",
-"Avant la Première Guerre mondiale, une grande partie du territoire était sous administration allemande. Après la guerre, le territoire fut placé sous administration française et britannique.",
-"Le 1er janvier 1960, le Cameroun sous administration française devient indépendant. Ahmadou Ahidjo devient le premier président.",
-"Le 1er octobre 1961, la partie sud du Cameroun britannique rejoint le Cameroun indépendant. Cette étape est généralement appelée réunification.",
-"En 1972, un référendum transforme l'État fédéral en République unie. Le Cameroun compte aujourd'hui dix régions."
-],
-items:[
-"Capitale politique : Yaoundé",
-"Indépendance : 1er janvier 1960",
-"Réunification : 1er octobre 1961",
-"Premier président : Ahmadou Ahidjo",
-"1972 : République unie",
-"10 régions aujourd'hui"
-],
-quiz:{
-q:"En quelle année le Cameroun devient-il indépendant ?",
-opts:["1946","1960","1972","1990"],
-ok:1
-}
-},
-en:{
-title:"🇨🇲 History of Cameroon",
-paras:[
-"Cameroon is a country in Central Africa. Yaoundé is the political capital and Douala is the main economic city.",
-"Before the First World War, a large part of the territory was under German administration. After the war, the territory was placed under French and British administration.",
-"On 1 January 1960, French-administered Cameroon became independent. Ahmadou Ahidjo became the first president.",
-"On 1 October 1961, the southern part of British Cameroon joined independent Cameroon. This step is generally called reunification.",
-"In 1972, a referendum transformed the federal state into a United Republic. Cameroon now has ten regions."
-],
-items:[
-"Political capital: Yaoundé",
-"Independence: 1 January 1960",
-"Reunification: 1 October 1961",
-"First president: Ahmadou Ahidjo",
-"1972: United Republic",
-"10 regions today"
-],
-quiz:{
-q:"In which year did Cameroon become independent?",
-opts:["1946","1960","1972","1990"],
-ok:1
-}
-}
-},
+nom:"📖 Histoire",
+description:"Histoire du Cameroun, de l'Afrique et du monde.",
+chapitres:[
+["Qu'est-ce que l'histoire ?",
+"L'histoire étudie les événements du passé et leur influence sur le présent.",
+"Les sources historiques peuvent être écrites, orales ou matérielles.",
+"Que permet d'étudier l'histoire ?","Le passé"],
+["Afrique",
+"L'Afrique possède une histoire riche avec de nombreux royaumes, peuples et civilisations.",
+"Exemple : les royaumes africains ont développé des systèmes politiques et commerciaux.",
+"Pourquoi étudier l'histoire africaine ?","Pour comprendre son passé."],
+["Cameroun",
+"Le Cameroun possède une histoire marquée par différentes populations, royaumes et périodes coloniales.",
+"Le Cameroun devient indépendant en 1960.",
+"En quelle année le Cameroun devient-il indépendant ?","1960"],
+["Monde",
+"L'histoire mondiale permet de comprendre les grands changements politiques, sociaux et économiques.",
+"Les guerres et les révolutions ont transformé de nombreuses sociétés.",
+"Pourquoi étudier l'histoire mondiale ?","Pour comprendre les changements du monde."]
+]},
 
+geographie:{
+nom:"🌍 Géographie",
+description:"Relief, climat, population, cartes et environnement.",
+chapitres:[
+["La Terre",
+"La Terre est notre planète. Elle possède des continents et des océans.",
+"Les continents comprennent l'Afrique, l'Europe, l'Asie, l'Amérique et l'Océanie.",
+"Sur quelle planète vivons-nous ?","La Terre"],
+["Climat",
+"Le climat décrit les conditions atmosphériques observées sur une longue période.",
+"Exemple : climat équatorial.",
+"Quel climat trouve-t-on dans certaines régions du Cameroun ?","Équatorial"],
+["Population",
+"La géographie étudie aussi la répartition des populations.",
+"Les populations sont plus ou moins concentrées selon les régions.",
+"Que signifie population ?","Ensemble des habitants d'un territoire."],
+["Cartographie",
+"Une carte représente un territoire de manière réduite.",
+"Une légende permet de comprendre les symboles d'une carte.",
+"À quoi sert une légende ?","À expliquer les symboles."]
+]},
 
-/* =========================
-   ENTREPRENEURIAT
-========================= */
+sciences:{
+nom:"🧪 Sciences",
+description:"Physique, chimie, biologie, corps humain et environnement.",
+chapitres:[
+["Matière",
+"La matière est tout ce qui possède une masse et occupe un espace.",
+"Elle peut être solide, liquide ou gazeuse.",
+"Donne un exemple de matière solide.","Une pierre"],
+["Corps humain",
+"Le corps humain possède plusieurs organes qui assurent différentes fonctions.",
+"Le cœur participe à la circulation du sang.",
+"Quel organe pompe le sang ?","Le cœur"],
+["Énergie",
+"L'énergie permet de produire des mouvements, de la chaleur, de la lumière ou d'autres effets.",
+"Exemples : énergie électrique, solaire et mécanique.",
+"Donne une source d'énergie renouvelable.","Le soleil"],
+["Environnement",
+"L'environnement comprend les éléments naturels et les êtres vivants qui nous entourent.",
+"Protéger l'environnement réduit la pollution.",
+"Donne une façon de protéger l'environnement.","Réduire la pollution."]
+]},
 
 entrepreneuriat:{
-fr:{
-title:"💼 Entrepreneuriat",
-paras:[
-"Entreprendre consiste à identifier un besoin et à proposer une solution utile.",
-"Une bonne idée commence souvent par un problème réel. Il faut ensuite comprendre les personnes concernées.",
-"Avant d'investir beaucoup d'argent, il est utile de tester une petite version du projet."
-],
-items:[
-"Identifier un problème",
-"Comprendre les besoins",
-"Créer une solution",
-"Tester",
-"Améliorer"
-],
-quiz:{
-q:"Par quoi commence généralement une bonne idée de projet ?",
-opts:[
-"Un logo",
-"Un problème réel",
-"Un bureau",
-"Un nom compliqué"
-],
-ok:1
-}
-},
-en:{
-title:"💼 Entrepreneurship",
-paras:[
-"Entrepreneurship means identifying a need and proposing a useful solution.",
-"A good idea often starts with a real problem. You then need to understand the people affected.",
-"Before investing a lot of money, it is useful to test a small version of the project."
-],
-items:[
-"Identify a problem",
-"Understand needs",
-"Create a solution",
-"Test",
-"Improve"
-],
-quiz:{
-q:"What does a good project idea usually start with?",
-opts:[
-"A logo",
-"A real problem",
-"An office",
-"A complicated name"
-],
-ok:1
-}
-}
-},
+nom:"💼 Entrepreneuriat",
+description:"Idée, entreprise, client, budget et gestion.",
+chapitres:[
+["Idée d'entreprise",
+"Une entreprise peut commencer par une idée répondant à un besoin.",
+"Exemple : service de réparation de téléphones.",
+"Que doit résoudre une bonne idée ?","Un besoin"],
+["Client",
+"Le client achète un produit ou utilise un service.",
+"Comprendre les besoins du client aide l'entreprise.",
+"Qui achète un produit ?","Le client"],
+["Budget",
+"Un budget permet de prévoir les recettes et les dépenses.",
+"Recettes - dépenses = résultat.",
+"10000 FCFA de recettes et 6000 FCFA de dépenses. Résultat ?","4000 FCFA"],
+["Marketing",
+"Le marketing permet de faire connaître un produit ou un service.",
+"Exemple : publicité sur les réseaux sociaux.",
+"Pourquoi faire de la publicité ?","Pour faire connaître le produit ou service."]
+]},
+
+gouvernement:{
+nom:"🏛️ Gouvernement / Éducation civique",
+description:"Citoyenneté, droits, devoirs et institutions.",
+chapitres:[
+["Citoyen",
+"Un citoyen possède des droits et des devoirs.",
+"Respecter les lois fait partie des responsabilités civiques.",
+"Un citoyen possède quoi ?","Des droits et des devoirs."],
+["État",
+"L'État organise la vie publique d'un pays à travers ses institutions.",
+"Les institutions ont différentes responsabilités.",
+"Pourquoi existe-t-il des institutions ?","Pour organiser la vie publique."],
+["Droits",
+"Les droits protègent les personnes et permettent leur participation à la société.",
+"Exemple : droit à l'éducation.",
+"Donne un exemple de droit.","Le droit à l'éducation."],
+["Devoirs",
+"Les devoirs sont les responsabilités que chacun doit respecter.",
+"Respecter les autres et les lois fait partie de la vie citoyenne.",
+"Donne un devoir du citoyen.","Respecter les lois."]
+]},
+
+informatique:{
+nom:"💻 Informatique",
+description:"Ordinateur, Internet, algorithmique et programmation.",
+chapitres:[
+["Ordinateur",
+"Un ordinateur est une machine qui traite et stocke des informations.",
+"Il possède notamment un processeur, une mémoire et des périphériques.",
+"Que traite un ordinateur ?","Des informations"],
+["Internet",
+"Internet est un réseau mondial permettant aux appareils de communiquer.",
+"Le Web est l'un des services accessibles grâce à Internet.",
+"Qu'est-ce qu'Internet ?","Un réseau mondial."],
+["Algorithmique",
+"Un algorithme est une suite d'instructions permettant de résoudre un problème.",
+"Exemple : étape 1 → saisir deux nombres → étape 2 → les additionner.",
+"À quoi sert un algorithme ?","À résoudre un problème."],
+["Programmation",
+"Programmer consiste à donner des instructions à un ordinateur dans un langage.",
+"HTML sert notamment à structurer des pages Web.",
+"Quel langage structure une page Web ?","HTML"],
+["Sécurité",
+"La sécurité informatique consiste à protéger les appareils, les comptes et les données.",
+"Un mot de passe doit rester secret.",
+"Pourquoi protéger son mot de passe ?","Pour protéger son compte."]
+]}
+
+};
 
 
 /* =========================
-   GOUVERNEMENT
+   AFFICHAGE
 ========================= */
 
-gouvernement:
+let langue="fr";
+let matiereActuelle="";
+let chapitreActuel=0;
+
+function afficherMatieres(){
+
+const recherche=document
+.getElementById("recherche")
+.value
+.toLowerCase();
+
+const zone=document.getElementById("matieres");
+
+zone.innerHTML="";
+
+for(const id in programme){
+
+const m=programme[id];
+
+if(
+m.nom.toLowerCase().includes(recherche) ||
+m.description.toLowerCase().includes(recherche)
+){
+
+zone.innerHTML+=`
+<div class="card">
+<h3>${m.nom}</h3>
+<p>${m.description}</p>
+<p class="small">${m.chapitres.length} chapitres disponibles</p>
+<button onclick="ouvrirMatiere('${id}')">
+Voir le cours →
+</button>
+</div>`;
+}
+
+}
+
+}
+
+
+/* =========================
+   OUVRIR UNE MATIÈRE
+========================= */
+
+function ouvrirMatiere(id){
+
+matiereActuelle=id;
+
+const m=programme[id];
+
+document.getElementById("titreCours").textContent=m.nom;
+
+let html=`
+<h3>📚 Programme</h3>
+<p>${m.description}</p>
+`;
+
+m.chapitres.forEach((c,i)=>{
+
+html+=`
+<div class="lesson">
+<h3>${i+1}. ${c[0]}</h3>
+<button onclick="ouvrirChapitre(${i})">
+Commencer cette leçon →
+</button>
+</div>
+`;
+
+});
+
+document.getElementById("contenuCours").innerHTML=html;
+
+document.getElementById("cours").style.display="block";
+
+document.getElementById("cours").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+/* =========================
+   OUVRIR LE CHAPITRE
+========================= */
+
+function ouvrirChapitre(i){
+
+chapitreActuel=i;
+
+const c=programme[matiereActuelle].chapitres[i];
+
+document.getElementById("contenuCours").innerHTML=`
+
+<button onclick="ouvrirMatiere('${matiereActuelle}')">
+← Retour au programme
+</button>
+
+<div class="lesson">
+
+<h3>📖 Leçon</h3>
+
+<p>${c[1]}</p>
+
+<h3>💡 Exemple</h3>
+
+<div class="example">
+${c[2]}
+</div>
+
+<h3>📐 Formule / schéma</h3>
+
+<div class="formula">
+${matiereActuelle==="technique" && i===2
+?"U = R × I"
+:"À retenir : comprends la leçon avant de passer à l'exercice."}
+</div>
+
+${c[2].includes("──")
+?`<div class="diagram">${c[2]}</div>`:""}
+
+<div class="exercise">
+
+<h3>✏️ Exercice</h3>
+
+<p>${c[3]}</p>
+
+<button onclick="voirReponse()">
+Vérifier la réponse
+</button>
+
+<p id="reponse" class="answer"></p>
+
+</div>
+
+<br>
+
+<button onclick="prochainChapitre()">
+Leçon suivante →
+</button>
+
+</div>
+`;
+
+}
+
+
+function voirReponse(){
+
+const c=programme[matiereActuelle].chapitres[chapitreActuel];
+
+document.getElementById("reponse").textContent=
+"✅ Réponse : "+c[4];
+
+}
+
+
+function prochainChapitre(){
+
+const total=programme[matiereActuelle].chapitres.length;
+
+if(chapitreActuel+1<total){
+
+ouvrirChapitre(chapitreActuel+1);
+
+}else{
+
+alert("🎉 Bravo ! Tu as terminé cette matière.");
+
+}
+
+}
+
+
+function fermerCours(){
+
+document.getElementById("cours").style.display="none";
+
+}
+
+
+function changerLangue(){
+
+langue=document.getElementById("langue").value;
+
+alert(
+langue==="en"
+?"The English version is being prepared progressively."
+:"Version française sélectionnée."
+);
+
+}
+
+
+/* DÉMARRAGE */
+
+afficherMatieres();
+
+</script>
+
+</body>
+</html>
