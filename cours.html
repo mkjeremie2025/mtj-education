@@ -3,863 +3,901 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MTJ Éducation | Apprendre aujourd'hui, construire demain</title>
+<meta name="description" content="MT Jeunesse - Cours, éducation, technique, informatique, histoire, entrepreneuriat et culture générale.">
+<meta name="theme-color" content="#07111f">
+<title>MT Jeunesse - Cours</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f4f7fb;
-  color:#172033;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#172033;
 }
 
-/* HEADER */
 header{
-  background:linear-gradient(135deg,#071d49,#0b5ed7);
-  color:white;
-  padding:18px 6%;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  box-shadow:0 3px 15px rgba(0,0,0,.15);
-}
-
-.header-content{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
+    background:#07111f;
+    color:white;
+    padding:20px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 20px rgba(0,0,0,.15);
 }
 
 .logo{
-  font-size:24px;
-  font-weight:bold;
+    font-size:28px;
+    font-weight:bold;
 }
 
-.logo span{
-  color:#55d6ff;
+.logo span{color:#4d8dff}
+
+.slogan{
+    color:#aebbd0;
+    margin-top:5px;
 }
 
-nav{
-  display:flex;
-  gap:18px;
-  align-items:center;
+nav{margin-top:18px}
+
+nav button{
+    background:#10233b;
+    color:white;
+    border:1px solid #294463;
+    padding:9px 12px;
+    margin:4px;
+    border-radius:7px;
+    cursor:pointer;
 }
 
-nav a{
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-  font-size:14px;
-}
-
-nav a:hover{
-  color:#55d6ff;
+nav button:hover{
+    background:#0b5cff;
 }
 
 .language{
-  border:none;
-  padding:8px 10px;
-  border-radius:8px;
+    margin-top:15px;
+    background:#0b5cff;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
 }
 
-/* HERO */
 .hero{
-  background:linear-gradient(135deg,#0b5ed7,#5b21b6);
-  color:white;
-  padding:75px 6%;
-}
-
-.hero-content{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1.3fr .7fr;
-  gap:40px;
-  align-items:center;
+    background:linear-gradient(135deg,#07111f,#0b5cff);
+    color:white;
+    text-align:center;
+    padding:70px 20px;
 }
 
 .hero h1{
-  font-size:48px;
-  margin-bottom:18px;
-}
-
-.hero h1 span{
-  color:#66e3ff;
+    font-size:42px;
+    margin-bottom:15px;
 }
 
 .hero p{
-  font-size:18px;
-  line-height:1.7;
-  max-width:650px;
-}
-
-.buttons{
-  margin-top:28px;
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  display:inline-block;
-  padding:13px 22px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:bold;
-  border:none;
-  cursor:pointer;
-}
-
-.btn-primary{
-  background:white;
-  color:#0b5ed7;
-}
-
-.btn-secondary{
-  background:rgba(255,255,255,.15);
-  color:white;
-  border:1px solid rgba(255,255,255,.5);
-}
-
-.hero-card{
-  background:rgba(255,255,255,.12);
-  padding:30px;
-  border-radius:20px;
-  backdrop-filter:blur(10px);
-  border:1px solid rgba(255,255,255,.2);
-}
-
-.hero-card h2{
-  margin-bottom:20px;
-}
-
-.stat{
-  display:flex;
-  justify-content:space-between;
-  padding:12px 0;
-  border-bottom:1px solid rgba(255,255,255,.2);
-}
-
-/* SECTIONS */
-section{
-  padding:60px 6%;
+    max-width:720px;
+    margin:auto;
+    color:#d5deeb;
+    font-size:17px;
 }
 
 .container{
-  max-width:1200px;
-  margin:auto;
+    max-width:1150px;
+    margin:auto;
+    padding:60px 20px;
 }
 
-.section-title{
-  text-align:center;
-  margin-bottom:35px;
+.title{
+    text-align:center;
+    margin-bottom:35px;
 }
 
-.section-title h2{
-  font-size:32px;
-  color:#071d49;
-  margin-bottom:10px;
+.title h2{
+    font-size:34px;
+    margin-bottom:10px;
 }
 
-.section-title p{
-  color:#667085;
+.title p{color:#687386}
+
+.search{
+    width:100%;
+    padding:14px;
+    border:1px solid #ccd5e2;
+    border-radius:9px;
+    margin-bottom:30px;
+    font-size:16px;
 }
 
-/* SEARCH */
-.search-box{
-  max-width:700px;
-  margin:0 auto 30px;
-  display:flex;
-  gap:10px;
+.courses{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-.search-box input{
-  width:100%;
-  padding:15px;
-  border:1px solid #d0d5dd;
-  border-radius:10px;
-  font-size:16px;
+.course{
+    background:white;
+    border:1px solid #e0e6ef;
+    border-radius:15px;
+    padding:25px;
+    cursor:pointer;
+    transition:.2s;
 }
 
-/* FILTERS */
-.filters{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:30px;
-}
-
-.filter{
-  border:none;
-  padding:10px 18px;
-  border-radius:20px;
-  background:#e8eef8;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-.filter.active,
-.filter:hover{
-  background:#0b5ed7;
-  color:white;
-}
-
-/* CARDS */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
-
-.card{
-  background:white;
-  border-radius:18px;
-  padding:25px;
-  box-shadow:0 5px 20px rgba(0,0,0,.07);
-  transition:.25s;
-  border:1px solid #edf0f5;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 10px 25px rgba(0,0,0,.12);
+.course:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    border-color:#b8d0ff;
 }
 
 .icon{
-  font-size:40px;
-  margin-bottom:15px;
+    font-size:38px;
+    margin-bottom:12px;
 }
 
-.card h3{
-  color:#071d49;
-  margin-bottom:10px;
+.course h3{margin-bottom:10px}
+
+.course p{
+    color:#687386;
+    line-height:1.6;
 }
 
-.card p{
-  color:#667085;
-  line-height:1.5;
-  margin-bottom:18px;
+.open{
+    display:inline-block;
+    margin-top:15px;
+    color:#0b5cff;
+    font-weight:bold;
 }
 
-.card-btn{
-  display:inline-block;
-  background:#0b5ed7;
-  color:white;
-  padding:10px 15px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
+.lesson{
+    display:none;
+    background:white;
+    border:1px solid #d7e3f8;
+    border-radius:15px;
+    padding:30px;
+    margin-top:35px;
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
 }
 
-/* LEVEL */
-.levels{
-  background:white;
+.lesson.show{display:block}
+
+.lesson h2{
+    margin-bottom:18px;
+    font-size:28px;
 }
 
-.level-card{
-  text-align:center;
+.lesson p{
+    color:#586579;
+    line-height:1.8;
+    margin-bottom:16px;
 }
 
-.level-card strong{
-  display:block;
-  font-size:28px;
-  color:#0b5ed7;
-  margin-bottom:8px;
+.lesson ul{
+    margin-left:25px;
+    line-height:2;
+    margin-bottom:22px;
 }
 
-/* PROGRESS */
-.progress-area{
-  background:#071d49;
-  color:white;
+.lesson li{color:#354257}
+
+.info{
+    background:#eef4ff;
+    border-left:4px solid #0b5cff;
+    padding:16px;
+    border-radius:8px;
+    margin:20px 0;
+    line-height:1.7;
 }
 
-.progress-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+.check{
+    margin-top:25px;
+    padding:20px;
+    background:#f4f7fb;
+    border-radius:12px;
 }
 
-.progress-card{
-  background:rgba(255,255,255,.1);
-  padding:25px;
-  border-radius:15px;
+.check h3{
+    margin-bottom:12px;
 }
 
-.progress-bar{
-  height:10px;
-  background:rgba(255,255,255,.2);
-  border-radius:10px;
-  margin-top:15px;
-  overflow:hidden;
+.check button{
+    display:block;
+    width:100%;
+    text-align:left;
+    margin:7px 0;
+    padding:12px;
+    border:1px solid #d0d8e6;
+    border-radius:8px;
+    background:white;
+    cursor:pointer;
 }
 
-.progress-fill{
-  height:100%;
-  background:#55d6ff;
-  border-radius:10px;
+.check button:hover{
+    background:#edf3ff;
 }
 
-/* QUIZ */
-.quiz{
-  background:#eef5ff;
+.check button.good{
+    background:#157347;
+    color:white;
+    border-color:#157347;
 }
 
-.quiz-box{
-  max-width:700px;
-  margin:auto;
-  background:white;
-  padding:30px;
-  border-radius:18px;
-  box-shadow:0 5px 20px rgba(0,0,0,.08);
+.check button.bad{
+    background:#a33b3b;
+    color:white;
+    border-color:#a33b3b;
 }
 
-.question{
-  font-size:20px;
-  font-weight:bold;
-  margin-bottom:20px;
+.result{
+    margin-top:12px;
+    font-weight:bold;
 }
 
-.answer{
-  width:100%;
-  text-align:left;
-  padding:13px;
-  margin:7px 0;
-  border:1px solid #d0d5dd;
-  background:white;
-  border-radius:9px;
-  cursor:pointer;
+.close{
+    margin-top:20px;
+    padding:10px 16px;
+    background:#07111f;
+    color:white;
+    border:none;
+    border-radius:7px;
+    cursor:pointer;
 }
 
-.answer:hover{
-  background:#eaf2ff;
-}
+.close:hover{background:#0b5cff}
 
-#result{
-  margin-top:15px;
-  font-weight:bold;
-}
-
-/* FOOTER */
 footer{
-  background:#050f25;
-  color:white;
-  padding:40px 6%;
-  text-align:center;
-}
-
-footer h2{
-  margin-bottom:10px;
+    background:#030912;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+    margin-top:30px;
 }
 
 footer p{
-  color:#b8c1d1;
-  margin:7px;
+    color:#9caabd;
+    margin-top:8px;
 }
 
-/* MOBILE */
-@media(max-width:900px){
-  .grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .hero-content{
-    grid-template-columns:1fr;
-  }
-
-  .progress-grid{
-    grid-template-columns:1fr;
-  }
-
-  .hero h1{
-    font-size:38px;
-  }
+@media(max-width:850px){
+    .courses{
+        grid-template-columns:repeat(2,1fr);
+    }
 }
 
 @media(max-width:600px){
-  .header-content{
-    flex-direction:column;
-  }
+    .courses{
+        grid-template-columns:1fr;
+    }
 
-  nav{
-    flex-wrap:wrap;
-    justify-content:center;
-  }
+    .hero h1{
+        font-size:34px;
+    }
 
-  .grid{
-    grid-template-columns:1fr;
-  }
+    .container{
+        padding:45px 16px;
+    }
 
-  .hero{
-    padding:50px 5%;
-  }
-
-  section{
-    padding:45px 5%;
-  }
-
-  .hero h1{
-    font-size:32px;
-  }
-
-  .search-box{
-    flex-direction:column;
-  }
+    .lesson{
+        padding:22px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
-  <div class="header-content">
 
-    <div class="logo">
-      MTJ <span>Éducation</span>
-    </div>
+<div class="logo">
+MT <span>Jeunesse</span>
+</div>
 
-    <nav>
-      <a href="#accueil">Accueil</a>
-      <a href="#matieres">Cours</a>
-      <a href="#niveaux">Niveaux</a>
-      <a href="#quiz">Quiz</a>
+<div class="slogan" id="slogan">
+Apprendre • Créer • Entreprendre • Innover
+</div>
 
-      <select class="language" id="languageSelect">
-        <option value="fr">🇫🇷 Français</option>
-        <option value="en">🇬🇧 English</option>
-      </select>
-    </nav>
+<nav>
 
-  </div>
+<button onclick="location.href='index.html'" id="homeBtn">
+Accueil
+</button>
+
+<button onclick="location.href='cours.html'" id="coursesBtn">
+Cours
+</button>
+
+<button onclick="location.href='quiz.html'" id="quizBtn">
+Quiz
+</button>
+
+</nav>
+
+<button class="language" onclick="changeLanguage()" id="langBtn">
+🇬🇧 English
+</button>
+
 </header>
 
 
-<!-- HERO -->
-<section class="hero" id="accueil">
+<section class="hero">
 
-  <div class="hero-content">
+<h1 id="heroTitle">
+📚 Les cours MT Jeunesse
+</h1>
 
-    <div>
-      <h1>
-        Apprends.<br>
-        Progresse.<br>
-        <span>Construis ton avenir.</span>
-      </h1>
-
-      <p id="heroText">
-        Bienvenue sur MTJ Éducation & Entrepreneuriat,
-        une plateforme éducative moderne pour apprendre,
-        pratiquer et développer tes compétences.
-      </p>
-
-      <div class="buttons">
-        <a href="#matieres" class="btn btn-primary">
-          📚 Commencer les cours
-        </a>
-
-        <a href="#quiz" class="btn btn-secondary">
-          🧠 Faire un quiz
-        </a>
-      </div>
-    </div>
-
-    <div class="hero-card">
-
-      <h2>🎓 MTJ Éducation</h2>
-
-      <div class="stat">
-        <span>📚 Matières</span>
-        <strong>8+</strong>
-      </div>
-
-      <div class="stat">
-        <span>🧠 Quiz</span>
-        <strong>20+</strong>
-      </div>
-
-      <div class="stat">
-        <span>🌍 Langues</span>
-        <strong>2</strong>
-      </div>
-
-      <div class="stat">
-        <span>🚀 Objectif</span>
-        <strong>Réussir</strong>
-      </div>
-
-    </div>
-
-  </div>
+<p id="heroText">
+Choisis une matière et commence à apprendre.
+</p>
 
 </section>
 
 
-<!-- MATIERES -->
-<section id="matieres">
-
-  <div class="container">
+<main class="container">
+
+<div class="title">
+
+<h2 id="courseTitle">
+Toutes les matières
+</h2>
+
+<p id="courseSubtitle">
+Des cours simples pour apprendre, comprendre et progresser.
+</p>
+
+</div>
+
+
+<input
+type="text"
+class="search"
+id="search"
+placeholder="🔎 Rechercher un cours..."
+onkeyup="searchCourses()"
+>
+
+
+<div class="courses" id="courses">
+
+
+<div class="course" data-name="maths" onclick="openLesson('maths')">
+<div class="icon">📐</div>
+<h3 data-fr="Mathématiques" data-en="Mathematics">Mathématiques</h3>
+<p data-fr="Algèbre, géométrie, calcul et exercices."
+data-en="Algebra, geometry, calculations and exercises.">
+Algèbre, géométrie, calcul et exercices.
+</p>
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+</div>
+
+
+<div class="course" data-name="technique" onclick="openLesson('technique')">
+<div class="icon">⚡</div>
+<h3 data-fr="Technique" data-en="Technical Studies">Technique</h3>
+<p data-fr="Électricité, électronique, électrotechnique et machines."
+data-en="Electricity, electronics, electrotechnics and machines.">
+Électricité, électronique, électrotechnique et machines.
+</p>
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+</div>
+
+
+<div class="course" data-name="anglais" onclick="openLesson('anglais')">
+<div class="icon">🇬🇧</div>
+<h3 data-fr="Anglais" data-en="English">Anglais</h3>
+<p data-fr="Vocabulaire, grammaire, conjugaison et communication."
+data-en="Vocabulary, grammar, conjugation and communication.">
+Vocabulaire, grammaire, conjugaison et communication.
+</p>
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+</div>
+
+
+<div class="course" data-name="francais" onclick="openLesson('francais')">
+<div class="icon">🇫🇷</div>
+<h3 data-fr="Français" data-en="French">Français</h3>
+<p data-fr="Grammaire, conjugaison, vocabulaire et expression."
+data-en="Grammar, conjugation, vocabulary and expression.">
+Grammaire, conjugaison, vocabulaire et expression.
+</p>
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+</div>
+
+
+<div class="course" data-name="histoire" onclick="openLesson('histoire')">
+<div class="icon">🇨🇲</div>
+<h3 data-fr="Histoire" data-en="History">Histoire</h3>
+<p data-fr="Histoire du Cameroun, de l'Afrique et du monde."
+data-en="History of Cameroon, Africa and the world.">
+Histoire du Cameroun, de l'Afrique et du monde.
+</p>
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+</div>
+
+
+<div class="course" data-name="entrepreneuriat" onclick="openLesson('entrepreneuriat')">
+<div class="icon">💼</div>
+<h3 data-fr="Entrepreneuriat" data-en="Entrepreneurship">Entrepreneuriat</h3>
+<p data-fr="Idée de projet, business, marketing, vente et gestion."
+data-en="Project ideas, business, marketing, sales and management.">
+Idée de projet, business, marketing, vente et gestion.
+</p>
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+</div>
+
+
+<div class="course" data-name="gouvernement" onclick="openLesson('gouvernement')">
+<div class="icon">🏛️</div>
+<h3 data-fr="Gouvernement" data-en="Government">Gouvernement</h3>
+<p data-fr="Institutions, administration et fonctionnement de l'État."
+data-en="Institutions, administration and how the state works.">
+Institutions, administration et fonctionnement de l'État.
+</p>
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+</div>
+
+
+<div class="course" data-name="politique" onclick="openLesson('politique')">
+<div class="icon">⚖️</div>
+<h3 data-fr="Politique et citoyenneté" data-en="Politics and Citizenship">
+Politique et citoyenneté
+</h3>
+<p data-fr="Droits, devoirs, institutions et participation citoyenne."
+data-en="Rights, duties, institutions and civic participation.">
+Droits, devoirs, institutions et participation citoyenne.
+</p>
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+</div>
+
+
+<div class="course" data-name="informatique" onclick="openLesson('informatique')">
+<div class="icon">💻</div>
+<h3 data-fr="Informatique" data-en="Computer Science">
+Informatique
+</h3>
+<p data-fr="Ordinateurs, programmation, Internet et création de sites."
+data-en="Computers, programming, Internet and website creation.">
+Ordinateurs, programmation, Internet et création de sites.
+</p>
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+</div>
+
+
+<div class="course" data-name="sciences" onclick="openLesson('sciences')">
+<div class="icon">🔬</div>
+<h3 data-fr="Sciences" data-en="Science">Sciences</h3>
+<p data-fr="Physique, chimie, biologie et connaissances scientifiques."
+data-en="Physics, chemistry, biology and scientific knowledge.">
+Physique, chimie, biologie et connaissances scientifiques.
+</p>
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+</div>
+
+
+<div class="course" data-name="culture" onclick="openLesson('culture')">
+<div class="icon">🌍</div>
+<h3 data-fr="Culture générale" data-en="General Knowledge">
+Culture générale
+</h3>
+<p data-fr="Pays, capitales, découvertes et connaissances du monde."
+data-en="Countries, capitals, discoveries and world knowledge.">
+Pays, capitales, découvertes et connaissances du monde.
+</p>
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+</div>
+
+
+<div class="course" data-name="articles" onclick="openLesson('articles')">
+<div class="icon">📰</div>
+<h3 data-fr="Articles" data-en="Articles">Articles</h3>
+<p data-fr="Actualités éducatives, découvertes et sujets intéressants."
+data-en="Educational news, discoveries and interesting topics.">
+Actualités éducatives, découvertes et sujets intéressants.
+</p>
+<span class="open" data-fr="Lire →" data-en="Read →">
+Lire →
+</span>
+</div>
+
+
+<div class="course" data-name="projets" onclick="openLesson('projets')">
+<div class="icon">🚀</div>
+<h3 data-fr="Projets et innovation" data-en="Projects and Innovation">
+Projets et innovation
+</h3>
+<p data-fr="Transforme tes idées en projets concrets."
+data-en="Turn your ideas into practical projects.">
+Transforme tes idées en projets concrets.
+</p>
+<span class="open" data-fr="Découvrir →" data-en="Discover →">
+Découvrir →
+</span>
+</div>
+
+</div>
+
+
+<div class="lesson" id="lesson">
+
+<h2 id="lessonTitle"></h2>
+
+<div id="lessonBody"></div>
+
+<ul id="lessonList"></ul>
+
+<div class="check" id="check"></div>
+
+<button class="close" onclick="closeLesson()" id="closeBtn">
+Fermer
+</button>
+
+</div>
+
+</main>
 
-    <div class="section-title">
-      <h2>📚 Nos matières</h2>
-      <p>Choisis une matière et commence ton apprentissage.</p>
-    </div>
 
-    <div class="search-box">
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="🔎 Rechercher une matière..."
-        onkeyup="searchSubjects()">
-    </div>
-
-    <div class="filters">
-      <button class="filter active" onclick="filterSubjects('all',this)">
-        Tous
-      </button>
-
-      <button class="filter" onclick="filterSubjects('debutant',this)">
-        Débutant
-      </button>
-
-      <button class="filter" onclick="filterSubjects('intermediaire',this)">
-        Intermédiaire
-      </button>
-
-      <button class="filter" onclick="filterSubjects('avance',this)">
-        Avancé
-      </button>
-    </div>
-
-
-    <div class="grid" id="subjectGrid">
-
-      <div class="card subject" data-level="debutant">
-        <div class="icon">📐</div>
-        <h3>Mathématiques</h3>
-        <p>Nombres, fractions, équations, géométrie, statistiques et algèbre.</p>
-        <a href="maths.html" class="card-btn">Voir le cours →</a>
-      </div>
-
-
-      <div class="card subject" data-level="debutant">
-        <div class="icon">📖</div>
-        <h3>Français</h3>
-        <p>Grammaire, conjugaison, orthographe, vocabulaire et expression.</p>
-        <a href="francais.html" class="card-btn">Voir le cours →</a>
-      </div>
-
-
-      <div class="card subject" data-level="intermediaire">
-        <div class="icon">🇬🇧</div>
-        <h3>English</h3>
-        <p>Grammar, vocabulary, communication and professional English.</p>
-        <a href="anglais.html" class="card-btn">View course →</a>
-      </div>
-
-
-      <div class="card subject" data-level="intermediaire">
-        <div class="icon">⚡</div>
-        <h3>Technique</h3>
-        <p>Électricité, électronique, installations et connaissances techniques.</p>
-        <a href="technique.html" class="card-btn">Voir le cours →</a>
-      </div>
-
-
-      <div class="card subject" data-level="debutant">
-        <div class="icon">💻</div>
-        <h3>Informatique</h3>
-        <p>Programmation, informatique, intelligence artificielle et numérique.</p>
-        <a href="informatique.html" class="card-btn">Voir le cours →</a>
-      </div>
-
-
-      <div class="card subject" data-level="intermediaire">
-        <div class="icon">💼</div>
-        <h3>Entrepreneuriat</h3>
-        <p>Idées d'entreprise, gestion, marketing et développement de projets.</p>
-        <a href="entrepreneuriat.html" class="card-btn">Voir le cours →</a>
-      </div>
-
-
-      <div class="card subject" data-level="debutant">
-        <div class="icon">🌍</div>
-        <h3>Histoire</h3>
-        <p>Découvre les grandes périodes, événements et personnages historiques.</p>
-        <a href="histoire.html" class="card-btn">Voir le cours →</a>
-      </div>
-
-
-      <div class="card subject" data-level="debutant">
-        <div class="icon">🇨🇲</div>
-        <h3>Citoyenneté</h3>
-        <p>Droits, devoirs, valeurs, responsabilité et vie en société.</p>
-        <a href="citoyennete.html" class="card-btn">Voir le cours →</a>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- NIVEAUX -->
-<section class="levels" id="niveaux">
-
-  <div class="container">
-
-    <div class="section-title">
-      <h2>🎯 Choisis ton niveau</h2>
-      <p>Apprends progressivement selon ton niveau.</p>
-    </div>
-
-    <div class="grid">
-
-      <div class="card level-card">
-        <strong>01</strong>
-        <h3>Débutant</h3>
-        <p>Commence avec les bases et progresse étape par étape.</p>
-      </div>
-
-      <div class="card level-card">
-        <strong>02</strong>
-        <h3>Intermédiaire</h3>
-        <p>Renforce tes connaissances avec des exercices pratiques.</p>
-      </div>
-
-      <div class="card level-card">
-        <strong>03</strong>
-        <h3>Avancé</h3>
-        <p>Approfondis tes compétences et relève de nouveaux défis.</p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- PROGRESSION -->
-<section class="progress-area">
-
-  <div class="container">
-
-    <div class="section-title">
-      <h2 style="color:white;">📈 Ta progression</h2>
-      <p style="color:#cbd5e1;">
-        Suis ton évolution et continue à apprendre.
-      </p>
-    </div>
-
-    <div class="progress-grid">
-
-      <div class="progress-card">
-        <h3>📐 Mathématiques</h3>
-        <p>75% terminé</p>
-        <div class="progress-bar">
-          <div class="progress-fill" style="width:75%;"></div>
-        </div>
-      </div>
-
-      <div class="progress-card">
-        <h3>⚡ Technique</h3>
-        <p>55% terminé</p>
-        <div class="progress-bar">
-          <div class="progress-fill" style="width:55%;"></div>
-        </div>
-      </div>
-
-      <div class="progress-card">
-        <h3>💻 Informatique</h3>
-        <p>40% terminé</p>
-        <div class="progress-bar">
-          <div class="progress-fill" style="width:40%;"></div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- QUIZ -->
-<section class="quiz" id="quiz">
-
-  <div class="container">
-
-    <div class="section-title">
-      <h2>🧠 Mini Quiz</h2>
-      <p>Teste rapidement tes connaissances.</p>
-    </div>
-
-    <div class="quiz-box">
-
-      <div class="question">
-        Quelle est la valeur de 5 × 6 ?
-      </div>
-
-      <button class="answer" onclick="checkAnswer(false)">
-        A. 20
-      </button>
-
-      <button class="answer" onclick="checkAnswer(true)">
-        B. 30
-      </button>
-
-      <button class="answer" onclick="checkAnswer(false)">
-        C. 35
-      </button>
-
-      <button class="answer" onclick="checkAnswer(false)">
-        D. 25
-      </button>
-
-      <div id="result"></div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- FOOTER -->
 <footer>
 
-  <h2>MTJ Éducation & Entrepreneuriat</h2>
+<strong>MT Jeunesse</strong>
 
-  <p>Apprendre aujourd'hui, construire demain. 🚀</p>
+<p id="footerSlogan">
+Apprendre aujourd'hui. Construire demain.
+</p>
 
-  <p>
-    Une plateforme pensée pour les jeunes,
-    les élèves et les futurs entrepreneurs.
-  </p>
+<p>
+Créateur : M K Jérémie
+</p>
 
-  <p>
-    © 2026 MTJ Éducation — Tous droits réservés.
-  </p>
+<p>
+© 2026 MT Jeunesse — Tous droits réservés.
+</p>
 
 </footer>
 
 
 <script>
 
-/* RECHERCHE */
-function searchSubjects(){
+var lang = "fr";
 
-  let input =
-    document.getElementById("searchInput")
-    .value
-    .toLowerCase();
 
-  let subjects =
-    document.querySelectorAll(".subject");
+var lessons = {
 
-  subjects.forEach(function(subject){
+/* =========================
+   MATHEMATIQUES
+========================= */
 
-    let text =
-      subject.innerText.toLowerCase();
-
-    if(text.includes(input)){
-      subject.style.display = "block";
-    }else{
-      subject.style.display = "none";
-    }
-
-  });
-
+maths:{
+fr:{
+title:"📐 Mathématiques",
+paras:[
+"Les mathématiques permettent de résoudre des problèmes grâce aux nombres, aux formules et au raisonnement.",
+"Un pourcentage compare une partie à 100. Par exemple, 25 % de 200 = 50.",
+"L'aire d'un rectangle se calcule avec longueur × largeur. L'aire d'un triangle se calcule avec base × hauteur ÷ 2."
+],
+items:[
+"Pourcentage = partie × 100 ÷ total",
+"Aire du rectangle = longueur × largeur",
+"Aire du triangle = base × hauteur ÷ 2",
+"Une équation doit rester équilibrée"
+],
+quiz:{
+q:"25 % de 80 égale combien ?",
+opts:["15","20","25","40"],
+ok:1
 }
-
-
-/* FILTRE */
-function filterSubjects(level,button){
-
-  let subjects =
-    document.querySelectorAll(".subject");
-
-  document.querySelectorAll(".filter")
-    .forEach(function(btn){
-      btn.classList.remove("active");
-    });
-
-  button.classList.add("active");
-
-  subjects.forEach(function(subject){
-
-    if(level === "all" ||
-       subject.dataset.level === level){
-
-      subject.style.display = "block";
-
-    }else{
-
-      subject.style.display = "none";
-
-    }
-
-  });
-
+},
+en:{
+title:"📐 Mathematics",
+paras:[
+"Mathematics helps solve problems using numbers, formulas and reasoning.",
+"A percentage compares a part with 100. For example, 25% of 200 = 50.",
+"The area of a rectangle is length × width. The area of a triangle is base × height ÷ 2."
+],
+items:[
+"Percentage = part × 100 ÷ total",
+"Rectangle area = length × width",
+"Triangle area = base × height ÷ 2",
+"An equation must remain balanced"
+],
+quiz:{
+q:"What is 25% of 80?",
+opts:["15","20","25","40"],
+ok:1
 }
-
-
-/* QUIZ */
-function checkAnswer(correct){
-
-  let result =
-    document.getElementById("result");
-
-  if(correct){
-
-    result.innerHTML =
-      "✅ Bonne réponse ! Excellent travail.";
-
-    result.style.color = "green";
-
-  }else{
-
-    result.innerHTML =
-      "❌ Mauvaise réponse. Essaie encore.";
-
-    result.style.color = "red";
-
-  }
-
 }
+},
 
 
-/* LANGUE */
-const languageSelect =
-  document.getElementById("languageSelect");
+/* =========================
+   TECHNIQUE
+========================= */
 
-languageSelect.addEventListener("change",function(){
+technique:{
+fr:{
+title:"⚡ Technique",
+paras:[
+"Les filières techniques permettent de comprendre et de construire des systèmes électriques et électroniques.",
+"Dans un circuit simple, la tension provoque la circulation du courant et la résistance s'oppose à cette circulation.",
+"Un condensateur peut stocker une charge électrique. Une diode laisse principalement passer le courant dans un seul sens."
+],
+items:[
+"Tension, courant et résistance",
+"Condensateur = stockage de charge",
+"Diode = courant principalement dans un sens",
+"Résistance = opposition au courant"
+],
+quiz:{
+q:"Quel composant stocke principalement une charge électrique ?",
+opts:["Diode","Condensateur","Transformateur","Interrupteur"],
+ok:1
+}
+},
+en:{
+title:"⚡ Technical Studies",
+paras:[
+"Technical studies help us understand and build electrical and electronic systems.",
+"In a simple circuit, voltage drives current while resistance opposes the current.",
+"A capacitor can store electrical charge. A diode mainly allows current to flow in one direction."
+],
+items:[
+"Voltage, current and resistance",
+"Capacitor = stores charge",
+"Diode = mainly one current direction",
+"Resistance = opposition to current"
+],
+quiz:{
+q:"Which component mainly stores electrical charge?",
+opts:["Diode","Capacitor","Transformer","Switch"],
+ok:1
+}
+}
+},
 
-  if(this.value === "en"){
 
-    document.getElementById("heroText").innerText =
-      "Welcome to MTJ Education & Entrepreneurship, a modern educational platform to learn, practice and develop your skills.";
+/* =========================
+   ANGLAIS
+========================= */
 
-  }else{
+anglais:{
+fr:{
+title:"🇬🇧 Anglais",
+paras:[
+"L'anglais permet de communiquer avec des personnes du monde entier.",
+"Pour se présenter, on peut utiliser : My name is..., I am... years old, I live in...",
+"Les verbes irréguliers ne prennent pas toujours -ed au passé. Par exemple : go → went."
+],
+items:[
+"I am / I was / I will be",
+"My name is...",
+"Go → went",
+"See → saw"
+],
+quiz:{
+q:"Quel est le passé de « go » ?",
+opts:["goed","went","gone","going"],
+ok:1
+}
+},
+en:{
+title:"🇬🇧 English",
+paras:[
+"English helps people communicate with others around the world.",
+"To introduce yourself, you can say: My name is..., I am... years old, I live in...",
+"Irregular verbs do not always take -ed in the past. For example: go → went."
+],
+items:[
+"I am / I was / I will be",
+"My name is...",
+"Go → went",
+"See → saw"
+],
+quiz:{
+q:"What is the past of go?",
+opts:["goed","went","gone","going"],
+ok:1
+}
+}
+},
 
-    document.getElementById("heroText").innerText =
-      "Bienvenue sur MTJ Éducation & Entrepreneuriat, une plateforme éducative moderne pour apprendre, pratiquer et développer tes compétences.";
 
-  }
+/* =========================
+   FRANCAIS
+========================= */
 
-});
+francais:{
+fr:{
+title:"🇫🇷 Français",
+paras:[
+"Le français permet de mieux communiquer à l'écrit comme à l'oral.",
+"Une phrase commence généralement par une majuscule et se termine par un signe de ponctuation.",
+"Le sujet et le verbe doivent être correctement accordés."
+],
+items:[
+"Grammaire",
+"Conjugaison",
+"Orthographe",
+"Vocabulaire",
+"Expression écrite"
+],
+quiz:{
+q:"Quelle phrase est correcte ?",
+opts:[
+"les eleves arrive.",
+"Les élèves arrivent.",
+"les Élèves arrives",
+"Les élève arrive."
+],
+ok:1
+}
+},
+en:{
+title:"🇫🇷 French",
+paras:[
+"French helps develop clear written and spoken communication.",
+"A sentence generally begins with a capital letter and ends with punctuation.",
+"The subject and verb must agree correctly."
+],
+items:[
+"Grammar",
+"Conjugation",
+"Spelling",
+"Vocabulary",
+"Written expression"
+],
+quiz:{
+q:"Which sentence is correct?",
+opts:[
+"les eleves arrive.",
+"Les élèves arrivent.",
+"les Élèves arrives",
+"Les élève arrive."
+],
+ok:1
+}
+}
+},
 
-</script>
 
-</body>
-</html>
+/* =========================
+   HISTOIRE
+========================= */
+
+histoire:{
+fr:{
+title:"🇨🇲 Histoire du Cameroun",
+paras:[
+"Le Cameroun est un pays d'Afrique centrale. Yaoundé est la capitale politique et Douala est la principale ville économique.",
+"Avant la Première Guerre mondiale, une grande partie du territoire était sous administration allemande. Après la guerre, le territoire fut placé sous administration française et britannique.",
+"Le 1er janvier 1960, le Cameroun sous administration française devient indépendant. Ahmadou Ahidjo devient le premier président.",
+"Le 1er octobre 1961, la partie sud du Cameroun britannique rejoint le Cameroun indépendant. Cette étape est généralement appelée réunification.",
+"En 1972, un référendum transforme l'État fédéral en République unie. Le Cameroun compte aujourd'hui dix régions."
+],
+items:[
+"Capitale politique : Yaoundé",
+"Indépendance : 1er janvier 1960",
+"Réunification : 1er octobre 1961",
+"Premier président : Ahmadou Ahidjo",
+"1972 : République unie",
+"10 régions aujourd'hui"
+],
+quiz:{
+q:"En quelle année le Cameroun devient-il indépendant ?",
+opts:["1946","1960","1972","1990"],
+ok:1
+}
+},
+en:{
+title:"🇨🇲 History of Cameroon",
+paras:[
+"Cameroon is a country in Central Africa. Yaoundé is the political capital and Douala is the main economic city.",
+"Before the First World War, a large part of the territory was under German administration. After the war, the territory was placed under French and British administration.",
+"On 1 January 1960, French-administered Cameroon became independent. Ahmadou Ahidjo became the first president.",
+"On 1 October 1961, the southern part of British Cameroon joined independent Cameroon. This step is generally called reunification.",
+"In 1972, a referendum transformed the federal state into a United Republic. Cameroon now has ten regions."
+],
+items:[
+"Political capital: Yaoundé",
+"Independence: 1 January 1960",
+"Reunification: 1 October 1961",
+"First president: Ahmadou Ahidjo",
+"1972: United Republic",
+"10 regions today"
+],
+quiz:{
+q:"In which year did Cameroon become independent?",
+opts:["1946","1960","1972","1990"],
+ok:1
+}
+}
+},
+
+
+/* =========================
+   ENTREPRENEURIAT
+========================= */
+
+entrepreneuriat:{
+fr:{
+title:"💼 Entrepreneuriat",
+paras:[
+"Entreprendre consiste à identifier un besoin et à proposer une solution utile.",
+"Une bonne idée commence souvent par un problème réel. Il faut ensuite comprendre les personnes concernées.",
+"Avant d'investir beaucoup d'argent, il est utile de tester une petite version du projet."
+],
+items:[
+"Identifier un problème",
+"Comprendre les besoins",
+"Créer une solution",
+"Tester",
+"Améliorer"
+],
+quiz:{
+q:"Par quoi commence généralement une bonne idée de projet ?",
+opts:[
+"Un logo",
+"Un problème réel",
+"Un bureau",
+"Un nom compliqué"
+],
+ok:1
+}
+},
+en:{
+title:"💼 Entrepreneurship",
+paras:[
+"Entrepreneurship means identifying a need and proposing a useful solution.",
+"A good idea often starts with a real problem. You then need to understand the people affected.",
+"Before investing a lot of money, it is useful to test a small version of the project."
+],
+items:[
+"Identify a problem",
+"Understand needs",
+"Create a solution",
+"Test",
+"Improve"
+],
+quiz:{
+q:"What does a good project idea usually start with?",
+opts:[
+"A logo",
+"A real problem",
+"An office",
+"A complicated name"
+],
+ok:1
+}
+}
+},
+
+
+/* =========================
+   GOUVERNEMENT
+========================= */
+
+gouvernement:
