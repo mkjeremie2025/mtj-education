@@ -3,613 +3,1077 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Histoire du Cameroun 🇨🇲</title>
+
+<title>MT Jeunesse - Cours</title>
 
 <style>
+
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:Arial, sans-serif;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 body{
-  background:#f4f6f8;
-  color:#222;
-  line-height:1.6;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#172033;
 }
 
 header{
-  background:linear-gradient(135deg,#007a3d,#ce1126,#fcd116);
-  color:white;
-  padding:45px 20px;
-  text-align:center;
+    background:#07111f;
+    color:white;
+    padding:20px;
+    text-align:center;
 }
 
-header h1{
-  font-size:42px;
-  margin-bottom:10px;
+.logo{
+    font-size:28px;
+    font-weight:bold;
 }
 
-header p{
-  font-size:18px;
+.logo span{
+    color:#4d8dff;
+}
+
+.slogan{
+    color:#aebbd0;
+    margin-top:5px;
 }
 
 nav{
-  background:#111;
-  padding:15px;
-  text-align:center;
-  position:sticky;
-  top:0;
-  z-index:100;
+    margin-top:18px;
 }
 
-nav a{
-  color:white;
-  text-decoration:none;
-  margin:0 12px;
-  font-weight:bold;
+nav button{
+    background:#10233b;
+    color:white;
+    border:1px solid #294463;
+    padding:9px 12px;
+    margin:4px;
+    border-radius:7px;
+    cursor:pointer;
 }
 
-nav a:hover{
-  color:#fcd116;
+nav button:hover{
+    background:#0b5cff;
 }
 
-.container{
-  width:92%;
-  max-width:1200px;
-  margin:auto;
+.language{
+    margin-top:15px;
+    background:#0b5cff;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
 }
 
 .hero{
-  margin:30px 0;
-  padding:45px 25px;
-  background:white;
-  border-radius:18px;
-  text-align:center;
-  box-shadow:0 5px 20px rgba(0,0,0,.08);
+    background:linear-gradient(135deg,#07111f,#0b5cff);
+    color:white;
+    text-align:center;
+    padding:65px 20px;
 }
 
-.hero h2{
-  color:#007a3d;
-  font-size:30px;
-  margin-bottom:15px;
+.hero h1{
+    font-size:42px;
+    margin-bottom:15px;
 }
 
-.section-title{
-  text-align:center;
-  margin:45px 0 25px;
-  color:#007a3d;
-  font-size:30px;
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:#d5deeb;
 }
 
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+.container{
+    max-width:1150px;
+    margin:auto;
+    padding:60px 20px;
 }
 
-.card{
-  background:white;
-  padding:25px;
-  border-radius:16px;
-  box-shadow:0 4px 15px rgba(0,0,0,.08);
-  transition:.3s;
+.title{
+    text-align:center;
+    margin-bottom:35px;
 }
 
-.card:hover{
-  transform:translateY(-5px);
+.title h2{
+    font-size:34px;
+    margin-bottom:10px;
 }
 
-.card h3{
-  color:#ce1126;
-  margin-bottom:10px;
-}
-
-.date{
-  color:#007a3d;
-  font-weight:bold;
-  font-size:20px;
-}
-
-.timeline{
-  border-left:5px solid #007a3d;
-  margin:30px auto;
-  max-width:900px;
-  padding-left:25px;
-}
-
-.event{
-  background:white;
-  padding:20px;
-  margin-bottom:20px;
-  border-radius:12px;
-  box-shadow:0 3px 12px rgba(0,0,0,.08);
-}
-
-.event h3{
-  color:#ce1126;
+.title p{
+    color:#687386;
 }
 
 .search{
-  margin:25px auto;
-  max-width:600px;
+    width:100%;
+    padding:14px;
+    border:1px solid #ccd5e2;
+    border-radius:9px;
+    margin-bottom:30px;
+    font-size:16px;
 }
 
-.search input{
-  width:100%;
-  padding:15px;
-  border:2px solid #007a3d;
-  border-radius:10px;
-  font-size:16px;
+.courses{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-.quiz{
-  background:#111;
-  color:white;
-  padding:30px;
-  border-radius:18px;
-  margin:40px 0;
+.course{
+    background:white;
+    border:1px solid #e0e6ef;
+    border-radius:15px;
+    padding:25px;
+    cursor:pointer;
+    transition:.2s;
 }
 
-.quiz h2{
-  color:#fcd116;
-  margin-bottom:20px;
+.course:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
 }
 
-.question{
-  background:#222;
-  padding:20px;
-  border-radius:12px;
-  margin-bottom:20px;
+.icon{
+    font-size:38px;
+    margin-bottom:12px;
 }
 
-button{
-  background:#007a3d;
-  color:white;
-  border:none;
-  padding:12px 20px;
-  border-radius:8px;
-  cursor:pointer;
-  font-weight:bold;
+.course h3{
+    margin-bottom:10px;
 }
 
-button:hover{
-  background:#005b2d;
+.course p{
+    color:#687386;
+    line-height:1.6;
 }
 
-.result{
-  margin-top:20px;
-  font-size:20px;
-  font-weight:bold;
+.open{
+    display:inline-block;
+    margin-top:15px;
+    color:#0b5cff;
+    font-weight:bold;
+}
+
+.lesson{
+    display:none;
+    background:white;
+    border:1px solid #d7e3f8;
+    border-radius:15px;
+    padding:30px;
+    margin-top:30px;
+}
+
+.lesson.show{
+    display:block;
+}
+
+.lesson h2{
+    margin-bottom:15px;
+}
+
+.lesson p{
+    color:#586579;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.lesson ul{
+    margin-left:25px;
+    line-height:2;
+}
+
+.close{
+    margin-top:20px;
+    padding:10px 16px;
+    background:#07111f;
+    color:white;
+    border:none;
+    border-radius:7px;
+    cursor:pointer;
 }
 
 footer{
-  background:#111;
-  color:white;
-  text-align:center;
-  padding:30px 15px;
-  margin-top:50px;
+    background:#030912;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
 }
 
-.badge{
-  display:inline-block;
-  padding:7px 12px;
-  background:#fcd116;
-  border-radius:20px;
-  margin:5px;
-  font-weight:bold;
+footer p{
+    color:#9caabd;
+    margin-top:8px;
+}
+
+@media(max-width:850px){
+
+    .courses{
+        grid-template-columns:repeat(2,1fr);
+    }
+
 }
 
 @media(max-width:600px){
-  header h1{
-    font-size:30px;
-  }
 
-  nav a{
-    display:inline-block;
-    margin:5px;
-    font-size:14px;
-  }
+    .courses{
+        grid-template-columns:1fr;
+    }
 
-  .hero h2{
-    font-size:24px;
-  }
+    .hero h1{
+        font-size:34px;
+    }
+
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>🇨🇲 Histoire du Cameroun</h1>
-  <p>Découvrons ensemble l'histoire, les peuples, les royaumes et les grandes figures du Cameroun.</p>
-</header>
+
+<div class="logo">
+MT <span>Jeunesse</span>
+</div>
+
+<div class="slogan">
+Apprendre • Créer • Entreprendre • Innover
+</div>
 
 <nav>
-  <a href="#accueil">Accueil</a>
-  <a href="#periodes">Périodes</a>
-  <a href="#chronologie">Chronologie</a>
-  <a href="#personnages">Personnages</a>
-  <a href="#quiz">Quiz</a>
+
+<button onclick="location.href='index.html'">
+Accueil
+</button>
+
+<button onclick="location.href='cours.html'">
+Cours
+</button>
+
+<button onclick="location.href='quiz.html'">
+Quiz
+</button>
+
 </nav>
 
-<div class="container">
+<button class="language" onclick="changeLanguage()" id="langBtn">
+🇬🇧 English
+</button>
 
-<section id="accueil" class="hero">
-  <h2>Bienvenue dans l'histoire du Cameroun 🇨🇲</h2>
+</header>
 
-  <p>
-    Ce site est consacré exclusivement à l'histoire du Cameroun.
-    Il permet de découvrir les grandes périodes qui ont marqué
-    le pays, les peuples, les royaumes, la colonisation,
-    l'indépendance et les grandes personnalités historiques.
-  </p>
 
-  <br>
+<section class="hero">
 
-  <span class="badge">Culture</span>
-  <span class="badge">Histoire</span>
-  <span class="badge">Patrimoine</span>
-  <span class="badge">Éducation</span>
-</section>
+<h1 id="heroTitle">
+📚 Les cours MT Jeunesse
+</h1>
 
-<section id="periodes">
-
-<h2 class="section-title">📚 Les grandes périodes</h2>
-
-<div class="search">
-  <input
-    type="text"
-    id="search"
-    placeholder="🔎 Rechercher une période ou un événement..."
-    onkeyup="rechercher()"
-  >
-</div>
-
-<div class="cards" id="cards">
-
-<div class="card">
-  <h3>🏺 Les premiers peuples</h3>
-  <p>
-    Découverte des premiers peuples installés sur le territoire
-    camerounais et de leurs modes de vie.
-  </p>
-</div>
-
-<div class="card">
-  <h3>👑 Les royaumes et chefferies</h3>
-  <p>
-    Découvrez les royaumes, chefferies traditionnelles et
-    organisations politiques qui ont marqué l'histoire du pays.
-  </p>
-</div>
-
-<div class="card">
-  <h3>🇩🇪 La période allemande</h3>
-  <p>
-    Le Cameroun devient une colonie allemande à partir de la fin
-    du XIXe siècle.
-  </p>
-</div>
-
-<div class="card">
-  <h3>🇫🇷🇬🇧 La période franco-britannique</h3>
-  <p>
-    Après la Première Guerre mondiale, le territoire est placé
-    sous administration française et britannique.
-  </p>
-</div>
-
-<div class="card">
-  <h3>✊ La lutte pour l'indépendance</h3>
-  <p>
-    Découvrez les mouvements politiques et les acteurs qui ont
-    participé à la marche vers l'indépendance.
-  </p>
-</div>
-
-<div class="card">
-  <h3>🇨🇲 L'indépendance</h3>
-  <p>
-    Le Cameroun français accède à l'indépendance le
-    1er janvier 1960.
-  </p>
-</div>
-
-<div class="card">
-  <h3>🏛️ Le Cameroun après l'indépendance</h3>
-  <p>
-    Découvrez les principales étapes de l'évolution politique
-    du Cameroun après 1960.
-  </p>
-</div>
-
-<div class="card">
-  <h3>🌍 Le Cameroun contemporain</h3>
-  <p>
-    Une présentation des grandes transformations du Cameroun
-    jusqu'à l'époque contemporaine.
-  </p>
-</div>
-
-</div>
-</section>
-
-<section id="chronologie">
-
-<h2 class="section-title">🕰️ Grande chronologie</h2>
-
-<div class="timeline">
-
-<div class="event">
-  <div class="date">1472</div>
-  <h3>Premiers contacts portugais</h3>
-  <p>
-    Des navigateurs portugais atteignent la région de l'actuel
-    littoral camerounais. Le nom « Rio dos Camarões »
-    est associé aux nombreux crustacés observés dans les eaux.
-  </p>
-</div>
-
-<div class="event">
-  <div class="date">1884</div>
-  <h3>Début de la période allemande</h3>
-  <p>
-    L'Allemagne établit son protectorat sur le territoire
-    qui devient le Kamerun allemand.
-  </p>
-</div>
-
-<div class="event">
-  <div class="date">1919</div>
-  <h3>Administration internationale</h3>
-  <p>
-    Après la Première Guerre mondiale, le territoire est
-    placé sous mandat de la Société des Nations.
-  </p>
-</div>
-
-<div class="event">
-  <div class="date">1945</div>
-  <h3>Après la Seconde Guerre mondiale</h3>
-  <p>
-    Le Cameroun est placé sous tutelle de l'Organisation
-    des Nations unies.
-  </p>
-</div>
-
-<div class="event">
-  <div class="date">1er janvier 1960</div>
-  <h3>Indépendance du Cameroun français</h3>
-  <p>
-    Le Cameroun français devient indépendant.
-  </p>
-</div>
-
-<div class="event">
-  <div class="date">1961</div>
-  <h3>Réunification</h3>
-  <p>
-    Une partie du Cameroun britannique rejoint la République
-    du Cameroun, formant une nouvelle structure fédérale.
-  </p>
-</div>
-
-<div class="event">
-  <div class="date">1972</div>
-  <h3>État unitaire</h3>
-  <p>
-    Le référendum du 20 mai 1972 conduit à la création
-    de la République-Unie du Cameroun.
-  </p>
-</div>
-
-</div>
-</section>
-
-<section id="personnages">
-
-<h2 class="section-title">👤 Grandes figures historiques</h2>
-
-<div class="cards">
-
-<div class="card">
-  <h3>Rudolf Duala Manga Bell</h3>
-  <p>
-    Chef duala et figure historique de la résistance à
-    la politique coloniale allemande.
-  </p>
-</div>
-
-<div class="card">
-  <h3>Ahmadou Ahidjo</h3>
-  <p>
-    Premier président de la République du Cameroun indépendant.
-  </p>
-</div>
-
-<div class="card">
-  <h3>John Ngu Foncha</h3>
-  <p>
-    Homme politique camerounais important dans l'histoire
-    du Cameroun occidental et de la réunification.
-  </p>
-</div>
-
-<div class="card">
-  <h3>Um Nyobè</h3>
-  <p>
-    Figure majeure du mouvement nationaliste camerounais
-    et de la lutte pour l'indépendance.
-  </p>
-</div>
-
-</div>
-</section>
-
-<section id="quiz" class="quiz">
-
-<h2>🧠 Quiz : connais-tu l'histoire du Cameroun ?</h2>
-
-<div class="question">
-  <p><strong>1. En quelle année le Cameroun français devient-il indépendant ?</strong></p>
-
-  <br>
-
-  <label>
-    <input type="radio" name="q1" value="0">
-    1955
-  </label>
-
-  <br>
-
-  <label>
-    <input type="radio" name="q1" value="1">
-    1960
-  </label>
-
-  <br>
-
-  <label>
-    <input type="radio" name="q1" value="0">
-    1972
-  </label>
-</div>
-
-<div class="question">
-  <p><strong>2. Quelle puissance coloniale a administré le Kamerun avant la Première Guerre mondiale ?</strong></p>
-
-  <br>
-
-  <label>
-    <input type="radio" name="q2" value="1">
-    Allemagne
-  </label>
-
-  <br>
-
-  <label>
-    <input type="radio" name="q2" value="0">
-    Espagne
-  </label>
-
-  <br>
-
-  <label>
-    <input type="radio" name="q2" value="0">
-    Portugal
-  </label>
-</div>
-
-<div class="question">
-  <p><strong>3. En quelle année a eu lieu le référendum qui a conduit à l'État unitaire ?</strong></p>
-
-  <br>
-
-  <label>
-    <input type="radio" name="q3" value="0">
-    1960
-  </label>
-
-  <br>
-
-  <label>
-    <input type="radio" name="q3" value="0">
-    1961
-  </label>
-
-  <br>
-
-  <label>
-    <input type="radio" name="q3" value="1">
-    1972
-  </label>
-</div>
-
-<button onclick="corrigerQuiz()">Voir mon résultat</button>
-
-<div id="resultat" class="result"></div>
+<p id="heroText">
+Choisis une matière et commence à apprendre.
+</p>
 
 </section>
 
+
+<main class="container">
+
+<div class="title">
+
+<h2 id="courseTitle">
+Toutes les matières
+</h2>
+
+<p id="courseSubtitle">
+Des cours simples pour apprendre et progresser.
+</p>
+
 </div>
+
+
+<input
+type="text"
+class="search"
+id="search"
+placeholder="🔎 Rechercher un cours..."
+onkeyup="searchCourses()"
+>
+
+
+<div class="courses" id="courses">
+
+
+<div class="course" data-name="maths" onclick="openLesson('maths')">
+
+<div class="icon">📐</div>
+
+<h3 data-fr="Mathématiques" data-en="Mathematics">
+Mathématiques
+</h3>
+
+<p
+data-fr="Algèbre, géométrie, calcul et exercices."
+data-en="Algebra, geometry, calculations and exercises."
+>
+Algèbre, géométrie, calcul et exercices.
+</p>
+
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+
+</div>
+
+
+<div class="course" data-name="technique" onclick="openLesson('technique')">
+
+<div class="icon">⚡</div>
+
+<h3 data-fr="Technique" data-en="Technical Studies">
+Technique
+</h3>
+
+<p
+data-fr="Électricité, électronique, électrotechnique et machines."
+data-en="Electricity, electronics, electrotechnics and machines."
+>
+Électricité, électronique, électrotechnique et machines.
+</p>
+
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+
+</div>
+
+
+<div class="course" data-name="anglais" onclick="openLesson('anglais')">
+
+<div class="icon">🇬🇧</div>
+
+<h3 data-fr="Anglais" data-en="English">
+Anglais
+</h3>
+
+<p
+data-fr="Vocabulaire, grammaire, conjugaison et communication."
+data-en="Vocabulary, grammar, conjugation and communication."
+>
+Vocabulaire, grammaire, conjugaison et communication.
+</p>
+
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+
+</div>
+
+
+<div class="course" data-name="francais" onclick="openLesson('francais')">
+
+<div class="icon">🇫🇷</div>
+
+<h3 data-fr="Français" data-en="French">
+Français
+</h3>
+
+<p
+data-fr="Grammaire, conjugaison, vocabulaire et expression."
+data-en="Grammar, conjugation, vocabulary and expression."
+>
+Grammaire, conjugaison, vocabulaire et expression.
+</p>
+
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+
+</div>
+
+
+<div class="course" data-name="histoire" onclick="openLesson('histoire')">
+
+<div class="icon">🇨🇲</div>
+
+<h3 data-fr="Histoire" data-en="History">
+Histoire
+</h3>
+
+<p
+data-fr="Histoire du Cameroun, de l'Afrique et du monde."
+data-en="History of Cameroon, Africa and the world."
+>
+Histoire du Cameroun, de l'Afrique et du monde.
+</p>
+
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+
+</div>
+
+
+<div class="course" data-name="entrepreneuriat" onclick="openLesson('entrepreneuriat')">
+
+<div class="icon">💼</div>
+
+<h3 data-fr="Entrepreneuriat" data-en="Entrepreneurship">
+Entrepreneuriat
+</h3>
+
+<p
+data-fr="Idée de projet, business, marketing, vente et gestion."
+data-en="Project ideas, business, marketing, sales and management."
+>
+Idée de projet, business, marketing, vente et gestion.
+</p>
+
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+
+</div>
+
+
+<div class="course" data-name="gouvernement" onclick="openLesson('gouvernement')">
+
+<div class="icon">🏛️</div>
+
+<h3 data-fr="Gouvernement" data-en="Government">
+Gouvernement
+</h3>
+
+<p
+data-fr="Institutions, administration et fonctionnement de l'État."
+data-en="Institutions, administration and how the state works."
+>
+Institutions, administration et fonctionnement de l'État.
+</p>
+
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+
+</div>
+
+
+<div class="course" data-name="politique" onclick="openLesson('politique')">
+
+<div class="icon">⚖️</div>
+
+<h3 data-fr="Politique & Citoyenneté" data-en="Politics & Citizenship">
+Politique & Citoyenneté
+</h3>
+
+<p
+data-fr="Droits, devoirs, institutions et participation citoyenne."
+data-en="Rights, duties, institutions and civic participation."
+>
+Droits, devoirs, institutions et participation citoyenne.
+</p>
+
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+
+</div>
+
+
+<div class="course" data-name="informatique" onclick="openLesson('informatique')">
+
+<div class="icon">💻</div>
+
+<h3 data-fr="Informatique" data-en="Computer Science">
+Informatique
+</h3>
+
+<p
+data-fr="Ordinateurs, programmation, Internet et création de sites."
+data-en="Computers, programming, Internet and website creation."
+>
+Ordinateurs, programmation, Internet et création de sites.
+</p>
+
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+
+</div>
+
+
+<div class="course" data-name="sciences" onclick="openLesson('sciences')">
+
+<div class="icon">🔬</div>
+
+<h3 data-fr="Sciences" data-en="Science">
+Sciences
+</h3>
+
+<p
+data-fr="Physique, chimie, biologie et connaissances scientifiques."
+data-en="Physics, chemistry, biology and scientific knowledge."
+>
+Physique, chimie, biologie et connaissances scientifiques.
+</p>
+
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+
+</div>
+
+
+<div class="course" data-name="culture" onclick="openLesson('culture')">
+
+<div class="icon">🌍</div>
+
+<h3 data-fr="Culture générale" data-en="General Knowledge">
+Culture générale
+</h3>
+
+<p
+data-fr="Pays, capitales, découvertes, personnalités et connaissances du monde."
+data-en="Countries, capitals, discoveries, people and world knowledge."
+>
+Pays, capitales, découvertes, personnalités et connaissances du monde.
+</p>
+
+<span class="open" data-fr="Voir le cours →" data-en="View course →">
+Voir le cours →
+</span>
+
+</div>
+
+
+<div class="course" data-name="articles" onclick="openLesson('articles')">
+
+<div class="icon">📰</div>
+
+<h3 data-fr="Articles" data-en="Articles">
+Articles
+</h3>
+
+<p
+data-fr="Actualités éducatives, découvertes et sujets intéressants."
+data-en="Educational news, discoveries and interesting topics."
+>
+Actualités éducatives, découvertes et sujets intéressants.
+</p>
+
+<span class="open" data-fr="Lire →" data-en="Read →">
+Lire →
+</span>
+
+</div>
+
+
+<div class="course" data-name="projets" onclick="openLesson('projets')">
+
+<div class="icon">🚀</div>
+
+<h3 data-fr="Projets & Innovation" data-en="Projects & Innovation">
+Projets & Innovation
+</h3>
+
+<p
+data-fr="Transforme tes idées en projets concrets."
+data-en="Turn your ideas into practical projects."
+>
+Transforme tes idées en projets concrets.
+</p>
+
+<span class="open" data-fr="Découvrir →" data-en="Discover →">
+Découvrir →
+</span>
+
+</div>
+
+</div>
+
+
+<div class="lesson" id="lesson">
+
+<h2 id="lessonTitle"></h2>
+
+<p id="lessonText"></p>
+
+<ul id="lessonList"></ul>
+
+<button class="close" onclick="closeLesson()" id="closeBtn">
+Fermer
+</button>
+
+</div>
+
+</main>
+
 
 <footer>
-  <h3>🇨🇲 Histoire du Cameroun</h3>
-  <p>Un espace numérique pour apprendre, découvrir et transmettre l'histoire du Cameroun.</p>
-  <br>
-  <p>Créé par M K Jérémie</p>
+
+<strong>MT Jeunesse</strong>
+
+<p>
+Apprendre aujourd'hui. Construire demain.
+</p>
+
+<p>
+Créateur : M K Jérémie
+</p>
+
+<p>
+© 2026 MT Jeunesse — Tous droits réservés.
+</p>
+
 </footer>
+
 
 <script>
 
-function rechercher(){
+var lang = "fr";
 
-  let recherche =
-    document.getElementById("search").value.toLowerCase();
 
-  let cartes =
-    document.querySelectorAll(".card");
+var lessons = {
 
-  cartes.forEach(function(carte){
+maths:{
+fr:{
+title:"📐 Mathématiques",
+text:"Les mathématiques permettent de résoudre des problèmes grâce aux nombres, aux formules et au raisonnement.",
+items:[
+"Algèbre et expressions",
+"Équations et inéquations",
+"Géométrie et calcul des surfaces",
+"Pourcentages et proportions"
+]
+},
+en:{
+title:"📐 Mathematics",
+text:"Mathematics helps solve problems using numbers, formulas and logical reasoning.",
+items:[
+"Algebra and expressions",
+"Equations and inequalities",
+"Geometry and areas",
+"Percentages and proportions"
+]
+}
+},
 
-    let texte =
-      carte.innerText.toLowerCase();
+technique:{
+fr:{
+title:"⚡ Technique",
+text:"Les filières techniques permettent de comprendre et de construire des systèmes électriques et électroniques.",
+items:[
+"Courant, tension et résistance",
+"Lois électriques fondamentales",
+"Machines électriques",
+"Électronique et composants",
+"Installations électriques"
+]
+},
+en:{
+title:"⚡ Technical Studies",
+text:"Technical studies help us understand and build electrical and electronic systems.",
+items:[
+"Current, voltage and resistance",
+"Basic electrical laws",
+"Electrical machines",
+"Electronic components",
+"Electrical installations"
+]
+}
+},
 
-    if(texte.includes(recherche)){
-      carte.style.display = "block";
-    }else{
-      carte.style.display = "none";
+anglais:{
+fr:{
+title:"🇬🇧 Anglais",
+text:"L'anglais permet de communiquer avec des personnes du monde entier.",
+items:[
+"Vocabulaire quotidien",
+"Présent, passé et futur",
+"Verbes irréguliers",
+"Conversation et communication"
+]
+},
+en:{
+title:"🇬🇧 English",
+text:"English helps people communicate with others around the world.",
+items:[
+"Everyday vocabulary",
+"Present, past and future",
+"Irregular verbs",
+"Conversation and communication"
+]
+}
+},
+
+francais:{
+fr:{
+title:"🇫🇷 Français",
+text:"Le français permet de mieux communiquer à l'écrit comme à l'oral.",
+items:[
+"Grammaire",
+"Conjugaison",
+"Orthographe",
+"Vocabulaire",
+"Expression écrite"
+]
+},
+en:{
+title:"🇫🇷 French",
+text:"French helps develop clear written and spoken communication.",
+items:[
+"Grammar",
+"Conjugation",
+"Spelling",
+"Vocabulary",
+"Written expression"
+]
+}
+},
+
+histoire:{
+fr:{
+title:"🇨🇲 Histoire",
+text:"L'histoire permet de comprendre les événements qui ont construit les sociétés.",
+items:[
+"Histoire du Cameroun",
+"Histoire de l'Afrique",
+"Colonisation et indépendance",
+"Grandes périodes de l'histoire mondiale"
+]
+},
+en:{
+title:"🇨🇲 History",
+text:"History helps us understand the events that shaped societies.",
+items:[
+"History of Cameroon",
+"History of Africa",
+"Colonization and independence",
+"Major periods of world history"
+]
+}
+},
+
+entrepreneuriat:{
+fr:{
+title:"💼 Entrepreneuriat",
+text:"Entreprendre consiste à identifier un besoin et à créer une solution utile.",
+items:[
+"Trouver une idée",
+"Étudier un besoin",
+"Créer un produit ou service",
+"Marketing et communication",
+"Vente et gestion"
+]
+},
+en:{
+title:"💼 Entrepreneurship",
+text:"Entrepreneurship means identifying a need and creating a useful solution.",
+items:[
+"Finding an idea",
+"Understanding a need",
+"Creating a product or service",
+"Marketing and communication",
+"Sales and management"
+]
+}
+},
+
+gouvernement:{
+fr:{
+title:"🏛️ Gouvernement",
+text:"Le gouvernement participe à l'administration et au fonctionnement de l'État.",
+items:[
+"Les institutions de l'État",
+"Le rôle du gouvernement",
+"L'administration publique",
+"Les services publics"
+]
+},
+en:{
+title:"🏛️ Government",
+text:"Government participates in the administration and functioning of the state.",
+items:[
+"State institutions",
+"The role of government",
+"Public administration",
+"Public services"
+]
+}
+},
+
+politique:{
+fr:{
+title:"⚖️ Politique & Citoyenneté",
+text:"La citoyenneté concerne les droits, les devoirs et la participation à la vie de la société.",
+items:[
+"Les droits du citoyen",
+"Les devoirs du citoyen",
+"Les institutions",
+"La participation citoyenne"
+]
+},
+en:{
+title:"⚖️ Politics & Citizenship",
+text:"Citizenship concerns rights, duties and participation in society.",
+items:[
+"Citizen rights",
+"Citizen duties",
+"Institutions",
+"Civic participation"
+]
+}
+},
+
+informatique:{
+fr:{
+title:"💻 Informatique",
+text:"L'informatique permet de traiter l'information et de créer des outils numériques.",
+items:[
+"Fonctionnement d'un ordinateur",
+"Internet",
+"Programmation",
+"HTML et CSS",
+"Création de sites web"
+]
+},
+en:{
+title:"💻 Computer Science",
+text:"Computer science helps process information and create digital tools.",
+items:[
+"How computers work",
+"Internet",
+"Programming",
+"HTML and CSS",
+"Website creation"
+]
+}
+},
+
+sciences:{
+fr:{
+title:"🔬 Sciences",
+text:"Les sciences permettent de comprendre la nature et les phénomènes qui nous entourent.",
+items:[
+"Physique",
+"Chimie",
+"Biologie",
+"Énergie et matière"
+]
+},
+en:{
+title:"🔬 Science",
+text:"Science helps us understand nature and the phenomena around us.",
+items:[
+"Physics",
+"Chemistry",
+"Biology",
+"Energy and matter"
+]
+}
+},
+
+culture:{
+fr:{
+title:"🌍 Culture générale",
+text:"La culture générale permet de mieux connaître le monde.",
+items:[
+"Pays et capitales",
+"Continents et océans",
+"Grandes découvertes",
+"Personnalités importantes"
+]
+},
+en:{
+title:"🌍 General Knowledge",
+text:"General knowledge helps us better understand the world.",
+items:[
+"Countries and capitals",
+"Continents and oceans",
+"Major discoveries",
+"Important people"
+]
+}
+},
+
+articles:{
+fr:{
+title:"📰 Articles",
+text:"Découvre des sujets éducatifs et des informations intéressantes.",
+items:[
+"Technologie",
+"Éducation",
+"Jeunesse",
+"Entrepreneuriat",
+"Culture et société"
+]
+},
+en:{
+title:"📰 Articles",
+text:"Discover educational topics and interesting information.",
+items:[
+"Technology",
+"Education",
+"Youth",
+"Entrepreneurship",
+"Culture and society"
+]
+}
+},
+
+projets:{
+fr:{
+title:"🚀 Projets & Innovation",
+text:"Un projet commence par une idée et avance grâce à l'action.",
+items:[
+"Trouver un problème",
+"Imaginer une solution",
+"Créer un prototype",
+"Tester",
+"Améliorer le projet"
+]
+},
+en:{
+title:"🚀 Projects & Innovation",
+text:"A project starts with an idea and moves forward through action.",
+items:[
+"Find a problem",
+"Imagine a solution",
+"Create a prototype",
+"Test it",
+"Improve the project"
+]
+}
+}
+
+};
+
+
+function openLesson(name){
+
+    var lesson = lessons[name][lang];
+
+    document.getElementById("lessonTitle").textContent =
+        lesson.title;
+
+    document.getElementById("lessonText").textContent =
+        lesson.text;
+
+    var list =
+        document.getElementById("lessonList");
+
+    list.innerHTML = "";
+
+    for(var i=0;i<lesson.items.length;i++){
+
+        var li = document.createElement("li");
+
+        li.textContent = lesson.items[i];
+
+        list.appendChild(li);
+
     }
 
-  });
+    document.getElementById("lesson").classList.add("show");
+
+    document.getElementById("lesson").scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
 
 }
 
-function corrigerQuiz(){
 
-  let score = 0;
+function closeLesson(){
 
-  let questions = ["q1","q2","q3"];
+    document.getElementById("lesson")
+        .classList.remove("show");
 
-  questions.forEach(function(question){
+}
 
-    let reponse =
-      document.querySelector(
-        'input[name="' + question + '"]:checked'
-      );
 
-    if(reponse){
-      score += Number(reponse.value);
+function changeLanguage(){
+
+    lang = lang === "fr" ? "en" : "fr";
+
+    var nodes =
+        document.querySelectorAll("[data-fr]");
+
+    for(var i=0;i<nodes.length;i++){
+
+        nodes[i].textContent =
+            nodes[i].getAttribute("data-" + lang);
+
     }
 
-  });
+    document.documentElement.lang = lang;
 
-  let resultat =
-    document.getElementById("resultat");
+    document.getElementById("langBtn").textContent =
+        lang === "fr"
+        ? "🇬🇧 English"
+        : "🇫🇷 Français";
 
-  if(score === 3){
+    document.getElementById("heroTitle").textContent =
+        lang === "fr"
+        ? "📚 Les cours MT Jeunesse"
+        : "📚 MT Jeunesse Courses";
 
-    resultat.innerHTML =
-      "🎉 Excellent ! Tu as obtenu 3/3.";
+    document.getElementById("heroText").textContent =
+        lang === "fr"
+        ? "Choisis une matière et commence à apprendre."
+        : "Choose a subject and start learning.";
 
-  }else if(score === 2){
+    document.getElementById("courseTitle").textContent =
+        lang === "fr"
+        ? "Toutes les matières"
+        : "All Subjects";
 
-    resultat.innerHTML =
-      "👏 Très bien ! Tu as obtenu 2/3.";
+    document.getElementById("courseSubtitle").textContent =
+        lang === "fr"
+        ? "Des cours simples pour apprendre et progresser."
+        : "Simple courses to learn and improve.";
 
-  }else if(score === 1){
+    document.getElementById("search").placeholder =
+        lang === "fr"
+        ? "🔎 Rechercher un cours..."
+        : "🔎 Search for a course...";
 
-    resultat.innerHTML =
-      "👍 Tu as obtenu 1/3. Continue à apprendre !";
+    document.getElementById("closeBtn").textContent =
+        lang === "fr"
+        ? "Fermer"
+        : "Close";
 
-  }else{
+}
 
-    resultat.innerHTML =
-      "📚 0/3. Pas grave, continue à découvrir l'histoire du Cameroun.";
 
-  }
+function searchCourses(){
+
+    var search =
+        document.getElementById("search")
+        .value
+        .toLowerCase();
+
+    var courses =
+        document.querySelectorAll(".course");
+
+    for(var i=0;i<courses.length;i++){
+
+        var name =
+            courses[i].textContent.toLowerCase();
+
+        if(name.indexOf(search) !== -1){
+
+            courses[i].style.display = "";
+
+        }else{
+
+            courses[i].style.display = "none";
+
+        }
+
+    }
 
 }
 
