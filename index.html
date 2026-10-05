@@ -4,10 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MT Jeunesse - Cours</title>
+<meta name="description" content="MT Jeunesse - Plateforme éducative pour apprendre, réviser et progresser.">
+<meta name="robots" content="index, follow">
+
+<title>MT Jeunesse | Apprendre aujourd'hui, construire demain</title>
 
 <style>
-
 *{
     box-sizing:border-box;
     margin:0;
@@ -15,219 +17,253 @@
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:Arial, sans-serif;
     background:#f4f7fb;
     color:#172033;
+    line-height:1.6;
 }
 
+/* HEADER */
 header{
-    background:#07111f;
+    background:linear-gradient(135deg,#0757c8,#00a6ff);
     color:white;
-    padding:20px;
-    text-align:center;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.15);
 }
 
 .logo{
-    font-size:28px;
+    font-size:25px;
     font-weight:bold;
-}
-
-.logo span{
-    color:#4d8dff;
-}
-
-.slogan{
-    color:#aebbd0;
-    margin-top:5px;
 }
 
 nav{
-    margin-top:18px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
 }
 
-nav button{
-    background:#10233b;
+nav a{
     color:white;
-    border:1px solid #294463;
-    padding:9px 12px;
-    margin:4px;
-    border-radius:7px;
-    cursor:pointer;
-}
-
-nav button:hover{
-    background:#0b5cff;
-}
-
-.language{
-    margin-top:15px;
-    background:#0b5cff;
-    color:white;
-    border:none;
-    padding:10px 18px;
+    text-decoration:none;
+    padding:9px 14px;
     border-radius:8px;
-    cursor:pointer;
     font-weight:bold;
 }
 
+nav a:hover{
+    background:rgba(255,255,255,.18);
+}
+
+/* HERO */
 .hero{
-    background:linear-gradient(135deg,#07111f,#0b5cff);
-    color:white;
+    min-height:75vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     text-align:center;
-    padding:65px 20px;
+    padding:60px 20px;
+    background:
+        radial-gradient(circle at top right,#dff4ff,transparent 35%),
+        #f4f7fb;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.badge{
+    display:inline-block;
+    background:#e8f3ff;
+    color:#0757c8;
+    padding:8px 15px;
+    border-radius:30px;
+    font-weight:bold;
+    margin-bottom:20px;
 }
 
 .hero h1{
-    font-size:42px;
+    font-size:clamp(38px,7vw,70px);
+    color:#0757c8;
     margin-bottom:15px;
+}
+
+.hero h2{
+    font-size:clamp(22px,4vw,35px);
+    margin-bottom:20px;
 }
 
 .hero p{
     max-width:700px;
     margin:auto;
-    color:#d5deeb;
+    color:#5c6678;
+    font-size:18px;
 }
 
-.container{
-    max-width:1150px;
-    margin:auto;
-    padding:60px 20px;
-}
-
-.title{
-    text-align:center;
-    margin-bottom:35px;
-}
-
-.title h2{
-    font-size:34px;
-    margin-bottom:10px;
-}
-
-.title p{
-    color:#687386;
-}
-
-.search{
-    width:100%;
-    padding:14px;
-    border:1px solid #ccd5e2;
-    border-radius:9px;
-    margin-bottom:30px;
-    font-size:16px;
-}
-
-.courses{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.course{
-    background:white;
-    border:1px solid #e0e6ef;
-    border-radius:15px;
-    padding:25px;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.course:hover{
-    transform:translateY(-5px);
-    box-shadow:0 12px 30px rgba(0,0,0,.08);
-}
-
-.icon{
-    font-size:38px;
-    margin-bottom:12px;
-}
-
-.course h3{
-    margin-bottom:10px;
-}
-
-.course p{
-    color:#687386;
-    line-height:1.6;
-}
-
-.open{
-    display:inline-block;
-    margin-top:15px;
-    color:#0b5cff;
-    font-weight:bold;
-}
-
-.lesson{
-    display:none;
-    background:white;
-    border:1px solid #d7e3f8;
-    border-radius:15px;
-    padding:30px;
+.buttons{
     margin-top:30px;
 }
 
-.lesson.show{
-    display:block;
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    padding:14px 22px;
+    border-radius:10px;
+    margin:5px;
+    font-weight:bold;
+    transition:.2s;
 }
 
-.lesson h2{
-    margin-bottom:15px;
-}
-
-.lesson p{
-    color:#586579;
-    line-height:1.8;
-    margin-bottom:15px;
-}
-
-.lesson ul{
-    margin-left:25px;
-    line-height:2;
-}
-
-.close{
-    margin-top:20px;
-    padding:10px 16px;
-    background:#07111f;
+.btn-primary{
+    background:#0757c8;
     color:white;
-    border:none;
-    border-radius:7px;
-    cursor:pointer;
 }
 
+.btn-primary:hover{
+    background:#043d91;
+    transform:translateY(-2px);
+}
+
+.btn-secondary{
+    background:white;
+    color:#0757c8;
+    border:2px solid #0757c8;
+}
+
+.btn-secondary:hover{
+    background:#eaf3ff;
+}
+
+/* SECTIONS */
+section{
+    padding:65px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    font-size:34px;
+    color:#0757c8;
+}
+
+.section-title p{
+    color:#697386;
+}
+
+/* CARDS */
+.grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 4px 18px rgba(0,0,0,.07);
+    transition:.2s;
+    border:1px solid #e7ebf1;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.10);
+}
+
+.icon{
+    font-size:40px;
+    margin-bottom:12px;
+}
+
+.card h3{
+    color:#0757c8;
+    margin-bottom:8px;
+}
+
+/* HOW */
+.how{
+    background:white;
+}
+
+.step{
+    text-align:center;
+}
+
+.number{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#0757c8;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 15px;
+    font-weight:bold;
+    font-size:20px;
+}
+
+/* SECURITY */
+.security{
+    max-width:900px;
+    margin:auto;
+    background:#eef8f1;
+    border-left:5px solid #198754;
+    padding:25px;
+    border-radius:12px;
+}
+
+.security h3{
+    color:#146c43;
+    margin-bottom:10px;
+}
+
+/* FOOTER */
 footer{
-    background:#030912;
+    background:#101828;
     color:white;
     text-align:center;
-    padding:40px 20px;
+    padding:35px 20px;
 }
 
 footer p{
-    color:#9caabd;
+    color:#b8c0cc;
     margin-top:8px;
 }
 
-@media(max-width:850px){
+/* MOBILE */
+@media(max-width:700px){
 
-    .courses{
-        grid-template-columns:repeat(2,1fr);
+    header{
+        flex-direction:column;
+        padding:15px;
     }
 
+    nav{
+        justify-content:center;
+    }
+
+    .hero{
+        min-height:70vh;
+        padding:45px 15px;
+    }
+
+    section{
+        padding:50px 15px;
+    }
 }
-
-@media(max-width:600px){
-
-    .courses{
-        grid-template-columns:1fr;
-    }
-
-    .hero h1{
-        font-size:34px;
-    }
-
-}
-
 </style>
 </head>
 
@@ -235,848 +271,266 @@ footer p{
 
 <header>
 
-<div class="logo">
-MT <span>Jeunesse</span>
-</div>
+    <div class="logo">📚 MT Jeunesse</div>
 
-<div class="slogan">
-Apprendre • Créer • Entreprendre • Innover
-</div>
-
-<nav>
-
-<button onclick="location.href='index.html'">
-Accueil
-</button>
-
-<button onclick="location.href='cours.html'">
-Cours
-</button>
-
-<button onclick="location.href='quiz.html'">
-Quiz
-</button>
-
-</nav>
-
-<button class="language" onclick="changeLanguage()" id="langBtn">
-🇬🇧 English
-</button>
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="cours.html">Cours</a>
+        <a href="#matieres">Matières</a>
+        <a href="#apropos">À propos</a>
+    </nav>
 
 </header>
 
 
-<section class="hero">
+<main>
 
-<h1 id="heroTitle">
-📚 Les cours MT Jeunesse
-</h1>
+<!-- ACCUEIL -->
+<section class="hero" id="accueil">
 
-<p id="heroText">
-Choisis une matière et commence à apprendre.
-</p>
+    <div class="hero-content">
+
+        <span class="badge">🌍 Plateforme éducative</span>
+
+        <h1>MT Jeunesse</h1>
+
+        <h2>Apprendre aujourd'hui pour construire demain.</h2>
+
+        <p>
+            Une plateforme éducative conçue pour aider les jeunes
+            à apprendre, comprendre, pratiquer et progresser.
+        </p>
+
+        <div class="buttons">
+
+            <a class="btn btn-primary" href="cours.html">
+                📚 Commencer les cours
+            </a>
+
+            <a class="btn btn-secondary" href="#matieres">
+                🔎 Découvrir les matières
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<main class="container">
+<!-- MATIÈRES -->
+<section id="matieres">
 
-<div class="title">
+    <div class="section-title">
 
-<h2 id="courseTitle">
-Toutes les matières
-</h2>
+        <h2>📚 Nos matières</h2>
 
-<p id="courseSubtitle">
-Des cours simples pour apprendre et progresser.
-</p>
+        <p>
+            Explore les principales matières disponibles sur MT Jeunesse.
+        </p>
 
-</div>
+    </div>
 
 
-<input
-type="text"
-class="search"
-id="search"
-placeholder="🔎 Rechercher un cours..."
-onkeyup="searchCourses()"
->
+    <div class="grid">
 
+        <div class="card">
+            <div class="icon">🔢</div>
+            <h3>Mathématiques</h3>
+            <p>Nombres, calculs, fractions, équations et géométrie.</p>
+        </div>
 
-<div class="courses" id="courses">
+        <div class="card">
+            <div class="icon">⚡</div>
+            <h3>Technique / Électricité</h3>
+            <p>Courant, tension, résistance, puissance et circuits.</p>
+        </div>
 
+        <div class="card">
+            <div class="icon">🇬🇧</div>
+            <h3>Anglais</h3>
+            <p>Grammaire, vocabulaire, conjugaison et communication.</p>
+        </div>
 
-<div class="course" data-name="maths" onclick="openLesson('maths')">
+        <div class="card">
+            <div class="icon">🇫🇷</div>
+            <h3>Français</h3>
+            <p>Grammaire, conjugaison, vocabulaire et rédaction.</p>
+        </div>
 
-<div class="icon">📐</div>
+        <div class="card">
+            <div class="icon">🌍</div>
+            <h3>Histoire & Géographie</h3>
+            <p>Comprendre les sociétés, les territoires et le monde.</p>
+        </div>
 
-<h3 data-fr="Mathématiques" data-en="Mathematics">
-Mathématiques
-</h3>
+        <div class="card">
+            <div class="icon">🔬</div>
+            <h3>Sciences</h3>
+            <p>Découvrir la matière, le corps humain et les phénomènes scientifiques.</p>
+        </div>
 
-<p
-data-fr="Algèbre, géométrie, calcul et exercices."
-data-en="Algebra, geometry, calculations and exercises."
->
-Algèbre, géométrie, calcul et exercices.
-</p>
+        <div class="card">
+            <div class="icon">💼</div>
+            <h3>Entrepreneuriat</h3>
+            <p>Idées, projets, budget, marketing et création d'entreprise.</p>
+        </div>
 
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
+        <div class="card">
+            <div class="icon">💻</div>
+            <h3>Informatique</h3>
+            <p>Ordinateurs, Internet, algorithmique, programmation et sécurité.</p>
+        </div>
 
-</div>
+    </div>
 
+</section>
 
-<div class="course" data-name="technique" onclick="openLesson('technique')">
 
-<div class="icon">⚡</div>
+<!-- COMMENT ÇA MARCHE -->
+<section class="how">
 
-<h3 data-fr="Technique" data-en="Technical Studies">
-Technique
-</h3>
+    <div class="section-title">
 
-<p
-data-fr="Électricité, électronique, électrotechnique et machines."
-data-en="Electricity, electronics, electrotechnics and machines."
->
-Électricité, électronique, électrotechnique et machines.
-</p>
+        <h2>🚀 Comment apprendre ?</h2>
 
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
+        <p>Une méthode simple pour progresser étape par étape.</p>
 
-</div>
+    </div>
 
 
-<div class="course" data-name="anglais" onclick="openLesson('anglais')">
+    <div class="grid">
 
-<div class="icon">🇬🇧</div>
+        <div class="card step">
+            <div class="number">1</div>
+            <h3>Choisis une matière</h3>
+            <p>Sélectionne le domaine que tu veux étudier.</p>
+        </div>
 
-<h3 data-fr="Anglais" data-en="English">
-Anglais
-</h3>
+        <div class="card step">
+            <div class="number">2</div>
+            <h3>Choisis un chapitre</h3>
+            <p>Parcours les leçons organisées comme un livre.</p>
+        </div>
 
-<p
-data-fr="Vocabulaire, grammaire, conjugaison et communication."
-data-en="Vocabulary, grammar, conjugation and communication."
->
-Vocabulaire, grammaire, conjugaison et communication.
-</p>
+        <div class="card step">
+            <div class="number">3</div>
+            <h3>Apprends</h3>
+            <p>Lis la leçon, les exemples, les formules et les schémas.</p>
+        </div>
 
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
+        <div class="card step">
+            <div class="number">4</div>
+            <h3>Pratique</h3>
+            <p>Fais les exercices et vérifie tes corrections.</p>
+        </div>
 
-</div>
+    </div>
 
+</section>
 
-<div class="course" data-name="francais" onclick="openLesson('francais')">
 
-<div class="icon">🇫🇷</div>
+<!-- SÉCURITÉ -->
+<section id="securite">
 
-<h3 data-fr="Français" data-en="French">
-Français
-</h3>
+    <div class="section-title">
 
-<p
-data-fr="Grammaire, conjugaison, vocabulaire et expression."
-data-en="Grammar, conjugation, vocabulary and expression."
->
-Grammaire, conjugaison, vocabulaire et expression.
-</p>
+        <h2>🛡️ Sécurité</h2>
 
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
+        <p>MT Jeunesse privilégie une expérience simple et responsable.</p>
 
-</div>
+    </div>
 
+    <div class="security">
 
-<div class="course" data-name="histoire" onclick="openLesson('histoire')">
+        <h3>🔒 Protection du site</h3>
 
-<div class="icon">🇨🇲</div>
+        <p>
+            Cette page utilise uniquement du HTML, du CSS et du JavaScript
+            nécessaires au fonctionnement du site. Aucun téléchargement
+            automatique de programme n'est effectué depuis cette page.
+        </p>
 
-<h3 data-fr="Histoire" data-en="History">
-Histoire
-</h3>
+        <p style="margin-top:10px;">
+            ⚠️ MT Jeunesse n'est pas un antivirus et ne peut pas analyser
+            ou supprimer les virus présents sur l'appareil de l'utilisateur.
+        </p>
 
-<p
-data-fr="Histoire du Cameroun, de l'Afrique et du monde."
-data-en="History of Cameroon, Africa and the world."
->
-Histoire du Cameroun, de l'Afrique et du monde.
-</p>
+    </div>
 
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
+</section>
 
-</div>
 
+<!-- À PROPOS -->
+<section id="apropos">
 
-<div class="course" data-name="entrepreneuriat" onclick="openLesson('entrepreneuriat')">
+    <div class="section-title">
 
-<div class="icon">💼</div>
+        <h2>🌟 À propos de MT Jeunesse</h2>
 
-<h3 data-fr="Entrepreneuriat" data-en="Entrepreneurship">
-Entrepreneuriat
-</h3>
+        <p>
+            Un projet éducatif tourné vers l'apprentissage et la jeunesse.
+        </p>
 
-<p
-data-fr="Idée de projet, business, marketing, vente et gestion."
-data-en="Project ideas, business, marketing, sales and management."
->
-Idée de projet, business, marketing, vente et gestion.
-</p>
+    </div>
 
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
+    <div class="card" style="max-width:900px;margin:auto;text-align:center;">
 
-</div>
+        <p>
+            MT Jeunesse a pour objectif de rendre l'apprentissage
+            plus accessible, plus clair et plus intéressant.
+        </p>
 
+        <p style="margin-top:15px;">
+            📖 Cours → 💡 Explications → 📝 Exercices → ✅ Corrections
+        </p>
 
-<div class="course" data-name="gouvernement" onclick="openLesson('gouvernement')">
+        <div class="buttons">
 
-<div class="icon">🏛️</div>
+            <a class="btn btn-primary" href="cours.html">
+                📚 Accéder aux cours
+            </a>
 
-<h3 data-fr="Gouvernement" data-en="Government">
-Gouvernement
-</h3>
+        </div>
 
-<p
-data-fr="Institutions, administration et fonctionnement de l'État."
-data-en="Institutions, administration and how the state works."
->
-Institutions, administration et fonctionnement de l'État.
-</p>
+    </div>
 
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
-
-</div>
-
-
-<div class="course" data-name="politique" onclick="openLesson('politique')">
-
-<div class="icon">⚖️</div>
-
-<h3 data-fr="Politique & Citoyenneté" data-en="Politics & Citizenship">
-Politique & Citoyenneté
-</h3>
-
-<p
-data-fr="Droits, devoirs, institutions et participation citoyenne."
-data-en="Rights, duties, institutions and civic participation."
->
-Droits, devoirs, institutions et participation citoyenne.
-</p>
-
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
-
-</div>
-
-
-<div class="course" data-name="informatique" onclick="openLesson('informatique')">
-
-<div class="icon">💻</div>
-
-<h3 data-fr="Informatique" data-en="Computer Science">
-Informatique
-</h3>
-
-<p
-data-fr="Ordinateurs, programmation, Internet et création de sites."
-data-en="Computers, programming, Internet and website creation."
->
-Ordinateurs, programmation, Internet et création de sites.
-</p>
-
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
-
-</div>
-
-
-<div class="course" data-name="sciences" onclick="openLesson('sciences')">
-
-<div class="icon">🔬</div>
-
-<h3 data-fr="Sciences" data-en="Science">
-Sciences
-</h3>
-
-<p
-data-fr="Physique, chimie, biologie et connaissances scientifiques."
-data-en="Physics, chemistry, biology and scientific knowledge."
->
-Physique, chimie, biologie et connaissances scientifiques.
-</p>
-
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
-
-</div>
-
-
-<div class="course" data-name="culture" onclick="openLesson('culture')">
-
-<div class="icon">🌍</div>
-
-<h3 data-fr="Culture générale" data-en="General Knowledge">
-Culture générale
-</h3>
-
-<p
-data-fr="Pays, capitales, découvertes, personnalités et connaissances du monde."
-data-en="Countries, capitals, discoveries, people and world knowledge."
->
-Pays, capitales, découvertes, personnalités et connaissances du monde.
-</p>
-
-<span class="open" data-fr="Voir le cours →" data-en="View course →">
-Voir le cours →
-</span>
-
-</div>
-
-
-<div class="course" data-name="articles" onclick="openLesson('articles')">
-
-<div class="icon">📰</div>
-
-<h3 data-fr="Articles" data-en="Articles">
-Articles
-</h3>
-
-<p
-data-fr="Actualités éducatives, découvertes et sujets intéressants."
-data-en="Educational news, discoveries and interesting topics."
->
-Actualités éducatives, découvertes et sujets intéressants.
-</p>
-
-<span class="open" data-fr="Lire →" data-en="Read →">
-Lire →
-</span>
-
-</div>
-
-
-<div class="course" data-name="projets" onclick="openLesson('projets')">
-
-<div class="icon">🚀</div>
-
-<h3 data-fr="Projets & Innovation" data-en="Projects & Innovation">
-Projets & Innovation
-</h3>
-
-<p
-data-fr="Transforme tes idées en projets concrets."
-data-en="Turn your ideas into practical projects."
->
-Transforme tes idées en projets concrets.
-</p>
-
-<span class="open" data-fr="Découvrir →" data-en="Discover →">
-Découvrir →
-</span>
-
-</div>
-
-</div>
-
-
-<div class="lesson" id="lesson">
-
-<h2 id="lessonTitle"></h2>
-
-<p id="lessonText"></p>
-
-<ul id="lessonList"></ul>
-
-<button class="close" onclick="closeLesson()" id="closeBtn">
-Fermer
-</button>
-
-</div>
+</section>
 
 </main>
 
 
 <footer>
 
-<strong>MT Jeunesse</strong>
+    <strong>📚 MT Jeunesse</strong>
 
-<p>
-Apprendre aujourd'hui. Construire demain.
-</p>
+    <p>Apprendre aujourd'hui pour construire demain.</p>
 
-<p>
-Créateur : M K Jérémie
-</p>
-
-<p>
-© 2026 MT Jeunesse — Tous droits réservés.
-</p>
+    <p>© 2026 MT Jeunesse — Tous droits réservés.</p>
 
 </footer>
 
 
 <script>
+/*
+  Sécurité basique côté client :
+  éviter l'ouverture de fenêtres inutiles
+  et empêcher certaines manipulations accidentelles.
+*/
 
-var lang = "fr";
+document.addEventListener("contextmenu", function(e){
+    /* Le clic droit reste autorisé : le site doit rester accessible. */
+});
 
+document.querySelectorAll("a[href]").forEach(function(link){
 
-var lessons = {
+    const destination = link.getAttribute("href");
 
-maths:{
-fr:{
-title:"📐 Mathématiques",
-text:"Les mathématiques permettent de résoudre des problèmes grâce aux nombres, aux formules et au raisonnement.",
-items:[
-"Algèbre et expressions",
-"Équations et inéquations",
-"Géométrie et calcul des surfaces",
-"Pourcentages et proportions"
-]
-},
-en:{
-title:"📐 Mathematics",
-text:"Mathematics helps solve problems using numbers, formulas and logical reasoning.",
-items:[
-"Algebra and expressions",
-"Equations and inequalities",
-"Geometry and areas",
-"Percentages and proportions"
-]
-}
-},
-
-technique:{
-fr:{
-title:"⚡ Technique",
-text:"Les filières techniques permettent de comprendre et de construire des systèmes électriques et électroniques.",
-items:[
-"Courant, tension et résistance",
-"Lois électriques fondamentales",
-"Machines électriques",
-"Électronique et composants",
-"Installations électriques"
-]
-},
-en:{
-title:"⚡ Technical Studies",
-text:"Technical studies help us understand and build electrical and electronic systems.",
-items:[
-"Current, voltage and resistance",
-"Basic electrical laws",
-"Electrical machines",
-"Electronic components",
-"Electrical installations"
-]
-}
-},
-
-anglais:{
-fr:{
-title:"🇬🇧 Anglais",
-text:"L'anglais permet de communiquer avec des personnes du monde entier.",
-items:[
-"Vocabulaire quotidien",
-"Présent, passé et futur",
-"Verbes irréguliers",
-"Conversation et communication"
-]
-},
-en:{
-title:"🇬🇧 English",
-text:"English helps people communicate with others around the world.",
-items:[
-"Everyday vocabulary",
-"Present, past and future",
-"Irregular verbs",
-"Conversation and communication"
-]
-}
-},
-
-francais:{
-fr:{
-title:"🇫🇷 Français",
-text:"Le français permet de mieux communiquer à l'écrit comme à l'oral.",
-items:[
-"Grammaire",
-"Conjugaison",
-"Orthographe",
-"Vocabulaire",
-"Expression écrite"
-]
-},
-en:{
-title:"🇫🇷 French",
-text:"French helps develop clear written and spoken communication.",
-items:[
-"Grammar",
-"Conjugation",
-"Spelling",
-"Vocabulary",
-"Written expression"
-]
-}
-},
-
-histoire:{
-fr:{
-title:"🇨🇲 Histoire",
-text:"L'histoire permet de comprendre les événements qui ont construit les sociétés.",
-items:[
-"Histoire du Cameroun",
-"Histoire de l'Afrique",
-"Colonisation et indépendance",
-"Grandes périodes de l'histoire mondiale"
-]
-},
-en:{
-title:"🇨🇲 History",
-text:"History helps us understand the events that shaped societies.",
-items:[
-"History of Cameroon",
-"History of Africa",
-"Colonization and independence",
-"Major periods of world history"
-]
-}
-},
-
-entrepreneuriat:{
-fr:{
-title:"💼 Entrepreneuriat",
-text:"Entreprendre consiste à identifier un besoin et à créer une solution utile.",
-items:[
-"Trouver une idée",
-"Étudier un besoin",
-"Créer un produit ou service",
-"Marketing et communication",
-"Vente et gestion"
-]
-},
-en:{
-title:"💼 Entrepreneurship",
-text:"Entrepreneurship means identifying a need and creating a useful solution.",
-items:[
-"Finding an idea",
-"Understanding a need",
-"Creating a product or service",
-"Marketing and communication",
-"Sales and management"
-]
-}
-},
-
-gouvernement:{
-fr:{
-title:"🏛️ Gouvernement",
-text:"Le gouvernement participe à l'administration et au fonctionnement de l'État.",
-items:[
-"Les institutions de l'État",
-"Le rôle du gouvernement",
-"L'administration publique",
-"Les services publics"
-]
-},
-en:{
-title:"🏛️ Government",
-text:"Government participates in the administration and functioning of the state.",
-items:[
-"State institutions",
-"The role of government",
-"Public administration",
-"Public services"
-]
-}
-},
-
-politique:{
-fr:{
-title:"⚖️ Politique & Citoyenneté",
-text:"La citoyenneté concerne les droits, les devoirs et la participation à la vie de la société.",
-items:[
-"Les droits du citoyen",
-"Les devoirs du citoyen",
-"Les institutions",
-"La participation citoyenne"
-]
-},
-en:{
-title:"⚖️ Politics & Citizenship",
-text:"Citizenship concerns rights, duties and participation in society.",
-items:[
-"Citizen rights",
-"Citizen duties",
-"Institutions",
-"Civic participation"
-]
-}
-},
-
-informatique:{
-fr:{
-title:"💻 Informatique",
-text:"L'informatique permet de traiter l'information et de créer des outils numériques.",
-items:[
-"Fonctionnement d'un ordinateur",
-"Internet",
-"Programmation",
-"HTML et CSS",
-"Création de sites web"
-]
-},
-en:{
-title:"💻 Computer Science",
-text:"Computer science helps process information and create digital tools.",
-items:[
-"How computers work",
-"Internet",
-"Programming",
-"HTML and CSS",
-"Website creation"
-]
-}
-},
-
-sciences:{
-fr:{
-title:"🔬 Sciences",
-text:"Les sciences permettent de comprendre la nature et les phénomènes qui nous entourent.",
-items:[
-"Physique",
-"Chimie",
-"Biologie",
-"Énergie et matière"
-]
-},
-en:{
-title:"🔬 Science",
-text:"Science helps us understand nature and the phenomena around us.",
-items:[
-"Physics",
-"Chemistry",
-"Biology",
-"Energy and matter"
-]
-}
-},
-
-culture:{
-fr:{
-title:"🌍 Culture générale",
-text:"La culture générale permet de mieux connaître le monde.",
-items:[
-"Pays et capitales",
-"Continents et océans",
-"Grandes découvertes",
-"Personnalités importantes"
-]
-},
-en:{
-title:"🌍 General Knowledge",
-text:"General knowledge helps us better understand the world.",
-items:[
-"Countries and capitals",
-"Continents and oceans",
-"Major discoveries",
-"Important people"
-]
-}
-},
-
-articles:{
-fr:{
-title:"📰 Articles",
-text:"Découvre des sujets éducatifs et des informations intéressantes.",
-items:[
-"Technologie",
-"Éducation",
-"Jeunesse",
-"Entrepreneuriat",
-"Culture et société"
-]
-},
-en:{
-title:"📰 Articles",
-text:"Discover educational topics and interesting information.",
-items:[
-"Technology",
-"Education",
-"Youth",
-"Entrepreneurship",
-"Culture and society"
-]
-}
-},
-
-projets:{
-fr:{
-title:"🚀 Projets & Innovation",
-text:"Un projet commence par une idée et avance grâce à l'action.",
-items:[
-"Trouver un problème",
-"Imaginer une solution",
-"Créer un prototype",
-"Tester",
-"Améliorer le projet"
-]
-},
-en:{
-title:"🚀 Projects & Innovation",
-text:"A project starts with an idea and moves forward through action.",
-items:[
-"Find a problem",
-"Imagine a solution",
-"Create a prototype",
-"Test it",
-"Improve the project"
-]
-}
-}
-
-};
-
-
-function openLesson(name){
-
-    var lesson = lessons[name][lang];
-
-    document.getElementById("lessonTitle").textContent =
-        lesson.title;
-
-    document.getElementById("lessonText").textContent =
-        lesson.text;
-
-    var list =
-        document.getElementById("lessonList");
-
-    list.innerHTML = "";
-
-    for(var i=0;i<lesson.items.length;i++){
-
-        var li = document.createElement("li");
-
-        li.textContent = lesson.items[i];
-
-        list.appendChild(li);
-
+    if(destination && destination.startsWith("javascript:")){
+        link.removeAttribute("href");
     }
 
-    document.getElementById("lesson").classList.add("show");
-
-    document.getElementById("lesson").scrollIntoView({
-        behavior:"smooth",
-        block:"center"
-    });
-
-}
-
-
-function closeLesson(){
-
-    document.getElementById("lesson")
-        .classList.remove("show");
-
-}
-
-
-function changeLanguage(){
-
-    lang = lang === "fr" ? "en" : "fr";
-
-    var nodes =
-        document.querySelectorAll("[data-fr]");
-
-    for(var i=0;i<nodes.length;i++){
-
-        nodes[i].textContent =
-            nodes[i].getAttribute("data-" + lang);
-
-    }
-
-    document.documentElement.lang = lang;
-
-    document.getElementById("langBtn").textContent =
-        lang === "fr"
-        ? "🇬🇧 English"
-        : "🇫🇷 Français";
-
-    document.getElementById("heroTitle").textContent =
-        lang === "fr"
-        ? "📚 Les cours MT Jeunesse"
-        : "📚 MT Jeunesse Courses";
-
-    document.getElementById("heroText").textContent =
-        lang === "fr"
-        ? "Choisis une matière et commence à apprendre."
-        : "Choose a subject and start learning.";
-
-    document.getElementById("courseTitle").textContent =
-        lang === "fr"
-        ? "Toutes les matières"
-        : "All Subjects";
-
-    document.getElementById("courseSubtitle").textContent =
-        lang === "fr"
-        ? "Des cours simples pour apprendre et progresser."
-        : "Simple courses to learn and improve.";
-
-    document.getElementById("search").placeholder =
-        lang === "fr"
-        ? "🔎 Rechercher un cours..."
-        : "🔎 Search for a course...";
-
-    document.getElementById("closeBtn").textContent =
-        lang === "fr"
-        ? "Fermer"
-        : "Close";
-
-}
-
-
-function searchCourses(){
-
-    var search =
-        document.getElementById("search")
-        .value
-        .toLowerCase();
-
-    var courses =
-        document.querySelectorAll(".course");
-
-    for(var i=0;i<courses.length;i++){
-
-        var name =
-            courses[i].textContent.toLowerCase();
-
-        if(name.indexOf(search) !== -1){
-
-            courses[i].style.display = "";
-
-        }else{
-
-            courses[i].style.display = "none";
-
-        }
-
-    }
-
-}
-
+});
 </script>
 
 </body>
